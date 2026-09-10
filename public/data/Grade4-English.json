@@ -1,0 +1,1950 @@
+{
+  "title": "WORD SHOOTER",
+  "subtitle": "GRADE 4 ENGLISH ADVENTURE",
+  "questions": [
+    {
+      "id": "ENG4-001",
+      "question": "I _ a student.",
+      "options": ["is", "are", "was", "be", "am"],
+      "answer": "am",
+      "hint": "Say the sentence aloud and choose what sounds right after “I.”",
+      "metadata": {
+        "Lesson": "Unit 1",
+        "Page": "Pg 7-8",
+        "Category": "Fill in the blank",
+        "Skill": "Is/am/are",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-002",
+      "question": "She _ my teacher.",
+      "options": ["am", "are", "were", "be", "is"],
+      "answer": "is",
+      "hint": "The subject is one female person.",
+      "metadata": {
+        "Lesson": "Unit 1",
+        "Page": "Pg 7-8",
+        "Category": "Fill in the blank",
+        "Skill": "Is/am/are",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-003",
+      "question": "They _ good friends.",
+      "options": ["is", "am", "was", "be", "are"],
+      "answer": "are",
+      "hint": "The subject means more than one person.",
+      "metadata": {
+        "Lesson": "Unit 1",
+        "Page": "Pg 7-8",
+        "Category": "Fill in the blank",
+        "Skill": "Is/am/are",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-004",
+      "question": "Mina lives _ Nepal.",
+      "options": ["from", "at", "on", "to", "in"],
+      "answer": "in",
+      "hint": "The blank tells where Mina lives now.",
+      "metadata": {
+        "Lesson": "Unit 1",
+        "Page": "Pg 10",
+        "Category": "Fill in the blank",
+        "Skill": "In/from",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-005",
+      "question": "Ravi is _ Pokhara.",
+      "options": ["in", "on", "at", "under", "from"],
+      "answer": "from",
+      "hint": "The sentence tells Ravi’s place of origin.",
+      "metadata": {
+        "Lesson": "Unit 1",
+        "Page": "Pg 10",
+        "Category": "Fill in the blank",
+        "Skill": "In/from",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-006",
+      "question": "Which spelling is correct?",
+      "options": ["teecher", "techer", "teachar", "teatcher", "teacher"],
+      "answer": "teacher",
+      "hint": "Start with “teach” and add the ending for a person.",
+      "metadata": {
+        "Lesson": "Unit 1",
+        "Page": "Pg 2",
+        "Category": "Spelling",
+        "Skill": "Correct spelling",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-007",
+      "question": "We say _ when leaving.",
+      "options": ["hello", "welcome", "thanks", "sorry", "goodbye"],
+      "answer": "goodbye",
+      "hint": "Think about what you say before going away.",
+      "metadata": {
+        "Lesson": "Unit 1",
+        "Page": "Pg 1-4",
+        "Category": "Fill in the blank",
+        "Skill": "Leave-taking",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-008",
+      "question": "What does “introduce” mean?",
+      "options": [
+        "hide someone",
+        "call someone",
+        "help someone",
+        "follow someone",
+        "present someone"
+      ],
+      "answer": "present someone",
+      "hint": "Imagine meeting a new classmate for the first time.",
+      "metadata": {
+        "Lesson": "Unit 1",
+        "Page": "Pg 1-4",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-009",
+      "question": "This is _ schoolbag.",
+      "options": ["mine", "me", "I", "ours", "my"],
+      "answer": "my",
+      "hint": "The ownership word comes directly before a noun.",
+      "metadata": {
+        "Lesson": "Unit 2",
+        "Page": "Pg 22-24",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive adjectives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-010",
+      "question": "Ram lost _ pencil.",
+      "options": ["her", "their", "our", "your", "his"],
+      "answer": "his",
+      "hint": "Ram is one boy who owns the pencil.",
+      "metadata": {
+        "Lesson": "Unit 2",
+        "Page": "Pg 22-24",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive adjectives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-011",
+      "question": "Sita loves _ new dress.",
+      "options": ["his", "my", "our", "their", "her"],
+      "answer": "her",
+      "hint": "Sita is one girl who owns the dress.",
+      "metadata": {
+        "Lesson": "Unit 2",
+        "Page": "Pg 22-24",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive adjectives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-012",
+      "question": "This book is _.",
+      "options": ["my", "me", "I", "ours", "mine"],
+      "answer": "mine",
+      "hint": "The ownership word stands alone after “is.”",
+      "metadata": {
+        "Lesson": "Unit 2",
+        "Page": "Pg 22-24",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive pronouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-013",
+      "question": "Those pencils are _.",
+      "options": ["their", "them", "they", "hers", "theirs"],
+      "answer": "theirs",
+      "hint": "The pencils belong to a group of people.",
+      "metadata": {
+        "Lesson": "Unit 2",
+        "Page": "Pg 22-24",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive pronouns",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-014",
+      "question": "_ is my sister.",
+      "options": ["Her", "Hers", "They", "We", "She"],
+      "answer": "She",
+      "hint": "Choose a subject word for one girl.",
+      "metadata": {
+        "Lesson": "Unit 2",
+        "Page": "Pg 24-25",
+        "Category": "Fill in the blank",
+        "Skill": "Personal pronouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-015",
+      "question": "Please give the ball to _.",
+      "options": ["his", "he", "hers", "they", "him"],
+      "answer": "him",
+      "hint": "The missing word comes after “to” and refers to a boy.",
+      "metadata": {
+        "Lesson": "Unit 2",
+        "Page": "Pg 24-25",
+        "Category": "Fill in the blank",
+        "Skill": "Object pronouns",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-016",
+      "question": "What does “belongings” mean?",
+      "options": [
+        "lost things",
+        "broken things",
+        "old things",
+        "heavy things",
+        "owned things"
+      ],
+      "answer": "owned things",
+      "hint": "Think about the items you pack in your schoolbag.",
+      "metadata": {
+        "Lesson": "Unit 2",
+        "Page": "Pg 13-20",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-017",
+      "question": "I _ brush my teeth daily.",
+      "options": ["never", "rarely", "yesterday", "tomorrow", "always"],
+      "answer": "always",
+      "hint": "“Daily” means the action happens every day.",
+      "metadata": {
+        "Lesson": "Unit 3",
+        "Page": "Pg 33-35",
+        "Category": "Fill in the blank",
+        "Skill": "Frequency adverbs",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-018",
+      "question": "She _ walks to school.",
+      "options": ["never", "tomorrow", "yesterday", "once", "usually"],
+      "answer": "usually",
+      "hint": "The action happens on most days, but not necessarily every day.",
+      "metadata": {
+        "Lesson": "Unit 3",
+        "Page": "Pg 33-35",
+        "Category": "Fill in the blank",
+        "Skill": "Frequency adverbs",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-019",
+      "question": "He _ eats meat.",
+      "options": ["always", "daily", "often", "usually", "never"],
+      "answer": "never",
+      "hint": "The sentence should mean he does not eat meat at any time.",
+      "metadata": {
+        "Lesson": "Unit 3",
+        "Page": "Pg 33-35",
+        "Category": "Fill in the blank",
+        "Skill": "Frequency adverbs",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-020",
+      "question": "_ do you live?",
+      "options": ["Who", "When", "Why", "What", "Where"],
+      "answer": "Where",
+      "hint": "The expected answer would be the name of a place.",
+      "metadata": {
+        "Lesson": "Unit 3",
+        "Page": "Pg 35-36",
+        "Category": "Fill in the blank",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-021",
+      "question": "_ is your birthday?",
+      "options": ["Where", "Who", "Why", "What", "When"],
+      "answer": "When",
+      "hint": "The expected answer would be a date or time.",
+      "metadata": {
+        "Lesson": "Unit 3",
+        "Page": "Pg 35-36",
+        "Category": "Fill in the blank",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-022",
+      "question": "_ are you crying?",
+      "options": ["Where", "Who", "When", "Which", "Why"],
+      "answer": "Why",
+      "hint": "The speaker wants to know the reason.",
+      "metadata": {
+        "Lesson": "Unit 3",
+        "Page": "Pg 35-36",
+        "Category": "Fill in the blank",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-023",
+      "question": "Quarter past seven is _.",
+      "options": ["7:30", "6:45", "8:15", "7:45", "7:15"],
+      "answer": "7:15",
+      "hint": "Move 15 minutes forward from seven o’clock.",
+      "metadata": {
+        "Lesson": "Unit 3",
+        "Page": "Pg 27-32",
+        "Category": "Time",
+        "Skill": "Reading time",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-024",
+      "question": "Half past nine is _.",
+      "options": ["9:15", "8:30", "10:30", "9:45", "9:30"],
+      "answer": "9:30",
+      "hint": "Move 30 minutes forward from nine o’clock.",
+      "metadata": {
+        "Lesson": "Unit 3",
+        "Page": "Pg 27-32",
+        "Category": "Time",
+        "Skill": "Reading time",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-025",
+      "question": "Yesterday, I _ tired.",
+      "options": ["were", "am", "is", "are", "was"],
+      "answer": "was",
+      "hint": "The sentence is about the past and has the subject “I.”",
+      "metadata": {
+        "Lesson": "Unit 4",
+        "Page": "Pg 46-48",
+        "Category": "Fill in the blank",
+        "Skill": "Was/were",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-026",
+      "question": "They _ at school yesterday.",
+      "options": ["was", "are", "is", "am", "were"],
+      "answer": "were",
+      "hint": "The sentence is in the past and the subject is plural.",
+      "metadata": {
+        "Lesson": "Unit 4",
+        "Page": "Pg 46-48",
+        "Category": "Fill in the blank",
+        "Skill": "Was/were",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-027",
+      "question": "She _ absent yesterday.",
+      "options": ["weren't", "isn't", "aren't", "don't", "wasn't"],
+      "answer": "wasn't",
+      "hint": "Use a negative past form for one person.",
+      "metadata": {
+        "Lesson": "Unit 4",
+        "Page": "Pg 46-48",
+        "Category": "Fill in the blank",
+        "Skill": "Past negation",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-028",
+      "question": "We _ late yesterday.",
+      "options": ["wasn't", "aren't", "isn't", "didn't", "weren't"],
+      "answer": "weren't",
+      "hint": "Use a negative past form for a group.",
+      "metadata": {
+        "Lesson": "Unit 4",
+        "Page": "Pg 46-48",
+        "Category": "Fill in the blank",
+        "Skill": "Past negation",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-029",
+      "question": "_ you help me, please?",
+      "options": ["Was", "Did", "Has", "Does", "Could"],
+      "answer": "Could",
+      "hint": "Choose the word that makes the request sound polite.",
+      "metadata": {
+        "Lesson": "Unit 4",
+        "Page": "Pg 38-45",
+        "Category": "Fill in the blank",
+        "Skill": "Polite requests",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-030",
+      "question": "Please _ the window.",
+      "options": ["opens", "opened", "opening", "opener", "open"],
+      "answer": "open",
+      "hint": "After “please,” use the simplest form of the action word.",
+      "metadata": {
+        "Lesson": "Unit 4",
+        "Page": "Pg 38-45",
+        "Category": "Fill in the blank",
+        "Skill": "Requests",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-031",
+      "question": "What does “request” mean?",
+      "options": [
+        "loud order",
+        "short answer",
+        "funny story",
+        "quick action",
+        "polite ask"
+      ],
+      "answer": "polite ask",
+      "hint": "Imagine politely asking someone for help.",
+      "metadata": {
+        "Lesson": "Unit 4",
+        "Page": "Pg 38-45",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-032",
+      "question": "Which response is polite?",
+      "options": [
+        "Go away",
+        "Be quiet",
+        "Never ask",
+        "I refuse",
+        "Yes, please"
+      ],
+      "answer": "Yes, please",
+      "hint": "Choose the response you could respectfully say to a teacher.",
+      "metadata": {
+        "Lesson": "Unit 4",
+        "Page": "Pg 38-45",
+        "Category": "Dialogue completion",
+        "Skill": "Polite responses",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-033",
+      "question": "How _ books are there?",
+      "options": ["much", "little", "few", "any", "many"],
+      "answer": "many",
+      "hint": "Books can be counted one by one.",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 59-61",
+        "Category": "Fill in the blank",
+        "Skill": "Much/many",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-034",
+      "question": "How _ water do you drink?",
+      "options": ["many", "few", "number", "several", "much"],
+      "answer": "much",
+      "hint": "Water is normally measured rather than counted.",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 59-61",
+        "Category": "Fill in the blank",
+        "Skill": "Much/many",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-035",
+      "question": "I have _ apple.",
+      "options": ["a", "the", "many", "much", "an"],
+      "answer": "an",
+      "hint": "Say “apple” aloud and listen to its first sound.",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 62-63",
+        "Category": "Fill in the blank",
+        "Skill": "Articles",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-036",
+      "question": "She bought _ mango.",
+      "options": ["an", "the", "much", "many", "a"],
+      "answer": "a",
+      "hint": "Say “mango” aloud and listen to its first sound.",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 62-63",
+        "Category": "Fill in the blank",
+        "Skill": "Articles",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-037",
+      "question": "Which noun is countable?",
+      "options": ["water", "rice", "sugar", "milk", "pencil"],
+      "answer": "pencil",
+      "hint": "Choose something you can count as one, two, or three.",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 61-62",
+        "Category": "Classification",
+        "Skill": "Countable nouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-038",
+      "question": "Which noun is uncountable?",
+      "options": ["apple", "book", "chair", "coin", "rice"],
+      "answer": "rice",
+      "hint": "Choose something normally measured by weight or amount.",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 61-62",
+        "Category": "Classification",
+        "Skill": "Uncountable nouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-039",
+      "question": "What is the plural of “child”?",
+      "options": ["childs", "childes", "childrens", "child", "children"],
+      "answer": "children",
+      "hint": "This word has a special plural form instead of simply adding “s.”",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 62-64",
+        "Category": "Singular and plural",
+        "Skill": "Irregular plurals",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-040",
+      "question": "What is the plural of “box”?",
+      "options": ["boxs", "boxies", "boxen", "box", "boxes"],
+      "answer": "boxes",
+      "hint": "Easy",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 62-64",
+        "Category": "Singular and plural",
+        "Skill": "Check which ending is normally added after the letter “x.”",
+        "Difficulty": null
+      }
+    },
+    {
+      "id": "ENG4-041",
+      "question": "A pen costs Rs. 30. Two cost _.",
+      "options": ["Rs. 30", "Rs. 40", "Rs. 50", "Rs. 90", "Rs. 60"],
+      "answer": "Rs. 60",
+      "hint": "Add the price of the pen two times.",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 50-58",
+        "Category": "Price",
+        "Skill": "Total price",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-042",
+      "question": "Rice costs Rs. 80. Pay Rs. 100. Change?",
+      "options": ["Rs. 10", "Rs. 30", "Rs. 40", "Rs. 80", "Rs. 20"],
+      "answer": "Rs. 20",
+      "hint": "Take the cost away from the amount paid.",
+      "metadata": {
+        "Lesson": "Unit 5",
+        "Page": "Pg 50-58",
+        "Category": "Price",
+        "Skill": "Calculating change",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-043",
+      "question": "A horse is _ than a goat.",
+      "options": ["biggest", "big", "more big", "smaller", "bigger"],
+      "answer": "bigger",
+      "hint": "Only two animals are being compared.",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 69-73",
+        "Category": "Fill in the blank",
+        "Skill": "Comparatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-044",
+      "question": "A mouse is _ than a cat.",
+      "options": ["smallest", "small", "more small", "bigger", "smaller"],
+      "answer": "smaller",
+      "hint": "Think about the size of each animal and compare only two.",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 69-73",
+        "Category": "Fill in the blank",
+        "Skill": "Comparatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-045",
+      "question": "A train is _ than a bicycle.",
+      "options": ["fastest", "fast", "more fast", "slower", "faster"],
+      "answer": "faster",
+      "hint": "Think about which one normally moves more quickly.",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 69-73",
+        "Category": "Fill in the blank",
+        "Skill": "Comparatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-046",
+      "question": "This flower is _ than that one.",
+      "options": [
+        "beautiful",
+        "most beautiful",
+        "beautifuller",
+        "less beauty",
+        "more beautiful"
+      ],
+      "answer": "more beautiful",
+      "hint": "Long describing words often need another word before them.",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 69-73",
+        "Category": "Fill in the blank",
+        "Skill": "Comparatives",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-047",
+      "question": "Everest is the _ mountain.",
+      "options": ["higher", "high", "more high", "lowest", "highest"],
+      "answer": "highest",
+      "hint": "Everest is being compared with every other mountain.",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 73-75",
+        "Category": "Fill in the blank",
+        "Skill": "Superlatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-048",
+      "question": "A cheetah is the _ animal.",
+      "options": ["faster", "fast", "more fast", "slowest", "fastest"],
+      "answer": "fastest",
+      "hint": "One animal is being compared with all animals.",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 73-75",
+        "Category": "Fill in the blank",
+        "Skill": "Superlatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-049",
+      "question": "Good becomes _ in comparison.",
+      "options": ["gooder", "best", "more good", "worse", "better"],
+      "answer": "better",
+      "hint": "Medium",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 73-75",
+        "Category": "Comparative forms",
+        "Skill": "“Good” changes into a special form when comparing two things.",
+        "Difficulty": null
+      }
+    },
+    {
+      "id": "ENG4-050",
+      "question": "Good becomes _ in superlative.",
+      "options": ["better", "goodest", "more good", "worst", "best"],
+      "answer": "best",
+      "hint": "Medium",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 73-75",
+        "Category": "Superlative forms",
+        "Skill": "Think of the special form used when one is above all others.",
+        "Difficulty": null
+      }
+    },
+    {
+      "id": "ENG4-051",
+      "question": "What is the opposite of “bigger”?",
+      "options": ["taller", "higher", "wider", "longer", "smaller"],
+      "answer": "smaller",
+      "hint": "Imagine changing from a large size to a little size.",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 65-68",
+        "Category": "Vocabulary meaning",
+        "Skill": "Opposites",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-052",
+      "question": "Which word compares two things?",
+      "options": ["tall", "tallest", "height", "high", "taller"],
+      "answer": "taller",
+      "hint": "Look for a describing word used when comparing two people.",
+      "metadata": {
+        "Lesson": "Unit 6",
+        "Page": "Pg 69-73",
+        "Category": "Classification",
+        "Skill": "Comparative adjectives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-053",
+      "question": "The book is _ the table.",
+      "options": ["under", "between", "behind", "beside", "on"],
+      "answer": "on",
+      "hint": "Imagine where you normally place a book while studying.",
+      "metadata": {
+        "Lesson": "Unit 7",
+        "Page": "Pg 85-87",
+        "Category": "Fill in the blank",
+        "Skill": "Prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-054",
+      "question": "The shoes are _ the bed.",
+      "options": ["on", "above", "between", "opposite", "under"],
+      "answer": "under",
+      "hint": "Picture the shoes hidden below the bed.",
+      "metadata": {
+        "Lesson": "Unit 7",
+        "Page": "Pg 85-87",
+        "Category": "Fill in the blank",
+        "Skill": "Prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-055",
+      "question": "The bank is _ the school.",
+      "options": ["inside", "under", "through", "during", "opposite"],
+      "answer": "opposite",
+      "hint": "Imagine the two buildings facing each other across a road.",
+      "metadata": {
+        "Lesson": "Unit 7",
+        "Page": "Pg 85-87",
+        "Category": "Fill in the blank",
+        "Skill": "Prepositions",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-056",
+      "question": "The shop is _ the bank.",
+      "options": ["under", "inside", "through", "above", "beside"],
+      "answer": "beside",
+      "hint": "Imagine the two buildings standing side by side.",
+      "metadata": {
+        "Lesson": "Unit 7",
+        "Page": "Pg 85-87",
+        "Category": "Fill in the blank",
+        "Skill": "Prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-057",
+      "question": "The tree is _ two houses.",
+      "options": ["on", "inside", "behind", "above", "between"],
+      "answer": "between",
+      "hint": "Picture one tree with a house on each side.",
+      "metadata": {
+        "Lesson": "Unit 7",
+        "Page": "Pg 85-87",
+        "Category": "Fill in the blank",
+        "Skill": "Prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-058",
+      "question": "The cat is _ the curtain.",
+      "options": ["on", "between", "above", "opposite", "behind"],
+      "answer": "behind",
+      "hint": "The curtain blocks the cat from view.",
+      "metadata": {
+        "Lesson": "Unit 7",
+        "Page": "Pg 85-87",
+        "Category": "Fill in the blank",
+        "Skill": "Prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-059",
+      "question": "Which word shows location?",
+      "options": ["quickly", "beautiful", "always", "happy", "under"],
+      "answer": "under",
+      "hint": "Choose the word that tells where something is.",
+      "metadata": {
+        "Lesson": "Unit 7",
+        "Page": "Pg 85-87",
+        "Category": "Classification",
+        "Skill": "Prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-060",
+      "question": "What does “opposite” mean?",
+      "options": [
+        "close beside",
+        "hidden below",
+        "placed inside",
+        "moving away",
+        "facing across"
+      ],
+      "answer": "facing across",
+      "hint": "Imagine two shops on different sides of the same road.",
+      "metadata": {
+        "Lesson": "Unit 7",
+        "Page": "Pg 77-84",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-061",
+      "question": "The Sun _ in the east.",
+      "options": ["rise", "rising", "rose", "rised", "rises"],
+      "answer": "rises",
+      "hint": "The sentence states a fact that happens every day.",
+      "metadata": {
+        "Lesson": "Unit 8",
+        "Page": "Pg 98-101",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-062",
+      "question": "Water _ at 100°C.",
+      "options": ["boil", "boiling", "boiled", "is boil", "boils"],
+      "answer": "boils",
+      "hint": "The subject is singular, and the sentence states a scientific fact.",
+      "metadata": {
+        "Lesson": "Unit 8",
+        "Page": "Pg 98-101",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-063",
+      "question": "He _ football every day.",
+      "options": ["play", "playing", "played", "player", "plays"],
+      "answer": "plays",
+      "hint": "The subject is one boy, and the action happens regularly.",
+      "metadata": {
+        "Lesson": "Unit 8",
+        "Page": "Pg 98-101",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-064",
+      "question": "They _ meat.",
+      "options": [
+        "doesn't eat",
+        "not eat",
+        "aren't eat",
+        "isn't eat",
+        "don't eat"
+      ],
+      "answer": "don't eat",
+      "hint": "Choose the negative form used with a plural subject.",
+      "metadata": {
+        "Lesson": "Unit 8",
+        "Page": "Pg 101-103",
+        "Category": "Fill in the blank",
+        "Skill": "Present negation",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-065",
+      "question": "She _ coffee.",
+      "options": [
+        "don't drink",
+        "not drinks",
+        "isn't drink",
+        "aren't drink",
+        "doesn't drink"
+      ],
+      "answer": "doesn't drink",
+      "hint": "Choose the negative form used with one female person.",
+      "metadata": {
+        "Lesson": "Unit 8",
+        "Page": "Pg 101-103",
+        "Category": "Fill in the blank",
+        "Skill": "Present negation",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-066",
+      "question": "_ he play cricket?",
+      "options": ["Do", "Is", "Has", "Was", "Does"],
+      "answer": "Does",
+      "hint": "The question is about the regular action of one boy.",
+      "metadata": {
+        "Lesson": "Unit 8",
+        "Page": "Pg 101-103",
+        "Category": "Fill in the blank",
+        "Skill": "Present questions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-067",
+      "question": "_ they live here?",
+      "options": ["Does", "Are", "Has", "Was", "Do"],
+      "answer": "Do",
+      "hint": "The question is about the regular action of several people.",
+      "metadata": {
+        "Lesson": "Unit 8",
+        "Page": "Pg 101-103",
+        "Category": "Fill in the blank",
+        "Skill": "Present questions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-068",
+      "question": "Which is a natural material?",
+      "options": ["plastic", "glass", "nylon", "steel", "wood"],
+      "answer": "wood",
+      "hint": "Choose a material that comes directly from a living thing.",
+      "metadata": {
+        "Lesson": "Unit 8",
+        "Page": "Pg 95-97",
+        "Category": "Classification",
+        "Skill": "Materials",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-069",
+      "question": "_ left at the corner.",
+      "options": ["Turns", "Turned", "Turning", "To turn", "Turn"],
+      "answer": "Turn",
+      "hint": "A direction normally begins with the basic form of an action word.",
+      "metadata": {
+        "Lesson": "Unit 9",
+        "Page": "Pg 112-114",
+        "Category": "Fill in the blank",
+        "Skill": "Imperatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-070",
+      "question": "_ straight for ten metres.",
+      "options": ["Goes", "Went", "Going", "Gone", "Go"],
+      "answer": "Go",
+      "hint": "Choose the basic action word used for movement.",
+      "metadata": {
+        "Lesson": "Unit 9",
+        "Page": "Pg 112-114",
+        "Category": "Fill in the blank",
+        "Skill": "Imperatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-071",
+      "question": "_ touch the hot pan.",
+      "options": ["Doesn't", "Didn't", "Wasn't", "Aren't", "Don't"],
+      "answer": "Don't",
+      "hint": "The sentence warns someone not to do an action.",
+      "metadata": {
+        "Lesson": "Unit 9",
+        "Page": "Pg 112-114",
+        "Category": "Fill in the blank",
+        "Skill": "Negative imperatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-072",
+      "question": "_ your hands before eating.",
+      "options": ["Washes", "Washed", "Washing", "Washer", "Wash"],
+      "answer": "Wash",
+      "hint": "Instructions begin with the basic form of an action word.",
+      "metadata": {
+        "Lesson": "Unit 9",
+        "Page": "Pg 112-114",
+        "Category": "Fill in the blank",
+        "Skill": "Imperatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-073",
+      "question": "Which direction is opposite east?",
+      "options": ["north", "south", "left", "right", "west"],
+      "answer": "west",
+      "hint": "Picture a compass and look directly across from east.",
+      "metadata": {
+        "Lesson": "Unit 9",
+        "Page": "Pg 104-111",
+        "Category": "Directions",
+        "Skill": "Compass directions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-074",
+      "question": "Which direction is opposite north?",
+      "options": ["east", "west", "left", "right", "south"],
+      "answer": "south",
+      "hint": "Picture a compass and look directly across from north.",
+      "metadata": {
+        "Lesson": "Unit 9",
+        "Page": "Pg 104-111",
+        "Category": "Directions",
+        "Skill": "Compass directions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-075",
+      "question": "The hospital is _ the bank.",
+      "options": ["through", "during", "above", "inside", "beside"],
+      "answer": "beside",
+      "hint": "Picture the hospital and bank standing side by side.",
+      "metadata": {
+        "Lesson": "Unit 9",
+        "Page": "Pg 114-116",
+        "Category": "Fill in the blank",
+        "Skill": "Direction prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-076",
+      "question": "What does “straight” mean?",
+      "options": [
+        "turning left",
+        "moving back",
+        "stopping there",
+        "crossing over",
+        "no turning"
+      ],
+      "answer": "no turning",
+      "hint": "Imagine walking forward without changing direction.",
+      "metadata": {
+        "Lesson": "Unit 9",
+        "Page": "Pg 104-111",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-077",
+      "question": "Yesterday, I _ home early.",
+      "options": ["go", "goes", "going", "gone", "went"],
+      "answer": "went",
+      "hint": "The action was completed before today.",
+      "metadata": {
+        "Lesson": "Unit 10",
+        "Page": "Pg 124-126",
+        "Category": "Fill in the blank",
+        "Skill": "Simple past",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-078",
+      "question": "She _ an apple yesterday.",
+      "options": ["eat", "eats", "eating", "eated", "ate"],
+      "answer": "ate",
+      "hint": "Choose the special past form of the action word.",
+      "metadata": {
+        "Lesson": "Unit 10",
+        "Page": "Pg 124-126",
+        "Category": "Fill in the blank",
+        "Skill": "Simple past",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-079",
+      "question": "They _ football last week.",
+      "options": ["play", "plays", "playing", "plaied", "played"],
+      "answer": "played",
+      "hint": "The action is finished, and this is a regular verb.",
+      "metadata": {
+        "Lesson": "Unit 10",
+        "Page": "Pg 124-126",
+        "Category": "Fill in the blank",
+        "Skill": "Simple past",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-080",
+      "question": "We _ a tiger at the zoo.",
+      "options": ["see", "seen", "sees", "seeing", "saw"],
+      "answer": "saw",
+      "hint": "Imagine the zoo visit happened yesterday.",
+      "metadata": {
+        "Lesson": "Unit 10",
+        "Page": "Pg 124-126",
+        "Category": "Fill in the blank",
+        "Skill": "Simple past",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-081",
+      "question": "He _ a new bicycle.",
+      "options": ["buy", "buys", "buyed", "buying", "bought"],
+      "answer": "bought",
+      "hint": "Choose the special past form of “buy.”",
+      "metadata": {
+        "Lesson": "Unit 10",
+        "Page": "Pg 124-126",
+        "Category": "Fill in the blank",
+        "Skill": "Simple past",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-082",
+      "question": "The past form of “come” is _.",
+      "options": ["comed", "comes", "coming", "come", "came"],
+      "answer": "came",
+      "hint": "This verb does not make its past form by adding “-ed.”",
+      "metadata": {
+        "Lesson": "Unit 10",
+        "Page": "Pg 124-126",
+        "Category": "Past tense",
+        "Skill": "Irregular verbs",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-083",
+      "question": "The past form of “walk” is _.",
+      "options": ["walks", "walking", "walken", "walkt", "walked"],
+      "answer": "walked",
+      "hint": "This regular verb needs the usual past-tense ending.",
+      "metadata": {
+        "Lesson": "Unit 10",
+        "Page": "Pg 124-126",
+        "Category": "Past tense",
+        "Skill": "Regular verbs",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-084",
+      "question": "Which word shows past time?",
+      "options": ["tomorrow", "always", "now", "daily", "yesterday"],
+      "answer": "yesterday",
+      "hint": "Choose the word that refers to the day before today.",
+      "metadata": {
+        "Lesson": "Unit 10",
+        "Page": "Pg 117-123",
+        "Category": "Classification",
+        "Skill": "Time words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-085",
+      "question": "I stayed home _ it rained.",
+      "options": ["and", "but", "or", "so", "because"],
+      "answer": "because",
+      "hint": "The rain explains why the person stayed home.",
+      "metadata": {
+        "Lesson": "Unit 11",
+        "Page": "Pg 135-137",
+        "Category": "Fill in the blank",
+        "Skill": "Conjunctions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-086",
+      "question": "I was tired _ I continued.",
+      "options": ["and", "because", "or", "so", "but"],
+      "answer": "but",
+      "hint": "The second idea is surprising after the first.",
+      "metadata": {
+        "Lesson": "Unit 11",
+        "Page": "Pg 135-137",
+        "Category": "Fill in the blank",
+        "Skill": "Conjunctions",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-087",
+      "question": "Mina bought rice _ vegetables.",
+      "options": ["but", "because", "or", "so", "and"],
+      "answer": "and",
+      "hint": "Two similar shopping items are being added together.",
+      "metadata": {
+        "Lesson": "Unit 11",
+        "Page": "Pg 135-137",
+        "Category": "Fill in the blank",
+        "Skill": "Conjunctions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-088",
+      "question": "He cried _ he was hurt.",
+      "options": ["but", "and", "or", "so", "because"],
+      "answer": "because",
+      "hint": "Being hurt explains the first action.",
+      "metadata": {
+        "Lesson": "Unit 11",
+        "Page": "Pg 135-137",
+        "Category": "Fill in the blank",
+        "Skill": "Conjunctions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-089",
+      "question": "The cat entered _ ate fish.",
+      "options": ["but", "because", "or", "so", "and"],
+      "answer": "and",
+      "hint": "The same animal performs two actions.",
+      "metadata": {
+        "Lesson": "Unit 11",
+        "Page": "Pg 135-137",
+        "Category": "Fill in the blank",
+        "Skill": "Conjunctions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-090",
+      "question": "She is poor _ honest.",
+      "options": ["and", "because", "or", "so", "but"],
+      "answer": "but",
+      "hint": "The sentence connects two contrasting descriptions.",
+      "metadata": {
+        "Lesson": "Unit 11",
+        "Page": "Pg 135-137",
+        "Category": "Fill in the blank",
+        "Skill": "Conjunctions",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-091",
+      "question": "What does “frightened” mean?",
+      "options": [
+        "very happy",
+        "very hungry",
+        "very tired",
+        "very strong",
+        "very afraid"
+      ],
+      "answer": "very afraid",
+      "hint": "Imagine how you might feel after hearing a scary noise.",
+      "metadata": {
+        "Lesson": "Unit 11",
+        "Page": "Pg 128-134",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-092",
+      "question": "Which word gives a reason?",
+      "options": ["but", "and", "or", "also", "because"],
+      "answer": "because",
+      "hint": "Choose the word used before an explanation.",
+      "metadata": {
+        "Lesson": "Unit 11",
+        "Page": "Pg 135-137",
+        "Category": "Classification",
+        "Skill": "Conjunctions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-093",
+      "question": "The boy _ running.",
+      "options": ["are", "am", "was", "be", "is"],
+      "answer": "is",
+      "hint": "The subject is one boy, and the action is happening now.",
+      "metadata": {
+        "Lesson": "Unit 12",
+        "Page": "Pg 146-148",
+        "Category": "Fill in the blank",
+        "Skill": "Present continuous",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-094",
+      "question": "The girls _ dancing.",
+      "options": ["is", "am", "was", "be", "are"],
+      "answer": "are",
+      "hint": "The subject means more than one girl.",
+      "metadata": {
+        "Lesson": "Unit 12",
+        "Page": "Pg 146-148",
+        "Category": "Fill in the blank",
+        "Skill": "Present continuous",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-095",
+      "question": "I _ reading a book.",
+      "options": ["is", "are", "were", "be", "am"],
+      "answer": "am",
+      "hint": "The action is happening now, and the subject is “I.”",
+      "metadata": {
+        "Lesson": "Unit 12",
+        "Page": "Pg 146-148",
+        "Category": "Fill in the blank",
+        "Skill": "Present continuous",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-096",
+      "question": "Look! The dog is _.",
+      "options": ["barked", "barks", "bark", "barker", "barking"],
+      "answer": "barking",
+      "hint": "“Look!” tells you the action is happening now.",
+      "metadata": {
+        "Lesson": "Unit 12",
+        "Page": "Pg 146-148",
+        "Category": "Fill in the blank",
+        "Skill": "Present continuous",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-097",
+      "question": "These flowers are very _.",
+      "options": ["beauty", "beautifully", "beautify", "beauties", "beautiful"],
+      "answer": "beautiful",
+      "hint": "The missing word should describe how the flowers look.",
+      "metadata": {
+        "Lesson": "Unit 12",
+        "Page": "Pg 146-149",
+        "Category": "Fill in the blank",
+        "Skill": "Adjectives",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-098",
+      "question": "_ book here is mine.",
+      "options": ["These", "Those", "They", "Them", "This"],
+      "answer": "This",
+      "hint": "Only one nearby object is being pointed out.",
+      "metadata": {
+        "Lesson": "Unit 12",
+        "Page": "Pg 147-149",
+        "Category": "Fill in the blank",
+        "Skill": "Demonstratives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-099",
+      "question": "_ houses there are old.",
+      "options": ["This", "That", "It", "Its", "Those"],
+      "answer": "Those",
+      "hint": "Several objects far from the speaker are being pointed out.",
+      "metadata": {
+        "Lesson": "Unit 12",
+        "Page": "Pg 147-149",
+        "Category": "Fill in the blank",
+        "Skill": "Demonstratives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-100",
+      "question": "What does “popular” mean?",
+      "options": [
+        "very old",
+        "rarely seen",
+        "poorly made",
+        "badly known",
+        "well liked"
+      ],
+      "answer": "well liked",
+      "hint": "Think about a singer whom many people enjoy.",
+      "metadata": {
+        "Lesson": "Unit 12",
+        "Page": "Pg 138-145",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-101",
+      "question": "I like _ books.",
+      "options": ["read", "reads", "ran", "reader", "reading"],
+      "answer": "reading",
+      "hint": "The action word after “like” should name an activity.",
+      "metadata": {
+        "Lesson": "Unit 13",
+        "Page": "Pg 158-160",
+        "Category": "Fill in the blank",
+        "Skill": "Like + verb-ing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-102",
+      "question": "She loves _ pictures.",
+      "options": ["draw", "draws", "drew", "drawn", "drawing"],
+      "answer": "drawing",
+      "hint": "The action word after “loves” should name an activity.",
+      "metadata": {
+        "Lesson": "Unit 13",
+        "Page": "Pg 158-160",
+        "Category": "Fill in the blank",
+        "Skill": "Love + verb-ing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-103",
+      "question": "He hates _ early.",
+      "options": ["wake", "wakes", "woke", "waken", "waking"],
+      "answer": "waking",
+      "hint": "The action word after “hates” should end like an activity name.",
+      "metadata": {
+        "Lesson": "Unit 13",
+        "Page": "Pg 158-160",
+        "Category": "Fill in the blank",
+        "Skill": "Hate + verb-ing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-104",
+      "question": "They enjoy _ football.",
+      "options": ["play", "plays", "played", "player", "playing"],
+      "answer": "playing",
+      "hint": "After “enjoy,” use a form that names the activity.",
+      "metadata": {
+        "Lesson": "Unit 13",
+        "Page": "Pg 158-160",
+        "Category": "Fill in the blank",
+        "Skill": "Verb-ing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-105",
+      "question": "Mina _ like swimming.",
+      "options": ["don't", "isn't", "wasn't", "weren't", "doesn't"],
+      "answer": "doesn't",
+      "hint": "Mina is one person, and the sentence is in the present.",
+      "metadata": {
+        "Lesson": "Unit 13",
+        "Page": "Pg 160-161",
+        "Category": "Fill in the blank",
+        "Skill": "Negation",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-106",
+      "question": "Which activity is a hobby?",
+      "options": ["sleeping", "sneezing", "coughing", "waiting", "painting"],
+      "answer": "painting",
+      "hint": "Choose something people practise for fun or creativity.",
+      "metadata": {
+        "Lesson": "Unit 13",
+        "Page": "Pg 150-157",
+        "Category": "Classification",
+        "Skill": "Hobbies",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-107",
+      "question": "What does “creative” mean?",
+      "options": [
+        "very tired",
+        "badly broken",
+        "quite empty",
+        "always late",
+        "full ideas"
+      ],
+      "answer": "full ideas",
+      "hint": "Think about someone who invents new drawings or stories.",
+      "metadata": {
+        "Lesson": "Unit 13",
+        "Page": "Pg 150-157",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-108",
+      "question": "Which spelling is correct?",
+      "options": [
+        "gardning",
+        "gardennig",
+        "gardeningg",
+        "gardenning",
+        "gardening"
+      ],
+      "answer": "gardening",
+      "hint": "Begin with “garden” and add the activity ending carefully.",
+      "metadata": {
+        "Lesson": "Unit 13",
+        "Page": "Pg 150-157",
+        "Category": "Spelling",
+        "Skill": "Correct spelling",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-109",
+      "question": "Birds _ fly.",
+      "options": ["can't", "couldn't", "weren't", "don't", "can"],
+      "answer": "can",
+      "hint": "The sentence describes something birds are able to do.",
+      "metadata": {
+        "Lesson": "Unit 14",
+        "Page": "Pg 170-172",
+        "Category": "Fill in the blank",
+        "Skill": "Can/can’t",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-110",
+      "question": "Fish _ walk.",
+      "options": ["can", "could", "are", "do", "can't"],
+      "answer": "can't",
+      "hint": "Think about whether fish have the body parts needed for walking.",
+      "metadata": {
+        "Lesson": "Unit 14",
+        "Page": "Pg 170-172",
+        "Category": "Fill in the blank",
+        "Skill": "Can/can’t",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-111",
+      "question": "I _ ride a bicycle now.",
+      "options": ["couldn't", "was", "did", "have", "can"],
+      "answer": "can",
+      "hint": "The sentence describes an ability the speaker has now.",
+      "metadata": {
+        "Lesson": "Unit 14",
+        "Page": "Pg 170-172",
+        "Category": "Fill in the blank",
+        "Skill": "Present ability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-112",
+      "question": "As a baby, I _ walk.",
+      "options": ["can", "could", "was", "did", "couldn't"],
+      "answer": "couldn't",
+      "hint": "Think about an ability a very young baby normally lacks.",
+      "metadata": {
+        "Lesson": "Unit 14",
+        "Page": "Pg 170-172",
+        "Category": "Fill in the blank",
+        "Skill": "Past ability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-113",
+      "question": "My grandfather _ run fast.",
+      "options": ["can't", "isn't", "doesn't", "wasn't", "could"],
+      "answer": "could",
+      "hint": "The sentence describes something he was able to do earlier.",
+      "metadata": {
+        "Lesson": "Unit 14",
+        "Page": "Pg 170-172",
+        "Category": "Fill in the blank",
+        "Skill": "Past ability",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-114",
+      "question": "A goalkeeper _ catch balls.",
+      "options": ["can't", "couldn't", "wasn't", "isn't", "can"],
+      "answer": "can",
+      "hint": "Think about the main job of a goalkeeper.",
+      "metadata": {
+        "Lesson": "Unit 14",
+        "Page": "Pg 162-169",
+        "Category": "Fill in the blank",
+        "Skill": "Ability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-115",
+      "question": "Which animal can climb trees?",
+      "options": ["fish", "cow", "duck", "sheep", "monkey"],
+      "answer": "monkey",
+      "hint": "Choose the animal that uses hands and feet to move on branches.",
+      "metadata": {
+        "Lesson": "Unit 14",
+        "Page": "Pg 162-169",
+        "Category": "Ability",
+        "Skill": "Animal abilities",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-116",
+      "question": "What does “ability” mean?",
+      "options": ["must stop", "will go", "did happen", "may ask", "can do"],
+      "answer": "can do",
+      "hint": "Think about a skill someone is able to perform.",
+      "metadata": {
+        "Lesson": "Unit 14",
+        "Page": "Pg 162-169",
+        "Category": "Vocabulary meaning",
+        "Skill": "Word meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-117",
+      "question": "_ is your best friend?",
+      "options": ["Where", "When", "Why", "How", "Who"],
+      "answer": "Who",
+      "hint": "The expected answer would be a person’s name.",
+      "metadata": {
+        "Lesson": "Unit 15",
+        "Page": "Pg 181-184",
+        "Category": "Fill in the blank",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-118",
+      "question": "_ are you late?",
+      "options": ["Who", "Where", "When", "Which", "Why"],
+      "answer": "Why",
+      "hint": "The speaker wants an explanation.",
+      "metadata": {
+        "Lesson": "Unit 15",
+        "Page": "Pg 181-184",
+        "Category": "Fill in the blank",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-119",
+      "question": "_ do you go to school?",
+      "options": ["Who", "What", "Which", "Whose", "How"],
+      "answer": "How",
+      "hint": "The expected answer might be “by bus” or “on foot.”",
+      "metadata": {
+        "Lesson": "Unit 15",
+        "Page": "Pg 181-184",
+        "Category": "Fill in the blank",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-120",
+      "question": "_ does school begin?",
+      "options": ["Who", "Why", "Which", "Whose", "When"],
+      "answer": "When",
+      "hint": "The expected answer would be a time.",
+      "metadata": {
+        "Lesson": "Unit 15",
+        "Page": "Pg 181-184",
+        "Category": "Fill in the blank",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-121",
+      "question": "Do you like apples?",
+      "options": [
+        "Yes, I am",
+        "Yes, I can",
+        "Yes, I was",
+        "Yes, I have",
+        "Yes, I do"
+      ],
+      "answer": "Yes, I do",
+      "hint": "Repeat the helping word used at the beginning of the question.",
+      "metadata": {
+        "Lesson": "Unit 15",
+        "Page": "Pg 181-184",
+        "Category": "Dialogue completion",
+        "Skill": "Yes/no answers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-122",
+      "question": "Can Rita swim?",
+      "options": [
+        "Yes, she is",
+        "Yes, she does",
+        "Yes, she was",
+        "Yes, she has",
+        "Yes, she can"
+      ],
+      "answer": "Yes, she can",
+      "hint": "Keep the same ability word in the short answer.",
+      "metadata": {
+        "Lesson": "Unit 15",
+        "Page": "Pg 181-184",
+        "Category": "Dialogue completion",
+        "Skill": "Yes/no answers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-123",
+      "question": "I think school is important.",
+      "options": ["I refuse", "I forget", "I leave", "I doubt", "I agree"],
+      "answer": "I agree",
+      "hint": "Choose the response showing the same opinion.",
+      "metadata": {
+        "Lesson": "Unit 15",
+        "Page": "Pg 174-180",
+        "Category": "Dialogue completion",
+        "Skill": "Agreement",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-124",
+      "question": "I do not share that opinion.",
+      "options": [
+        "I agree",
+        "I remember",
+        "I accept",
+        "I follow",
+        "I disagree"
+      ],
+      "answer": "I disagree",
+      "hint": "Choose the response showing a different opinion.",
+      "metadata": {
+        "Lesson": "Unit 15",
+        "Page": "Pg 174-180",
+        "Category": "Dialogue completion",
+        "Skill": "Disagreement",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG4-125",
+      "question": "We _ visit Pokhara tomorrow.",
+      "options": ["did", "were", "have", "had", "will"],
+      "answer": "will",
+      "hint": "The visit has not happened yet.",
+      "metadata": {
+        "Lesson": "Unit 16",
+        "Page": "Pg 192-194",
+        "Category": "Fill in the blank",
+        "Skill": "Future with will",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-126",
+      "question": "She _ travel next week.",
+      "options": ["did", "was", "has", "had", "will"],
+      "answer": "will",
+      "hint": "“Next week” shows that the action is still ahead.",
+      "metadata": {
+        "Lesson": "Unit 16",
+        "Page": "Pg 192-194",
+        "Category": "Fill in the blank",
+        "Skill": "Future with will",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-127",
+      "question": "They _ play football tomorrow.",
+      "options": ["did", "were", "had", "was", "will"],
+      "answer": "will",
+      "hint": "Choose the helping word used for a future action.",
+      "metadata": {
+        "Lesson": "Unit 16",
+        "Page": "Pg 192-194",
+        "Category": "Fill in the blank",
+        "Skill": "Future with will",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-128",
+      "question": "I _ going to study.",
+      "options": ["is", "are", "was", "were", "am"],
+      "answer": "am",
+      "hint": "Choose the helping verb that matches “I.”",
+      "metadata": {
+        "Lesson": "Unit 16",
+        "Page": "Pg 193-195",
+        "Category": "Fill in the blank",
+        "Skill": "Going to future",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-129",
+      "question": "He _ going to cook.",
+      "options": ["am", "are", "were", "be", "is"],
+      "answer": "is",
+      "hint": "The subject is one boy making a plan.",
+      "metadata": {
+        "Lesson": "Unit 16",
+        "Page": "Pg 193-195",
+        "Category": "Fill in the blank",
+        "Skill": "Going to future",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-130",
+      "question": "We _ going to dance.",
+      "options": ["is", "am", "was", "be", "are"],
+      "answer": "are",
+      "hint": "The subject means more than one person.",
+      "metadata": {
+        "Lesson": "Unit 16",
+        "Page": "Pg 193-195",
+        "Category": "Fill in the blank",
+        "Skill": "Going to future",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-131",
+      "question": "_ you visit us tomorrow?",
+      "options": ["Did", "Was", "Has", "Does", "Will"],
+      "answer": "Will",
+      "hint": "The question asks about an action that has not happened yet.",
+      "metadata": {
+        "Lesson": "Unit 16",
+        "Page": "Pg 192-194",
+        "Category": "Fill in the blank",
+        "Skill": "Future questions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG4-132",
+      "question": "The negative of “will” is _.",
+      "options": ["don't", "didn't", "wasn't", "isn't", "won't"],
+      "answer": "won't",
+      "hint": "Look for the shortened form made from “will not.”",
+      "metadata": {
+        "Lesson": "Unit 16",
+        "Page": "Pg 192-194",
+        "Category": "Future tense",
+        "Skill": "Negative future",
+        "Difficulty": "Medium"
+      }
+    }
+  ]
+}

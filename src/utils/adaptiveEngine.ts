@@ -5,8 +5,8 @@ export interface QuestionData {
   answer: string | number;
   hint: string;
   difficulty?: number; // 1 (Easy), 2 (Medium), 3 (Hard) or 1-5 scale
-  category?: string;   // e.g. 'Time', 'Number sense', 'Place value', 'addition'
-  skill?: string;      // e.g. 'Unit conversion', 'Reading time', 'Place value'
+  category?: string; // e.g. 'Time', 'Number sense', 'Place value', 'addition'
+  skill?: string; // e.g. 'Unit conversion', 'Reading time', 'Place value'
   metadata?: Record<string, any>;
 }
 
@@ -24,16 +24,16 @@ export interface PerformanceLog {
  * into a standardized numerical scale (1 to 5).
  */
 export function normalizeDifficulty(diffVal: any): number {
-  if (typeof diffVal === 'number') {
+  if (typeof diffVal === "number") {
     return Math.max(1, Math.min(5, Math.round(diffVal)));
   }
-  if (typeof diffVal === 'string') {
+  if (typeof diffVal === "string") {
     const lower = diffVal.trim().toLowerCase();
-    if (lower === 'easy' || lower === 'सजिलो' || lower === '1') return 1;
-    if (lower === 'medium' || lower === 'मध्यम' || lower === '2') return 2;
-    if (lower === 'hard' || lower === 'गाह्रो' || lower === '3') return 3;
-    if (lower === 'very hard' || lower === '4') return 4;
-    if (lower === 'expert' || lower === 'master' || lower === '5') return 5;
+    if (lower === "easy" || lower === "सजिलो" || lower === "1") return 1;
+    if (lower === "medium" || lower === "मध्यम" || lower === "2") return 2;
+    if (lower === "hard" || lower === "गाह्रो" || lower === "3") return 3;
+    if (lower === "very hard" || lower === "4") return 4;
+    if (lower === "expert" || lower === "master" || lower === "5") return 5;
     const parsed = parseInt(lower, 10);
     if (!isNaN(parsed)) return Math.max(1, Math.min(5, parsed));
   }
@@ -48,32 +48,42 @@ export function normalizeDifficulty(diffVal: any): number {
  * 4. The correct answer must match one of the available options.
  */
 export function isValidQuestion(raw: any, expectedOptionCount = 5): boolean {
-  if (!raw || typeof raw !== 'object') return false;
+  if (!raw || typeof raw !== "object") return false;
 
   // 1. Question prompt text validation
-  if (typeof raw.question !== 'string' || raw.question.trim().length === 0) {
+  if (typeof raw.question !== "string" || raw.question.trim().length === 0) {
     return false;
   }
 
   // 2. Answer validation
-  if (raw.answer === undefined || raw.answer === null || String(raw.answer).trim().length === 0) {
+  if (
+    raw.answer === undefined ||
+    raw.answer === null ||
+    String(raw.answer).trim().length === 0
+  ) {
     return false;
   }
 
   // 3. Options validation (must have exactly expectedOptionCount items, none null/empty)
-  if (!Array.isArray(raw.options) || raw.options.length !== expectedOptionCount) {
+  if (
+    !Array.isArray(raw.options) ||
+    raw.options.length !== expectedOptionCount
+  ) {
     return false;
   }
 
   const hasEmptyOrNullOption = raw.options.some(
-    (opt: any) => opt === null || opt === undefined || String(opt).trim().length === 0
+    (opt: any) =>
+      opt === null || opt === undefined || String(opt).trim().length === 0,
   );
   if (hasEmptyOrNullOption) {
     return false;
   }
 
   // 4. Correct answer must be present in the options list
-  const hasMatchingAnswer = raw.options.some((opt: any) => isAnswerCorrect(opt, raw.answer));
+  const hasMatchingAnswer = raw.options.some((opt: any) =>
+    isAnswerCorrect(opt, raw.answer),
+  );
   if (!hasMatchingAnswer) {
     return false;
   }
@@ -86,22 +96,34 @@ export function isValidQuestion(raw: any, expectedOptionCount = 5): boolean {
  */
 export function normalizeQuestion(raw: any, index: number): QuestionData {
   const metadata = raw.metadata || {};
-  const diff = raw.difficulty !== undefined ? raw.difficulty : metadata.Difficulty;
-  const category = raw.category || metadata.Category || metadata.Theme || metadata['Chapter / Lesson'] || 'general';
+  const diff =
+    raw.difficulty !== undefined ? raw.difficulty : metadata.Difficulty;
+  const category =
+    raw.category ||
+    metadata.Category ||
+    metadata.Theme ||
+    metadata["Chapter / Lesson"] ||
+    "general";
   const skill = raw.skill || metadata.Skill || category;
 
-  const options: (string | number)[] = Array.isArray(raw.options) ? [...raw.options] : [];
+  const options: (string | number)[] = Array.isArray(raw.options)
+    ? [...raw.options]
+    : [];
 
   return {
     id: raw.id !== undefined && raw.id !== null ? raw.id : `Q-${index + 1}`,
-    question: String(raw.question || '').trim(),
+    question: String(raw.question || "").trim(),
     options,
     answer: raw.answer,
-    hint: raw.hint ? String(raw.hint) : (metadata['Hint / Concept'] ? String(metadata['Hint / Concept']) : ''),
+    hint: raw.hint
+      ? String(raw.hint)
+      : metadata["Hint / Concept"]
+        ? String(metadata["Hint / Concept"])
+        : "",
     difficulty: normalizeDifficulty(diff),
     category: String(category).trim(),
     skill: String(skill).trim(),
-    metadata
+    metadata,
   };
 }
 
@@ -123,10 +145,15 @@ export function shuffleArray<T>(array: T[]): T[] {
  */
 export function isAnswerCorrect(
   userValue: string | number | undefined | null,
-  answerValue: string | number | undefined | null
+  answerValue: string | number | undefined | null,
 ): boolean {
   if (userValue === answerValue) return true;
-  if (userValue === undefined || userValue === null || answerValue === undefined || answerValue === null) {
+  if (
+    userValue === undefined ||
+    userValue === null ||
+    answerValue === undefined ||
+    answerValue === null
+  ) {
     return false;
   }
 
@@ -136,7 +163,7 @@ export function isAnswerCorrect(
 
   const numUser = Number(strUser);
   const numAns = Number(strAns);
-  if (!isNaN(numUser) && !isNaN(numAns) && strUser !== '' && strAns !== '') {
+  if (!isNaN(numUser) && !isNaN(numAns) && strUser !== "" && strAns !== "") {
     return Math.abs(numUser - numAns) < 0.0001;
   }
 
@@ -144,7 +171,7 @@ export function isAnswerCorrect(
 }
 
 export class AdaptiveEngine {
-  private activeSourceFileName: string = 'UNKNOWN_FILE';
+  private activeSourceFileName: string = "UNKNOWN_FILE";
   private allQuestions: QuestionData[] = [];
   private lastQuestionId: string | number | null = null;
   private recentQuestionIds: (string | number)[] = [];
@@ -152,7 +179,10 @@ export class AdaptiveEngine {
   private history: PerformanceLog[] = [];
   private consecutiveCategoryErrors: Record<string, number> = {};
   private consecutiveSkillErrors: Record<string, number> = {};
-  private categoryPerformance: Record<string, { correct: number; incorrect: number }> = {};
+  private categoryPerformance: Record<
+    string,
+    { correct: number; incorrect: number }
+  > = {};
 
   /**
    * Initializes the pool with questions loaded from the active JSON file.
@@ -160,7 +190,10 @@ export class AdaptiveEngine {
    * so only valid questions from this file enter the active pool.
    * NEVER combines, mixes, or falls back to questions from other files.
    */
-  public setQuestions(rawQuestions: any[], sourceFileName: string = 'UNKNOWN_FILE'): void {
+  public setQuestions(
+    rawQuestions: any[],
+    sourceFileName: string = "UNKNOWN_FILE",
+  ): void {
     this.activeSourceFileName = sourceFileName;
     this.allQuestions = [];
     this.lastQuestionId = null;
@@ -170,9 +203,14 @@ export class AdaptiveEngine {
     this.consecutiveSkillErrors = {};
     this.categoryPerformance = {};
 
-    if (!rawQuestions || !Array.isArray(rawQuestions) || rawQuestions.length === 0) {
-      console.error(`[AdaptiveEngine] Developer Error: No valid questions provided for ${sourceFileName}.`);
-      throw new Error(`No question data found in assigned game file: ${sourceFileName}`);
+    if (
+      !rawQuestions ||
+      !Array.isArray(rawQuestions) ||
+      rawQuestions.length === 0
+    ) {
+      throw new Error(
+        `No question data found in assigned game file: ${sourceFileName}`,
+      );
     }
 
     const validQuestions: QuestionData[] = [];
@@ -189,22 +227,13 @@ export class AdaptiveEngine {
     });
 
     if (validQuestions.length === 0) {
-      console.error(
-        `[AdaptiveEngine] Developer Error: 0 valid questions with 5 options found in ${sourceFileName} (rawCount=${rawQuestions.length}, skippedInvalid=${skippedInvalidCount}). No cross-file fallback allowed.`
+      throw new Error(
+        `The assigned JSON question file (${sourceFileName}) contains no valid questions with 5 options.`,
       );
-      throw new Error(`The assigned JSON question file (${sourceFileName}) contains no valid questions with 5 options.`);
-    }
-
-    if (skippedInvalidCount > 0) {
-      console.warn(`[AdaptiveEngine] Skipped ${skippedInvalidCount} invalid questions in ${sourceFileName}.`);
     }
 
     // Keep questions in their exact original order from the JSON file (no shuffling of the question array)
     this.allQuestions = [...validQuestions];
-
-    console.log(
-      `[AdaptiveEngine] Locked Question Pool to [${this.activeSourceFileName}] with ${this.allQuestions.length} valid questions (original file order preserved).`
-    );
   }
 
   public getActiveSourceFile(): string {
@@ -222,7 +251,7 @@ export class AdaptiveEngine {
    * Records a player's attempt at answering a question.
    */
   public recordAttempt(question: QuestionData, isCorrect: boolean): void {
-    const category = question.category || 'general';
+    const category = question.category || "general";
     const skill = question.skill || category;
     const difficulty = question.difficulty || 1;
 
@@ -232,7 +261,7 @@ export class AdaptiveEngine {
       skill,
       difficulty,
       isCorrect,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     });
 
     if (!this.categoryPerformance[category]) {
@@ -245,8 +274,10 @@ export class AdaptiveEngine {
       this.consecutiveSkillErrors[skill] = 0;
     } else {
       this.categoryPerformance[category].incorrect += 1;
-      this.consecutiveCategoryErrors[category] = (this.consecutiveCategoryErrors[category] || 0) + 1;
-      this.consecutiveSkillErrors[skill] = (this.consecutiveSkillErrors[skill] || 0) + 1;
+      this.consecutiveCategoryErrors[category] =
+        (this.consecutiveCategoryErrors[category] || 0) + 1;
+      this.consecutiveSkillErrors[skill] =
+        (this.consecutiveSkillErrors[skill] || 0) + 1;
     }
 
     // Keep history bounded to avoid memory leaks
@@ -256,7 +287,10 @@ export class AdaptiveEngine {
 
     // Track recently used questions to prevent immediate repetition
     this.recentQuestionIds.push(question.id);
-    const maxRecents = Math.max(3, Math.min(15, Math.floor(this.allQuestions.length * 0.6)));
+    const maxRecents = Math.max(
+      3,
+      Math.min(15, Math.floor(this.allQuestions.length * 0.6)),
+    );
     if (this.recentQuestionIds.length > maxRecents) {
       this.recentQuestionIds.shift();
     }
@@ -292,7 +326,9 @@ export class AdaptiveEngine {
    * Checks if player has struggled with a particular category.
    */
   public getStrugglingCategory(threshold = 2): string | null {
-    for (const [cat, errors] of Object.entries(this.consecutiveCategoryErrors)) {
+    for (const [cat, errors] of Object.entries(
+      this.consecutiveCategoryErrors,
+    )) {
       if (errors >= threshold) {
         return cat;
       }
@@ -321,9 +357,12 @@ export class AdaptiveEngine {
    * 5. Randomly selects / shuffles a suitable question from the candidate pool.
    * 6. Immediately returns that question for display.
    */
-  public selectNextQuestion(expLevel = 1, currentQuestionId?: string | number): QuestionData {
+  public selectNextQuestion(
+    expLevel = 1,
+    currentQuestionId?: string | number,
+  ): QuestionData {
     if (this.allQuestions.length === 0) {
-      throw new Error('No questions loaded into Adaptive Engine');
+      throw new Error("No questions loaded into Adaptive Engine");
     }
 
     if (this.allQuestions.length === 1) {
@@ -333,14 +372,17 @@ export class AdaptiveEngine {
     const targetDifficulty = this.getTargetDifficulty(expLevel);
     const strugglingSkill = this.getStrugglingSkill();
     const strugglingCat = this.getStrugglingCategory();
-    const excludeId = currentQuestionId !== undefined ? currentQuestionId : this.lastQuestionId;
+    const excludeId =
+      currentQuestionId !== undefined ? currentQuestionId : this.lastQuestionId;
 
     // Filter suitable questions based on adaptive criteria
     const findAdaptiveCandidates = (pool: QuestionData[]): QuestionData[] => {
       // 1. If player is struggling with a specific skill, prioritize that skill
       if (strugglingSkill) {
         const skillMatches = pool.filter(
-          (q) => q.skill === strugglingSkill && (q.difficulty || 1) <= targetDifficulty
+          (q) =>
+            q.skill === strugglingSkill &&
+            (q.difficulty || 1) <= targetDifficulty,
         );
         if (skillMatches.length > 0) return skillMatches;
       }
@@ -348,18 +390,22 @@ export class AdaptiveEngine {
       // 2. If struggling with a category, prioritize that category
       if (strugglingCat) {
         const catMatches = pool.filter(
-          (q) => q.category === strugglingCat && (q.difficulty || 1) <= targetDifficulty
+          (q) =>
+            q.category === strugglingCat &&
+            (q.difficulty || 1) <= targetDifficulty,
         );
         if (catMatches.length > 0) return catMatches;
       }
 
       // 3. Exact target difficulty match
-      const exactMatches = pool.filter((q) => (q.difficulty || 1) === targetDifficulty);
+      const exactMatches = pool.filter(
+        (q) => (q.difficulty || 1) === targetDifficulty,
+      );
       if (exactMatches.length > 0) return exactMatches;
 
       // 4. Close difficulty match (+/- 1 level)
       const closeMatches = pool.filter(
-        (q) => Math.abs((q.difficulty || 1) - targetDifficulty) <= 1
+        (q) => Math.abs((q.difficulty || 1) - targetDifficulty) <= 1,
       );
       if (closeMatches.length > 0) return closeMatches;
 
@@ -384,8 +430,11 @@ export class AdaptiveEngine {
     }
 
     // 3. Filter out questions in recent history (if multiple candidates exist) for maximum variety
-    const nonRecent = validCandidates.filter((q) => !this.recentQuestionIds.includes(q.id));
-    const finalSelectionPool = nonRecent.length > 0 ? nonRecent : validCandidates;
+    const nonRecent = validCandidates.filter(
+      (q) => !this.recentQuestionIds.includes(q.id),
+    );
+    const finalSelectionPool =
+      nonRecent.length > 0 ? nonRecent : validCandidates;
 
     // 4. Randomly shuffle and select a suitable question from the final candidate pool
     const shuffledPool = shuffleArray(finalSelectionPool);
@@ -395,20 +444,16 @@ export class AdaptiveEngine {
     // 5. Update tracking
     this.lastQuestionId = selected.id;
     this.recentQuestionIds.push(selected.id);
-    const maxRecents = Math.max(3, Math.min(15, Math.floor(this.allQuestions.length * 0.6)));
+    const maxRecents = Math.max(
+      3,
+      Math.min(15, Math.floor(this.allQuestions.length * 0.6)),
+    );
     if (this.recentQuestionIds.length > maxRecents) {
       this.recentQuestionIds.shift();
     }
-
-    // 6. Debugging verification log
-    console.log(
-      `[Question System] Question loaded from: ${this.activeSourceFileName} | Question ID: ${selected.id} | Q: "${selected.question.slice(0, 40)}${selected.question.length > 40 ? '...' : ''}"`
-    );
 
     return selected;
   }
 }
 
 export const adaptiveEngine = new AdaptiveEngine();
-
-

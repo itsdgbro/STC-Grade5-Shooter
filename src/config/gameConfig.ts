@@ -7,10 +7,8 @@ export const GAME_CONFIG = {
   // ==========================================
   // 0. DATA SOURCE
   // ==========================================
-  // Path to the assigned questions JSON file for the current game in the public folder.
-  // Each game uses ONLY its assigned JSON file as its independent question pool.
-  // DO NOT combine, merge, or cross-reference other question files.
-  dataFile: "data/Grade5-English-questions-ENG5-only.json",
+  // Stable runtime manifest. Its `file` value selects the question JSON after build.
+  dataFile: "data/data.json",
   // ==========================================
   // 1. BALL DIMENSIONS & VISUAL SIZING
   // ==========================================
@@ -28,6 +26,7 @@ export const GAME_CONFIG = {
     // beside it a little lower, the outermost pair lower still.
     arcTopPercentY: 28,
     arcDropPercent: 13,
+    verticalOffsetPx: 145,
 
     // Centered horizontal margins for a tighter, evenly spaced group.
     horizontalMarginLeft: 14,
@@ -91,6 +90,9 @@ export const GAME_CONFIG = {
 
     // Recoil animation duration (ms)
     recoilDurationMs: 400,
+
+    // Delay between shots, shown as a reveal overlay on the SHOOT button (ms)
+    cooldownMs: 1000,
 
     // Muzzle flash duration (ms)
     muzzleFlashDurationMs: 450,

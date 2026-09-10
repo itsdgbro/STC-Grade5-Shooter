@@ -4,6 +4,7 @@ import { sfx } from "../utils/sounds";
 import { Heart, Lightbulb, Pause, Settings } from "lucide-react";
 import { SettingsModal } from "./SettingsModal";
 import { GAME_CONFIG } from "../config/gameConfig";
+import { loadConfiguredQuestionData } from "../utils/questionData";
 import {
   adaptiveEngine,
   isAnswerCorrect,
@@ -113,22 +114,27 @@ function getBallTextFit(value: string): {
   return { fontSizeCqw: fontSizePx / 19.2, multiLine };
 }
 
-// Largest font (px) that keeps the question on one line inside its panel.
-// "As big as possible, but not too big" -> a hard MAX_PX ceiling, then it
-// scales down smoothly for longer questions (ellipsis guards the extremes).
+// Largest responsive font that keeps the question readable inside its panel.
+// The returned cqw value scales with the fixed game stage at every viewport size.
 function getQuestionTextFit(q: string): number {
   const USABLE_WIDTH = 1150; // text space inside the panel on the fixed 1920 stage
   const GLYPH_RATIO = 0.5; // avg bold-glyph advance across a mixed sentence
   const MIN_PX = 18;
   const MAX_PX = 46;
   const len = Math.max(1, q.trim().length);
-  return Math.max(MIN_PX, Math.min(USABLE_WIDTH / (len * GLYPH_RATIO), MAX_PX));
+  const fontSizePx = Math.max(
+    MIN_PX,
+    Math.min(USABLE_WIDTH / (len * GLYPH_RATIO), MAX_PX),
+  );
+  return fontSizePx / 19.2;
 }
 
 // Vertical positions for a top half-circle: centre ball highest, balls drop
 // parabolically toward the outer edges (see arcTopPercentY / arcDropPercent).
 function getArcYPositions(count: number): number[] {
-  const topY = GAME_CONFIG.balls.arcTopPercentY;
+  const topY =
+    GAME_CONFIG.balls.arcTopPercentY +
+    (GAME_CONFIG.balls.verticalOffsetPx / 1080) * 100;
   const drop = GAME_CONFIG.balls.arcDropPercent;
   if (count <= 1) return [topY];
   const center = (count - 1) / 2;
@@ -165,7 +171,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
   const [isPaused, setIsPaused] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
 
-  // 5. EXP Level Progression State
+  // EXP Level Progression State
   const [expLevel, setExpLevel] = useState(1);
   const [currentExp, setCurrentExp] = useState(0);
   const [score, setScore] = useState(0);
@@ -180,6 +186,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
   const [cannonAngle, setCannonAngle] = useState(0); // -maxAimAngleDegrees .. +maxAimAngleDegrees
   const [maxDistanceReached, setMaxDistanceReached] = useState(700);
   const [isShooting, setIsShooting] = useState(false);
+  const [cooldownRemainingMs, setCooldownRemainingMs] = useState(0);
   const [isRecoil, setIsRecoil] = useState(false);
 
   // Muzzle flash / smoke effect
@@ -208,6 +215,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
 
   const arenaRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | null>(null);
+  const collisionHandledRef = useRef(false);
 
   // Adaptive Question Loader Function
   const loadNextAdaptiveQuestion = useCallback(
@@ -221,12 +229,6 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
         const count = shuffledOptions.length;
         const xPositions = getDynamicXPositions(count);
         const yPositions = getArcYPositions(count);
-
-        console.log(
-          `[Answer Balls] Shuffled options for question [${nextQ.id}]:`,
-          shuffledOptions,
-          `(Correct answer: "${nextQ.answer}")`,
-        );
 
         const newBalls: Ball[] = shuffledOptions.map((val, idx) => ({
           id: idx,
@@ -250,9 +252,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
         setBalls(newBalls);
         setFeedback(null);
         setShowHint(false);
-      } catch (err) {
-        console.error("Error selecting next adaptive question:", err);
-      }
+      } catch {}
     },
     [],
   );
@@ -262,21 +262,16 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
     setIsLoading(true);
     setLoadError(null);
     try {
-      const targetFile = GAME_CONFIG.dataFile;
-      const filePath = targetFile.startsWith("/")
-        ? targetFile.slice(1)
-        : targetFile;
-      const res = await fetch(
-        `${import.meta.env.BASE_URL}${filePath}?t=${Date.now()}`,
-      );
-      if (!res.ok) {
-        throw new Error(`Failed to load ${filePath}: HTTP ${res.status}`);
-      }
-      const data = await res.json();
+      const { data, sourceFile: targetFile } =
+        await loadConfiguredQuestionData();
+      const questionDocument =
+        data && typeof data === "object"
+          ? (data as { questions?: unknown })
+          : null;
       const rawQuestions = Array.isArray(data)
         ? data
-        : Array.isArray(data?.questions)
-          ? data.questions
+        : Array.isArray(questionDocument?.questions)
+          ? questionDocument.questions
           : [];
 
       if (rawQuestions.length === 0) {
@@ -288,10 +283,6 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       setIsLoading(false);
       loadNextAdaptiveQuestion(expLevel);
     } catch (err: any) {
-      console.error(
-        "[EquationShooter] Developer Error loading question file:",
-        err,
-      );
       setIsLoading(false);
       setLoadError(err?.message || "Failed to load valid question file");
     }
@@ -469,19 +460,34 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
     isPaused,
     showSettings,
     isGameOver,
+    cooldownRemainingMs,
   ]);
+
+  // Count down the shooting cooldown independently from projectile travel.
+  useEffect(() => {
+    if (cooldownRemainingMs <= 0) return;
+
+    const interval = window.setInterval(() => {
+      setCooldownRemainingMs((remaining) => Math.max(0, remaining - 50));
+    }, 50);
+
+    return () => window.clearInterval(interval);
+  }, [cooldownRemainingMs]);
 
   // 4. FIRING — bullet leaves the muzzle tip along the exact aim line.
   const fireCannon = () => {
     if (
       isShooting ||
+      cooldownRemainingMs > 0 ||
       isPaused ||
       showSettings ||
       isGameOver ||
       !arenaRef.current
     )
       return;
+    collisionHandledRef.current = false;
     setIsShooting(true);
+    setCooldownRemainingMs(GAME_CONFIG.cannon.cooldownMs);
 
     setIsRecoil(true);
     setTimeout(() => setIsRecoil(false), GAME_CONFIG.cannon.recoilDurationMs);
@@ -550,6 +556,8 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       curX: number,
       curY: number,
     ) => {
+      if (collisionHandledRef.current) return true;
+
       // Find the closest ball to the projectile's swept path
       let closestIdx = -1;
       let closestDist = 999;
@@ -581,6 +589,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       }
 
       if (closestIdx !== -1) {
+        collisionHandledRef.current = true;
         handleHitBall(closestIdx, hitTargetX, hitTargetY);
         return true;
       }
@@ -592,6 +601,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
         curX < -60 ||
         curX > arenaWidth + 60
       ) {
+        collisionHandledRef.current = true;
         setFlyingBullet(null);
         setIsShooting(false);
         sfx.playGentleTryAgain();
@@ -1249,7 +1259,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
           flexDirection: "column",
           alignItems: "center",
           gap: "10px",
-          zIndex: 20,
+          zIndex: 125,
         }}
       >
         {/* SINGLE HEADER ROW: BACK BUTTON + QUESTION BAR (LEFT/CENTER) & EXP BAR + SCORE (RIGHT) */}
@@ -1343,22 +1353,25 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              height: "146px",
+              height: "200px",
               boxSizing: "border-box",
-              overflow: "hidden",
+              overflow: "visible",
             }}
           >
             <span
               style={{
-                fontSize: `${getQuestionTextFit(equation.q).toFixed(1)}px`,
+                fontSize: `clamp(0.94cqw, ${getQuestionTextFit(equation.q).toFixed(2)}cqw, 2.4cqw)`,
                 fontWeight: 900,
                 color: "#0f172a",
                 letterSpacing: "0.3px",
                 lineHeight: 1.15,
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-                textOverflow: "ellipsis",
+                whiteSpace: "normal",
+                overflowWrap: "break-word",
+                overflow: "visible",
+                textOverflow: "clip",
                 maxWidth: "100%",
+                width: "100%",
+                display: "block",
                 padding: "0 4px",
               }}
             >
@@ -1404,9 +1417,10 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               </span>
               <span
                 style={{
-                  fontSize: "clamp(1.25rem, 1.8cqw, 1.7rem)",
+                  fontSize: "clamp(1.9rem, 3cqw, 2.8rem)",
                   fontWeight: 900,
-                  color: "#0284c7",
+                  color: "#dc2626",
+                  textShadow: "0 2px 0 #991b1b, 0 0 8px rgba(220,38,38,0.25)",
                   lineHeight: 1,
                 }}
               >
@@ -1499,78 +1513,93 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
             className="animate-pop no-drag-aim"
             style={{
               position: "absolute",
-              bottom: "120px",
-              left: "28px",
-              background: "linear-gradient(180deg, #ffffff 0%, #fefce8 100%)",
-              border: "5px solid #facc15",
-              borderRadius: "26px",
-              padding: "24px 34px",
-              boxShadow: "0 8px 0 #ca8a04, 0 16px 26px rgba(0,0,0,0.22)",
+              inset: 0,
+              zIndex: 1010,
+              background: "rgba(15, 23, 42, 0.52)",
+              backdropFilter: "blur(5px)",
               display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: "14px",
-              maxWidth: "620px",
-              width: "88%",
-              textAlign: "left",
-              zIndex: 40,
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <div
               style={{
+                position: "relative",
+                background: "linear-gradient(180deg, #ffffff 0%, #fefce8 100%)",
+                border: "7px solid #facc15",
+                borderRadius: "36px",
+                padding: "72px 88px",
+                boxShadow: "0 12px 0 #ca8a04, 0 24px 44px rgba(0,0,0,0.32)",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                width: "100%",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "30px",
+                maxWidth: "1200px",
+                width: "88%",
+                textAlign: "left",
               }}
             >
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: "12px",
-                  color: "#854d0e",
-                  fontWeight: 900,
-                  fontSize: "clamp(1.4rem, 1.7cqw, 1.7rem)",
+                  justifyContent: "space-between",
+                  width: "100%",
                 }}
               >
-                <Lightbulb size={32} fill="#ca8a04" color="#ca8a04" />
-                <span>HINT</span>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "14px",
+                    color: "#854d0e",
+                    fontWeight: 900,
+                    fontSize: "clamp(2rem, 2.6cqw, 2.6rem)",
+                  }}
+                >
+                  <Lightbulb size={37} fill="#ca8a04" color="#ca8a04" />
+                  <span>HINT</span>
+                </div>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setShowHint(false);
+                  }}
+                  style={{
+                    background: "#ef4444",
+                    border: "5px solid #ffffff",
+                    borderRadius: "50%",
+                    position: "absolute",
+                    top: "-28px",
+                    right: "-28px",
+                    width: "84px",
+                    height: "84px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    fontWeight: 900,
+                    color: "#ffffff",
+                    fontSize: "2.7rem",
+                    boxShadow: "0 6px 0 #b91c1c, 0 10px 18px rgba(0,0,0,0.25)",
+                  }}
+                >
+                  ✕
+                </button>
               </div>
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setShowHint(false);
-                }}
+              <div
                 style={{
-                  background: "#fef08a",
-                  border: "none",
-                  borderRadius: "50%",
-                  width: "38px",
-                  height: "38px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  cursor: "pointer",
-                  fontWeight: 900,
-                  color: "#854d0e",
-                  fontSize: "1.25rem",
+                  color: "#713f12",
+                  maxWidth: "1000px",
+                  fontSize: "clamp(2.1rem, 2.9cqw, 2.95rem)",
+                  fontWeight: 800,
+                  lineHeight: 1.4,
                 }}
               >
-                ✕
-              </button>
-            </div>
-            <div
-              style={{
-                color: "#713f12",
-                fontSize: "clamp(1.35rem, 1.8cqw, 1.75rem)",
-                fontWeight: 800,
-                lineHeight: 1.35,
-              }}
-            >
-              💡{" "}
-              {equation.hint ||
-                "Solve the equation step by step, then shoot the matching number ball!"}
+                💡{" "}
+                {equation.hint ||
+                  "Solve the equation step by step, then shoot the matching number ball!"}
+              </div>
             </div>
           </div>
         )}
@@ -1578,10 +1607,13 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
         {/* Compact Feedback Prompt Banner */}
         <div
           style={{
-            minHeight: "30px",
+            position: "absolute",
+            inset: 0,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            pointerEvents: "none",
+            zIndex: 80,
           }}
         >
           {feedback ? (
@@ -1592,14 +1624,14 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                   ? "linear-gradient(180deg, #34d399 0%, #059669 100%)"
                   : "linear-gradient(180deg, #fbbf24 0%, #d97706 100%)",
                 color: "#FFFFFF",
-                padding: "6px 26px",
+                padding: "18px 78px",
                 borderRadius: "9999px",
-                fontSize: "1.3rem",
+                fontSize: "3.9rem",
                 fontWeight: 900,
                 boxShadow: feedback.isCorrect
-                  ? "0 4px 0 #047857"
-                  : "0 4px 0 #b45309",
-                border: "3px solid #FFFFFF",
+                  ? "0 12px 0 #047857, 0 20px 36px rgba(0,0,0,0.28)"
+                  : "0 12px 0 #b45309, 0 20px 36px rgba(0,0,0,0.28)",
+                border: "9px solid #FFFFFF",
               }}
             >
               {feedback.text}
@@ -2104,13 +2136,18 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               e.stopPropagation();
               fireCannon();
             }}
-            disabled={isShooting || isPaused || showSettings}
+            disabled={
+              isShooting || cooldownRemainingMs > 0 || isPaused || showSettings
+            }
             className="btn-3d btn-shoot-mobile no-drag-aim"
             style={{
               position: "relative",
               overflow: "hidden",
               background:
-                isShooting || isPaused || showSettings
+                isShooting ||
+                cooldownRemainingMs > 0 ||
+                isPaused ||
+                showSettings
                   ? "linear-gradient(180deg, #94a3b8 0%, #64748b 100%)"
                   : "linear-gradient(180deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%)",
               color: "#FFFFFF",
@@ -2121,7 +2158,10 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               letterSpacing: "2px",
               border: "5px solid #FFFFFF",
               boxShadow:
-                isShooting || isPaused || showSettings
+                isShooting ||
+                cooldownRemainingMs > 0 ||
+                isPaused ||
+                showSettings
                   ? "0 6px 0 #475569"
                   : "0 9px 0 #991b1b, 0 16px 26px rgba(220, 38, 38, 0.45)",
               textShadow: "0 2px 0 #7f1d1d, 0 3px 6px rgba(0,0,0,0.35)",
@@ -2130,11 +2170,20 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               justifyContent: "center",
               gap: "12px",
               cursor:
-                isShooting || isPaused || showSettings
+                isShooting ||
+                cooldownRemainingMs > 0 ||
+                isPaused ||
+                showSettings
                   ? "not-allowed"
                   : "pointer",
               zIndex: 25,
-              opacity: isShooting || isPaused || showSettings ? 0.75 : 1,
+              opacity:
+                isShooting ||
+                cooldownRemainingMs > 0 ||
+                isPaused ||
+                showSettings
+                  ? 0.75
+                  : 1,
             }}
           >
             {/* Specular top highlight */}
@@ -2151,10 +2200,37 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                 pointerEvents: "none",
               }}
             />
-            <span style={{ fontSize: "1.15em", transform: "translateY(-1px)" }}>
+
+            {cooldownRemainingMs > 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  left: "auto",
+                  width: `${(cooldownRemainingMs / GAME_CONFIG.cannon.cooldownMs) * 100}%`,
+                  background: "rgba(51, 65, 85, 0.78)",
+                  borderRadius: "9999px",
+                  pointerEvents: "none",
+                  zIndex: 1,
+                  transition: "width 50ms linear",
+                }}
+              />
+            )}
+
+            <span
+              style={{
+                fontSize: "1.15em",
+                transform: "translateY(-1px)",
+                zIndex: 2,
+              }}
+            >
               🔥
             </span>
-            <span>SHOOT</span>
+            <span style={{ zIndex: 2 }}>
+              {cooldownRemainingMs > 0
+                ? `WAIT ${(cooldownRemainingMs / 1000).toFixed(1)}s`
+                : "SHOOT"}
+            </span>
           </button>
         </div>
       </div>
@@ -2168,7 +2244,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
           style={{
             position: "absolute",
             inset: 0,
-            zIndex: 120,
+            zIndex: 10000,
             background: "rgba(15, 23, 42, 0.75)",
             backdropFilter: "blur(8px)",
             display: "flex",
@@ -2320,7 +2396,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
           style={{
             position: "absolute",
             inset: 0,
-            zIndex: 130,
+            zIndex: 10000,
             background: "rgba(15, 23, 42, 0.78)",
             backdropFilter: "blur(8px)",
             display: "flex",
@@ -2362,13 +2438,23 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
             <p
               style={{
                 color: "#64748b",
-                fontSize: "1.6rem",
+                fontSize: "35.6px",
                 fontWeight: 700,
                 margin: 0,
                 lineHeight: 1.4,
               }}
             >
-              You ran out of hearts. Your score was {score} points.
+              You ran out of hearts. Your score was{" "}
+              <span
+                style={{
+                  color: "#dc2626",
+                  fontWeight: 900,
+                  textShadow: "0 2px 0 #991b1b, 0 0 8px rgba(220,38,38,0.25)",
+                }}
+              >
+                {score}
+              </span>{" "}
+              points.
             </p>
 
             <div
