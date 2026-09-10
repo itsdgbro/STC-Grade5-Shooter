@@ -2,16 +2,17 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import confetti from 'canvas-confetti';
 import { sfx } from '../utils/sounds';
 import { ArrowLeft, Star, Lightbulb } from 'lucide-react';
+import { GAME_CONFIG } from '../config/gameConfig';
 
 interface Ball {
   id: number;
-  value: number;
+  value: string | number;
   bgGradient: string;
   borderColor: string;
   shadowColor: string;
   glowColor: string;
-  x: number; // percentage horizontally (15%, 32%, 50%, 68%, 85%)
-  yPercent: number; // percentage vertically (45% to 58%)
+  x: number; // percentage horizontally
+  yPercent: number; // percentage vertically
   scale: number;
   bobVariant: number;
   status?: 'correct' | 'wrong' | null;
@@ -53,12 +54,61 @@ const BALL_THEMES = [
 const PRAISE_MESSAGES = ['GREAT! 🌟', 'CORRECT! 🎉', 'AWESOME! 🚀', 'SUPER STAR! ⭐', 'BRILLIANT! 🏆'];
 const GENTLE_MESSAGES = ['Try Again! 😊', 'Almost! Give it another shot! 💪', 'Keep Trying! ✨'];
 
+export interface QuestionData {
+  id: number;
+  question: string;
+  options: (string | number)[];
+  answer: string | number;
+  hint: string;
+}
+
+const FALLBACK_QUESTIONS: QuestionData[] = [
+  {
+    id: 1,
+    question: "14 + 8 = ?",
+    options: [20, 22, 24],
+    answer: 22,
+    hint: "💡 Add 14 + 6 to make 20, then add the remaining 2 to get 22!"
+  },
+  {
+    id: 2,
+    question: "35 - 17 = ?",
+    options: [16, 18, 19, 22],
+    answer: 18,
+    hint: "💡 Start at 35: take away 10 to get 25, then take away 7 more to reach 18!"
+  },
+  {
+    id: 3,
+    question: "6 × 7 = ?",
+    options: [36, 40, 42, 48, 49],
+    answer: 42,
+    hint: "💡 Think of 6 groups of 7: (6 × 5 = 30) plus (6 × 2 = 12), so 30 + 12 = 42!"
+  }
+];
+
+// Calculate dynamic horizontal percentage spacing for 3 to 5 balls with safe side padding
+function getDynamicXPositions(count: number): number[] {
+  if (count <= 1) return [50];
+  if (count === 2) return [35, 65];
+  if (count === 3) return [22, 50, 78];
+  if (count === 4) return [18, 39, 61, 82];
+  if (count === 5) return [16, 33, 50, 67, 84];
+
+  // Generic formula from configurable margins
+  const leftMargin = GAME_CONFIG.balls.horizontalMarginLeft;
+  const rightMargin = GAME_CONFIG.balls.horizontalMarginRight;
+  const step = (rightMargin - leftMargin) / (count - 1);
+  return Array.from({ length: count }, (_, i) => Math.round(leftMargin + i * step));
+}
+
 interface EquationShooterProps {
   onBack: () => void;
 }
 
 export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
-  const [equation, setEquation] = useState<{ q: string; answer: number; hint: string }>({ q: '', answer: 0, hint: '' });
+  const [questions, setQuestions] = useState<QuestionData[]>(FALLBACK_QUESTIONS);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [equation, setEquation] = useState<{ q: string; answer: string | number; hint: string }>({ q: '', answer: 0, hint: '' });
   const [showHint, setShowHint] = useState(false);
   const [balls, setBalls] = useState<Ball[]>([]);
   const [feedback, setFeedback] = useState<{ text: string; isCorrect: boolean } | null>(null);
@@ -93,102 +143,42 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
   const arenaRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | null>(null);
 
-  // 1. GENERATE 2–1–2 BALL FORMATION WITH SMOOTH LEVEL PROGRESSION
-  const generateNewEquation = useCallback((streakCount: number) => {
-    let q = '';
-    let answer = 0;
-    let hint = '';
-
-    if (streakCount < 3) {
-      const isAdd = Math.random() > 0.45;
-      if (isAdd) {
-        const a = Math.floor(Math.random() * 8) + 3; // 3-10
-        const b = Math.floor(Math.random() * 8) + 2; // 2-9
-        q = `${a} + ${b} = ?`;
-        answer = a + b;
-        hint = `Start at ${a} and count forward by ${b}.`;
-      } else {
-        const b = Math.floor(Math.random() * 6) + 3; // 3-8
-        const a = b + Math.floor(Math.random() * 8) + 2; // b+2 to b+9
-        q = `${a} - ${b} = ?`;
-        answer = a - b;
-        hint = `Start with ${a} and take away ${b}.`;
+  // Load questions from configured JSON file on initial mount
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        const filePath = GAME_CONFIG.dataFile.startsWith('/') ? GAME_CONFIG.dataFile.slice(1) : GAME_CONFIG.dataFile;
+        const res = await fetch(`${import.meta.env.BASE_URL}${filePath}?t=${Date.now()}`);
+        if (res.ok) {
+          const data = await res.json();
+          const list: QuestionData[] = Array.isArray(data)
+            ? data
+            : Array.isArray(data?.questions)
+            ? data.questions
+            : [];
+          if (list.length > 0) {
+            setQuestions(list);
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Failed to load external configured questions file, using fallback:', err);
       }
-    } else if (streakCount < 6) {
-      const opChoice = Math.random();
-      if (opChoice < 0.45) {
-        const a = Math.floor(Math.random() * 4) + 2;
-        const b = Math.floor(Math.random() * 5) + 2;
-        q = `${a} × ${b} = ?`;
-        answer = a * b;
-        hint = `Think of ${a} groups of ${b}.`;
-      } else if (opChoice < 0.75) {
-        const divisor = Math.floor(Math.random() * 4) + 2;
-        const quotient = Math.floor(Math.random() * 5) + 2;
-        const dividend = divisor * quotient;
-        q = `${dividend} ÷ ${divisor} = ?`;
-        answer = quotient;
-        hint = `How many groups of ${divisor} can you make from ${dividend}?`;
-      } else {
-        const a = Math.floor(Math.random() * 9) + 5;
-        const b = Math.floor(Math.random() * 8) + 4;
-        q = `${a} + ${b} = ?`;
-        answer = a + b;
-        hint = `Add ${a} and ${b} together by tens and ones.`;
-      }
-    } else {
-      const op = ['add', 'sub', 'mult', 'div'][Math.floor(Math.random() * 4)];
-      if (op === 'mult') {
-        const a = Math.floor(Math.random() * 5) + 4;
-        const b = Math.floor(Math.random() * 6) + 3;
-        q = `${a} × ${b} = ?`;
-        answer = a * b;
-        hint = `Think of ${a} groups of ${b}.`;
-      } else if (op === 'div') {
-        const divisor = Math.floor(Math.random() * 6) + 3;
-        const quotient = Math.floor(Math.random() * 6) + 3;
-        q = `${divisor * quotient} ÷ ${divisor} = ?`;
-        answer = quotient;
-        hint = `How many groups of ${divisor} can you make from ${divisor * quotient}?`;
-      } else if (op === 'sub') {
-        const b = Math.floor(Math.random() * 9) + 4;
-        const a = b + Math.floor(Math.random() * 12) + 5;
-        q = `${a} - ${b} = ?`;
-        answer = a - b;
-        hint = `Start with ${a} and subtract ${b}.`;
-      } else {
-        const a = Math.floor(Math.random() * 12) + 6;
-        const b = Math.floor(Math.random() * 10) + 5;
-        q = `${a} + ${b} = ?`;
-        answer = a + b;
-        hint = `Combine ${a} and ${b} into a total sum.`;
-      }
-    }
+    };
+    fetchQuestions();
+  }, []);
 
-    let startVal = answer - 2;
-    if (startVal < 0) startVal = 0;
+  // Display question by index and construct dynamic ball positions
+  const loadQuestion = useCallback((qIndex: number, questionsList: QuestionData[]) => {
+    if (!questionsList || questionsList.length === 0) return;
+    const currentQ = questionsList[qIndex % questionsList.length];
 
-    let candidateSet = new Set<number>();
-    for (let i = 0; i < 5; i++) {
-      candidateSet.add(startVal + i);
-    }
-    if (!candidateSet.has(answer)) {
-      candidateSet.add(answer);
-    }
-    while (candidateSet.size < 5) {
-      startVal += 1;
-      candidateSet.add(startVal + candidateSet.size);
-    }
+    // Shuffle options so the correct answer position is varied
+    const shuffledOptions = [...currentQ.options].sort(() => Math.random() - 0.5);
+    const count = shuffledOptions.length;
+    const xPositions = getDynamicXPositions(count);
 
-    const allValues = Array.from(candidateSet).slice(0, 5);
-    allValues.sort(() => Math.random() - 0.5);
-
-    // Single straight horizontal row (● ● ● ● ●) positioned higher in the arena (y = 38%)
-    // Edge balls brought safely inward (16% to 84%) so they have generous margins from boundaries
-    const xPositions = [16, 33, 50, 67, 84];
-    const yPercentages = [38, 38, 38, 38, 38];
-
-    const newBalls: Ball[] = allValues.map((val, idx) => ({
+    const newBalls: Ball[] = shuffledOptions.map((val, idx) => ({
       id: idx,
       value: val,
       bgGradient: BALL_THEMES[idx % BALL_THEMES.length].bg,
@@ -196,28 +186,29 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       shadowColor: BALL_THEMES[idx % BALL_THEMES.length].shadowColor,
       glowColor: BALL_THEMES[idx % BALL_THEMES.length].glowColor,
       x: xPositions[idx],
-      yPercent: yPercentages[idx],
+      yPercent: GAME_CONFIG.balls.verticalPercentY, // Centrally configured
       scale: 1,
       bobVariant: idx % 3,
       status: null
     }));
 
-    setEquation({ q, answer, hint });
+    setEquation({ q: currentQ.question, answer: currentQ.answer, hint: currentQ.hint });
     setBalls(newBalls);
     setFeedback(null);
     setShowHint(false);
   }, []);
 
+  // Load question whenever questions array or currentQuestionIndex changes
   useEffect(() => {
-    generateNewEquation(0);
-  }, [generateNewEquation]);
+    loadQuestion(currentQuestionIndex, questions);
+  }, [currentQuestionIndex, questions, loadQuestion]);
 
   const getCannonOrigin = () => {
     if (!arenaRef.current) return { x: 700, y: 700 };
     const arenaRect = arenaRef.current.getBoundingClientRect();
     return {
       x: arenaRect.width / 2,
-      y: arenaRect.height - 85
+      y: arenaRect.height - GAME_CONFIG.cannon.muzzleOffset
     };
   };
 
@@ -230,12 +221,12 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
     const currentMaxReach = maxDistanceReached;
 
     let closestBallIdx: number | null = null;
-    let minDistance = 95; // generous 95px hitbox tolerance matching expanded hitboxes
+    let minDistance = GAME_CONFIG.balls.targetToleranceDistance;
 
     for (let i = 0; i < balls.length; i++) {
       const ball = balls[i];
       const ballCenterX = (ball.x / 100) * arenaRect.width;
-      const ballCenterY = (ball.yPercent / 100) * arenaRect.height;
+      const ballCenterY = (ball.yPercent / 100) * arenaHeightCalc(arenaRect.height);
 
       const deltaX = ballCenterX - cannonPos.x;
       const deltaY = ballCenterY - cannonPos.y;
@@ -254,6 +245,8 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
     }
     return closestBallIdx;
   };
+
+  const arenaHeightCalc = (h: number) => h;
 
   const targetedBallIndex = getTargetedBallIndex();
 
@@ -339,7 +332,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
     setTimeout(() => setMuzzleFlash(null), 450);
 
     // Constant crisp velocity following exact angle
-    const bulletSpeed = 24;
+    const bulletSpeed = GAME_CONFIG.cannon.bulletSpeed;
     const vx = Math.sin(angleRad) * bulletSpeed;
     const vy = -Math.cos(angleRad) * bulletSpeed;
 
@@ -353,7 +346,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
     });
   };
 
-  // Collision Loop with Continuous Segment Detection and 45-50% Enlarged Hitboxes
+  // Collision Loop with Continuous Segment Detection and Configurable Hitboxes
   useEffect(() => {
     if (!flyingBullet || !arenaRef.current) return;
 
@@ -386,9 +379,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       let hitTargetX = 0;
       let hitTargetY = 0;
 
-      // Generous hitbox radius: 88px (45-50% larger than visible ~58px ball radius + 24px bullet radius)
-      // Prevents bullet from tunneling or jumping over any ball including far-left and far-right
-      const hitRadius = 88;
+      const hitRadius = GAME_CONFIG.balls.hitRadius;
 
       for (let i = 0; i < balls.length; i++) {
         const ball = balls[i];
@@ -470,7 +461,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       sfx.playCorrect();
       const praise = PRAISE_MESSAGES[Math.floor(Math.random() * PRAISE_MESSAGES.length)];
       setFeedback({ text: praise, isCorrect: true });
-      setScore((prev) => prev + 10);
+      setScore((prev) => prev + GAME_CONFIG.gameplay.scorePerCorrect);
       const newStreak = correctStreak + 1;
       setCorrectStreak(newStreak);
 
@@ -485,8 +476,8 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       });
 
       setTimeout(() => {
-        generateNewEquation(newStreak);
-      }, 1000);
+        setCurrentQuestionIndex((prev) => (prev + 1) % questions.length);
+      }, GAME_CONFIG.gameplay.nextQuestionDelayMs);
     } else {
       sfx.playGentleTryAgain();
       const gentle = GENTLE_MESSAGES[Math.floor(Math.random() * GENTLE_MESSAGES.length)];
@@ -500,7 +491,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
         setBalls((prev) =>
           prev.map((b, idx) => (idx === ballIdx ? { ...b, status: null } : b))
         );
-      }, 900);
+      }, GAME_CONFIG.gameplay.wrongBallResetDelayMs);
     }
   };
 
@@ -934,24 +925,30 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
           </div>
         )}
 
-        {/* Top Equation Display Banner */}
+        {/* Top Equation / Question Display Banner */}
         <div
           className="animate-pop"
           style={{
             background: '#FFFFFF',
             borderRadius: '34px',
-            padding: '12px 64px',
+            padding: '10px 48px',
             boxShadow: '0 12px 0 #0284c7, 0 20px 35px rgba(0,0,0,0.22)',
             border: '6px solid #38bdf8',
-            textAlign: 'center'
+            textAlign: 'center',
+            maxWidth: '92%'
           }}
         >
           <span
             style={{
-              fontSize: 'clamp(2.8rem, 6.5vw, 4.2rem)',
+              fontSize: equation.q.length > 25
+                ? 'clamp(1.8rem, 3.8vw, 2.6rem)'
+                : equation.q.length > 15
+                ? 'clamp(2.2rem, 4.8vw, 3.2rem)'
+                : 'clamp(2.8rem, 6.5vw, 4.2rem)',
               fontWeight: 900,
               color: '#0f172a',
-              letterSpacing: '2px'
+              letterSpacing: '1px',
+              lineHeight: 1.2
             }}
           >
             {equation.q}
@@ -1031,8 +1028,8 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                 left: `${ball.x}%`,
                 top: `${ball.yPercent}%`,
                 transform: 'translate(-50%, -50%)',
-                width: 'clamp(92px, 11.5vw, 134px)',
-                height: 'clamp(92px, 11.5vw, 134px)',
+                width: GAME_CONFIG.balls.sizeClamp,
+                height: GAME_CONFIG.balls.sizeClamp,
                 borderRadius: '50%',
                 background:
                   ball.status === 'correct'
@@ -1040,10 +1037,12 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                     : ball.status === 'wrong'
                     ? 'radial-gradient(circle at 35% 30%, #f87171 0%, #dc2626 100%)'
                     : ball.bgGradient,
-                border: isTargeted ? '6px solid #fef08a' : `5px solid ${ball.borderColor}`,
+                border: isTargeted
+                  ? `${GAME_CONFIG.balls.borderWidthTargeted}px solid #fef08a`
+                  : `${GAME_CONFIG.balls.borderWidthNormal}px solid ${ball.borderColor}`,
                 boxShadow: isTargeted
-                  ? `0 0 36px #fde047, 0 10px 0 ${ball.shadowColor}`
-                  : `0 10px 0 ${ball.shadowColor}, 0 16px 25px rgba(0,0,0,0.35)`,
+                  ? `0 0 42px #fde047, 0 12px 0 ${ball.shadowColor}`
+                  : `0 12px 0 ${ball.shadowColor}, 0 20px 30px rgba(0,0,0,0.35)`,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1060,14 +1059,14 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                 <div
                   style={{
                     position: 'absolute',
-                    top: -15,
+                    top: -18,
                     background: '#fef08a',
                     color: '#854d0e',
-                    fontSize: '0.9rem',
+                    fontSize: '1rem',
                     fontWeight: 900,
-                    padding: '3px 10px',
-                    borderRadius: '8px',
-                    boxShadow: '0 2px 5px rgba(0,0,0,0.25)',
+                    padding: '4px 12px',
+                    borderRadius: '9999px',
+                    boxShadow: '0 3px 6px rgba(0,0,0,0.25)',
                     zIndex: 4
                   }}
                 >
@@ -1075,18 +1074,42 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                 </div>
               )}
 
-              {/* Number Value */}
-              <span
-                style={{
-                  fontSize: 'clamp(2.5rem, 4.6vw, 3.8rem)',
-                  fontWeight: 900,
-                  color: '#FFFFFF',
-                  textShadow: '0 3px 8px rgba(0,0,0,0.55)',
-                  zIndex: 2
-                }}
-              >
-                {ball.value}
-              </span>
+              {/* Value / Word */}
+              {(() => {
+                const str = String(ball.value);
+                let fontSize = GAME_CONFIG.balls.fontSizes.singleDigit;
+                if (str.length > 7) {
+                  fontSize = GAME_CONFIG.balls.fontSizes.extraLongWord;
+                } else if (str.length > 5) {
+                  fontSize = GAME_CONFIG.balls.fontSizes.longWord;
+                } else if (str.length > 3) {
+                  fontSize = GAME_CONFIG.balls.fontSizes.mediumWord;
+                } else if (str.length > 2) {
+                  fontSize = GAME_CONFIG.balls.fontSizes.shortWord;
+                }
+
+                return (
+                  <span
+                    style={{
+                      fontSize,
+                      fontWeight: 900,
+                      color: '#FFFFFF',
+                      textShadow: '0 4px 10px rgba(0,0,0,0.6)',
+                      zIndex: 2,
+                      textAlign: 'center',
+                      padding: '0 8px',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'clip',
+                      lineHeight: 1,
+                      maxWidth: '90%',
+                      display: 'inline-block'
+                    }}
+                  >
+                    {ball.value}
+                  </span>
+                );
+              })()}
             </div>
           );
         })}

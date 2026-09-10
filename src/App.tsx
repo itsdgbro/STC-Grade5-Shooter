@@ -1,11 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { sfx } from './utils/sounds';
 import { EquationShooter } from './components/EquationShooter';
+import { GAME_CONFIG } from './config/gameConfig';
 
 type Screen = 'main-menu' | 'equation-shooter';
 
 export function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('main-menu');
+  const [gameTitle, setGameTitle] = useState('MATH SHOOTER');
+  const [gameSubtitle, setGameSubtitle] = useState('GRADE 5 MATH CHALLENGE');
+
+  useEffect(() => {
+    const loadGameInfo = async () => {
+      try {
+        const filePath = GAME_CONFIG.dataFile.startsWith('/') ? GAME_CONFIG.dataFile.slice(1) : GAME_CONFIG.dataFile;
+        const res = await fetch(`${import.meta.env.BASE_URL}${filePath}?t=${Date.now()}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (data && typeof data === 'object') {
+            if (data.title) setGameTitle(data.title);
+            if (data.subtitle) setGameSubtitle(data.subtitle);
+          }
+        }
+      } catch (err) {
+        console.warn('Failed to load game info from configured dataFile:', err);
+      }
+    };
+    loadGameInfo();
+  }, [currentScreen]);
 
   return (
     <div
@@ -125,36 +147,6 @@ export function App() {
             />
 
             {/* Mid-Hill Trees with Subtle Ambient Breeze */}
-            {/* Left Mid-Hill Trees */}
-            <g transform="translate(180, 680)" className="animate-tree-rustle">
-              <rect x="-8" y="40" width="16" height="50" rx="6" fill="url(#trunkGrad)" stroke="#78350f" strokeWidth="1.5" />
-              <circle cx="0" cy="15" r="45" fill="url(#treeGrad2)" />
-              <circle cx="-20" cy="5" r="30" fill="url(#treeGrad1)" />
-              <circle cx="20" cy="0" r="32" fill="url(#treeGrad1)" />
-              <circle cx="0" cy="-20" r="35" fill="#86efac" />
-            </g>
-            <g transform="translate(320, 720)" className="animate-tree-rustle">
-              <rect x="-6" y="30" width="12" height="40" rx="5" fill="url(#trunkGrad)" stroke="#78350f" strokeWidth="1.5" />
-              <circle cx="0" cy="10" r="35" fill="url(#treeGrad1)" />
-              <circle cx="-15" cy="0" r="24" fill="#86efac" />
-              <circle cx="15" cy="-5" r="25" fill="#4ade80" />
-            </g>
-
-            {/* Right Mid-Hill Trees */}
-            <g transform="translate(1600, 690)" className="animate-tree-rustle">
-              <rect x="-10" y="45" width="20" height="60" rx="7" fill="url(#trunkGrad)" stroke="#78350f" strokeWidth="1.5" />
-              <circle cx="0" cy="20" r="52" fill="url(#treeGrad2)" />
-              <circle cx="-25" cy="5" r="36" fill="url(#treeGrad1)" />
-              <circle cx="25" cy="0" r="38" fill="url(#treeGrad1)" />
-              <circle cx="0" cy="-25" r="40" fill="#86efac" />
-            </g>
-            <g transform="translate(1760, 730)" className="animate-tree-rustle">
-              <rect x="-7" y="35" width="14" height="45" rx="5" fill="url(#trunkGrad)" stroke="#78350f" strokeWidth="1.5" />
-              <circle cx="0" cy="12" r="38" fill="url(#treeGrad1)" />
-              <circle cx="-16" cy="2" r="26" fill="#86efac" />
-              <circle cx="16" cy="-4" r="28" fill="#4ade80" />
-            </g>
-
             {/* Layer 4: Foreground Lush Rolling Meadows */}
             <path
               d="M -50,910 Q 350,810 850,890 T 1600,870 Q 1850,820 2000,900 L 2000,1100 L -50,1100 Z"
@@ -162,10 +154,10 @@ export function App() {
             />
 
             {/* Foreground Left Big Cartoon Tree with Highlights */}
-            <g transform="translate(110, 750)">
-              <rect x="-16" y="80" width="32" height="150" rx="12" fill="url(#trunkGrad)" stroke="#78350f" strokeWidth="3" />
-              <path d="M -16,210 Q -35,235 -50,230 Q -25,210 -10,190" fill="#78350f" />
-              <path d="M 16,210 Q 35,235 50,230 Q 25,210 10,190" fill="#78350f" />
+            <g transform="translate(110, 830)">
+              <rect x="-16" y="80" width="32" height="180" rx="12" fill="url(#trunkGrad)" stroke="#78350f" strokeWidth="3" />
+              <path d="M -16,240 Q -35,265 -50,260 Q -25,240 -10,220" fill="#78350f" />
+              <path d="M 16,240 Q 35,265 50,260 Q 25,240 10,220" fill="#78350f" />
               <g className="animate-tree-rustle">
                 <circle cx="0" cy="50" r="85" fill="#15803d" stroke="#14532d" strokeWidth="2.5" />
                 <circle cx="-55" cy="20" r="65" fill="#16a34a" />
@@ -434,19 +426,47 @@ export function App() {
             transform: 'translateY(-28px)'
           }}
         >
-          {/* Heading: "Welcome" with cartoon depth and readability */}
-          <h1
-            style={{
-              fontSize: 'clamp(4rem, 9.5vw, 6.8rem)',
-              fontWeight: 900,
-              color: '#FFFFFF',
-              textShadow: '0 8px 0 #0284c7, 0 16px 0 #0369a1, 0 24px 35px rgba(0,0,0,0.35)',
-              letterSpacing: '3px',
-              margin: 0
-            }}
-          >
-            Welcome
-          </h1>
+          {/* Game Title & Grade 5 Badge */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '18px' }}>
+            {/* Grade 5 Badge */}
+            <div
+              style={{
+                background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+                color: '#FFFFFF',
+                padding: '12px 42px',
+                borderRadius: '9999px',
+                fontSize: 'clamp(1.6rem, 3.2vw, 2.4rem)',
+                fontWeight: 900,
+                letterSpacing: '3px',
+                textTransform: 'uppercase',
+                border: '5px solid #fef08a',
+                boxShadow: '0 10px 0 #92400e, 0 16px 25px rgba(0,0,0,0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '14px',
+                textShadow: '0 3px 6px rgba(0,0,0,0.5)'
+              }}
+            >
+              <span style={{ fontSize: '1.2em' }}>⭐</span>
+              <span>{gameSubtitle}</span>
+              <span style={{ fontSize: '1.2em' }}>⭐</span>
+            </div>
+
+            {/* Main Game Name */}
+            <h1
+              style={{
+                fontSize: 'clamp(4.8rem, 11vw, 7.8rem)',
+                fontWeight: 900,
+                color: '#FFFFFF',
+                textShadow: '0 10px 0 #0284c7, 0 18px 0 #0369a1, 0 28px 45px rgba(0,0,0,0.45)',
+                letterSpacing: '4px',
+                margin: 0,
+                lineHeight: 1.05
+              }}
+            >
+              {gameTitle}
+            </h1>
+          </div>
 
           {/* ONE large Play button -> directly launches Shooter Game */}
           <button

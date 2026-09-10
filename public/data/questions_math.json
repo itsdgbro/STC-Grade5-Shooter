@@ -1,0 +1,186 @@
+{
+  "title": "MATH SHOOTER",
+  "subtitle": "GRADE 5 MATH CHALLENGE",
+  "questions": [
+    {
+      "id": 1,
+      "question": "14 + 8 = ?",
+      "options": [
+        20,
+        22,
+        24
+      ],
+      "answer": 22,
+      "hint": "💡 Add 14 + 6 to make 20, then add the remaining 2 to get 22!"
+    },
+    {
+      "id": 2,
+      "question": "35 - 17 = ?",
+      "options": [
+        16,
+        18,
+        19,
+        22
+      ],
+      "answer": 18,
+      "hint": "💡 Start at 35: take away 10 to get 25, then take away 7 more to reach 18!"
+    },
+    {
+      "id": 3,
+      "question": "6 × 7 = ?",
+      "options": [
+        36,
+        40,
+        42,
+        48,
+        49
+      ],
+      "answer": 42,
+      "hint": "💡 Think of 6 groups of 7: (6 × 5 = 30) plus (6 × 2 = 12), so 30 + 12 = 42!"
+    },
+    {
+      "id": 4,
+      "question": "56 ÷ 8 = ?",
+      "options": [
+        6,
+        7,
+        8
+      ],
+      "answer": 7,
+      "hint": "💡 Ask yourself: What number multiplied by 8 gives 56? Since 7 × 8 = 56, the answer is 7!"
+    },
+    {
+      "id": 5,
+      "question": "45 + 28 = ?",
+      "options": [
+        63,
+        71,
+        73,
+        75
+      ],
+      "answer": 73,
+      "hint": "💡 Add the tens first: 40 + 20 = 60. Then add the ones: 5 + 8 = 13. Finally, 60 + 13 = 73!"
+    },
+    {
+      "id": 6,
+      "question": "9 × 8 = ?",
+      "options": [
+        64,
+        70,
+        72,
+        74,
+        81
+      ],
+      "answer": 72,
+      "hint": "💡 9 times trick: 10 × 8 = 80, then subtract one 8 (80 - 8 = 72)!"
+    },
+    {
+      "id": 7,
+      "question": "81 ÷ 9 = ?",
+      "options": [
+        7,
+        8,
+        9
+      ],
+      "answer": 9,
+      "hint": "💡 What number multiplied by itself makes 81? 9 × 9 = 81!"
+    },
+    {
+      "id": 8,
+      "question": "92 - 38 = ?",
+      "options": [
+        52,
+        54,
+        56,
+        64
+      ],
+      "answer": 54,
+      "hint": "💡 92 - 30 = 62, then count down 8 more: 62 - 8 = 54!"
+    },
+    {
+      "id": 9,
+      "question": "12 × 5 = ?",
+      "options": [
+        50,
+        55,
+        60,
+        65,
+        70
+      ],
+      "answer": 60,
+      "hint": "💡 10 × 5 = 50, and 2 × 5 = 10. Add them together: 50 + 10 = 60!"
+    },
+    {
+      "id": 10,
+      "question": "72 ÷ 6 = ?",
+      "options": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "answer": 12,
+      "hint": "💡 6 × 10 = 60. You need 12 more to reach 72, which is 2 more sixes! So 10 + 2 = 12."
+    },
+    {
+      "id": 11,
+      "question": "25 × 4 = ?",
+      "options": [
+        75,
+        100,
+        125
+      ],
+      "answer": 100,
+      "hint": "💡 Think of quarters in money: 4 quarters of 25 cents make 100 cents ($1.00)!"
+    },
+    {
+      "id": 12,
+      "question": "144 ÷ 12 = ?",
+      "options": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "answer": 12,
+      "hint": "💡 12 dozen equals a gross (144). 12 × 12 = 144!"
+    },
+    {
+      "id": 13,
+      "question": "68 + 47 = ?",
+      "options": [
+        105,
+        113,
+        115,
+        125
+      ],
+      "answer": 115,
+      "hint": "💡 68 + 40 = 108. Then add 7: 108 + 7 = 115!"
+    },
+    {
+      "id": 14,
+      "question": "100 - 37 = ?",
+      "options": [
+        53,
+        63,
+        73
+      ],
+      "answer": 63,
+      "hint": "💡 100 - 30 = 70. Take away 7 more: 70 - 7 = 63!"
+    },
+    {
+      "id": 15,
+      "question": "15 × 6 = ?",
+      "options": [
+        80,
+        85,
+        90,
+        95,
+        100
+      ],
+      "answer": 90,
+      "hint": "💡 15 × 2 = 30. Since 6 is three 2s, multiply 30 × 3 = 90!"
+    }
+  ]
+}
