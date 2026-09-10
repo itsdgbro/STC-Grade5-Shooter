@@ -1,0 +1,101 @@
+{
+  "title": "WORD SHOOTER",
+  "subtitle": "GRADE 5 ENGLISH ADVENTURE",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Opposite of 'ANCIENT'?",
+      "options": [
+        "Modern",
+        "Old",
+        "Classic"
+      ],
+      "answer": "Modern",
+      "hint": "💡 Ancient means very old from a long time ago. The opposite is brand new or modern!"
+    },
+    {
+      "id": 2,
+      "question": "Synonym for 'BRAVE'?",
+      "options": [
+        "Timid",
+        "Fearless",
+        "Quiet",
+        "Calm"
+      ],
+      "answer": "Fearless",
+      "hint": "💡 A brave hero shows courage and has no fear — they are fearless!"
+    },
+    {
+      "id": 3,
+      "question": "Which word is a NOUN?",
+      "options": [
+        "Quickly",
+        "Castle",
+        "Bright",
+        "Jump",
+        "Soft"
+      ],
+      "answer": "Castle",
+      "hint": "💡 A noun is a person, place, or thing. A 'Castle' is a grand building/place!"
+    },
+    {
+      "id": 4,
+      "question": "Past tense of 'FLY'?",
+      "options": [
+        "Flew",
+        "Flown",
+        "Flyed"
+      ],
+      "answer": "Flew",
+      "hint": "💡 'Fly' is an irregular verb: Today birds fly, yesterday they flew!"
+    },
+    {
+      "id": 5,
+      "question": "Which is spelled correctly?",
+      "options": [
+        "Recieve",
+        "Receive",
+        "Receeve",
+        "Receve"
+      ],
+      "answer": "Receive",
+      "hint": "💡 Remember the spelling rule: 'I before E, except after C' → R-E-C-E-I-V-E!"
+    },
+    {
+      "id": 6,
+      "question": "Find the ADJECTIVE:",
+      "options": [
+        "Run",
+        "Sparkling",
+        "Song",
+        "Loudly",
+        "Cat"
+      ],
+      "answer": "Sparkling",
+      "hint": "💡 Adjectives describe nouns (e.g. 'a sparkling star')!"
+    },
+    {
+      "id": 7,
+      "question": "Plural of 'CHILD'?",
+      "options": [
+        "Childs",
+        "Children",
+        "Childrens"
+      ],
+      "answer": "Children",
+      "hint": "💡 'Child' has an irregular plural form: one child, many children!"
+    },
+    {
+      "id": 8,
+      "question": "Opposite of 'EXPAND'?",
+      "options": [
+        "Grow",
+        "Shrink",
+        "Stretch",
+        "Widen"
+      ],
+      "answer": "Shrink",
+      "hint": "💡 Expand means to get bigger. The opposite is to get smaller or shrink!"
+    }
+  ]
+}
