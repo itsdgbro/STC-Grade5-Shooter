@@ -13,7 +13,8 @@ export function App() {
   useEffect(() => {
     const loadGameInfo = async () => {
       try {
-        const filePath = GAME_CONFIG.dataFile.startsWith('/') ? GAME_CONFIG.dataFile.slice(1) : GAME_CONFIG.dataFile;
+        const targetPath = GAME_CONFIG.dataFile;
+        const filePath = targetPath.startsWith('/') ? targetPath.slice(1) : targetPath;
         const res = await fetch(`${import.meta.env.BASE_URL}${filePath}?t=${Date.now()}`);
         if (res.ok) {
           const data = await res.json();
@@ -121,16 +122,42 @@ export function App() {
             {/* Sky background */}
             <rect width="1920" height="1080" fill="url(#worldSkyGrad)" />
 
-            {/* Warm Golden Sun with Soft Rays */}
+            {/* Warm Golden Sun with Cheerful Cartoon Rays */}
             <g transform="translate(1650, 160)">
               <circle cx="0" cy="0" r="140" fill="url(#sunGlow)" opacity="0.6" />
-              <circle cx="0" cy="0" r="72" fill="#fde047" stroke="#fef08a" strokeWidth="6" />
+              {/* Playful cartoon rays around the circumference */}
+              <g className="animate-sun-pulse" style={{ transformOrigin: '0 0' }}>
+                {[0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5].map((angle, i) => (
+                  <g key={i} transform={`rotate(${angle})`}>
+                    {i % 2 === 0 ? (
+                      <path
+                        d="M -13,-70 C -13,-98 -7,-125 0,-125 C 7,-125 13,-98 13,-70 Z"
+                        fill="#fde047"
+                        stroke="#f59e0b"
+                        strokeWidth="4"
+                        strokeLinejoin="round"
+                      />
+                    ) : (
+                      <path
+                        d="M -10.5,-70 C -10.5,-90 -6,-112 0,-112 C 6,-112 10.5,-90 10.5,-70 Z"
+                        fill="#facc15"
+                        stroke="#f59e0b"
+                        strokeWidth="3.5"
+                        strokeLinejoin="round"
+                      />
+                    )}
+                  </g>
+                ))}
+              </g>
+              <circle cx="0" cy="0" r="72" fill="#fde047" stroke="#f59e0b" strokeWidth="5" />
               {/* Friendly smiling face on the sun */}
               <circle cx="-20" cy="-10" r="6.5" fill="#854d0e" />
               <circle cx="20" cy="-10" r="6.5" fill="#854d0e" />
-              <ellipse cx="-26" cy="6" rx="6" ry="4" fill="#f472b6" opacity="0.8" />
-              <ellipse cx="26" cy="6" rx="6" ry="4" fill="#f472b6" opacity="0.8" />
-              <path d="M -15,12 Q 0,25 15,12" fill="none" stroke="#854d0e" strokeWidth="4" strokeLinecap="round" />
+              <circle cx="-18" cy="-12" r="2.5" fill="#ffffff" />
+              <circle cx="22" cy="-12" r="2.5" fill="#ffffff" />
+              <ellipse cx="-26" cy="6" rx="7" ry="4.5" fill="#f472b6" opacity="0.85" />
+              <ellipse cx="26" cy="6" rx="7" ry="4.5" fill="#f472b6" opacity="0.85" />
+              <path d="M -15,12 Q 0,26 15,12" fill="none" stroke="#854d0e" strokeWidth="4" strokeLinecap="round" />
             </g>
 
             {/* Layer 2: Distant Soft Blue-Green Mountain Hills */}

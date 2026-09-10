@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import confetti from 'canvas-confetti';
 import { sfx } from '../utils/sounds';
-import { ArrowLeft, Star, Lightbulb } from 'lucide-react';
+import { ArrowLeft, Lightbulb, Zap } from 'lucide-react';
 import { GAME_CONFIG } from '../config/gameConfig';
+import { adaptiveEngine, isAnswerCorrect, shuffleArray, type QuestionData } from '../utils/adaptiveEngine';
 
 interface Ball {
   id: number;
@@ -54,51 +55,15 @@ const BALL_THEMES = [
 const PRAISE_MESSAGES = ['GREAT! 🌟', 'CORRECT! 🎉', 'AWESOME! 🚀', 'SUPER STAR! ⭐', 'BRILLIANT! 🏆'];
 const GENTLE_MESSAGES = ['Try Again! 😊', 'Almost! Give it another shot! 💪', 'Keep Trying! ✨'];
 
-export interface QuestionData {
-  id: number;
-  question: string;
-  options: (string | number)[];
-  answer: string | number;
-  hint: string;
-}
-
-const FALLBACK_QUESTIONS: QuestionData[] = [
-  {
-    id: 1,
-    question: "14 + 8 = ?",
-    options: [20, 22, 24],
-    answer: 22,
-    hint: "💡 Add 14 + 6 to make 20, then add the remaining 2 to get 22!"
-  },
-  {
-    id: 2,
-    question: "35 - 17 = ?",
-    options: [16, 18, 19, 22],
-    answer: 18,
-    hint: "💡 Start at 35: take away 10 to get 25, then take away 7 more to reach 18!"
-  },
-  {
-    id: 3,
-    question: "6 × 7 = ?",
-    options: [36, 40, 42, 48, 49],
-    answer: 42,
-    hint: "💡 Think of 6 groups of 7: (6 × 5 = 30) plus (6 × 2 = 12), so 30 + 12 = 42!"
-  }
-];
-
-// Calculate dynamic horizontal percentage spacing for 3 to 5 balls with safe side padding
+// Calculate dynamic horizontal percentage spacing for centered ball formation
+// Treats the answer balls as a single centered group with consistent gaps and safe outer margins
 function getDynamicXPositions(count: number): number[] {
   if (count <= 1) return [50];
-  if (count === 2) return [35, 65];
-  if (count === 3) return [22, 50, 78];
-  if (count === 4) return [18, 39, 61, 82];
-  if (count === 5) return [16, 33, 50, 67, 84];
-
-  // Generic formula from configurable margins
   const leftMargin = GAME_CONFIG.balls.horizontalMarginLeft;
   const rightMargin = GAME_CONFIG.balls.horizontalMarginRight;
-  const step = (rightMargin - leftMargin) / (count - 1);
-  return Array.from({ length: count }, (_, i) => Math.round(leftMargin + i * step));
+  const availableWidth = rightMargin - leftMargin;
+  const step = availableWidth / (count - 1);
+  return Array.from({ length: count }, (_, i) => leftMargin + i * step);
 }
 
 interface EquationShooterProps {
@@ -106,14 +71,19 @@ interface EquationShooterProps {
 }
 
 export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
-  const [questions, setQuestions] = useState<QuestionData[]>(FALLBACK_QUESTIONS);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadError, setLoadError] = useState<string | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<QuestionData | null>(null);
   const [equation, setEquation] = useState<{ q: string; answer: string | number; hint: string }>({ q: '', answer: 0, hint: '' });
   const [showHint, setShowHint] = useState(false);
   const [balls, setBalls] = useState<Ball[]>([]);
   const [feedback, setFeedback] = useState<{ text: string; isCorrect: boolean } | null>(null);
-  const [score, setScore] = useState(0);
   const [correctStreak, setCorrectStreak] = useState(0);
+
+  // 5. EXP Level Progression State
+  const [expLevel, setExpLevel] = useState(1);
+  const [currentExp, setCurrentExp] = useState(0);
+  const [levelUpCelebration, setLevelUpCelebration] = useState<{ newLevel: number } | null>(null);
 
   // Cannon & Aiming Drag State
   const [isAiming, setIsAiming] = useState(false);
@@ -143,65 +113,83 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
   const arenaRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | null>(null);
 
-  // Load questions from configured JSON file on initial mount
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const filePath = GAME_CONFIG.dataFile.startsWith('/') ? GAME_CONFIG.dataFile.slice(1) : GAME_CONFIG.dataFile;
-        const res = await fetch(`${import.meta.env.BASE_URL}${filePath}?t=${Date.now()}`);
-        if (res.ok) {
-          const data = await res.json();
-          const list: QuestionData[] = Array.isArray(data)
-            ? data
-            : Array.isArray(data?.questions)
-            ? data.questions
-            : [];
-          if (list.length > 0) {
-            setQuestions(list);
-            return;
-          }
-        }
-      } catch (err) {
-        console.warn('Failed to load external configured questions file, using fallback:', err);
+  // Adaptive Question Loader Function
+  const loadNextAdaptiveQuestion = useCallback((level: number, prevQId?: string | number) => {
+    try {
+      const nextQ = adaptiveEngine.selectNextQuestion(level, prevQId);
+      setCurrentQuestion(nextQ);
+
+      // Shuffle options so the correct answer position is varied every time
+      const shuffledOptions = shuffleArray([...nextQ.options]);
+      const count = shuffledOptions.length;
+      const xPositions = getDynamicXPositions(count);
+
+      console.log(
+        `[Answer Balls] Shuffled options for question [${nextQ.id}]:`,
+        shuffledOptions,
+        `(Correct answer: "${nextQ.answer}")`
+      );
+
+      const newBalls: Ball[] = shuffledOptions.map((val, idx) => ({
+        id: idx,
+        value: val,
+        bgGradient: BALL_THEMES[idx % BALL_THEMES.length].bg,
+        borderColor: BALL_THEMES[idx % BALL_THEMES.length].borderColor,
+        shadowColor: BALL_THEMES[idx % BALL_THEMES.length].shadowColor,
+        glowColor: BALL_THEMES[idx % BALL_THEMES.length].glowColor,
+        x: xPositions[idx],
+        yPercent: GAME_CONFIG.balls.verticalPercentY,
+        scale: 1,
+        bobVariant: idx % 3,
+        status: null
+      }));
+
+      setEquation({ q: nextQ.question, answer: nextQ.answer, hint: nextQ.hint });
+      setBalls(newBalls);
+      setFeedback(null);
+      setShowHint(false);
+    } catch (err) {
+      console.error('Error selecting next adaptive question:', err);
+    }
+  }, []);
+
+  // Load questions ONLY from the assigned JSON file for the current game
+  const fetchAndInitializeQuestions = useCallback(async () => {
+    setIsLoading(true);
+    setLoadError(null);
+    try {
+      const targetFile = GAME_CONFIG.dataFile;
+      const filePath = targetFile.startsWith('/') ? targetFile.slice(1) : targetFile;
+      const res = await fetch(`${import.meta.env.BASE_URL}${filePath}?t=${Date.now()}`);
+      if (!res.ok) {
+        throw new Error(`Failed to load ${filePath}: HTTP ${res.status}`);
       }
-    };
-    fetchQuestions();
-  }, []);
+      const data = await res.json();
+      const rawQuestions = Array.isArray(data)
+        ? data
+        : Array.isArray(data?.questions)
+        ? data.questions
+        : [];
 
-  // Display question by index and construct dynamic ball positions
-  const loadQuestion = useCallback((qIndex: number, questionsList: QuestionData[]) => {
-    if (!questionsList || questionsList.length === 0) return;
-    const currentQ = questionsList[qIndex % questionsList.length];
+      if (rawQuestions.length === 0) {
+        throw new Error(`No questions found in assigned file: ${targetFile}`);
+      }
 
-    // Shuffle options so the correct answer position is varied
-    const shuffledOptions = [...currentQ.options].sort(() => Math.random() - 0.5);
-    const count = shuffledOptions.length;
-    const xPositions = getDynamicXPositions(count);
+      // Initialize adaptive engine using ONLY the questions from this single file
+      adaptiveEngine.setQuestions(rawQuestions, targetFile);
+      setIsLoading(false);
+      loadNextAdaptiveQuestion(expLevel);
+    } catch (err: any) {
+      console.error('[EquationShooter] Developer Error loading question file:', err);
+      setIsLoading(false);
+      setLoadError(err?.message || 'Failed to load valid question file');
+    }
+  }, [expLevel, loadNextAdaptiveQuestion]);
 
-    const newBalls: Ball[] = shuffledOptions.map((val, idx) => ({
-      id: idx,
-      value: val,
-      bgGradient: BALL_THEMES[idx % BALL_THEMES.length].bg,
-      borderColor: BALL_THEMES[idx % BALL_THEMES.length].borderColor,
-      shadowColor: BALL_THEMES[idx % BALL_THEMES.length].shadowColor,
-      glowColor: BALL_THEMES[idx % BALL_THEMES.length].glowColor,
-      x: xPositions[idx],
-      yPercent: GAME_CONFIG.balls.verticalPercentY, // Centrally configured
-      scale: 1,
-      bobVariant: idx % 3,
-      status: null
-    }));
-
-    setEquation({ q: currentQ.question, answer: currentQ.answer, hint: currentQ.hint });
-    setBalls(newBalls);
-    setFeedback(null);
-    setShowHint(false);
-  }, []);
-
-  // Load question whenever questions array or currentQuestionIndex changes
   useEffect(() => {
-    loadQuestion(currentQuestionIndex, questions);
-  }, [currentQuestionIndex, questions, loadQuestion]);
+    fetchAndInitializeQuestions();
+  }, [fetchAndInitializeQuestions]);
+
 
   const getCannonOrigin = () => {
     if (!arenaRef.current) return { x: 700, y: 700 };
@@ -252,8 +240,18 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
 
   // 3. CONTINUOUS INTUITIVE DRAG-TO-AIM & VARIABLE POWER SYSTEM
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    // If clicking on an interactive button, do not start aim dragging
+    const target = e.target as HTMLElement;
+    if (target.closest('button') || target.closest('.no-drag-aim')) {
+      return;
+    }
+
     if (isShooting || !arenaRef.current) return;
-    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
+    try {
+      (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
+    } catch {
+      // safe fallback
+    }
     setIsAiming(true);
     updateAimFromPointer(e.clientX, e.clientY);
   };
@@ -300,16 +298,27 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
   };
 
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (!isAiming || isShooting) return;
+    if (!isAiming) return;
     setIsAiming(false);
     try {
-      (e.target as HTMLElement).releasePointerCapture?.(e.pointerId);
+      (e.currentTarget as HTMLElement).releasePointerCapture?.(e.pointerId);
     } catch {
       // Safe fallback
     }
-    fireCannon();
+    // Note: In mobile-first controls, dragging solely aims. Shooting is explicitly triggered via SHOOT button
   };
 
+  // Keyboard shortcut listener (Spacebar / Enter for desktop firing)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code === 'Space' || e.code === 'Enter') {
+        e.preventDefault();
+        fireCannon();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [cannonAngle, maxDistanceReached, isShooting]);
 
   // 4. FIRING ALONG EXACT TRAJECTORY WITH FORGIVING HIT DETECTION
   const fireCannon = () => {
@@ -447,12 +456,17 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
 
   // 5. HIT IMPACT & SUCCESS / RETRY
   const handleHitBall = (ballIdx: number, hitX: number, hitY: number) => {
+    if (!currentQuestion) return;
+
     setFlyingBullet(null);
     setIsShooting(false);
     sfx.playBallHit();
 
     const targetBall = balls[ballIdx];
-    const isCorrect = targetBall.value === equation.answer;
+    const isCorrect = isAnswerCorrect(targetBall.value, equation.answer);
+
+    // Record attempt into Adaptive Learning Engine
+    adaptiveEngine.recordAttempt(currentQuestion, isCorrect);
 
     setImpactEffect({ x: hitX, y: hitY, isCorrect });
     setTimeout(() => setImpactEffect(null), 500);
@@ -461,37 +475,63 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       sfx.playCorrect();
       const praise = PRAISE_MESSAGES[Math.floor(Math.random() * PRAISE_MESSAGES.length)];
       setFeedback({ text: praise, isCorrect: true });
-      setScore((prev) => prev + GAME_CONFIG.gameplay.scorePerCorrect);
       const newStreak = correctStreak + 1;
       setCorrectStreak(newStreak);
+
+      // EXP Calculation
+      const expGained = GAME_CONFIG.expSystem.baseExpPerCorrect;
+      const expRequired = GAME_CONFIG.expSystem.getExpRequired(expLevel);
+
+      let nextLevel = expLevel;
+      const totalExp = currentExp + expGained;
+
+      if (totalExp >= expRequired) {
+        // Level Up Triggered!
+        nextLevel = Math.min(GAME_CONFIG.expSystem.maxLevel, expLevel + 1);
+        setExpLevel(nextLevel);
+        setCurrentExp(Math.max(0, totalExp - expRequired));
+
+        setLevelUpCelebration({ newLevel: nextLevel });
+        sfx.playCorrect();
+        confetti({
+          particleCount: 110,
+          spread: 100,
+          origin: { y: 0.5 }
+        });
+
+        setTimeout(() => {
+          setLevelUpCelebration(null);
+        }, 2200);
+      } else {
+        setCurrentExp(totalExp);
+      }
 
       setBalls((prev) =>
         prev.map((b, idx) => (idx === ballIdx ? { ...b, status: 'correct' } : b))
       );
 
       confetti({
-        particleCount: 65,
-        spread: 85,
+        particleCount: 45,
+        spread: 75,
         origin: { y: 0.6 }
       });
 
       setTimeout(() => {
-        setCurrentQuestionIndex((prev) => (prev + 1) % questions.length);
+        loadNextAdaptiveQuestion(nextLevel, currentQuestion.id);
       }, GAME_CONFIG.gameplay.nextQuestionDelayMs);
     } else {
       sfx.playGentleTryAgain();
-      const gentle = GENTLE_MESSAGES[Math.floor(Math.random() * GENTLE_MESSAGES.length)];
-      setFeedback({ text: gentle, isCorrect: false });
+      setCorrectStreak(0);
 
       setBalls((prev) =>
         prev.map((b, idx) => (idx === ballIdx ? { ...b, status: 'wrong' } : b))
       );
 
+      // On incorrect answer: record mistake in adaptive learning,
+      // and immediately transition smoothly to a fresh new question
       setTimeout(() => {
-        setBalls((prev) =>
-          prev.map((b, idx) => (idx === ballIdx ? { ...b, status: null } : b))
-        );
-      }, GAME_CONFIG.gameplay.wrongBallResetDelayMs);
+        loadNextAdaptiveQuestion(expLevel, currentQuestion.id);
+      }, 350);
     }
   };
 
@@ -573,7 +613,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '16px 32px 10px 32px',
+        padding: '8px 16px 8px 16px',
         overflow: 'hidden',
         boxSizing: 'border-box',
         touchAction: 'none',
@@ -581,24 +621,96 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
         background: 'linear-gradient(180deg, #60a5fa 0%, #93c5fd 40%, #bae6fd 60%)'
       }}
     >
+      {/* Loading Overlay */}
+      {isLoading && (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 100,
+            background: 'rgba(56, 189, 248, 0.92)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '16px',
+            color: '#FFFFFF'
+          }}
+        >
+          <div style={{ fontSize: '3.5rem' }} className="animate-sun-pulse">
+            🎯
+          </div>
+          <h2 style={{ fontSize: '1.8rem', fontWeight: 900, textShadow: '0 3px 6px rgba(0,0,0,0.3)', margin: 0 }}>
+            Loading Questions...
+          </h2>
+        </div>
+      )}
+
+      {/* Error Overlay with Retry */}
+      {loadError && (
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 100,
+            background: 'rgba(15, 23, 42, 0.92)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '16px',
+            padding: '24px',
+            textAlign: 'center',
+            color: '#FFFFFF'
+          }}
+        >
+          <div style={{ fontSize: '3rem' }}>⚠️</div>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 900, margin: 0, color: '#f87171' }}>
+            Failed to Load Questions
+          </h2>
+          <p style={{ maxWidth: '400px', fontSize: '1rem', color: '#cbd5e1', margin: 0 }}>
+            {loadError}
+          </p>
+          <button
+            onClick={() => fetchAndInitializeQuestions()}
+            className="btn-3d"
+            style={{
+              background: '#38bdf8',
+              color: '#0f172a',
+              border: '3px solid #FFFFFF',
+              borderRadius: '9999px',
+              padding: '10px 28px',
+              fontWeight: 900,
+              fontSize: '1.1rem',
+              cursor: 'pointer',
+              boxShadow: '0 4px 0 #0284c7'
+            }}
+          >
+            Retry Loading
+          </button>
+        </div>
+      )}
+
       {/* ========================================================================= */}
       {/* WIDE LAYERED CARTOON ENVIRONMENT BACKGROUND                               */}
       {/* ========================================================================= */}
 
-      {/* SINGLE CHEERFUL CARTOON SUN WITH CLEAR NATURAL SUNRAYS (ONLY ONE SUN) */}
+      {/* SINGLE CHEERFUL CARTOON SUN WITH 360-DEGREE SURROUNDING RAYS */}
       <div
         style={{
           position: 'absolute',
-          top: 15,
-          left: 35,
-          width: '150px',
-          height: '150px',
+          top: 10,
+          left: 30,
+          width: '160px',
+          height: '160px',
           pointerEvents: 'none',
           zIndex: 2,
           filter: 'drop-shadow(0 6px 14px rgba(234, 88, 12, 0.25))'
         }}
       >
-        <svg viewBox="0 0 160 160" width="100%" height="100%">
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
           <defs>
             <radialGradient id="singleSunGlow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stopColor="#fef08a" />
@@ -607,28 +719,27 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
             </radialGradient>
           </defs>
 
-          {/* Natural Cartoon Sun Rays */}
-          <g transform="translate(80, 80)" className="animate-sun-pulse">
-            {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => (
+          {/* Complete 360° Ring of Playful Cartoon Sun Rays (Outward Radiating from Edge) */}
+          <g transform="translate(100, 100)" className="animate-sun-pulse" style={{ transformOrigin: 'center' }}>
+            {[0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5].map((angle, i) => (
               <g key={i} transform={`rotate(${angle})`}>
                 {i % 2 === 0 ? (
-                  // Long triangular rays
-                  <polygon
-                    points="-7,-52 0,-76 7,-52"
+                  // Prominent rounded ray (Top, Diagonals, Sides, Bottom)
+                  <path
+                    d="M -9,-48 C -9,-68 -6,-88 0,-88 C 6,-88 9,-68 9,-48 Z"
                     fill="#fde047"
                     stroke="#f59e0b"
-                    strokeWidth="1.5"
+                    strokeWidth="3"
+                    strokeLinejoin="round"
                   />
                 ) : (
-                  // Rounded soft petal rays
-                  <ellipse
-                    cx="0"
-                    cy="-62"
-                    rx="5.5"
-                    ry="9"
+                  // Alternating cheerful rounded ray
+                  <path
+                    d="M -7.5,-48 C -7.5,-63 -4,-78 0,-78 C 4,-78 7.5,-63 7.5,-48 Z"
                     fill="#facc15"
                     stroke="#f59e0b"
-                    strokeWidth="1.5"
+                    strokeWidth="2.5"
+                    strokeLinejoin="round"
                   />
                 )}
               </g>
@@ -636,22 +747,22 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
           </g>
 
           {/* Main Sun Face Body */}
-          <circle cx="80" cy="80" r="48" fill="url(#singleSunGlow)" stroke="#f59e0b" strokeWidth="4.5" />
+          <circle cx="100" cy="100" r="48" fill="url(#singleSunGlow)" stroke="#f59e0b" strokeWidth="4.5" />
 
           {/* Soft Cheeks */}
-          <ellipse cx="60" cy="86" rx="8" ry="5" fill="#f472b6" opacity="0.85" />
-          <ellipse cx="100" cy="86" rx="8" ry="5" fill="#f472b6" opacity="0.85" />
+          <ellipse cx="80" cy="106" rx="8" ry="5" fill="#f472b6" opacity="0.85" />
+          <ellipse cx="120" cy="106" rx="8" ry="5" fill="#f472b6" opacity="0.85" />
 
           {/* Cheerful Friendly Eyes */}
-          <ellipse cx="66" cy="74" rx="5" ry="7" fill="#854d0e" />
-          <circle cx="68" cy="72" r="2" fill="#ffffff" />
+          <ellipse cx="86" cy="94" rx="5" ry="7" fill="#854d0e" />
+          <circle cx="88" cy="92" r="2" fill="#ffffff" />
 
-          <ellipse cx="94" cy="74" rx="5" ry="7" fill="#854d0e" />
-          <circle cx="96" cy="72" r="2" fill="#ffffff" />
+          <ellipse cx="114" cy="94" rx="5" ry="7" fill="#854d0e" />
+          <circle cx="116" cy="92" r="2" fill="#ffffff" />
 
           {/* Warm Friendly Smile */}
           <path
-            d="M 68,90 Q 80,102 92,90"
+            d="M 88,110 Q 100,122 112,110"
             fill="none"
             stroke="#854d0e"
             strokeWidth="3.5"
@@ -798,11 +909,33 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       </div>
 
       {/* ========================================================================= */}
-      {/* 1. TOP AREA: COMPACT HEADER & MASSIVE EQUATION BANNER                     */}
+      {/* 1. TOP AREA: QUESTION BANNER -> STAR BAR -> EXP BAR                        */}
       {/* ========================================================================= */}
-      <div style={{ width: '100%', maxWidth: '1440px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px', zIndex: 20 }}>
-        {/* Navigation & Score Bar */}
-        <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      {/* ========================================================================= */}
+      {/* 1. TOP HEADER: LEFT/CENTER QUESTION BAR & RIGHT EXP LEVEL + PROGRESS BAR */}
+      {/* ========================================================================= */}
+      <div
+        style={{
+          width: '100%',
+          maxWidth: '1280px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '4px',
+          zIndex: 20
+        }}
+      >
+        {/* SINGLE HEADER ROW: BACK BUTTON + QUESTION BAR (LEFT/CENTER) & EXP BAR + SCORE (RIGHT) */}
+        <div
+          style={{
+            width: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 'clamp(6px, 1.2vw, 12px)'
+          }}
+        >
+          {/* Back Button */}
           <button
             onClick={() => {
               sfx.playPop();
@@ -812,151 +945,256 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
             style={{
               background: '#FFFFFF',
               color: '#0284c7',
-              border: '3px solid #bae6fd',
+              border: '2.5px solid #bae6fd',
               borderRadius: '9999px',
-              padding: '10px 24px',
-              fontSize: '1.3rem',
+              padding: '4px 12px',
+              fontSize: 'clamp(0.8rem, 1.3vw, 1.0rem)',
               fontWeight: 800,
               display: 'flex',
               alignItems: 'center',
-              gap: '8px',
-              boxShadow: '0 6px 0 #7dd3fc'
+              gap: '4px',
+              boxShadow: '0 3px 0 #7dd3fc',
+              width: 'auto',
+              minWidth: '72px',
+              height: '42px',
+              justifyContent: 'center',
+              flexShrink: 0
             }}
           >
-            <ArrowLeft size={24} /> Back
+            <ArrowLeft size={16} /> Back
           </button>
 
-          {/* Level Tag & Hints Toggle */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div
-              style={{
-                background: 'rgba(255, 255, 255, 0.95)',
-                color: '#0284c7',
-                padding: '8px 24px',
-                borderRadius: '9999px',
-                fontSize: '1.25rem',
-                fontWeight: 800,
-                boxShadow: '0 6px 0 #bae6fd',
-                border: '2px solid #e0f2fe'
-              }}
-            >
-              {correctStreak >= 6 ? '⭐ Super Master' : correctStreak >= 3 ? '🚀 Explorer' : '🌱 Rookie'}
-            </div>
-
-            {/* Dedicated HINTS Button */}
-            <button
-              onClick={() => {
-                sfx.playPop();
-                setShowHint((prev) => !prev);
-              }}
-              className="btn-3d"
-              style={{
-                background: showHint
-                  ? 'linear-gradient(180deg, #f59e0b 0%, #d97706 100%)'
-                  : 'linear-gradient(180deg, #fef08a 0%, #facc15 100%)',
-                color: showHint ? '#FFFFFF' : '#854d0e',
-                padding: '8px 20px',
-                borderRadius: '9999px',
-                fontSize: '1.2rem',
-                fontWeight: 800,
-                border: '3px solid #FFFFFF',
-                boxShadow: showHint ? '0 6px 0 #b45309' : '0 6px 0 #ca8a04',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                cursor: 'pointer'
-              }}
-            >
-              <Lightbulb size={20} fill={showHint ? '#FFFFFF' : '#ca8a04'} color={showHint ? '#FFFFFF' : '#ca8a04'} />
-              HINTS
-            </button>
-          </div>
-
-          {/* Star Score */}
+          {/* PRIMARY HEADER QUESTION / EQUATION DISPLAY BANNER (LEFT / CENTER) */}
           <div
+            className="animate-pop"
             style={{
-              background: '#fef08a',
-              color: '#854d0e',
-              padding: '8px 26px',
-              borderRadius: '9999px',
-              fontSize: '1.35rem',
-              fontWeight: 800,
-              boxShadow: '0 6px 0 #fde047',
+              flex: 1,
+              minWidth: '0',
+              background: '#FFFFFF',
+              borderRadius: '16px',
+              padding: '2px 14px',
+              boxShadow: '0 4px 0 #0284c7, 0 6px 14px rgba(0,0,0,0.15)',
+              border: '3px solid #38bdf8',
+              textAlign: 'center',
               display: 'flex',
               alignItems: 'center',
-              gap: '8px',
-              border: '2px solid #fef9c3'
+              justifyContent: 'center',
+              height: '42px',
+              boxSizing: 'border-box',
+              overflow: 'hidden'
             }}
           >
-            <Star size={24} fill="#ca8a04" color="#ca8a04" /> {score}
+            <span
+              style={{
+                fontSize:
+                  equation.q.length > 38
+                    ? 'clamp(0.8rem, 1.5vw, 1.15rem)'
+                    : equation.q.length > 28
+                    ? 'clamp(0.92rem, 1.9vw, 1.35rem)'
+                    : equation.q.length > 18
+                    ? 'clamp(1.1rem, 2.4vw, 1.65rem)'
+                    : equation.q.length > 10
+                    ? 'clamp(1.25rem, 3.0vw, 1.95rem)'
+                    : 'clamp(1.4rem, 3.6vw, 2.2rem)',
+                fontWeight: 900,
+                color: '#0f172a',
+                letterSpacing: '0.3px',
+                lineHeight: 1.15,
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                maxWidth: '100%',
+                padding: '0 4px'
+              }}
+            >
+              {equation.q}
+            </span>
+          </div>
+
+          {/* RIGHT SIDE: EXP LEVEL & EXP PROGRESS BAR CONTAINER (OCCUPIES THE POINTS POSITION, +2% SIZE) */}
+          <div
+            style={{
+              background: 'rgba(255, 255, 255, 0.95)',
+              border: '2.5px solid #bae6fd',
+              borderRadius: '14px',
+              padding: '2px 10px',
+              boxShadow: '0 3px 0 #7dd3fc, 0 4px 10px rgba(0,0,0,0.08)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '2px',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '42.84px',
+              width: 'clamp(117.3px, 16.32vw, 158.1px)',
+              boxSizing: 'border-box',
+              flexShrink: 0
+            }}
+          >
+            {/* Level Title & Numeric EXP */}
+            <div
+              style={{
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '0 1px'
+              }}
+            >
+              <span
+                style={{
+                  fontSize: 'clamp(0.72rem, 1.08vw, 0.85rem)',
+                  fontWeight: 900,
+                  color: '#0369a1',
+                  letterSpacing: '0.2px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '3px',
+                  lineHeight: 1
+                }}
+              >
+                <Zap size={12} fill="#0284c7" color="#0284c7" />
+                LVL {expLevel}
+              </span>
+
+              <span
+                style={{
+                  fontSize: 'clamp(0.68rem, 1.02vw, 0.82rem)',
+                  fontWeight: 900,
+                  color: '#0284c7',
+                  lineHeight: 1
+                }}
+              >
+                {currentExp}/{GAME_CONFIG.expSystem.getExpRequired(expLevel)}
+              </span>
+            </div>
+
+            {/* Visual Bar Track */}
+            <div
+              style={{
+                width: '100%',
+                height: '5.1px',
+                background: '#e0f2fe',
+                borderRadius: '9999px',
+                overflow: 'hidden',
+                border: '1px solid #bae6fd'
+              }}
+            >
+              <div
+                className="exp-bar-fill"
+                style={{
+                  width: `${Math.min(100, Math.max(0, (currentExp / GAME_CONFIG.expSystem.getExpRequired(expLevel)) * 100))}%`,
+                  height: '100%',
+                  borderRadius: '9999px'
+                }}
+              />
+            </div>
           </div>
         </div>
+
+        {/* COMPACT LEVEL-UP ACHIEVEMENT BADGE */}
+        {levelUpCelebration && (
+          <div
+            className="animate-level-up"
+            style={{
+              position: 'absolute',
+              top: '48px',
+              background: 'linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #dc2626 100%)',
+              border: '2.5px solid #fef08a',
+              borderRadius: '9999px',
+              padding: '3px 18px',
+              boxShadow: '0 4px 0 #7c2d12, 0 8px 16px rgba(0,0,0,0.3)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              zIndex: 50,
+              pointerEvents: 'none'
+            }}
+          >
+            <span className="animate-star-spin" style={{ fontSize: '1rem' }}>⭐</span>
+            <span
+              style={{
+                fontSize: 'clamp(0.85rem, 1.6vw, 1.05rem)',
+                fontWeight: 900,
+                color: '#FFFFFF',
+                textShadow: '0 1px 3px rgba(0,0,0,0.4)',
+                letterSpacing: '1px'
+              }}
+            >
+              LEVEL UP!
+            </span>
+            <span
+              style={{
+                fontSize: 'clamp(0.8rem, 1.4vw, 0.95rem)',
+                fontWeight: 800,
+                color: '#fef08a',
+                textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+              }}
+            >
+              🎉 Level {levelUpCelebration.newLevel} Unlocked!
+            </span>
+            <span className="animate-star-spin" style={{ fontSize: '1rem' }}>⭐</span>
+          </div>
+        )}
 
         {/* Dedicated HINTS Card Overlay Panel */}
         {showHint && (
           <div
-            className="animate-pop"
+            className="animate-pop no-drag-aim"
             style={{
+              position: 'absolute',
+              bottom: '85px',
+              left: '20px',
               background: 'linear-gradient(180deg, #ffffff 0%, #fefce8 100%)',
-              border: '4px solid #facc15',
-              borderRadius: '24px',
-              padding: '14px 28px',
-              boxShadow: '0 10px 0 #ca8a04, 0 16px 25px rgba(0,0,0,0.18)',
+              border: '3.5px solid #facc15',
+              borderRadius: '18px',
+              padding: '12px 18px',
+              boxShadow: '0 6px 0 #ca8a04, 0 12px 20px rgba(0,0,0,0.2)',
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center',
-              gap: '6px',
-              maxWidth: '650px',
-              width: '90%',
-              textAlign: 'center',
-              zIndex: 35
+              alignItems: 'flex-start',
+              gap: '4px',
+              maxWidth: '360px',
+              width: '85%',
+              textAlign: 'left',
+              zIndex: 40
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#854d0e', fontWeight: 900, fontSize: '1.15rem' }}>
-              <Lightbulb size={22} fill="#ca8a04" color="#ca8a04" />
-              <span>HINTS & METHOD</span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#854d0e', fontWeight: 900, fontSize: '1rem' }}>
+                <Lightbulb size={18} fill="#ca8a04" color="#ca8a04" />
+                <span>HINT</span>
+              </div>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowHint(false);
+                }}
+                style={{
+                  background: '#fef08a',
+                  border: 'none',
+                  borderRadius: '50%',
+                  width: '22px',
+                  height: '22px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  fontWeight: 900,
+                  color: '#854d0e',
+                  fontSize: '0.8rem'
+                }}
+              >
+                ✕
+              </button>
             </div>
-            <div style={{ color: '#713f12', fontSize: '1.25rem', fontWeight: 800, lineHeight: 1.3 }}>
+            <div style={{ color: '#713f12', fontSize: '1rem', fontWeight: 800, lineHeight: 1.3 }}>
               💡 {equation.hint || 'Solve the equation step by step, then shoot the matching number ball!'}
-            </div>
-            <div style={{ color: '#a16207', fontSize: '0.95rem', fontWeight: 700 }}>
-              Aim your cannon and fire when ready! 🎯
             </div>
           </div>
         )}
 
-        {/* Top Equation / Question Display Banner */}
-        <div
-          className="animate-pop"
-          style={{
-            background: '#FFFFFF',
-            borderRadius: '34px',
-            padding: '10px 48px',
-            boxShadow: '0 12px 0 #0284c7, 0 20px 35px rgba(0,0,0,0.22)',
-            border: '6px solid #38bdf8',
-            textAlign: 'center',
-            maxWidth: '92%'
-          }}
-        >
-          <span
-            style={{
-              fontSize: equation.q.length > 25
-                ? 'clamp(1.8rem, 3.8vw, 2.6rem)'
-                : equation.q.length > 15
-                ? 'clamp(2.2rem, 4.8vw, 3.2rem)'
-                : 'clamp(2.8rem, 6.5vw, 4.2rem)',
-              fontWeight: 900,
-              color: '#0f172a',
-              letterSpacing: '1px',
-              lineHeight: 1.2
-            }}
-          >
-            {equation.q}
-          </span>
-        </div>
-
-        {/* Feedback Prompt Banner */}
-        <div style={{ minHeight: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {/* Compact Feedback Prompt Banner */}
+        <div style={{ minHeight: '18px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {feedback ? (
             <div
               className="animate-pop"
@@ -965,32 +1203,17 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                   ? 'linear-gradient(180deg, #34d399 0%, #059669 100%)'
                   : 'linear-gradient(180deg, #fbbf24 0%, #d97706 100%)',
                 color: '#FFFFFF',
-                padding: '6px 30px',
+                padding: '2px 16px',
                 borderRadius: '9999px',
-                fontSize: '1.4rem',
+                fontSize: '0.95rem',
                 fontWeight: 900,
-                boxShadow: feedback.isCorrect ? '0 6px 0 #047857' : '0 6px 0 #b45309',
-                border: '3px solid #FFFFFF'
+                boxShadow: feedback.isCorrect ? '0 3px 0 #047857' : '0 3px 0 #b45309',
+                border: '2px solid #FFFFFF'
               }}
             >
               {feedback.text}
             </div>
-          ) : (
-            <div
-              style={{
-                background: 'rgba(0, 0, 0, 0.22)',
-                padding: '4px 22px',
-                borderRadius: '9999px',
-                color: '#FFFFFF',
-                fontSize: '1.2rem',
-                fontWeight: 800,
-                backdropFilter: 'blur(4px)',
-                textShadow: '0 2px 4px rgba(0,0,0,0.4)'
-              }}
-            >
-              🎯 Pull farther to shoot farther & release!
-            </div>
-          )}
+          ) : null}
         </div>
       </div>
 
@@ -1041,8 +1264,8 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                   ? `${GAME_CONFIG.balls.borderWidthTargeted}px solid #fef08a`
                   : `${GAME_CONFIG.balls.borderWidthNormal}px solid ${ball.borderColor}`,
                 boxShadow: isTargeted
-                  ? `0 0 42px #fde047, 0 12px 0 ${ball.shadowColor}`
-                  : `0 12px 0 ${ball.shadowColor}, 0 20px 30px rgba(0,0,0,0.35)`,
+                  ? `0 0 35px #fde047, 0 8px 0 ${ball.shadowColor}`
+                  : `0 8px 0 ${ball.shadowColor}, 0 16px 24px rgba(0,0,0,0.35)`,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1059,12 +1282,12 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                 <div
                   style={{
                     position: 'absolute',
-                    top: -18,
+                    top: -16,
                     background: '#fef08a',
                     color: '#854d0e',
-                    fontSize: '1rem',
+                    fontSize: '0.85rem',
                     fontWeight: 900,
-                    padding: '4px 12px',
+                    padding: '2px 10px',
                     borderRadius: '9999px',
                     boxShadow: '0 3px 6px rgba(0,0,0,0.25)',
                     zIndex: 4
@@ -1074,7 +1297,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                 </div>
               )}
 
-              {/* Value / Word */}
+              {/* Value / Word with comfortable, consistent inner padding */}
               {(() => {
                 const str = String(ball.value);
                 let fontSize = GAME_CONFIG.balls.fontSizes.singleDigit;
@@ -1084,8 +1307,10 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                   fontSize = GAME_CONFIG.balls.fontSizes.longWord;
                 } else if (str.length > 3) {
                   fontSize = GAME_CONFIG.balls.fontSizes.mediumWord;
-                } else if (str.length > 2) {
+                } else if (str.length === 3) {
                   fontSize = GAME_CONFIG.balls.fontSizes.shortWord;
+                } else if (str.length === 2) {
+                  fontSize = GAME_CONFIG.balls.fontSizes.twoDigits;
                 }
 
                 return (
@@ -1094,16 +1319,22 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                       fontSize,
                       fontWeight: 900,
                       color: '#FFFFFF',
-                      textShadow: '0 4px 10px rgba(0,0,0,0.6)',
+                      textShadow: '0 2px 6px rgba(0,0,0,0.65)',
                       zIndex: 2,
                       textAlign: 'center',
-                      padding: '0 8px',
+                      padding: '0 4px',
                       whiteSpace: 'nowrap',
                       overflow: 'hidden',
-                      textOverflow: 'clip',
+                      textOverflow: 'ellipsis',
                       lineHeight: 1,
-                      maxWidth: '90%',
-                      display: 'inline-block'
+                      maxWidth: '88%',
+                      maxHeight: '88%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      userSelect: 'none',
+                      pointerEvents: 'none',
+                      boxSizing: 'border-box'
                     }}
                   >
                     {ball.value}
@@ -1182,118 +1413,217 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       )}
 
       {/* ========================================================================= */}
-      {/* 3. BOTTOM AREA: CANNON WITH GENTLE IDLE BREATH & RECOIL ANIMATION         */}
+      {/* 3. BOTTOM AREA: CANNON + BOTTOM-LEFT HINT + RIGHT-SIDE SHOOT BUTTON        */}
       {/* ========================================================================= */}
       <div
-        className={`${!isAiming && !isShooting ? 'animate-cannon-idle' : ''} ${isRecoil ? 'animate-recoil' : ''}`}
         style={{
           position: 'relative',
-          width: '260px',
-          height: '145px',
+          width: '100%',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          zIndex: 18,
-          cursor: 'grab',
-          marginBottom: '5px'
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          zIndex: 22,
+          padding: '0 10px 4px 10px'
         }}
       >
-        {/* Cartoon Cannon Barrel */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '42px',
-            width: '80px',
-            height: '115px',
-            transformOrigin: 'bottom center',
-            transform: `rotate(${cannonAngle}deg)`,
-            transition: isAiming ? 'none' : 'transform 0.12s ease-out',
-            filter: 'drop-shadow(0 10px 14px rgba(0,0,0,0.35))',
-            zIndex: 11
-          }}
-        >
-          <svg viewBox="0 0 80 115" width="80" height="115">
-            <defs>
-              <linearGradient id="barrelMetal" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#64748b" />
-                <stop offset="30%" stopColor="#94a3b8" />
-                <stop offset="70%" stopColor="#334155" />
-                <stop offset="100%" stopColor="#1e293b" />
-              </linearGradient>
-              <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#fde047" />
-                <stop offset="50%" stopColor="#f59e0b" />
-                <stop offset="100%" stopColor="#b45309" />
-              </linearGradient>
-            </defs>
-
-            {/* Rear Cannon Bulb Base */}
-            <circle cx="40" cy="98" r="28" fill="url(#barrelMetal)" stroke="#0f172a" strokeWidth="4" />
-
-            {/* Main Tapered Cannon Body */}
-            <path d="M 18,92 L 23,20 L 57,20 L 62,92 Z" fill="url(#barrelMetal)" stroke="#0f172a" strokeWidth="4" />
-
-            {/* Brass Gold Accent Ring 1 */}
-            <rect x="21" y="44" width="38" height="10" rx="3" fill="url(#goldTrim)" stroke="#78350f" strokeWidth="2" />
-
-            {/* Brass Gold Accent Ring 2 */}
-            <rect x="22" y="74" width="36" height="8" rx="3" fill="url(#goldTrim)" stroke="#78350f" strokeWidth="2" />
-
-            {/* Chunky Muzzle Bell Ring */}
-            <rect x="15" y="10" width="50" height="16" rx="6" fill="#1e293b" stroke="#cbd5e1" strokeWidth="3" />
-            <ellipse cx="40" cy="10" rx="20" ry="7" fill="#0f172a" stroke="#475569" strokeWidth="2" />
-          </svg>
+        {/* 4. HINT BUTTON - MOVED TO BOTTOM LEFT FOR COMFORTABLE THUMB TAP */}
+        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              sfx.playPop();
+              setShowHint((prev) => !prev);
+            }}
+            className="btn-3d btn-hint-mobile no-drag-aim"
+            style={{
+              background: showHint
+                ? 'linear-gradient(180deg, #f59e0b 0%, #d97706 100%)'
+                : 'linear-gradient(180deg, #fef08a 0%, #facc15 100%)',
+              color: showHint ? '#FFFFFF' : '#854d0e',
+              padding: '10px 18px',
+              borderRadius: '9999px',
+              fontSize: 'clamp(0.95rem, 1.8vw, 1.2rem)',
+              fontWeight: 900,
+              border: '3px solid #FFFFFF',
+              boxShadow: showHint ? '0 5px 0 #b45309, 0 8px 14px rgba(0,0,0,0.2)' : '0 5px 0 #ca8a04, 0 8px 14px rgba(0,0,0,0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              cursor: 'pointer',
+              zIndex: 25
+            }}
+          >
+            <Lightbulb size={20} fill={showHint ? '#FFFFFF' : '#ca8a04'} color={showHint ? '#FFFFFF' : '#ca8a04'} />
+            HINT
+          </button>
         </div>
 
-        {/* Polished Cartoon Wooden Carriage & Wheels Base */}
+        {/* CANNON WITH GENTLE IDLE BREATH & RECOIL ANIMATION (COMPACT SIZING) */}
         <div
+          className={`${!isAiming && !isShooting ? 'animate-cannon-idle' : ''} ${isRecoil ? 'animate-recoil' : ''}`}
           style={{
             position: 'relative',
             width: '180px',
-            height: '62px',
-            zIndex: 12
+            height: '110px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            zIndex: 18,
+            cursor: 'grab',
+            marginBottom: '0px'
           }}
         >
-          <svg viewBox="0 0 180 62" width="180" height="62" style={{ filter: 'drop-shadow(0 8px 12px rgba(0,0,0,0.4))' }}>
-            <defs>
-              <linearGradient id="woodGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" />
-                <stop offset="40%" stopColor="#d97706" />
-                <stop offset="100%" stopColor="#78350f" />
-              </linearGradient>
-              <radialGradient id="wheelHub">
-                <stop offset="0%" stopColor="#fef08a" />
-                <stop offset="60%" stopColor="#ca8a04" />
-                <stop offset="100%" stopColor="#713f12" />
-              </radialGradient>
-            </defs>
+          {/* Cartoon Cannon Barrel */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '28px',
+              width: '58px',
+              height: '84px',
+              transformOrigin: 'bottom center',
+              transform: `rotate(${cannonAngle}deg)`,
+              transition: isAiming ? 'none' : 'transform 0.12s ease-out',
+              filter: 'drop-shadow(0 8px 10px rgba(0,0,0,0.35))',
+              zIndex: 11
+            }}
+          >
+            <svg viewBox="0 0 80 115" width="58" height="84">
+              <defs>
+                <linearGradient id="barrelMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#64748b" />
+                  <stop offset="30%" stopColor="#94a3b8" />
+                  <stop offset="70%" stopColor="#334155" />
+                  <stop offset="100%" stopColor="#1e293b" />
+                </linearGradient>
+                <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#fde047" />
+                  <stop offset="50%" stopColor="#f59e0b" />
+                  <stop offset="100%" stopColor="#b45309" />
+                </linearGradient>
+              </defs>
 
-            {/* Wooden Carriage Mount Body */}
-            <path
-              d="M 32,15 C 32,8 45,2 90,2 C 135,2 148,8 148,15 L 158,54 C 158,58 152,60 144,60 L 36,60 C 28,60 22,58 22,54 Z"
-              fill="url(#woodGradient)"
-              stroke="#451a03"
-              strokeWidth="4"
+              {/* Rear Cannon Bulb Base */}
+              <circle cx="40" cy="98" r="28" fill="url(#barrelMetal)" stroke="#0f172a" strokeWidth="4" />
+
+              {/* Main Tapered Cannon Body */}
+              <path d="M 18,92 L 23,20 L 57,20 L 62,92 Z" fill="url(#barrelMetal)" stroke="#0f172a" strokeWidth="4" />
+
+              {/* Brass Gold Accent Ring 1 */}
+              <rect x="21" y="44" width="38" height="10" rx="3" fill="url(#goldTrim)" stroke="#78350f" strokeWidth="2" />
+
+              {/* Brass Gold Accent Ring 2 */}
+              <rect x="22" y="74" width="36" height="8" rx="3" fill="url(#goldTrim)" stroke="#78350f" strokeWidth="2" />
+
+              {/* Chunky Muzzle Bell Ring */}
+              <rect x="15" y="10" width="50" height="16" rx="6" fill="#1e293b" stroke="#cbd5e1" strokeWidth="3" />
+              <ellipse cx="40" cy="10" rx="20" ry="7" fill="#0f172a" stroke="#475569" strokeWidth="2" />
+            </svg>
+          </div>
+
+          {/* Polished Cartoon Wooden Carriage & Wheels Base */}
+          <div
+            style={{
+              position: 'relative',
+              width: '130px',
+              height: '44px',
+              zIndex: 12
+            }}
+          >
+            <svg viewBox="0 0 180 62" width="130" height="44" style={{ filter: 'drop-shadow(0 6px 10px rgba(0,0,0,0.38))' }}>
+              <defs>
+                <linearGradient id="woodGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#f59e0b" />
+                  <stop offset="40%" stopColor="#d97706" />
+                  <stop offset="100%" stopColor="#78350f" />
+                </linearGradient>
+                <radialGradient id="wheelHub">
+                  <stop offset="0%" stopColor="#fef08a" />
+                  <stop offset="60%" stopColor="#ca8a04" />
+                  <stop offset="100%" stopColor="#713f12" />
+                </radialGradient>
+              </defs>
+
+              {/* Wooden Carriage Mount Body */}
+              <path
+                d="M 32,15 C 32,8 45,2 90,2 C 135,2 148,8 148,15 L 158,54 C 158,58 152,60 144,60 L 36,60 C 28,60 22,58 22,54 Z"
+                fill="url(#woodGradient)"
+                stroke="#451a03"
+                strokeWidth="4"
+              />
+
+              {/* Carriage Brass Rivet Details */}
+              <circle cx="90" cy="18" r="6" fill="url(#wheelHub)" stroke="#451a03" strokeWidth="2" />
+              <circle cx="65" cy="40" r="4" fill="#fde047" stroke="#451a03" strokeWidth="1.5" />
+              <circle cx="115" cy="40" r="4" fill="#fde047" stroke="#451a03" strokeWidth="1.5" />
+
+              {/* Left Big Chunky Wooden Wheel */}
+              <circle cx="28" cy="38" r="22" fill="#78350f" stroke="#451a03" strokeWidth="4" />
+              <circle cx="28" cy="38" r="16" fill="#92400e" stroke="#fde047" strokeWidth="3" />
+              <circle cx="28" cy="38" r="7" fill="url(#wheelHub)" stroke="#451a03" strokeWidth="2" />
+
+              {/* Right Big Chunky Wooden Wheel */}
+              <circle cx="152" cy="38" r="22" fill="#78350f" stroke="#451a03" strokeWidth="4" />
+              <circle cx="152" cy="38" r="16" fill="#92400e" stroke="#fde047" strokeWidth="3" />
+              <circle cx="152" cy="38" r="7" fill="url(#wheelHub)" stroke="#451a03" strokeWidth="2" />
+            </svg>
+          </div>
+        </div>
+
+        {/* 3. DEDICATED SHOOT BUTTON ON THE RIGHT SIDE (SLIGHTLY SMALLER, COMFORTABLE MOBILE THUMB PRESS) */}
+        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              fireCannon();
+            }}
+            disabled={isShooting}
+            className="btn-3d btn-shoot-mobile no-drag-aim"
+            style={{
+              position: 'relative',
+              overflow: 'hidden',
+              background: isShooting
+                ? 'linear-gradient(180deg, #94a3b8 0%, #64748b 100%)'
+                : 'linear-gradient(180deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%)',
+              color: '#FFFFFF',
+              padding: '11px 26px',
+              borderRadius: '9999px',
+              fontSize: 'clamp(1.1rem, 2.2vw, 1.5rem)',
+              fontWeight: 900,
+              letterSpacing: '1.5px',
+              border: '3.5px solid #FFFFFF',
+              boxShadow: isShooting
+                ? '0 4px 0 #475569'
+                : '0 6px 0 #991b1b, 0 10px 18px rgba(220, 38, 38, 0.4)',
+              textShadow: '0 2px 0 #7f1d1d, 0 3px 6px rgba(0,0,0,0.35)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '8px',
+              cursor: isShooting ? 'not-allowed' : 'pointer',
+              zIndex: 25,
+              opacity: isShooting ? 0.75 : 1
+            }}
+          >
+            {/* Specular top highlight */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '2px',
+                left: '10%',
+                width: '80%',
+                height: '35%',
+                borderRadius: '9999px',
+                background: 'linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.05) 100%)',
+                pointerEvents: 'none'
+              }}
             />
-
-            {/* Carriage Brass Rivet Details */}
-            <circle cx="90" cy="18" r="6" fill="url(#wheelHub)" stroke="#451a03" strokeWidth="2" />
-            <circle cx="65" cy="40" r="4" fill="#fde047" stroke="#451a03" strokeWidth="1.5" />
-            <circle cx="115" cy="40" r="4" fill="#fde047" stroke="#451a03" strokeWidth="1.5" />
-
-            {/* Left Big Chunky Wooden Wheel */}
-            <circle cx="28" cy="38" r="22" fill="#78350f" stroke="#451a03" strokeWidth="4" />
-            <circle cx="28" cy="38" r="16" fill="#92400e" stroke="#fde047" strokeWidth="3" />
-            <circle cx="28" cy="38" r="7" fill="url(#wheelHub)" stroke="#451a03" strokeWidth="2" />
-
-            {/* Right Big Chunky Wooden Wheel */}
-            <circle cx="152" cy="38" r="22" fill="#78350f" stroke="#451a03" strokeWidth="4" />
-            <circle cx="152" cy="38" r="16" fill="#92400e" stroke="#fde047" strokeWidth="3" />
-            <circle cx="152" cy="38" r="7" fill="url(#wheelHub)" stroke="#451a03" strokeWidth="2" />
-          </svg>
+            <span style={{ fontSize: '1.15em', transform: 'translateY(-1px)' }}>🔥</span>
+            <span>SHOOT</span>
+          </button>
         </div>
       </div>
     </div>
   );
 };
+

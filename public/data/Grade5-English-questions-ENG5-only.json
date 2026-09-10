@@ -1,0 +1,5717 @@
+{
+  "title": "WORD SHOOTER",
+  "subtitle": "GRADE 5 ENGLISH ADVENTURE",
+  "questions": [
+    {
+      "id": "ENG5-001",
+      "question": "I ___ in Grade Five.",
+      "options": [
+        "is",
+        "are",
+        "be",
+        "was",
+        "am"
+      ],
+      "answer": "am",
+      "hint": "Notice which form of “be” is used with “I.”",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 5",
+        "Category": "Grammar",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-002",
+      "question": "She ___ at a school.",
+      "options": [
+        "study",
+        "studying",
+        "studied",
+        "studys",
+        "studies"
+      ],
+      "answer": "studies",
+      "hint": "The subject is one person, so check the verb ending.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 6",
+        "Category": "Grammar",
+        "Skill": "Subject-verb agreement",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-003",
+      "question": "They ___ a party monthly.",
+      "options": [
+        "has",
+        "having",
+        "had",
+        "haves",
+        "have"
+      ],
+      "answer": "have",
+      "hint": "The subject means more than one person.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 6",
+        "Category": "Grammar",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-004",
+      "question": "My brother ___ tea.",
+      "options": [
+        "don't like",
+        "isn't like",
+        "doesn't likes",
+        "not likes",
+        "doesn't like"
+      ],
+      "answer": "doesn't like",
+      "hint": "Use the negative helper for one boy before the base verb.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 6",
+        "Category": "Grammar",
+        "Skill": "Present negative",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-005",
+      "question": "We meet ___ Friday.",
+      "options": [
+        "at",
+        "in",
+        "from",
+        "by",
+        "on"
+      ],
+      "answer": "on",
+      "hint": "Friday is a day of the week.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 11",
+        "Category": "Grammar",
+        "Skill": "Time prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-006",
+      "question": "Lunch is ___ 1 p.m.",
+      "options": [
+        "on",
+        "in",
+        "for",
+        "from",
+        "at"
+      ],
+      "answer": "at",
+      "hint": "The sentence gives an exact clock time.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 11",
+        "Category": "Grammar",
+        "Skill": "Time prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-007",
+      "question": "It rains a lot ___ winter.",
+      "options": [
+        "on",
+        "at",
+        "by",
+        "from",
+        "in"
+      ],
+      "answer": "in",
+      "hint": "Winter is a season, not a particular day.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 11",
+        "Category": "Grammar",
+        "Skill": "Time prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-008",
+      "question": "Who checks visitors at a gate?",
+      "options": [
+        "teacher",
+        "headteacher",
+        "grocer",
+        "farmer",
+        "gatekeeper"
+      ],
+      "answer": "gatekeeper",
+      "hint": "Think about the person responsible for an entrance.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 4",
+        "Category": "Vocabulary",
+        "Skill": "People at school",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-009",
+      "question": "This is ___ book.",
+      "options": [
+        "mine",
+        "me",
+        "I",
+        "ours",
+        "my"
+      ],
+      "answer": "my",
+      "hint": "The blank comes directly before a noun.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 17",
+        "Category": "Grammar",
+        "Skill": "Possessive adjectives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-010",
+      "question": "The coffee is ___.",
+      "options": [
+        "my",
+        "me",
+        "I",
+        "our",
+        "mine"
+      ],
+      "answer": "mine",
+      "hint": "There is no noun after the blank.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 18",
+        "Category": "Grammar",
+        "Skill": "Possessive pronouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-011",
+      "question": "Rita has a cat. ___ loves it.",
+      "options": [
+        "He",
+        "It",
+        "They",
+        "We",
+        "She"
+      ],
+      "answer": "She",
+      "hint": "Replace the name of one girl with a pronoun.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 25",
+        "Category": "Grammar",
+        "Skill": "Personal pronouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-012",
+      "question": "Ram is a boy. ___ runs fast.",
+      "options": [
+        "She",
+        "It",
+        "They",
+        "We",
+        "He"
+      ],
+      "answer": "He",
+      "hint": "Replace the name of one boy.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 25",
+        "Category": "Grammar",
+        "Skill": "Personal pronouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-013",
+      "question": "The boys are ready. ___ can begin.",
+      "options": [
+        "He",
+        "She",
+        "It",
+        "We",
+        "They"
+      ],
+      "answer": "They",
+      "hint": "Choose a pronoun for several people.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 25",
+        "Category": "Grammar",
+        "Skill": "Personal pronouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-014",
+      "question": "The dog moves ___ tail.",
+      "options": [
+        "his",
+        "her",
+        "their",
+        "ours",
+        "its"
+      ],
+      "answer": "its",
+      "hint": "The owner is an animal, and a noun follows the blank.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 18",
+        "Category": "Grammar",
+        "Skill": "Possessive adjectives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-015",
+      "question": "These shoes belong to us. They are ___.",
+      "options": [
+        "our",
+        "theirs",
+        "mine",
+        "hers",
+        "ours"
+      ],
+      "answer": "ours",
+      "hint": "The blank replaces “our shoes.”",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 18",
+        "Category": "Grammar",
+        "Skill": "Possessive pronouns",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-016",
+      "question": "This pen belongs to Maya. It is ___.",
+      "options": [
+        "her",
+        "his",
+        "theirs",
+        "ours",
+        "hers"
+      ],
+      "answer": "hers",
+      "hint": "The owner is one girl, and no noun follows the blank.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 18",
+        "Category": "Grammar",
+        "Skill": "Possessive pronouns",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-017",
+      "question": "I brush daily. I ___ brush.",
+      "options": [
+        "never",
+        "sometimes",
+        "rarely",
+        "yesterday",
+        "always"
+      ],
+      "answer": "always",
+      "hint": "Daily means the action happens every day.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 32",
+        "Category": "Grammar",
+        "Skill": "Adverbs of frequency",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-018",
+      "question": "Rina is ___ late for school.",
+      "options": [
+        "quickly",
+        "tomorrow",
+        "much",
+        "loudly",
+        "never"
+      ],
+      "answer": "never",
+      "hint": "The missing word should tell how often she is late.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 32",
+        "Category": "Grammar",
+        "Skill": "Adverb placement",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-019",
+      "question": "___ do you visit the library?",
+      "options": [
+        "How much",
+        "Where",
+        "Who",
+        "Why",
+        "How often"
+      ],
+      "answer": "How often",
+      "hint": "The question asks about frequency.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 33",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-020",
+      "question": "Yesterday, I ___ tired.",
+      "options": [
+        "were",
+        "am",
+        "are",
+        "be",
+        "was"
+      ],
+      "answer": "was",
+      "hint": "Use the past form that agrees with “I.”",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 37",
+        "Category": "Grammar",
+        "Skill": "Past of be",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-021",
+      "question": "The children ___ excited.",
+      "options": [
+        "was",
+        "is",
+        "am",
+        "be",
+        "were"
+      ],
+      "answer": "were",
+      "hint": "The subject refers to several children.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 37",
+        "Category": "Grammar",
+        "Skill": "Past of be",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-022",
+      "question": "___ milk was spilt?",
+      "options": [
+        "How many",
+        "Where",
+        "When",
+        "Who",
+        "How much"
+      ],
+      "answer": "How much",
+      "hint": "Milk is measured rather than counted separately.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 38",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-023",
+      "question": "___ students came?",
+      "options": [
+        "How much",
+        "How often",
+        "Why",
+        "Where",
+        "How many"
+      ],
+      "answer": "How many",
+      "hint": "Students can be counted one by one.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 38",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-024",
+      "question": "___ were you absent?",
+      "options": [
+        "Where",
+        "When",
+        "Who",
+        "What",
+        "Why"
+      ],
+      "answer": "Why",
+      "hint": "The expected response is a reason.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 38",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-025",
+      "question": "___ you please open the window?",
+      "options": [
+        "Did",
+        "Are",
+        "Have",
+        "Was",
+        "Can"
+      ],
+      "answer": "Can",
+      "hint": "The speaker is politely asking someone to do something.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 48",
+        "Category": "Language Function",
+        "Skill": "Making requests",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-026",
+      "question": "“Can you help me?” “___.”",
+      "options": [
+        "Sorry",
+        "Never",
+        "Yesterday",
+        "Quietly",
+        "Certainly"
+      ],
+      "answer": "Certainly",
+      "hint": "Choose a positive and polite response.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 48",
+        "Category": "Language Function",
+        "Skill": "Accepting requests",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-027",
+      "question": "Which word politely refuses a request?",
+      "options": [
+        "Sure",
+        "Certainly",
+        "Glad",
+        "Welcome",
+        "Sorry"
+      ],
+      "answer": "Sorry",
+      "hint": "Look for the word that shows regret.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 48",
+        "Category": "Language Function",
+        "Skill": "Declining requests",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-028",
+      "question": "I made a mistake. I should ___.",
+      "options": [
+        "request",
+        "congratulate",
+        "shout",
+        "pretend",
+        "apologise"
+      ],
+      "answer": "apologise",
+      "hint": "Think about what you do after hurting or upsetting someone.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 42",
+        "Category": "Vocabulary",
+        "Skill": "Apology vocabulary",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-029",
+      "question": "___ is your birthday?",
+      "options": [
+        "Who",
+        "Where",
+        "Why",
+        "How",
+        "When"
+      ],
+      "answer": "When",
+      "hint": "The answer will be a date or time.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 45",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-030",
+      "question": "___ old are you?",
+      "options": [
+        "What",
+        "When",
+        "Who",
+        "Where",
+        "How"
+      ],
+      "answer": "How",
+      "hint": "The question asks about age.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 45",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-031",
+      "question": "She ___ like milk.",
+      "options": [
+        "don't",
+        "isn't",
+        "wasn't",
+        "hasn't",
+        "doesn't"
+      ],
+      "answer": "doesn't",
+      "hint": "Use the present negative helper for one person.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 50",
+        "Category": "Grammar",
+        "Skill": "Present negative",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-032",
+      "question": "We ___ enjoy the trip.",
+      "options": [
+        "doesn't",
+        "wasn't",
+        "aren't",
+        "haven't",
+        "didn't"
+      ],
+      "answer": "didn't",
+      "hint": "The action happened in the past.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 50",
+        "Category": "Grammar",
+        "Skill": "Past negative",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-033",
+      "question": "Your friend wins a race. Say:",
+      "options": [
+        "Sorry",
+        "Goodbye",
+        "Welcome",
+        "Please",
+        "Congratulations"
+      ],
+      "answer": "Congratulations",
+      "hint": "Choose what you say to celebrate someone’s success.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 60",
+        "Category": "Language Function",
+        "Skill": "Congratulating",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-034",
+      "question": "Someone helps you. Say:",
+      "options": [
+        "Sorry",
+        "Hello",
+        "Goodbye",
+        "Congrats",
+        "Thanks"
+      ],
+      "answer": "Thanks",
+      "hint": "Choose the polite response to receiving help.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 60",
+        "Category": "Language Function",
+        "Skill": "Thanking",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-035",
+      "question": "“Thank you.” “___.”",
+      "options": [
+        "Good luck",
+        "I'm sorry",
+        "Well done",
+        "Take care",
+        "You're welcome"
+      ],
+      "answer": "You're welcome",
+      "hint": "Choose the usual polite reply after someone thanks you.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 60",
+        "Category": "Language Function",
+        "Skill": "Responding to thanks",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-036",
+      "question": "Walk ___ on a slippery road.",
+      "options": [
+        "noisily",
+        "hungrily",
+        "loudly",
+        "suddenly",
+        "carefully"
+      ],
+      "answer": "carefully",
+      "hint": "Think about how you should move to avoid falling.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 55",
+        "Category": "Grammar",
+        "Skill": "Adverbs",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-037",
+      "question": "The hungry boy ate ___.",
+      "options": [
+        "quietly",
+        "carefully",
+        "slowly",
+        "softly",
+        "hungrily"
+      ],
+      "answer": "hungrily",
+      "hint": "The adverb should match someone who badly needs food.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 55",
+        "Category": "Grammar",
+        "Skill": "Adverbs",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-038",
+      "question": "What is the adverb of “quiet”?",
+      "options": [
+        "quieter",
+        "quietness",
+        "quietest",
+        "quiet",
+        "quietly"
+      ],
+      "answer": "quietly",
+      "hint": "Change the describing word into a word that tells how.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 58",
+        "Category": "Grammar",
+        "Skill": "Adverb formation",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-039",
+      "question": "What a wonderful surprise___",
+      "options": [
+        ".",
+        "?",
+        ",",
+        ":",
+        "!"
+      ],
+      "answer": "!",
+      "hint": "The sentence shows strong excitement.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 61",
+        "Category": "Punctuation",
+        "Skill": "Exclamation marks",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-040",
+      "question": "A passage between rooms is a ___.",
+      "options": [
+        "balcony",
+        "kitchen",
+        "garden",
+        "roof",
+        "hallway"
+      ],
+      "answer": "hallway",
+      "hint": "Imagine an indoor path with doors on both sides.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 57",
+        "Category": "Vocabulary",
+        "Skill": "Building vocabulary",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-041",
+      "question": "___ onions do we need?",
+      "options": [
+        "How much",
+        "How often",
+        "How old",
+        "How long",
+        "How many"
+      ],
+      "answer": "How many",
+      "hint": "Onions can be counted separately.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking About Quantity",
+        "Page": "Pg 66",
+        "Category": "Grammar",
+        "Skill": "Countable nouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-042",
+      "question": "___ water do you drink?",
+      "options": [
+        "How many",
+        "How often",
+        "How old",
+        "How long",
+        "How much"
+      ],
+      "answer": "How much",
+      "hint": "Water is normally measured, not counted as separate items.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking About Quantity",
+        "Page": "Pg 66",
+        "Category": "Grammar",
+        "Skill": "Uncountable nouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-043",
+      "question": "Which noun is uncountable?",
+      "options": [
+        "apple",
+        "book",
+        "chair",
+        "coin",
+        "milk"
+      ],
+      "answer": "milk",
+      "hint": "Choose something usually measured in litres or glasses.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking About Quantity",
+        "Page": "Pg 66",
+        "Category": "Grammar",
+        "Skill": "Uncountable nouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-044",
+      "question": "Which noun is countable?",
+      "options": [
+        "water",
+        "rice",
+        "sugar",
+        "money",
+        "bottle"
+      ],
+      "answer": "bottle",
+      "hint": "Choose something you can count as one, two, or three.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking About Quantity",
+        "Page": "Pg 66",
+        "Category": "Grammar",
+        "Skill": "Countable nouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-045",
+      "question": "What is the plural of “child”?",
+      "options": [
+        "childs",
+        "childes",
+        "childrens",
+        "child",
+        "children"
+      ],
+      "answer": "children",
+      "hint": "This noun does not form its plural by simply adding “s.”",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking About Quantity",
+        "Page": "Pg 67",
+        "Category": "Grammar",
+        "Skill": "Irregular plurals",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-046",
+      "question": "What is the plural of “tooth”?",
+      "options": [
+        "tooths",
+        "toothes",
+        "toothies",
+        "tooth",
+        "teeth"
+      ],
+      "answer": "teeth",
+      "hint": "The middle vowel changes in this irregular plural.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking About Quantity",
+        "Page": "Pg 67",
+        "Category": "Grammar",
+        "Skill": "Irregular plurals",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-047",
+      "question": "Mina is ___ engineer.",
+      "options": [
+        "a",
+        "the",
+        "some",
+        "any",
+        "an"
+      ],
+      "answer": "an",
+      "hint": "Listen to the first sound of “engineer.”",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking About Quantity",
+        "Page": "Pg 72",
+        "Category": "Grammar",
+        "Skill": "Articles",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-048",
+      "question": "I want to ask ___ question.",
+      "options": [
+        "an",
+        "the",
+        "some",
+        "any",
+        "a"
+      ],
+      "answer": "a",
+      "hint": "Listen to the first sound of “question.”",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking About Quantity",
+        "Page": "Pg 72",
+        "Category": "Grammar",
+        "Skill": "Articles",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-049",
+      "question": "What is the comparative of “big”?",
+      "options": [
+        "biggest",
+        "more big",
+        "biger",
+        "most big",
+        "bigger"
+      ],
+      "answer": "bigger",
+      "hint": "Check whether the final letter must be doubled.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 79",
+        "Category": "Grammar",
+        "Skill": "Comparatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-050",
+      "question": "What is the superlative of “good”?",
+      "options": [
+        "better",
+        "goodest",
+        "more good",
+        "gooder",
+        "best"
+      ],
+      "answer": "best",
+      "hint": "This adjective changes completely in its highest form.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 79",
+        "Category": "Grammar",
+        "Skill": "Irregular adjectives",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-051",
+      "question": "This story is ___ than that one.",
+      "options": [
+        "most interesting",
+        "interestinger",
+        "interesting",
+        "more interest",
+        "more interesting"
+      ],
+      "answer": "more interesting",
+      "hint": "A long adjective usually needs an extra comparison word.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 80",
+        "Category": "Grammar",
+        "Skill": "Comparatives",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-052",
+      "question": "A bicycle is ___ than a car.",
+      "options": [
+        "cheapest",
+        "more cheap",
+        "cheaply",
+        "cheap",
+        "cheaper"
+      ],
+      "answer": "cheaper",
+      "hint": "Only two things are being compared.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 80",
+        "Category": "Grammar",
+        "Skill": "Comparatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-053",
+      "question": "Ram is the ___ boy in his class.",
+      "options": [
+        "taller",
+        "tall",
+        "more tall",
+        "most taller",
+        "tallest"
+      ],
+      "answer": "tallest",
+      "hint": "One boy is compared with everyone else in the class.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 80",
+        "Category": "Grammar",
+        "Skill": "Superlatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-054",
+      "question": "___ Sun gives us light.",
+      "options": [
+        "A",
+        "An",
+        "Some",
+        "Any",
+        "The"
+      ],
+      "answer": "The",
+      "hint": "There is only one sun in our solar system.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 85",
+        "Category": "Grammar",
+        "Skill": "Definite article",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-055",
+      "question": "I saw ___ cat in the garden.",
+      "options": [
+        "an",
+        "the",
+        "any",
+        "some",
+        "a"
+      ],
+      "answer": "a",
+      "hint": "The cat is mentioned for the first time.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 85",
+        "Category": "Grammar",
+        "Skill": "Indefinite articles",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-056",
+      "question": "She is ___ honest girl.",
+      "options": [
+        "a",
+        "the",
+        "some",
+        "any",
+        "an"
+      ],
+      "answer": "an",
+      "hint": "Listen to the first sound, not just the first letter.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 85",
+        "Category": "Grammar",
+        "Skill": "Articles",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-057",
+      "question": "The book is ___ the table.",
+      "options": [
+        "in",
+        "at",
+        "under",
+        "behind",
+        "on"
+      ],
+      "answer": "on",
+      "hint": "Imagine the book resting on the table’s surface.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 95",
+        "Category": "Grammar",
+        "Skill": "Location prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-058",
+      "question": "The water is ___ the bottle.",
+      "options": [
+        "on",
+        "at",
+        "over",
+        "behind",
+        "in"
+      ],
+      "answer": "in",
+      "hint": "The bottle contains the water.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 95",
+        "Category": "Grammar",
+        "Skill": "Location prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-059",
+      "question": "The child is hiding ___ the bed.",
+      "options": [
+        "over",
+        "on",
+        "between",
+        "at",
+        "under"
+      ],
+      "answer": "under",
+      "hint": "Imagine the bed above the hiding child.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 90",
+        "Category": "Grammar",
+        "Skill": "Location prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-060",
+      "question": "The blue car is ___ the green car.",
+      "options": [
+        "between",
+        "inside",
+        "under",
+        "over",
+        "behind"
+      ],
+      "answer": "behind",
+      "hint": "One car is at the back of the other.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 90",
+        "Category": "Grammar",
+        "Skill": "Location prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-061",
+      "question": "The house is ___ two trees.",
+      "options": [
+        "behind",
+        "under",
+        "on",
+        "at",
+        "between"
+      ],
+      "answer": "between",
+      "hint": "The house has one tree on each side.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 90",
+        "Category": "Grammar",
+        "Skill": "Location prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-062",
+      "question": "I will meet you ___ the airport.",
+      "options": [
+        "on",
+        "in",
+        "under",
+        "over",
+        "at"
+      ],
+      "answer": "at",
+      "hint": "The airport is treated as a meeting point.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 96",
+        "Category": "Grammar",
+        "Skill": "Location prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-063",
+      "question": "She lives ___ Pokhara.",
+      "options": [
+        "at",
+        "on",
+        "under",
+        "between",
+        "in"
+      ],
+      "answer": "in",
+      "hint": "A person lives within a city.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 96",
+        "Category": "Grammar",
+        "Skill": "Location prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-064",
+      "question": "A bird flies ___ the house.",
+      "options": [
+        "under",
+        "inside",
+        "between",
+        "behind",
+        "over"
+      ],
+      "answer": "over",
+      "hint": "The bird moves across a higher position.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 90",
+        "Category": "Grammar",
+        "Skill": "Location prepositions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-065",
+      "question": "The Sun ___ in the east.",
+      "options": [
+        "rise",
+        "rising",
+        "rose",
+        "is rise",
+        "rises"
+      ],
+      "answer": "rises",
+      "hint": "This is a fact, and the subject is singular.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 103",
+        "Category": "Grammar",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-066",
+      "question": "Water ___ at 100°C.",
+      "options": [
+        "boil",
+        "boiling",
+        "boiled",
+        "is boil",
+        "boils"
+      ],
+      "answer": "boils",
+      "hint": "Use the tense for a scientific fact.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 103",
+        "Category": "Grammar",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-067",
+      "question": "The Earth ___ a planet.",
+      "options": [
+        "are",
+        "am",
+        "were",
+        "be",
+        "is"
+      ],
+      "answer": "is",
+      "hint": "The subject is one planet.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 103",
+        "Category": "Grammar",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-068",
+      "question": "My sister ___ tennis.",
+      "options": [
+        "play",
+        "playing",
+        "played",
+        "plaies",
+        "plays"
+      ],
+      "answer": "plays",
+      "hint": "The subject is one person, so inspect the verb ending.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 102",
+        "Category": "Grammar",
+        "Skill": "Subject-verb agreement",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-069",
+      "question": "They ___ lunch at noon.",
+      "options": [
+        "eats",
+        "eating",
+        "ate",
+        "is eat",
+        "eat"
+      ],
+      "answer": "eat",
+      "hint": "The subject refers to more than one person.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 102",
+        "Category": "Grammar",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-070",
+      "question": "Bob ___ to class on Saturdays.",
+      "options": [
+        "go",
+        "going",
+        "went",
+        "gos",
+        "goes"
+      ],
+      "answer": "goes",
+      "hint": "Think about how “go” changes with one person.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 102",
+        "Category": "Grammar",
+        "Skill": "Present simple",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-071",
+      "question": "Illegal hunting is called ___.",
+      "options": [
+        "hiking",
+        "farming",
+        "fishing",
+        "camping",
+        "poaching"
+      ],
+      "answer": "poaching",
+      "hint": "Think about hunting that breaks wildlife laws.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 100",
+        "Category": "Vocabulary",
+        "Skill": "Environmental vocabulary",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-072",
+      "question": "Covered with soft hair means ___.",
+      "options": [
+        "damp",
+        "illegal",
+        "unique",
+        "rough",
+        "furry"
+      ],
+      "answer": "furry",
+      "hint": "Easy",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 100",
+        "Category": "Vocabulary",
+        "Skill": "Think about the outside of a cat or rabbit."
+      }
+    },
+    {
+      "id": "ENG5-073",
+      "question": "First, ___ the eggs into a bowl.",
+      "options": [
+        "stir",
+        "flip",
+        "sprinkle",
+        "sieve",
+        "break"
+      ],
+      "answer": "break",
+      "hint": "Think about what must happen before the egg leaves its shell.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 111",
+        "Category": "Vocabulary",
+        "Skill": "Recipe verbs",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-074",
+      "question": "Use a spoon to ___ the mixture.",
+      "options": [
+        "break",
+        "peel",
+        "squeeze",
+        "weigh",
+        "stir"
+      ],
+      "answer": "stir",
+      "hint": "The action mixes the ingredients by moving them around.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 111",
+        "Category": "Vocabulary",
+        "Skill": "Recipe verbs",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-075",
+      "question": "___ talking during the lesson.",
+      "options": [
+        "Open",
+        "Turn",
+        "Walk",
+        "Cook",
+        "Stop"
+      ],
+      "answer": "Stop",
+      "hint": "The instruction tells someone to end an action.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 113",
+        "Category": "Grammar",
+        "Skill": "Imperatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-076",
+      "question": "___ make noise in class.",
+      "options": [
+        "Doesn't",
+        "Didn't",
+        "Can't",
+        "Wasn't",
+        "Don't"
+      ],
+      "answer": "Don't",
+      "hint": "The instruction tells everyone to avoid an action.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 113",
+        "Category": "Grammar",
+        "Skill": "Negative imperatives",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-077",
+      "question": "Go ___ ahead.",
+      "options": [
+        "under",
+        "between",
+        "inside",
+        "behind",
+        "straight"
+      ],
+      "answer": "straight",
+      "hint": "Continue forward without turning.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 118",
+        "Category": "Vocabulary",
+        "Skill": "Directions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-078",
+      "question": "Walk ___ the bridge.",
+      "options": [
+        "under",
+        "inside",
+        "between",
+        "behind",
+        "across"
+      ],
+      "answer": "across",
+      "hint": "Move from one side of the bridge to the other.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 118",
+        "Category": "Vocabulary",
+        "Skill": "Directions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-079",
+      "question": "Go ___ the shop and continue.",
+      "options": [
+        "inside",
+        "under",
+        "between",
+        "above",
+        "past"
+      ],
+      "answer": "past",
+      "hint": "Continue beyond the shop without stopping there.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 118",
+        "Category": "Vocabulary",
+        "Skill": "Directions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-080",
+      "question": "The sign points ←. Turn ___.",
+      "options": [
+        "right",
+        "straight",
+        "around",
+        "above",
+        "left"
+      ],
+      "answer": "left",
+      "hint": "Follow the direction shown by the arrow.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 118",
+        "Category": "Vocabulary",
+        "Skill": "Directions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-081",
+      "question": "Yesterday, I ___ a story.",
+      "options": [
+        "write",
+        "writing",
+        "writes",
+        "writed",
+        "wrote"
+      ],
+      "answer": "wrote",
+      "hint": "The time word shows that the action is finished.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 126",
+        "Category": "Grammar",
+        "Skill": "Simple past",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-082",
+      "question": "At 9 p.m., she ___.",
+      "options": [
+        "is sleeping",
+        "were sleeping",
+        "slept",
+        "will sleep",
+        "was sleeping"
+      ],
+      "answer": "was sleeping",
+      "hint": "The action was continuing at a particular past time.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 125",
+        "Category": "Grammar",
+        "Skill": "Past continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-083",
+      "question": "While I washed, a dog ___.",
+      "options": [
+        "was coming",
+        "comes",
+        "coming",
+        "come",
+        "came"
+      ],
+      "answer": "came",
+      "hint": "Choose the short action that interrupted the longer one.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 131",
+        "Category": "Grammar",
+        "Skill": "Past tense contrast",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-084",
+      "question": "He ___ when the phone rang.",
+      "options": [
+        "listened",
+        "is listening",
+        "were listening",
+        "has listened",
+        "was listening"
+      ],
+      "answer": "was listening",
+      "hint": "The listening was already in progress.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 131",
+        "Category": "Grammar",
+        "Skill": "Past continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-085",
+      "question": "Did you ___ the book?",
+      "options": [
+        "found",
+        "finding",
+        "finds",
+        "finded",
+        "find"
+      ],
+      "answer": "find",
+      "hint": "A verb after “did” returns to its basic form.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 131",
+        "Category": "Grammar",
+        "Skill": "Past questions",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-086",
+      "question": "They ___ dance yesterday.",
+      "options": [
+        "doesn't",
+        "weren't",
+        "aren't",
+        "haven't",
+        "didn't"
+      ],
+      "answer": "didn't",
+      "hint": "Use the negative helper for a completed past time.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 126",
+        "Category": "Grammar",
+        "Skill": "Past negative",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-087",
+      "question": "What is the past form of “go”?",
+      "options": [
+        "gone",
+        "goes",
+        "goed",
+        "going",
+        "went"
+      ],
+      "answer": "went",
+      "hint": "This verb changes completely in the past.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 125",
+        "Category": "Grammar",
+        "Skill": "Irregular past",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-088",
+      "question": "At 8 p.m., we ___ dinner.",
+      "options": [
+        "was eating",
+        "are eating",
+        "ate",
+        "will eat",
+        "were eating"
+      ],
+      "answer": "were eating",
+      "hint": "The action was happening at an exact past time.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 126",
+        "Category": "Grammar",
+        "Skill": "Past continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-089",
+      "question": "I stayed home ___ I was sick.",
+      "options": [
+        "but",
+        "and",
+        "or",
+        "so",
+        "because"
+      ],
+      "answer": "because",
+      "hint": "The second part explains the reason for the first.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 141",
+        "Category": "Grammar",
+        "Skill": "Conjunctions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-090",
+      "question": "I tried hard, ___ I lost.",
+      "options": [
+        "because",
+        "and",
+        "so",
+        "or",
+        "but"
+      ],
+      "answer": "but",
+      "hint": "The two ideas have an unexpected contrast.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 141",
+        "Category": "Grammar",
+        "Skill": "Conjunctions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-091",
+      "question": "She bought a pen ___ a pencil.",
+      "options": [
+        "but",
+        "because",
+        "or",
+        "so",
+        "and"
+      ],
+      "answer": "and",
+      "hint": "The sentence adds one item to another.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 141",
+        "Category": "Grammar",
+        "Skill": "Conjunctions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-092",
+      "question": "What is the past form of “give”?",
+      "options": [
+        "gived",
+        "given",
+        "gives",
+        "giving",
+        "gave"
+      ],
+      "answer": "gave",
+      "hint": "This verb changes its middle sound in the past.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 137",
+        "Category": "Grammar",
+        "Skill": "Irregular past",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-093",
+      "question": "What is the past form of “meet”?",
+      "options": [
+        "meet",
+        "moot",
+        "meeted",
+        "meets",
+        "met"
+      ],
+      "answer": "met",
+      "hint": "The past form is shorter than the original word.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 137",
+        "Category": "Grammar",
+        "Skill": "Irregular past",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-094",
+      "question": "What is the past form of “take”?",
+      "options": [
+        "taked",
+        "taken",
+        "takes",
+        "taking",
+        "took"
+      ],
+      "answer": "took",
+      "hint": "Think of the same vowel change as “shake” to “shook.”",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 137",
+        "Category": "Grammar",
+        "Skill": "Irregular past",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-095",
+      "question": "What did she ___?",
+      "options": [
+        "ate",
+        "eaten",
+        "eating",
+        "eats",
+        "eat"
+      ],
+      "answer": "eat",
+      "hint": "The helper already carries the past tense.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 138",
+        "Category": "Grammar",
+        "Skill": "Past questions",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-096",
+      "question": "___ she go yesterday?",
+      "options": [
+        "Does",
+        "Is",
+        "Has",
+        "Was",
+        "Did"
+      ],
+      "answer": "Did",
+      "hint": "The question asks about a finished action.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 138",
+        "Category": "Grammar",
+        "Skill": "Past questions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-097",
+      "question": "Who treats sick people?",
+      "options": [
+        "teacher",
+        "farmer",
+        "artist",
+        "waiter",
+        "doctor"
+      ],
+      "answer": "doctor",
+      "hint": "Think about the worker you visit at a hospital.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 147",
+        "Category": "Vocabulary",
+        "Skill": "Occupations",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-098",
+      "question": "Who puts out fires?",
+      "options": [
+        "doctor",
+        "farmer",
+        "chef",
+        "waiter",
+        "firefighter"
+      ],
+      "answer": "firefighter",
+      "hint": "Think about the worker trained for fire emergencies.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 148",
+        "Category": "Vocabulary",
+        "Skill": "Occupations",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-099",
+      "question": "Who prepares restaurant meals?",
+      "options": [
+        "waiter",
+        "artist",
+        "dentist",
+        "police officer",
+        "chef"
+      ],
+      "answer": "chef",
+      "hint": "This worker usually works in the kitchen.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 148",
+        "Category": "Vocabulary",
+        "Skill": "Occupations",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-100",
+      "question": "Dark ___ may bring rain.",
+      "options": [
+        "carpets",
+        "knives",
+        "tables",
+        "water",
+        "clouds"
+      ],
+      "answer": "clouds",
+      "hint": "Look for something dark that can appear in the sky.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 149",
+        "Category": "Vocabulary",
+        "Skill": "Adjective-noun pairs",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-101",
+      "question": "She ___ a book now.",
+      "options": [
+        "are reading",
+        "reads",
+        "was reading",
+        "will read",
+        "is reading"
+      ],
+      "answer": "is reading",
+      "hint": "The action is happening at this moment, and the subject is singular.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 156",
+        "Category": "Grammar",
+        "Skill": "Present continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-102",
+      "question": "They ___ football now.",
+      "options": [
+        "is playing",
+        "play",
+        "were playing",
+        "played",
+        "are playing"
+      ],
+      "answer": "are playing",
+      "hint": "The subject is plural, and the action is happening now.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 157",
+        "Category": "Grammar",
+        "Skill": "Present continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-103",
+      "question": "There ___ a book here.",
+      "options": [
+        "are",
+        "am",
+        "were",
+        "be",
+        "is"
+      ],
+      "answer": "is",
+      "hint": "Only one object follows the blank.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 157",
+        "Category": "Grammar",
+        "Skill": "There is/are",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-104",
+      "question": "There ___ two books here.",
+      "options": [
+        "is",
+        "am",
+        "was",
+        "be",
+        "are"
+      ],
+      "answer": "are",
+      "hint": "More than one object follows the blank.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 157",
+        "Category": "Grammar",
+        "Skill": "There is/are",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-105",
+      "question": "I enjoy ___ to music.",
+      "options": [
+        "listen",
+        "listened",
+        "listens",
+        "to listen",
+        "listening"
+      ],
+      "answer": "listening",
+      "hint": "The activity word after “enjoy” needs an “-ing” form.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 163",
+        "Category": "Grammar",
+        "Skill": "Verb-ing forms",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-106",
+      "question": "She loves ___ games.",
+      "options": [
+        "play",
+        "played",
+        "plays",
+        "to played",
+        "playing"
+      ],
+      "answer": "playing",
+      "hint": "The activity follows a word expressing strong liking.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 163",
+        "Category": "Grammar",
+        "Skill": "Verb-ing forms",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-107",
+      "question": "They hate ___ dishes.",
+      "options": [
+        "wash",
+        "washed",
+        "washes",
+        "to washed",
+        "washing"
+      ],
+      "answer": "washing",
+      "hint": "The activity word needs the form used after “hate.”",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 164",
+        "Category": "Grammar",
+        "Skill": "Verb-ing forms",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-108",
+      "question": "He dislikes ___ early.",
+      "options": [
+        "wake",
+        "woke",
+        "wakes",
+        "to woke",
+        "waking"
+      ],
+      "answer": "waking",
+      "hint": "Add the activity form while dropping the final silent “e.”",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 164",
+        "Category": "Grammar",
+        "Skill": "Verb-ing forms",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-109",
+      "question": "“Not expensive” means ___.",
+      "options": [
+        "crowded",
+        "bright",
+        "huge",
+        "plain",
+        "cheap"
+      ],
+      "answer": "cheap",
+      "hint": "Think about something that costs only a little money.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 162",
+        "Category": "Vocabulary",
+        "Skill": "Word meanings",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-110",
+      "question": "A reduced-price shopping event is a ___.",
+      "options": [
+        "venue",
+        "career",
+        "design",
+        "trail",
+        "sale"
+      ],
+      "answer": "sale",
+      "hint": "Shops hold this event when goods cost less than usual.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 162",
+        "Category": "Vocabulary",
+        "Skill": "Shopping vocabulary",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-111",
+      "question": "A large outdoor fire is a ___.",
+      "options": [
+        "hallway",
+        "beverage",
+        "bargain",
+        "cloud",
+        "bonfire"
+      ],
+      "answer": "bonfire",
+      "hint": "People may gather around this fire during a celebration.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 168",
+        "Category": "Vocabulary",
+        "Skill": "Word meanings",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-112",
+      "question": "Another word for “valley” is ___.",
+      "options": [
+        "trail",
+        "venue",
+        "plain",
+        "shore",
+        "vale"
+      ],
+      "answer": "vale",
+      "hint": "Think of low land lying between hills.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 168",
+        "Category": "Vocabulary",
+        "Skill": "Synonyms",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-113",
+      "question": "Birds ___ fly.",
+      "options": [
+        "can't",
+        "couldn't",
+        "don't",
+        "weren't",
+        "can"
+      ],
+      "answer": "can",
+      "hint": "The sentence describes a normal ability birds have.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 173",
+        "Category": "Grammar",
+        "Skill": "Ability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-114",
+      "question": "Fish ___ walk on roads.",
+      "options": [
+        "can",
+        "could",
+        "will",
+        "are",
+        "can't"
+      ],
+      "answer": "can't",
+      "hint": "Think about whether fish have legs for this action.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 174",
+        "Category": "Grammar",
+        "Skill": "Inability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-115",
+      "question": "At age five, he ___ swim.",
+      "options": [
+        "can",
+        "will",
+        "is",
+        "must",
+        "could"
+      ],
+      "answer": "could",
+      "hint": "The sentence describes an ability in the past.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 176",
+        "Category": "Grammar",
+        "Skill": "Past ability",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-116",
+      "question": "She was ill, so she ___ go.",
+      "options": [
+        "could",
+        "can",
+        "will",
+        "must",
+        "couldn't"
+      ],
+      "answer": "couldn't",
+      "hint": "Her illness prevented the past action.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 176",
+        "Category": "Grammar",
+        "Skill": "Past inability",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-117",
+      "question": "___ you lend me a pencil?",
+      "options": [
+        "Was",
+        "Did",
+        "Has",
+        "Are",
+        "Could"
+      ],
+      "answer": "Could",
+      "hint": "Choose a modal commonly used for polite requests.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 176",
+        "Category": "Language Function",
+        "Skill": "Polite requests",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-118",
+      "question": "I ___ hear you; the music is loud.",
+      "options": [
+        "can",
+        "could",
+        "will",
+        "am",
+        "can't"
+      ],
+      "answer": "can't",
+      "hint": "The loud music prevents the action.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 173",
+        "Category": "Grammar",
+        "Skill": "Inability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-119",
+      "question": "“Can you dance?” “Yes, I ___.”",
+      "options": [
+        "can't",
+        "do",
+        "am",
+        "will",
+        "can"
+      ],
+      "answer": "can",
+      "hint": "Repeat the helping word used in the question.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 177",
+        "Category": "Grammar",
+        "Skill": "Short answers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-120",
+      "question": "“Could she read?” “No, she ___.”",
+      "options": [
+        "could",
+        "can't",
+        "didn't",
+        "wasn't",
+        "couldn't"
+      ],
+      "answer": "couldn't",
+      "hint": "Keep the same past modal and make it negative.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 176",
+        "Category": "Grammar",
+        "Skill": "Short answers",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-121",
+      "question": "___ old are you?",
+      "options": [
+        "What",
+        "When",
+        "Where",
+        "Who",
+        "How"
+      ],
+      "answer": "How",
+      "hint": "The question asks for someone’s age.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 184",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-122",
+      "question": "___ are you late?",
+      "options": [
+        "When",
+        "Who",
+        "What",
+        "Which",
+        "Why"
+      ],
+      "answer": "Why",
+      "hint": "The expected response will explain a reason.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 184",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-123",
+      "question": "___ book are you reading?",
+      "options": [
+        "Why",
+        "How",
+        "When",
+        "Who",
+        "Which"
+      ],
+      "answer": "Which",
+      "hint": "The speaker wants a choice from available books.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 184",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-124",
+      "question": "___ do you brush your teeth?",
+      "options": [
+        "How much",
+        "How many",
+        "How old",
+        "How long",
+        "How often"
+      ],
+      "answer": "How often",
+      "hint": "The answer should tell the frequency of the action.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 184",
+        "Category": "Grammar",
+        "Skill": "Question words",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-125",
+      "question": "I missed lunch. I am ___.",
+      "options": [
+        "too slowly",
+        "enough time",
+        "quite slowly",
+        "totally agree",
+        "very hungry"
+      ],
+      "answer": "very hungry",
+      "hint": "Think about how someone feels after skipping a meal.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 189",
+        "Category": "Grammar",
+        "Skill": "Intensifiers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-126",
+      "question": "We cannot buy it. It is ___.",
+      "options": [
+        "very hungry",
+        "enough time",
+        "quite happy",
+        "too slowly",
+        "too expensive"
+      ],
+      "answer": "too expensive",
+      "hint": "The price is higher than the buyers can afford.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 190",
+        "Category": "Grammar",
+        "Skill": "Intensifiers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-127",
+      "question": "“Exercise is healthy.” You agree:",
+      "options": [
+        "I disagree",
+        "Not true",
+        "Too bad",
+        "No way",
+        "I agree"
+      ],
+      "answer": "I agree",
+      "hint": "Choose the response that supports the statement.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 190",
+        "Category": "Language Function",
+        "Skill": "Agreeing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-128",
+      "question": "“Homework is fun.” You disagree:",
+      "options": [
+        "I agree",
+        "Well done",
+        "Thank you",
+        "Good luck",
+        "I disagree"
+      ],
+      "answer": "I disagree",
+      "hint": "Choose the response that shows a different opinion.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 190",
+        "Category": "Language Function",
+        "Skill": "Disagreeing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-129",
+      "question": "She ___ sing tomorrow.",
+      "options": [
+        "is",
+        "was",
+        "did",
+        "has",
+        "will"
+      ],
+      "answer": "will",
+      "hint": "The action is planned for a time after today.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 194",
+        "Category": "Grammar",
+        "Skill": "Simple future",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-130",
+      "question": "We ___ help them tomorrow.",
+      "options": [
+        "didn't",
+        "aren't",
+        "weren't",
+        "haven't",
+        "won't"
+      ],
+      "answer": "won't",
+      "hint": "Choose the negative form used for a future action.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 195",
+        "Category": "Grammar",
+        "Skill": "Future negative",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-131",
+      "question": "___ you come tomorrow?",
+      "options": [
+        "Did",
+        "Are",
+        "Have",
+        "Was",
+        "Will"
+      ],
+      "answer": "Will",
+      "hint": "The question asks about a future action.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 195",
+        "Category": "Grammar",
+        "Skill": "Future questions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-132",
+      "question": "I have planned to swim. I am ___ swim.",
+      "options": [
+        "will be",
+        "went to",
+        "have to",
+        "used to",
+        "going to"
+      ],
+      "answer": "going to",
+      "hint": "The decision was made before the speaker said this.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 198",
+        "Category": "Grammar",
+        "Skill": "Going-to future",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-133",
+      "question": "Look at those clouds! It is ___ rain.",
+      "options": [
+        "will be",
+        "went to",
+        "has to",
+        "used to",
+        "going to"
+      ],
+      "answer": "going to",
+      "hint": "Visible evidence suggests what will happen soon.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 198",
+        "Category": "Grammar",
+        "Skill": "Future prediction",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-134",
+      "question": "What is the short form of “will not”?",
+      "options": [
+        "willn't",
+        "wasn't",
+        "didn't",
+        "wouldn't",
+        "won't"
+      ],
+      "answer": "won't",
+      "hint": "Think about the special contraction used with “will.”",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 197",
+        "Category": "Grammar",
+        "Skill": "Contractions",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-135",
+      "question": "We ___ the library tomorrow.",
+      "options": [
+        "visited",
+        "are visit",
+        "were visiting",
+        "have visited",
+        "will visit"
+      ],
+      "answer": "will visit",
+      "hint": "The time word points to the future.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 198",
+        "Category": "Grammar",
+        "Skill": "Simple future",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-136",
+      "question": "Next week, they ___ a test.",
+      "options": [
+        "took",
+        "taking",
+        "takes",
+        "were taking",
+        "will take"
+      ],
+      "answer": "will take",
+      "hint": "The action will happen after the present week.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 198",
+        "Category": "Grammar",
+        "Skill": "Simple future",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-001",
+      "question": "A person who manages a school is a ___.",
+      "options": [
+        "gatekeeper",
+        "shopkeeper",
+        "firefighter",
+        "farmer",
+        "headteacher"
+      ],
+      "answer": "headteacher",
+      "hint": "Think about the person responsible for the whole school.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 4",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-002",
+      "question": "A person who watches an entrance is a ___.",
+      "options": [
+        "headteacher",
+        "doctor",
+        "artist",
+        "waiter",
+        "gatekeeper"
+      ],
+      "answer": "gatekeeper",
+      "hint": "Think about who checks people at a gate.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 4",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-003",
+      "question": "Which word means “very good and enjoyable”?",
+      "options": [
+        "careful",
+        "difficult",
+        "ordinary",
+        "empty",
+        "wonderful"
+      ],
+      "answer": "wonderful",
+      "hint": "Choose a word used for a very enjoyable experience.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 4",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-004",
+      "question": "“We often ___ English books.”",
+      "options": [
+        "reads",
+        "reading",
+        "readed",
+        "reader",
+        "read"
+      ],
+      "answer": "read",
+      "hint": "The subject “we” uses the basic verb form.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 6",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-005",
+      "question": "“Emily ___ every Saturday.”",
+      "options": [
+        "swim",
+        "swimming",
+        "swam",
+        "swimmer",
+        "swims"
+      ],
+      "answer": "swims",
+      "hint": "A singular name needs a verb ending in -s.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 6",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-006",
+      "question": "“My brother ___ lemonade.”",
+      "options": [
+        "don't like",
+        "not likes",
+        "isn't like",
+        "no like",
+        "doesn't like"
+      ],
+      "answer": "doesn't like",
+      "hint": "Use the negative form for one male person.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 6",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-007",
+      "question": "“Can you come ___ Friday?”",
+      "options": [
+        "at",
+        "in",
+        "from",
+        "by",
+        "on"
+      ],
+      "answer": "on",
+      "hint": "Use the preposition normally placed before a day.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 11",
+        "Category": "Fill in the blank",
+        "Skill": "Time preposition",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-008",
+      "question": "“We have lunch ___ 1 p.m.”",
+      "options": [
+        "on",
+        "in",
+        "during",
+        "from",
+        "at"
+      ],
+      "answer": "at",
+      "hint": "An exact clock time takes a specific preposition.",
+      "metadata": {
+        "Unit": "Unit 1",
+        "Unit Name": "Meeting People",
+        "Page": "Pg 11",
+        "Category": "Fill in the blank",
+        "Skill": "Time preposition",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-009",
+      "question": "“This is Sita’s book. It is ___.”",
+      "options": [
+        "his",
+        "theirs",
+        "ours",
+        "its",
+        "hers"
+      ],
+      "answer": "hers",
+      "hint": "The book belongs to one female person.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 18",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive pronoun",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-010",
+      "question": "“That bicycle belongs to Ram. It is ___.”",
+      "options": [
+        "hers",
+        "ours",
+        "theirs",
+        "yours",
+        "his"
+      ],
+      "answer": "his",
+      "hint": "The owner is one male person.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 18",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive pronoun",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-011",
+      "question": "“The children have bags. They are ___ bags.”",
+      "options": [
+        "its",
+        "his",
+        "her",
+        "my",
+        "their"
+      ],
+      "answer": "their",
+      "hint": "Use the possessive word for more than one owner.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 18",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive adjective",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-012",
+      "question": "“The cat moves ___ tail.”",
+      "options": [
+        "his",
+        "their",
+        "our",
+        "your",
+        "its"
+      ],
+      "answer": "its",
+      "hint": "Use the possessive word normally used for an animal.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 18",
+        "Category": "Fill in the blank",
+        "Skill": "Possessive adjective",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-013",
+      "question": "Which word means “stomach”?",
+      "options": [
+        "brain",
+        "lungs",
+        "heart",
+        "hand",
+        "belly"
+      ],
+      "answer": "belly",
+      "hint": "Think about the front part of the body below the chest.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 23",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-014",
+      "question": "Which word means “small pieces”?",
+      "options": [
+        "holds",
+        "bends",
+        "grabs",
+        "talks",
+        "bits"
+      ],
+      "answer": "bits",
+      "hint": "Think about tiny parts of something larger.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 23",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-015",
+      "question": "“Ellen is an actress. ___ is famous.”",
+      "options": [
+        "He",
+        "It",
+        "They",
+        "We",
+        "She"
+      ],
+      "answer": "She",
+      "hint": "Replace one female name with a pronoun.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 25",
+        "Category": "Fill in the blank",
+        "Skill": "Personal pronoun",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-016",
+      "question": "“Daya and Dolma are friends. ___ study together.”",
+      "options": [
+        "She",
+        "He",
+        "It",
+        "Hers",
+        "They"
+      ],
+      "answer": "They",
+      "hint": "Use the pronoun for more than one person.",
+      "metadata": {
+        "Unit": "Unit 2",
+        "Unit Name": "Possession",
+        "Page": "Pg 25",
+        "Category": "Fill in the blank",
+        "Skill": "Personal pronoun",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-017",
+      "question": "Which word means “to save from danger”?",
+      "options": [
+        "prevent",
+        "repeat",
+        "rub",
+        "sneeze",
+        "protect"
+      ],
+      "answer": "protect",
+      "hint": "Choose the word connected with keeping someone safe.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 30",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-018",
+      "question": "Which word means “again and again”?",
+      "options": [
+        "rarely",
+        "quietly",
+        "suddenly",
+        "slowly",
+        "repeatedly"
+      ],
+      "answer": "repeatedly",
+      "hint": "Think about something happening many times.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 30",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-019",
+      "question": "Which word means “not feeling well”?",
+      "options": [
+        "healthy",
+        "active",
+        "pleased",
+        "careful",
+        "sick"
+      ],
+      "answer": "sick",
+      "hint": "Choose the word used when someone needs rest or treatment.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 30",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-020",
+      "question": "Which adverb means “at all times”?",
+      "options": [
+        "never",
+        "sometimes",
+        "rarely",
+        "usually",
+        "always"
+      ],
+      "answer": "always",
+      "hint": "Think of something that happens every single time.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 32",
+        "Category": "Adverbs",
+        "Skill": "Frequency",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-021",
+      "question": "Which adverb means “not at any time”?",
+      "options": [
+        "always",
+        "often",
+        "usually",
+        "sometimes",
+        "never"
+      ],
+      "answer": "never",
+      "hint": "Choose the word showing zero times.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 32",
+        "Category": "Adverbs",
+        "Skill": "Frequency",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-022",
+      "question": "“They ___ at home yesterday.”",
+      "options": [
+        "was",
+        "are",
+        "is",
+        "be",
+        "were"
+      ],
+      "answer": "were",
+      "hint": "The plural subject needs the plural past form of “be.”",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 37",
+        "Category": "Fill in the blank",
+        "Skill": "Past tense",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-023",
+      "question": "“Jamuna ___ at the market yesterday.”",
+      "options": [
+        "were",
+        "is",
+        "are",
+        "be",
+        "was"
+      ],
+      "answer": "was",
+      "hint": "One person needs the singular past form of “be.”",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 37",
+        "Category": "Fill in the blank",
+        "Skill": "Past tense",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-024",
+      "question": "“___ milk was spilled?”",
+      "options": [
+        "How many",
+        "How often",
+        "How old",
+        "How long",
+        "How much"
+      ],
+      "answer": "How much",
+      "hint": "Milk is not normally counted as separate items.",
+      "metadata": {
+        "Unit": "Unit 3",
+        "Unit Name": "Getting Information",
+        "Page": "Pg 38",
+        "Category": "Question words",
+        "Skill": "Quantity",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-025",
+      "question": "Which word means “to repair”?",
+      "options": [
+        "break",
+        "shout",
+        "pretend",
+        "wrap",
+        "mend"
+      ],
+      "answer": "mend",
+      "hint": "Choose the action used to make a broken object usable again.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 42",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-026",
+      "question": "Which word means “to say sorry”?",
+      "options": [
+        "realise",
+        "complain",
+        "congratulate",
+        "introduce",
+        "apologise"
+      ],
+      "answer": "apologise",
+      "hint": "Think about what you do after making a mistake.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 42",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-027",
+      "question": "Which word means “act as if something is true”?",
+      "options": [
+        "repair",
+        "clap",
+        "accept",
+        "request",
+        "pretend"
+      ],
+      "answer": "pretend",
+      "hint": "Think about acting without the situation being real.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 42",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-028",
+      "question": "“___ old is your sister?”",
+      "options": [
+        "What",
+        "Where",
+        "When",
+        "Why",
+        "How"
+      ],
+      "answer": "How",
+      "hint": "Age questions begin with a particular question word.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 45",
+        "Category": "Question words",
+        "Skill": "Age",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-029",
+      "question": "“___ is your birthday?”",
+      "options": [
+        "Who",
+        "Where",
+        "Why",
+        "How many",
+        "When"
+      ],
+      "answer": "When",
+      "hint": "Choose the question word used to ask about time.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 45",
+        "Category": "Question words",
+        "Skill": "Time",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-030",
+      "question": "“___ are you from?”",
+      "options": [
+        "When",
+        "Who",
+        "What",
+        "Why",
+        "Where"
+      ],
+      "answer": "Where",
+      "hint": "Choose the question word used to ask about a place.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 45",
+        "Category": "Question words",
+        "Skill": "Place",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-031",
+      "question": "“My sister makes juice.” Choose the negative verb.",
+      "options": [
+        "don't make",
+        "isn't make",
+        "not makes",
+        "wasn't make",
+        "doesn't make"
+      ],
+      "answer": "doesn't make",
+      "hint": "A singular subject needs “does not” and the basic verb.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 50",
+        "Category": "Negation",
+        "Skill": "Present negative",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-032",
+      "question": "“They enjoyed the trip.” Choose the negative verb.",
+      "options": [
+        "doesn't enjoy",
+        "don't enjoyed",
+        "not enjoy",
+        "weren't enjoy",
+        "didn't enjoy"
+      ],
+      "answer": "didn't enjoy",
+      "hint": "Use “did not” with the basic form of the verb.",
+      "metadata": {
+        "Unit": "Unit 4",
+        "Unit Name": "Requesting and Apologising",
+        "Page": "Pg 50",
+        "Category": "Negation",
+        "Skill": "Past negative",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-033",
+      "question": "Which word congratulates someone’s success?",
+      "options": [
+        "Excuse me",
+        "Never mind",
+        "Be quiet",
+        "Take care",
+        "Well done"
+      ],
+      "answer": "Well done",
+      "hint": "Use the expression said after someone performs successfully.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 53",
+        "Category": "Language function",
+        "Skill": "Congratulating",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-034",
+      "question": "“He ran ___.”",
+      "options": [
+        "quick",
+        "quicker",
+        "quickest",
+        "quickness",
+        "quickly"
+      ],
+      "answer": "quickly",
+      "hint": "The missing word describes how he ran.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 55",
+        "Category": "Fill in the blank",
+        "Skill": "Adverb use",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-035",
+      "question": "“The road is slippery. Walk ___.”",
+      "options": [
+        "loudly",
+        "hungrily",
+        "noisily",
+        "greedily",
+        "carefully"
+      ],
+      "answer": "carefully",
+      "hint": "Choose a safe way of walking on a slippery road.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 55",
+        "Category": "Fill in the blank",
+        "Skill": "Adverb use",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-036",
+      "question": "“The thief entered the house ___.”",
+      "options": [
+        "noisily",
+        "hungrily",
+        "beautifully",
+        "quick",
+        "quietly"
+      ],
+      "answer": "quietly",
+      "hint": "Choose a way that would prevent people from hearing him.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 55",
+        "Category": "Fill in the blank",
+        "Skill": "Adverb use",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-037",
+      "question": "Which word means “beautiful and attractive”?",
+      "options": [
+        "angry",
+        "crowded",
+        "noisy",
+        "empty",
+        "lovely"
+      ],
+      "answer": "lovely",
+      "hint": "Think of a pleasant flower or dress.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 57",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-038",
+      "question": "Which word means “recognise a good quality”?",
+      "options": [
+        "design",
+        "complain",
+        "ignore",
+        "dislike",
+        "appreciate"
+      ],
+      "answer": "appreciate",
+      "hint": "Choose what you do when you value someone’s help.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 57",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-039",
+      "question": "What is the adverb form of “slow”?",
+      "options": [
+        "slower",
+        "slowest",
+        "slowness",
+        "slowed",
+        "slowly"
+      ],
+      "answer": "slowly",
+      "hint": "Many adverbs are made by adding -ly.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 58",
+        "Category": "Word formation",
+        "Skill": "Adverb",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-040",
+      "question": "“Ouch___ That hurts.” Which mark is needed?",
+      "options": [
+        "?",
+        ".",
+        ",",
+        ":",
+        "!"
+      ],
+      "answer": "!",
+      "hint": "The sentence shows a sudden strong feeling.",
+      "metadata": {
+        "Unit": "Unit 5",
+        "Unit Name": "Thanking and Congratulating",
+        "Page": "Pg 61",
+        "Category": "Punctuation",
+        "Skill": "Exclamation mark",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-041",
+      "question": "“___ onions do we need?”",
+      "options": [
+        "How much",
+        "How old",
+        "How often",
+        "How long",
+        "How many"
+      ],
+      "answer": "How many",
+      "hint": "Onions can be counted one by one.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking about Quantity",
+        "Page": "Pg 66",
+        "Category": "Quantity",
+        "Skill": "Countable nouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-042",
+      "question": "“___ cheese do we need?”",
+      "options": [
+        "How many",
+        "How often",
+        "How old",
+        "How far",
+        "How much"
+      ],
+      "answer": "How much",
+      "hint": "Cheese is usually measured rather than counted.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking about Quantity",
+        "Page": "Pg 66",
+        "Category": "Quantity",
+        "Skill": "Uncountable nouns",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-043",
+      "question": "Which noun is uncountable?",
+      "options": [
+        "books",
+        "students",
+        "apples",
+        "packets",
+        "sugar"
+      ],
+      "answer": "sugar",
+      "hint": "Choose the item normally measured by weight.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking about Quantity",
+        "Page": "Pg 66",
+        "Category": "Grammar",
+        "Skill": "Countability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-044",
+      "question": "What is the plural of “child”?",
+      "options": [
+        "childs",
+        "childes",
+        "childrens",
+        "child",
+        "children"
+      ],
+      "answer": "children",
+      "hint": "This noun does not form its plural by adding -s.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking about Quantity",
+        "Page": "Pg 67",
+        "Category": "Grammar",
+        "Skill": "Irregular plural",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-045",
+      "question": "What is the plural of “tooth”?",
+      "options": [
+        "tooths",
+        "toothes",
+        "teeths",
+        "tooth",
+        "teeth"
+      ],
+      "answer": "teeth",
+      "hint": "The middle vowel changes in the plural.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking about Quantity",
+        "Page": "Pg 67",
+        "Category": "Grammar",
+        "Skill": "Irregular plural",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-046",
+      "question": "Which word means “full of light”?",
+      "options": [
+        "tiny",
+        "dark",
+        "quiet",
+        "empty",
+        "bright"
+      ],
+      "answer": "bright",
+      "hint": "Think about a room with many windows and lights.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking about Quantity",
+        "Page": "Pg 70",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-047",
+      "question": "“She is ___ engineer.”",
+      "options": [
+        "a",
+        "the",
+        "some",
+        "any",
+        "an"
+      ],
+      "answer": "an",
+      "hint": "The next word begins with a vowel sound.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking about Quantity",
+        "Page": "Pg 72",
+        "Category": "Articles",
+        "Skill": "Article use",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-048",
+      "question": "“It is ___ nice day.”",
+      "options": [
+        "an",
+        "the",
+        "some",
+        "any",
+        "a"
+      ],
+      "answer": "a",
+      "hint": "The next word begins with a consonant sound.",
+      "metadata": {
+        "Unit": "Unit 6",
+        "Unit Name": "Talking about Quantity",
+        "Page": "Pg 72",
+        "Category": "Articles",
+        "Skill": "Article use",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-049",
+      "question": "What is the comparative form of “cold”?",
+      "options": [
+        "coldest",
+        "more cold",
+        "coldly",
+        "coldness",
+        "colder"
+      ],
+      "answer": "colder",
+      "hint": "Use the form that compares two things.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 79",
+        "Category": "Comparison",
+        "Skill": "Comparative adjective",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-050",
+      "question": "What is the superlative form of “cold”?",
+      "options": [
+        "colder",
+        "most cold",
+        "coldly",
+        "coldness",
+        "coldest"
+      ],
+      "answer": "coldest",
+      "hint": "Use the form that compares one thing with a whole group.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 79",
+        "Category": "Comparison",
+        "Skill": "Superlative adjective",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-051",
+      "question": "What is the comparative form of “good”?",
+      "options": [
+        "gooder",
+        "best",
+        "more good",
+        "well",
+        "better"
+      ],
+      "answer": "better",
+      "hint": "This adjective changes completely when comparing two things.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 79",
+        "Category": "Comparison",
+        "Skill": "Irregular adjective",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-052",
+      "question": "“What is the ___ river?”",
+      "options": [
+        "longer",
+        "long",
+        "more long",
+        "longly",
+        "longest"
+      ],
+      "answer": "longest",
+      "hint": "The question compares one river with all other rivers.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 80",
+        "Category": "Fill in the blank",
+        "Skill": "Superlative adjective",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-053",
+      "question": "Which word means “careful”?",
+      "options": [
+        "bold",
+        "tiny",
+        "bright",
+        "barren",
+        "cautious"
+      ],
+      "answer": "cautious",
+      "hint": "Think about someone who avoids unnecessary danger.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 84",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-054",
+      "question": "Which word means “brave and confident”?",
+      "options": [
+        "cautious",
+        "tiny",
+        "barren",
+        "quiet",
+        "bold"
+      ],
+      "answer": "bold",
+      "hint": "Choose a word for someone who faces challenges confidently.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 84",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-055",
+      "question": "“Which is ___ highest mountain?”",
+      "options": [
+        "a",
+        "an",
+        "some",
+        "any",
+        "the"
+      ],
+      "answer": "the",
+      "hint": "A superlative adjective normally takes a particular article.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 85",
+        "Category": "Articles",
+        "Skill": "Definite article",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-056",
+      "question": "“She is ___ honest girl.”",
+      "options": [
+        "a",
+        "the",
+        "some",
+        "one",
+        "an"
+      ],
+      "answer": "an",
+      "hint": "Listen to the first sound of “honest,” not its first letter.",
+      "metadata": {
+        "Unit": "Unit 7",
+        "Unit Name": "Making Comparisons",
+        "Page": "Pg 85",
+        "Category": "Articles",
+        "Skill": "Article use",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-057",
+      "question": "Which word means “very large”?",
+      "options": [
+        "tiny",
+        "narrow",
+        "light",
+        "empty",
+        "massive"
+      ],
+      "answer": "massive",
+      "hint": "Think about the size of a huge rock or building.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 89",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-058",
+      "question": "Which word means “made or constructed”?",
+      "options": [
+        "broken",
+        "moved",
+        "hidden",
+        "painted",
+        "built"
+      ],
+      "answer": "built",
+      "hint": "Choose the past form connected with making a structure.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 89",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-059",
+      "question": "“The child is hiding ___ the bed.”",
+      "options": [
+        "over",
+        "between",
+        "through",
+        "along",
+        "under"
+      ],
+      "answer": "under",
+      "hint": "The child is lower than the bed.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 90",
+        "Category": "Prepositions",
+        "Skill": "Location",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-060",
+      "question": "“The blue car is ___ the green car.”",
+      "options": [
+        "under",
+        "between",
+        "inside",
+        "above",
+        "behind"
+      ],
+      "answer": "behind",
+      "hint": "Choose the word meaning at the back of something.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 90",
+        "Category": "Prepositions",
+        "Skill": "Location",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-061",
+      "question": "“The house is ___ the trees.”",
+      "options": [
+        "under",
+        "through",
+        "behind",
+        "over",
+        "between"
+      ],
+      "answer": "between",
+      "hint": "The house has trees on two sides.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 90",
+        "Category": "Prepositions",
+        "Skill": "Location",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-062",
+      "question": "“My father is working ___ the kitchen.”",
+      "options": [
+        "on",
+        "under",
+        "between",
+        "over",
+        "in"
+      ],
+      "answer": "in",
+      "hint": "Use the preposition for being inside a room.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 91",
+        "Category": "Prepositions",
+        "Skill": "Location",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-063",
+      "question": "Small drops of liquid are called ___.",
+      "options": [
+        "crystals",
+        "clouds",
+        "feathers",
+        "waves",
+        "droplets"
+      ],
+      "answer": "droplets",
+      "hint": "Think of very tiny drops of water.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 94",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-064",
+      "question": "Small balls of ice falling from clouds are ___.",
+      "options": [
+        "sleet",
+        "vapour",
+        "fog",
+        "rain",
+        "hail"
+      ],
+      "answer": "hail",
+      "hint": "Choose the frozen pieces that fall during some storms.",
+      "metadata": {
+        "Unit": "Unit 8",
+        "Unit Name": "Describing Location",
+        "Page": "Pg 94",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-065",
+      "question": "Illegal killing of wild animals is called ___.",
+      "options": [
+        "hunting",
+        "farming",
+        "fishing",
+        "grazing",
+        "poaching"
+      ],
+      "answer": "poaching",
+      "hint": "The action is against wildlife protection laws.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 100",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-066",
+      "question": "Which word means “slightly wet”?",
+      "options": [
+        "dry",
+        "furry",
+        "thick",
+        "illegal",
+        "damp"
+      ],
+      "answer": "damp",
+      "hint": "Think of clothes that are wet but not dripping.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 100",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-067",
+      "question": "A group of young animals born together is a ___.",
+      "options": [
+        "herd",
+        "flock",
+        "pack",
+        "crowd",
+        "litter"
+      ],
+      "answer": "litter",
+      "hint": "This word is often used for puppies or kittens.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 100",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-068",
+      "question": "“My sister ___ tennis.”",
+      "options": [
+        "play",
+        "playing",
+        "played",
+        "player",
+        "plays"
+      ],
+      "answer": "plays",
+      "hint": "A singular subject needs a verb ending in -s.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 102",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-069",
+      "question": "“They ___ lunch at noon.”",
+      "options": [
+        "eats",
+        "eating",
+        "ate",
+        "eaten",
+        "eat"
+      ],
+      "answer": "eat",
+      "hint": "The plural subject uses the basic verb form.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 102",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-070",
+      "question": "“Mr Rai ___ English.”",
+      "options": [
+        "teach",
+        "teaching",
+        "taught",
+        "teacher",
+        "teaches"
+      ],
+      "answer": "teaches",
+      "hint": "A verb ending in -ch takes -es for one person.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 102",
+        "Category": "Fill in the blank",
+        "Skill": "Present simple",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-071",
+      "question": "“My brother has a job.” Choose the negative verb.",
+      "options": [
+        "don't have",
+        "isn't have",
+        "not has",
+        "didn't had",
+        "doesn't have"
+      ],
+      "answer": "doesn't have",
+      "hint": "Use “does not” with the basic form of the verb.",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 107",
+        "Category": "Negation",
+        "Skill": "Present negative",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-072",
+      "question": "“___ your brother go to school?”",
+      "options": [
+        "Do",
+        "Is",
+        "Are",
+        "Did",
+        "Does"
+      ],
+      "answer": "Does",
+      "hint": "The subject is one person, and the main verb is “go.”",
+      "metadata": {
+        "Unit": "Unit 9",
+        "Unit Name": "Facts and Truths",
+        "Page": "Pg 108",
+        "Category": "Questions",
+        "Skill": "Present simple",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-073",
+      "question": "Which word begins a cooking command?",
+      "options": [
+        "Added",
+        "Adding",
+        "Adds",
+        "Addition",
+        "Add"
+      ],
+      "answer": "Add",
+      "hint": "Instructions normally start with the basic verb.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 111",
+        "Category": "Instructions",
+        "Skill": "Imperative",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-074",
+      "question": "What should you do after cooking one side of a pancake?",
+      "options": [
+        "Break it",
+        "Freeze it",
+        "Wash it",
+        "Throw it",
+        "Flip it"
+      ],
+      "answer": "Flip it",
+      "hint": "Think about how the other side reaches the hot pan.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 111",
+        "Category": "Instructions",
+        "Skill": "Sequence",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-075",
+      "question": "“___ in a queue at the bus stop.”",
+      "options": [
+        "Sit",
+        "Fall",
+        "Cheat",
+        "Bully",
+        "Stand"
+      ],
+      "answer": "Stand",
+      "hint": "Choose the safe and orderly action at a bus stop.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 113",
+        "Category": "Fill in the blank",
+        "Skill": "Imperative",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-076",
+      "question": "“___ noisy during lessons.”",
+      "options": [
+        "Don't sit",
+        "Be always",
+        "Do be",
+        "Not being",
+        "Don't be"
+      ],
+      "answer": "Don't be",
+      "hint": "Use a command that tells someone to avoid noise.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 113",
+        "Category": "Fill in the blank",
+        "Skill": "Negative imperative",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-077",
+      "question": "“___ attention to your teacher.”",
+      "options": [
+        "Eat",
+        "Stand",
+        "Fall",
+        "Cheat",
+        "Pay"
+      ],
+      "answer": "Pay",
+      "hint": "Think of the verb normally used before “attention.”",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 113",
+        "Category": "Fill in the blank",
+        "Skill": "Collocation",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-078",
+      "question": "“Go ___ ahead.”",
+      "options": [
+        "under",
+        "between",
+        "inside",
+        "behind",
+        "straight"
+      ],
+      "answer": "straight",
+      "hint": "Choose the word meaning forward without turning.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 118",
+        "Category": "Directions",
+        "Skill": "Direction word",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-079",
+      "question": "“Walk ___ the bridge.”",
+      "options": [
+        "under",
+        "behind",
+        "between",
+        "out",
+        "across"
+      ],
+      "answer": "across",
+      "hint": "The movement starts on one side and ends on the other.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 118",
+        "Category": "Directions",
+        "Skill": "Preposition",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-080",
+      "question": "“The bank is ___ the library.”",
+      "options": [
+        "inside",
+        "through",
+        "under",
+        "along",
+        "opposite"
+      ],
+      "answer": "opposite",
+      "hint": "Choose the word for two places facing each other.",
+      "metadata": {
+        "Unit": "Unit 10",
+        "Unit Name": "Instructions and Directions",
+        "Page": "Pg 118",
+        "Category": "Prepositions",
+        "Skill": "Location",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-081",
+      "question": "What is the past form of “live”?",
+      "options": [
+        "lives",
+        "living",
+        "liven",
+        "livest",
+        "lived"
+      ],
+      "answer": "lived",
+      "hint": "A regular past verb normally ends in -ed.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 125",
+        "Category": "Past tense",
+        "Skill": "Regular verb",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-082",
+      "question": "What is the past form of “ask”?",
+      "options": [
+        "asks",
+        "asking",
+        "asken",
+        "ask",
+        "asked"
+      ],
+      "answer": "asked",
+      "hint": "Add the regular past ending.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 125",
+        "Category": "Past tense",
+        "Skill": "Regular verb",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-083",
+      "question": "“I ___ a letter yesterday.”",
+      "options": [
+        "am writing",
+        "will write",
+        "write",
+        "is writing",
+        "was writing"
+      ],
+      "answer": "was writing",
+      "hint": "The action was continuing at a past time.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 125",
+        "Category": "Fill in the blank",
+        "Skill": "Past continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-084",
+      "question": "“They ___ football yesterday.”",
+      "options": [
+        "was playing",
+        "are playing",
+        "is playing",
+        "will play",
+        "were playing"
+      ],
+      "answer": "were playing",
+      "hint": "A plural subject uses the plural past form of “be.”",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 126",
+        "Category": "Fill in the blank",
+        "Skill": "Past continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-085",
+      "question": "Which word means “touch gently”?",
+      "options": [
+        "rush",
+        "push",
+        "hit",
+        "throw",
+        "pat"
+      ],
+      "answer": "pat",
+      "hint": "Think about gently touching a pet’s head.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 130",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-086",
+      "question": "Which word means “something liked the most”?",
+      "options": [
+        "ordinary",
+        "unwanted",
+        "difficult",
+        "strange",
+        "favourite"
+      ],
+      "answer": "favourite",
+      "hint": "Choose the word for your most liked food or game.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 130",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-087",
+      "question": "“While I washed dishes, a dog ___ in.”",
+      "options": [
+        "was coming",
+        "comes",
+        "come",
+        "is coming",
+        "came"
+      ],
+      "answer": "came",
+      "hint": "The shorter action interrupted a continuing action.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 131",
+        "Category": "Fill in the blank",
+        "Skill": "Past simple",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-088",
+      "question": "“She ___ vegetables when she cut her finger.”",
+      "options": [
+        "cut",
+        "cuts",
+        "is cutting",
+        "will cut",
+        "was cutting"
+      ],
+      "answer": "was cutting",
+      "hint": "The cutting activity was already in progress.",
+      "metadata": {
+        "Unit": "Unit 11",
+        "Unit Name": "Narrating Past Events",
+        "Page": "Pg 131",
+        "Category": "Fill in the blank",
+        "Skill": "Past continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-089",
+      "question": "Which word means “the oldest child”?",
+      "options": [
+        "youngest",
+        "smallest",
+        "tallest",
+        "newest",
+        "eldest"
+      ],
+      "answer": "eldest",
+      "hint": "Think about the child born first in a family.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 136",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-090",
+      "question": "A tool used for chopping wood is an ___.",
+      "options": [
+        "hoe",
+        "rake",
+        "spade",
+        "knife",
+        "axe"
+      ],
+      "answer": "axe",
+      "hint": "Choose the heavy tool with a metal blade and handle.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 136",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-091",
+      "question": "A piece of bread is called a ___.",
+      "options": [
+        "cake",
+        "bowl",
+        "slice",
+        "cup",
+        "loaf"
+      ],
+      "answer": "loaf",
+      "hint": "Think about bread before it is cut into slices.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 136",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-092",
+      "question": "What is the past form of “give”?",
+      "options": [
+        "gived",
+        "gives",
+        "giving",
+        "given",
+        "gave"
+      ],
+      "answer": "gave",
+      "hint": "This verb changes its vowel in the past.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 137",
+        "Category": "Past tense",
+        "Skill": "Irregular verb",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-093",
+      "question": "What is the past form of “eat”?",
+      "options": [
+        "eated",
+        "eaten",
+        "eats",
+        "eating",
+        "ate"
+      ],
+      "answer": "ate",
+      "hint": "Choose the form used for a completed meal yesterday.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 137",
+        "Category": "Past tense",
+        "Skill": "Irregular verb",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-094",
+      "question": "“I stayed home ___ I was sick.”",
+      "options": [
+        "but",
+        "and",
+        "or",
+        "so",
+        "because"
+      ],
+      "answer": "because",
+      "hint": "The second part explains the reason.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 141",
+        "Category": "Conjunctions",
+        "Skill": "Giving reasons",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-095",
+      "question": "“I lost the match, ___ I am happy.”",
+      "options": [
+        "because",
+        "and",
+        "so",
+        "or",
+        "but"
+      ],
+      "answer": "but",
+      "hint": "The two ideas are different or surprising together.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 141",
+        "Category": "Conjunctions",
+        "Skill": "Contrast",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-096",
+      "question": "“He bought a pen ___ a pencil.”",
+      "options": [
+        "but",
+        "because",
+        "or",
+        "although",
+        "and"
+      ],
+      "answer": "and",
+      "hint": "The sentence joins two similar objects.",
+      "metadata": {
+        "Unit": "Unit 12",
+        "Unit Name": "Giving Reasons",
+        "Page": "Pg 141",
+        "Category": "Conjunctions",
+        "Skill": "Adding information",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-097",
+      "question": "A person who treats sick people is a ___.",
+      "options": [
+        "farmer",
+        "waiter",
+        "artist",
+        "painter",
+        "doctor"
+      ],
+      "answer": "doctor",
+      "hint": "Think about the professional who works with patients.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 146",
+        "Category": "Jobs",
+        "Skill": "Occupation",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-098",
+      "question": "A person who prepares restaurant meals is a ___.",
+      "options": [
+        "waiter",
+        "dentist",
+        "artist",
+        "farmer",
+        "chef"
+      ],
+      "answer": "chef",
+      "hint": "This person mainly works in a kitchen.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 147",
+        "Category": "Jobs",
+        "Skill": "Occupation",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-099",
+      "question": "A person who serves restaurant customers is a ___.",
+      "options": [
+        "chef",
+        "doctor",
+        "farmer",
+        "teacher",
+        "waiter"
+      ],
+      "answer": "waiter",
+      "hint": "This person brings menus, food and bills to tables.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 147",
+        "Category": "Jobs",
+        "Skill": "Occupation",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-100",
+      "question": "Which word means “a job followed for years”?",
+      "options": [
+        "beverage",
+        "venue",
+        "treatment",
+        "crime",
+        "career"
+      ],
+      "answer": "career",
+      "hint": "Think about someone’s long-term working life.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 147",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-101",
+      "question": "Which word means “become an expert”?",
+      "options": [
+        "treat",
+        "protect",
+        "prepare",
+        "produce",
+        "specialise"
+      ],
+      "answer": "specialise",
+      "hint": "Choose the word for focusing deeply on one field.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 147",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-102",
+      "question": "In “a tall tree,” which word is the adjective?",
+      "options": [
+        "tree",
+        "a",
+        "is",
+        "an",
+        "tall"
+      ],
+      "answer": "tall",
+      "hint": "Find the word describing the tree’s height.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 149",
+        "Category": "Adjectives",
+        "Skill": "Word class",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-103",
+      "question": "“Listen! Someone ___ on the door.”",
+      "options": [
+        "knocks",
+        "knocked",
+        "will knock",
+        "was knock",
+        "is knocking"
+      ],
+      "answer": "is knocking",
+      "hint": "The word “Listen!” shows the action is happening now.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 157",
+        "Category": "Fill in the blank",
+        "Skill": "Present continuous",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-104",
+      "question": "“___ two swings in the playground.”",
+      "options": [
+        "There is",
+        "It is",
+        "They are",
+        "Here is",
+        "There are"
+      ],
+      "answer": "There are",
+      "hint": "The noun following the blank is plural.",
+      "metadata": {
+        "Unit": "Unit 13",
+        "Unit Name": "People and Places",
+        "Page": "Pg 157",
+        "Category": "Fill in the blank",
+        "Skill": "There is/are",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-105",
+      "question": "A time when goods have lower prices is a ___.",
+      "options": [
+        "bargain",
+        "market",
+        "offer",
+        "weekend",
+        "sale"
+      ],
+      "answer": "sale",
+      "hint": "Think about a shop reducing prices for a period.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 162",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-106",
+      "question": "Which word means “not expensive”?",
+      "options": [
+        "crowded",
+        "branded",
+        "casual",
+        "frustrating",
+        "cheap"
+      ],
+      "answer": "cheap",
+      "hint": "Choose the opposite of expensive.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 162",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-107",
+      "question": "Which word means “fair and sensible”?",
+      "options": [
+        "expensive",
+        "crowded",
+        "crazy",
+        "frustrating",
+        "reasonable"
+      ],
+      "answer": "reasonable",
+      "hint": "Think about a price that is neither too high nor too low.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 162",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-108",
+      "question": "Which word means “causing annoyance”?",
+      "options": [
+        "pleasant",
+        "reasonable",
+        "cheaper",
+        "special",
+        "frustrating"
+      ],
+      "answer": "frustrating",
+      "hint": "Choose the feeling caused by a difficult shopping experience.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 162",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-109",
+      "question": "“Prabhu enjoys ___ badminton.”",
+      "options": [
+        "play",
+        "played",
+        "plays",
+        "to played",
+        "playing"
+      ],
+      "answer": "playing",
+      "hint": "After “enjoy,” use the -ing form.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 164",
+        "Category": "Fill in the blank",
+        "Skill": "Verb-ing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-110",
+      "question": "“I love ___.”",
+      "options": [
+        "dance",
+        "danced",
+        "dances",
+        "to danced",
+        "dancing"
+      ],
+      "answer": "dancing",
+      "hint": "After “love,” an activity can use the -ing form.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 164",
+        "Category": "Fill in the blank",
+        "Skill": "Verb-ing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-111",
+      "question": "“She dislikes ___ homework.”",
+      "options": [
+        "do",
+        "does",
+        "did",
+        "done",
+        "doing"
+      ],
+      "answer": "doing",
+      "hint": "After “dislike,” use the -ing form of the activity.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 164",
+        "Category": "Fill in the blank",
+        "Skill": "Verb-ing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-112",
+      "question": "Which word means “a large outdoor fire”?",
+      "options": [
+        "trail",
+        "vale",
+        "blaze",
+        "spark",
+        "bonfire"
+      ],
+      "answer": "bonfire",
+      "hint": "Think about a fire made outside for celebration.",
+      "metadata": {
+        "Unit": "Unit 14",
+        "Unit Name": "Our Likes and Dislikes",
+        "Page": "Pg 168",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-113",
+      "question": "Difficulty hearing is a hearing ___.",
+      "options": [
+        "excellence",
+        "admiration",
+        "paralysis",
+        "equipment",
+        "disability"
+      ],
+      "answer": "disability",
+      "hint": "Choose the word describing a condition that limits an ability.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 171",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-114",
+      "question": "People taking part in sports are ___.",
+      "options": [
+        "experts",
+        "doctors",
+        "guides",
+        "artists",
+        "athletes"
+      ],
+      "answer": "athletes",
+      "hint": "Think about people trained to compete in games.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 171",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-115",
+      "question": "Being unable to move part of the body is ___.",
+      "options": [
+        "admiration",
+        "excellence",
+        "competition",
+        "equipment",
+        "paralysis"
+      ],
+      "answer": "paralysis",
+      "hint": "Choose the condition affecting body movement.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 171",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-116",
+      "question": "“I ___ speak Chinese. I learned it.”",
+      "options": [
+        "can't",
+        "couldn't",
+        "won't",
+        "don't",
+        "can"
+      ],
+      "answer": "can",
+      "hint": "The second sentence shows the speaker has the skill.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 173",
+        "Category": "Fill in the blank",
+        "Skill": "Ability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-117",
+      "question": "“He ___ jump because his leg hurts.”",
+      "options": [
+        "can",
+        "could",
+        "will",
+        "does",
+        "can't"
+      ],
+      "answer": "can't",
+      "hint": "The injury prevents him from doing the action.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 174",
+        "Category": "Fill in the blank",
+        "Skill": "Ability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-118",
+      "question": "“Fish ___ swim.”",
+      "options": [
+        "can't",
+        "couldn't",
+        "won't",
+        "aren't",
+        "can"
+      ],
+      "answer": "can",
+      "hint": "Choose the word for a natural ability fish have.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 174",
+        "Category": "Fill in the blank",
+        "Skill": "Ability",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-119",
+      "question": "A small useful tool is a ___.",
+      "options": [
+        "flash",
+        "splash",
+        "forecast",
+        "number",
+        "gadget"
+      ],
+      "answer": "gadget",
+      "hint": "Think about a small electronic device with a purpose.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 175",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-120",
+      "question": "“She ___ drive when she was five.”",
+      "options": [
+        "can't",
+        "won't",
+        "doesn't",
+        "isn't",
+        "couldn't"
+      ],
+      "answer": "couldn't",
+      "hint": "The sentence describes an ability she did not have in the past.",
+      "metadata": {
+        "Unit": "Unit 15",
+        "Unit Name": "Expressing Ability",
+        "Page": "Pg 176",
+        "Category": "Fill in the blank",
+        "Skill": "Past ability",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-121",
+      "question": "A picture of a person is called a ___.",
+      "options": [
+        "landscape",
+        "sculpture",
+        "poster",
+        "map",
+        "portrait"
+      ],
+      "answer": "portrait",
+      "hint": "Think about a painting showing someone’s face or body.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 182",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-122",
+      "question": "A family member who lived long ago is an ___.",
+      "options": [
+        "artist",
+        "courtier",
+        "painter",
+        "foreigner",
+        "ancestor"
+      ],
+      "answer": "ancestor",
+      "hint": "Think about people from earlier generations of your family.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 182",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-123",
+      "question": "Someone wanting to know more is ___.",
+      "options": [
+        "nervous",
+        "disappointed",
+        "angry",
+        "careless",
+        "curious"
+      ],
+      "answer": "curious",
+      "hint": "Choose the feeling that makes someone ask questions.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 182",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-124",
+      "question": "“___ old are you?”",
+      "options": [
+        "What",
+        "Why",
+        "Where",
+        "When",
+        "How"
+      ],
+      "answer": "How",
+      "hint": "Age questions use a fixed question-word pattern.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 184",
+        "Category": "Question words",
+        "Skill": "Age",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-125",
+      "question": "“___ are you absent?”",
+      "options": [
+        "When",
+        "Who",
+        "What",
+        "How many",
+        "Why"
+      ],
+      "answer": "Why",
+      "hint": "Choose the word used to ask for a reason.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 184",
+        "Category": "Question words",
+        "Skill": "Reason",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-126",
+      "question": "“___ do you brush your teeth?”",
+      "options": [
+        "How much",
+        "How old",
+        "How long",
+        "How many",
+        "How often"
+      ],
+      "answer": "How often",
+      "hint": "The question asks how frequently something happens.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 184",
+        "Category": "Question words",
+        "Skill": "Frequency",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-127",
+      "question": "Which word means “trained to follow rules”?",
+      "options": [
+        "connected",
+        "bored",
+        "strong",
+        "curious",
+        "disciplined"
+      ],
+      "answer": "disciplined",
+      "hint": "Think about someone who follows routines and instructions.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 189",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-128",
+      "question": "“The house costs too much. It is ___.”",
+      "options": [
+        "very hungry",
+        "quite happy",
+        "too slowly",
+        "enough time",
+        "too expensive"
+      ],
+      "answer": "too expensive",
+      "hint": "The price is higher than the buyer can accept.",
+      "metadata": {
+        "Unit": "Unit 16",
+        "Unit Name": "Agreeing and Disagreeing",
+        "Page": "Pg 190",
+        "Category": "Intensifiers",
+        "Skill": "Degree",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-129",
+      "question": "The gases surrounding Earth form the ___.",
+      "options": [
+        "planet",
+        "temperature",
+        "factory",
+        "century",
+        "atmosphere"
+      ],
+      "answer": "atmosphere",
+      "hint": "Think about the layer of air around our planet.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 193",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-130",
+      "question": "A period of one hundred years is a ___.",
+      "options": [
+        "decade",
+        "month",
+        "season",
+        "week",
+        "century"
+      ],
+      "answer": "century",
+      "hint": "Ten decades make one of these periods.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 193",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-131",
+      "question": "How hot or cold something is means its ___.",
+      "options": [
+        "atmosphere",
+        "oxygen",
+        "climate",
+        "weather",
+        "temperature"
+      ],
+      "answer": "temperature",
+      "hint": "A thermometer measures this.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 193",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-132",
+      "question": "Suitable for people to live in means ___.",
+      "options": [
+        "available",
+        "natural",
+        "possible",
+        "comfortable",
+        "habitable"
+      ],
+      "answer": "habitable",
+      "hint": "Choose a word describing a place where humans can live.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 193",
+        "Category": "Vocabulary",
+        "Skill": "Meaning",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-133",
+      "question": "“They ___ fruit tomorrow.”",
+      "options": [
+        "will ate",
+        "are eat",
+        "eating will",
+        "ate will",
+        "will eat"
+      ],
+      "answer": "will eat",
+      "hint": "Use “will” followed by the basic verb.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 195",
+        "Category": "Fill in the blank",
+        "Skill": "Simple future",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "ENG5-134",
+      "question": "“We ___ you tomorrow.”",
+      "options": [
+        "don't helped",
+        "not help",
+        "didn't help",
+        "aren't help",
+        "won't help"
+      ],
+      "answer": "won't help",
+      "hint": "Use the short negative form of “will.”",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 195",
+        "Category": "Fill in the blank",
+        "Skill": "Future negative",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-135",
+      "question": "Dark clouds are gathering. It is ___.",
+      "options": [
+        "will raining",
+        "rained now",
+        "rain yesterday",
+        "rains never",
+        "going to rain"
+      ],
+      "answer": "going to rain",
+      "hint": "Use the future form for a prediction based on visible evidence.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 199",
+        "Category": "Fill in the blank",
+        "Skill": "Going-to future",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "ENG5-136",
+      "question": "“I have planned it. I am ___ tomorrow.”",
+      "options": [
+        "will swimming",
+        "swim yesterday",
+        "swims now",
+        "was swimming",
+        "going to swim"
+      ],
+      "answer": "going to swim",
+      "hint": "Use the form commonly used for an existing plan.",
+      "metadata": {
+        "Unit": "Unit 17",
+        "Unit Name": "Future Plans",
+        "Page": "Pg 199",
+        "Category": "Fill in the blank",
+        "Skill": "Going-to future",
+        "Difficulty": "Medium"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2056 @@
+{
+  "title": "WORD SHOOTER",
+  "subtitle": "GRADE 3 Math ADVENTURE",
+  "questions": [
+    {
+      "id": "MATH3-001",
+      "question": "How many minutes are in 1 hour?",
+      "options": [30.0, 45.0, 90.0, 100.0, 60.0],
+      "answer": 60.0,
+      "hint": "Think about one full turn of the minute hand.",
+      "metadata": {
+        "Chapter": "Ch 1",
+        "Lesson": "Time 1",
+        "Page": "Pg 3",
+        "Category": "Time",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-002",
+      "question": "How many seconds are in 2 minutes?",
+      "options": [60.0, 90.0, 100.0, 180.0, 120.0],
+      "answer": 120.0,
+      "hint": "Multiply the number of minutes by 60.",
+      "metadata": {
+        "Chapter": "Ch 1",
+        "Lesson": "Time 1",
+        "Page": "Pg 3",
+        "Category": "Time",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-003",
+      "question": "How many minutes are in 3 hours?",
+      "options": [120.0, 160.0, 240.0, 300.0, 180.0],
+      "answer": 180.0,
+      "hint": "Each hour contains 60 minutes.",
+      "metadata": {
+        "Chapter": "Ch 1",
+        "Lesson": "Time 1",
+        "Page": "Pg 3",
+        "Category": "Time",
+        "Skill": "Unit conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-004",
+      "question": "What time is quarter past seven?",
+      "options": ["07:30:00", "07:45:00", "06:45:00", "08:15:00", "07:15:00"],
+      "answer": "07:15:00",
+      "hint": "A quarter of an hour is 15 minutes.",
+      "metadata": {
+        "Chapter": "Ch 1",
+        "Lesson": "Time 1",
+        "Page": "Pg 1",
+        "Category": "Time",
+        "Skill": "Reading time",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-005",
+      "question": "What time is half past three?",
+      "options": ["03:15:00", "03:45:00", "02:30:00", "04:30:00", "03:30:00"],
+      "answer": "03:30:00",
+      "hint": "Half an hour contains 30 minutes.",
+      "metadata": {
+        "Chapter": "Ch 1",
+        "Lesson": "Time 1",
+        "Page": "Pg 1",
+        "Category": "Time",
+        "Skill": "Reading time",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-006",
+      "question": "What is 5:45 called?",
+      "options": [
+        "Half past five",
+        "Quarter past five",
+        "Quarter to five",
+        "Six o'clock",
+        "Quarter to six"
+      ],
+      "answer": "Quarter to six",
+      "hint": "There are 15 minutes left before the next hour.",
+      "metadata": {
+        "Chapter": "Ch 1",
+        "Lesson": "Time 1",
+        "Page": "Pg 1",
+        "Category": "Time",
+        "Skill": "Reading time",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-007",
+      "question": "What is the largest three-digit number?",
+      "options": [100.0, 900.0, 1000.0, 990.0, 999.0],
+      "answer": 999.0,
+      "hint": "The next number begins the four-digit numbers.",
+      "metadata": {
+        "Chapter": "Ch 2",
+        "Lesson": "Numbers",
+        "Page": "Pg 9",
+        "Category": "Number sense",
+        "Skill": "Number range",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-008",
+      "question": "What is the smallest four-digit number?",
+      "options": [999.0, 1001.0, 900.0, 1111.0, 1000.0],
+      "answer": 1000.0,
+      "hint": "It comes immediately after the largest three-digit number.",
+      "metadata": {
+        "Chapter": "Ch 2",
+        "Lesson": "Numbers",
+        "Page": "Pg 9",
+        "Category": "Number sense",
+        "Skill": "Number range",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-009",
+      "question": "What is the place value of 8 in 54,875?",
+      "options": [8.0, 80.0, 8000.0, 80000.0, 800.0],
+      "answer": 800.0,
+      "hint": "Count the places from the right, beginning with ones.",
+      "metadata": {
+        "Chapter": "Ch 2",
+        "Lesson": "Numbers",
+        "Page": "Pg 22",
+        "Category": "Place value",
+        "Skill": "Place value",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-010",
+      "question": "What is the place value of 7 in 79,053?",
+      "options": [7000.0, 700.0, 70.0, 7.0, 70000.0],
+      "answer": 70000.0,
+      "hint": "The digit is in the ten-thousands place.",
+      "metadata": {
+        "Chapter": "Ch 2",
+        "Lesson": "Numbers",
+        "Page": "Pg 21",
+        "Category": "Place value",
+        "Skill": "Place value",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-011",
+      "question": "Which number has 2 thousands, 3 hundreds, 2 tens and 4 ones?",
+      "options": [2234.0, 2342.0, 3224.0, 2034.0, 2324.0],
+      "answer": 2324.0,
+      "hint": "Put each digit in its correct place.",
+      "metadata": {
+        "Chapter": "Ch 2",
+        "Lesson": "Numbers",
+        "Page": "Pg 15",
+        "Category": "Place value",
+        "Skill": "Number formation",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-012",
+      "question": "What numeral represents three thousand twenty-five?",
+      "options": [3250.0, 3005.0, 3205.0, 3520.0, 3025.0],
+      "answer": 3025.0,
+      "hint": "Use zero as a placeholder in the hundreds place.",
+      "metadata": {
+        "Chapter": "Ch 2",
+        "Lesson": "Numbers",
+        "Page": "Pg 18",
+        "Category": "Number sense",
+        "Skill": "Number names",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-013",
+      "question": "Which symbol completes 136 ___ 234?",
+      "options": [">", "<", "+", "−", "<"],
+      "answer": "<",
+      "hint": "Compare the hundreds digits first.",
+      "metadata": {
+        "Chapter": "Ch 3",
+        "Lesson": "Comparing Numbers",
+        "Page": "Pg 27",
+        "Category": "Comparison",
+        "Skill": "Compare numbers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-014",
+      "question": "Which symbol completes 4244 ___ 4234?",
+      "options": ["<", "=", "+", "−", ">"],
+      "answer": ">",
+      "hint": "The thousands and hundreds digits match, so compare the tens.",
+      "metadata": {
+        "Chapter": "Ch 3",
+        "Lesson": "Comparing Numbers",
+        "Page": "Pg 28",
+        "Category": "Comparison",
+        "Skill": "Compare numbers",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-015",
+      "question": "Which symbol completes 705 ___ 705?",
+      "options": [">", "<", "+", "−", "="],
+      "answer": "=",
+      "hint": "Both numbers have exactly the same digits.",
+      "metadata": {
+        "Chapter": "Ch 3",
+        "Lesson": "Comparing Numbers",
+        "Page": "Pg 38",
+        "Category": "Comparison",
+        "Skill": "Equal numbers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-016",
+      "question": "Which number is greater?",
+      "options": [8463.0, 8167.0, 8091.0, 6993.0, 8586.0],
+      "answer": 8586.0,
+      "hint": "Compare the thousands and then the hundreds digits.",
+      "metadata": {
+        "Chapter": "Ch 3",
+        "Lesson": "Comparing Numbers",
+        "Page": "Pg 31",
+        "Category": "Comparison",
+        "Skill": "Identify greater",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-017",
+      "question": "Which number is smaller?",
+      "options": [5213.0, 5311.0, 5221.0, 6211.0, 5211.0],
+      "answer": 5211.0,
+      "hint": "The first two digits match, so check the remaining digits.",
+      "metadata": {
+        "Chapter": "Ch 3",
+        "Lesson": "Comparing Numbers",
+        "Page": "Pg 30",
+        "Category": "Comparison",
+        "Skill": "Identify smaller",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-018",
+      "question": "Which is the greatest number?",
+      "options": [854.0, 781.0, 705.0, 529.0, 954.0],
+      "answer": 954.0,
+      "hint": "Look for the largest hundreds digit.",
+      "metadata": {
+        "Chapter": "Ch 3",
+        "Lesson": "Comparing Numbers",
+        "Page": "Pg 38",
+        "Category": "Comparison",
+        "Skill": "Identify greatest",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-019",
+      "question": "What comes next: 10, 12, 14, 16, 18, ___?",
+      "options": [19.0, 21.0, 22.0, 24.0, 20.0],
+      "answer": 20.0,
+      "hint": "Find how much is added each time.",
+      "metadata": {
+        "Chapter": "Ch 4",
+        "Lesson": "Number Patterns",
+        "Page": "Pg 33",
+        "Category": "Patterns",
+        "Skill": "Continue pattern",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-020",
+      "question": "What comes next: 2, 7, 12, 17, ___?",
+      "options": [19.0, 20.0, 21.0, 24.0, 22.0],
+      "answer": 22.0,
+      "hint": "Compare each number with the number before it.",
+      "metadata": {
+        "Chapter": "Ch 4",
+        "Lesson": "Number Patterns",
+        "Page": "Pg 34",
+        "Category": "Patterns",
+        "Skill": "Continue pattern",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-021",
+      "question": "What comes next: 15, 20, 25, 30, ___?",
+      "options": [32.0, 34.0, 40.0, 45.0, 35.0],
+      "answer": 35.0,
+      "hint": "The same amount is added at every step.",
+      "metadata": {
+        "Chapter": "Ch 4",
+        "Lesson": "Number Patterns",
+        "Page": "Pg 35",
+        "Category": "Patterns",
+        "Skill": "Continue pattern",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-022",
+      "question": "What comes next: 5, 9, 13, 17, ___?",
+      "options": [19.0, 20.0, 22.0, 23.0, 21.0],
+      "answer": 21.0,
+      "hint": "Find the difference between neighbouring numbers.",
+      "metadata": {
+        "Chapter": "Ch 4",
+        "Lesson": "Number Patterns",
+        "Page": "Pg 35",
+        "Category": "Patterns",
+        "Skill": "Continue pattern",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-023",
+      "question": "What comes next: 1, 3, 5, 7, ___?",
+      "options": [8.0, 10.0, 11.0, 12.0, 9.0],
+      "answer": 9.0,
+      "hint": "The pattern contains consecutive odd numbers.",
+      "metadata": {
+        "Chapter": "Ch 4",
+        "Lesson": "Number Patterns",
+        "Page": "Pg 35",
+        "Category": "Patterns",
+        "Skill": "Odd numbers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-024",
+      "question": "What comes next: 30, 40, 50, 60, ___?",
+      "options": [65.0, 75.0, 80.0, 90.0, 70.0],
+      "answer": 70.0,
+      "hint": "Count forward in tens.",
+      "metadata": {
+        "Chapter": "Ch 4",
+        "Lesson": "Number Patterns",
+        "Page": "Pg 35",
+        "Category": "Patterns",
+        "Skill": "Continue pattern",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-025",
+      "question": "Which number comes first in ascending order: 45, 18, 30?",
+      "options": [30.0, 45.0, 35.0, 48.0, 18.0],
+      "answer": 18.0,
+      "hint": "Ascending order begins with the smallest number.",
+      "metadata": {
+        "Chapter": "Ch 5",
+        "Lesson": "Ordering Numbers",
+        "Page": "Pg 39",
+        "Category": "Ordering",
+        "Skill": "Ascending order",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-026",
+      "question": "Which number comes first in descending order: 2345, 6514, 3257?",
+      "options": [3257.0, 2345.0, 2354.0, 6154.0, 6514.0],
+      "answer": 6514.0,
+      "hint": "Descending order begins with the greatest number.",
+      "metadata": {
+        "Chapter": "Ch 5",
+        "Lesson": "Ordering Numbers",
+        "Page": "Pg 39",
+        "Category": "Ordering",
+        "Skill": "Descending order",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-027",
+      "question": "Which is the correct ascending order?",
+      "options": ["45,25,18", "25,18,45", "18,45,25", "25,45,18", "18,25,45"],
+      "answer": "18,25,45",
+      "hint": "Arrange the numbers from smallest to largest.",
+      "metadata": {
+        "Chapter": "Ch 5",
+        "Lesson": "Ordering Numbers",
+        "Page": "Pg 39",
+        "Category": "Ordering",
+        "Skill": "Ascending order",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-028",
+      "question": "Which is the correct descending order?",
+      "options": [
+        290042004900.0, 420029004900.0, 490029004200.0, 420049002900.0,
+        490042002900.0
+      ],
+      "answer": 490042002900.0,
+      "hint": "Begin with the number having the greatest thousands digit.",
+      "metadata": {
+        "Chapter": "Ch 5",
+        "Lesson": "Ordering Numbers",
+        "Page": "Pg 41",
+        "Category": "Ordering",
+        "Skill": "Descending order",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-029",
+      "question": "Which number is between 2900 and 4900?",
+      "options": [1900.0, 5100.0, 5900.0, 900.0, 4200.0],
+      "answer": 4200.0,
+      "hint": "Choose a number greater than 2900 but smaller than 4900.",
+      "metadata": {
+        "Chapter": "Ch 5",
+        "Lesson": "Ordering Numbers",
+        "Page": "Pg 41",
+        "Category": "Number line",
+        "Skill": "Number position",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-030",
+      "question": "Which is the smallest number made from 5, 1 and 8?",
+      "options": [185.0, 518.0, 581.0, 851.0, 158.0],
+      "answer": 158.0,
+      "hint": "Place the smallest digit in the hundreds position.",
+      "metadata": {
+        "Chapter": "Ch 5",
+        "Lesson": "Ordering Numbers",
+        "Page": "Pg 40",
+        "Category": "Number formation",
+        "Skill": "Form smallest",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-031",
+      "question": "What is the Roman numeral for 1?",
+      "options": ["V", "X", "L", "C", "I"],
+      "answer": "I",
+      "hint": "It is shown using one vertical stroke.",
+      "metadata": {
+        "Chapter": "Ch 6",
+        "Lesson": "Local Numerals",
+        "Page": "Pg 44",
+        "Category": "Roman numerals",
+        "Skill": "Recognise numeral",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-032",
+      "question": "What is the Roman numeral for 5?",
+      "options": ["I", "X", "IV", "VI", "V"],
+      "answer": "V",
+      "hint": "It is the symbol used before I in the numeral VI.",
+      "metadata": {
+        "Chapter": "Ch 6",
+        "Lesson": "Local Numerals",
+        "Page": "Pg 44",
+        "Category": "Roman numerals",
+        "Skill": "Recognise numeral",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-033",
+      "question": "What is the Roman numeral for 10?",
+      "options": ["V", "I", "L", "XX", "X"],
+      "answer": "X",
+      "hint": "Two of these symbols make the numeral for 20.",
+      "metadata": {
+        "Chapter": "Ch 6",
+        "Lesson": "Local Numerals",
+        "Page": "Pg 44",
+        "Category": "Roman numerals",
+        "Skill": "Recognise numeral",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-034",
+      "question": "What number does XIV represent?",
+      "options": [11.0, 12.0, 16.0, 19.0, 14.0],
+      "answer": 14.0,
+      "hint": "X is 10 and IV is one less than 5.",
+      "metadata": {
+        "Chapter": "Ch 6",
+        "Lesson": "Local Numerals",
+        "Page": "Pg 44",
+        "Category": "Roman numerals",
+        "Skill": "Convert numeral",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-035",
+      "question": "What number does XIX represent?",
+      "options": [14.0, 16.0, 18.0, 21.0, 19.0],
+      "answer": 19.0,
+      "hint": "IX means one less than ten.",
+      "metadata": {
+        "Chapter": "Ch 6",
+        "Lesson": "Local Numerals",
+        "Page": "Pg 44",
+        "Category": "Roman numerals",
+        "Skill": "Convert numeral",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-036",
+      "question": "What is the Roman numeral for 20?",
+      "options": ["XV", "XIX", "XXI", "XII", "XX"],
+      "answer": "XX",
+      "hint": "Combine two symbols that each represent ten.",
+      "metadata": {
+        "Chapter": "Ch 6",
+        "Lesson": "Local Numerals",
+        "Page": "Pg 44",
+        "Category": "Roman numerals",
+        "Skill": "Write numeral",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-037",
+      "question": "One of two equal parts is called ___.",
+      "options": [
+        "One-third",
+        "One-fourth",
+        "Two-thirds",
+        "One whole",
+        "One-half"
+      ],
+      "answer": "One-half",
+      "hint": "The whole is divided into two equal parts.",
+      "metadata": {
+        "Chapter": "Ch 7",
+        "Lesson": "Fractions",
+        "Page": "Pg 45",
+        "Category": "Fractions",
+        "Skill": "Identify fraction",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-038",
+      "question": "One of four equal parts is called ___.",
+      "options": [
+        "One-half",
+        "One-third",
+        "Three-fourths",
+        "One whole",
+        "One-fourth"
+      ],
+      "answer": "One-fourth",
+      "hint": "The denominator shows four equal parts.",
+      "metadata": {
+        "Chapter": "Ch 7",
+        "Lesson": "Fractions",
+        "Page": "Pg 47",
+        "Category": "Fractions",
+        "Skill": "Identify fraction",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-039",
+      "question": "What is 2/2 equal to?",
+      "options": [
+        "2026-01-02 00:00:00",
+        2.0,
+        "2026-01-04 00:00:00",
+        "2026-02-03 00:00:00",
+        1.0
+      ],
+      "answer": 1.0,
+      "hint": "All two parts of the whole have been selected.",
+      "metadata": {
+        "Chapter": "Ch 7",
+        "Lesson": "Fractions",
+        "Page": "Pg 46",
+        "Category": "Fractions",
+        "Skill": "Whole fraction",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-040",
+      "question": "Which fraction is greater?",
+      "options": [
+        "2026-01-04 00:00:00",
+        "2026-01-08 00:00:00",
+        "2026-01-05 00:00:00",
+        "2026-01-06 00:00:00",
+        "2026-03-04 00:00:00"
+      ],
+      "answer": "2026-03-04 00:00:00",
+      "metadata": {
+        "Chapter": "Ch 7",
+        "Lesson": "Fractions",
+        "Page": "Compare fractions",
+        "Category": "The denominators match, so compare the numerators.",
+        "Skill": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-041",
+      "question": "Which fraction is smaller?",
+      "options": [
+        "2026-02-03 00:00:00",
+        "2026-03-03 00:00:00",
+        "2026-04-03 00:00:00",
+        "2026-05-03 00:00:00",
+        "2026-01-03 00:00:00"
+      ],
+      "answer": "2026-01-03 00:00:00",
+      "metadata": {
+        "Chapter": "Ch 7",
+        "Lesson": "Fractions",
+        "Page": "Compare fractions",
+        "Category": "The denominators match, so the smaller numerator gives the smaller fraction.",
+        "Skill": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-042",
+      "question": "What is one part of three equal parts?",
+      "options": [
+        "2026-01-02 00:00:00",
+        "2026-02-03 00:00:00",
+        "2026-03-04 00:00:00",
+        "2026-01-04 00:00:00",
+        "2026-01-03 00:00:00"
+      ],
+      "answer": "2026-01-03 00:00:00",
+      "metadata": {
+        "Chapter": "Ch 7",
+        "Lesson": "Fractions",
+        "Page": "Write fraction",
+        "Category": "The denominator counts all equal parts.",
+        "Skill": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-043",
+      "question": "Which unit is best for measuring a pencil?",
+      "options": ["Metre", "Litre", "Kilogram", "Hour", "Centimetre"],
+      "answer": "Centimetre",
+      "hint": "A pencil is a short object.",
+      "metadata": {
+        "Chapter": "Ch 8",
+        "Lesson": "Length 1",
+        "Page": "Pg 56",
+        "Category": "Measurement",
+        "Skill": "Choose unit",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-044",
+      "question": "Which unit is best for measuring a classroom?",
+      "options": ["Centimetre", "Millilitre", "Gram", "Minute", "Metre"],
+      "answer": "Metre",
+      "hint": "A classroom is much longer than a pencil.",
+      "metadata": {
+        "Chapter": "Ch 8",
+        "Lesson": "Length 1",
+        "Page": "Pg 57",
+        "Category": "Measurement",
+        "Skill": "Choose unit",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-045",
+      "question": "How many centimetres are in 1 metre?",
+      "options": [10.0, 50.0, 60.0, 1000.0, 100.0],
+      "answer": 100.0,
+      "hint": "A metre contains one hundred smaller length units.",
+      "metadata": {
+        "Chapter": "Ch 8",
+        "Lesson": "Length 1",
+        "Page": "Pg 57",
+        "Category": "Measurement",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-046",
+      "question": "Which tool measures a short straight line?",
+      "options": ["Clock", "Scale", "Jug", "Thermometer", "Ruler"],
+      "answer": "Ruler",
+      "hint": "Look for a tool marked in centimetres.",
+      "metadata": {
+        "Chapter": "Ch 8",
+        "Lesson": "Length 1",
+        "Page": "Pg 56",
+        "Category": "Measurement",
+        "Skill": "Choose tool",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-047",
+      "question": "Which is longer?",
+      "options": [
+        "80 centimetres",
+        "50 centimetres",
+        "20 centimetres",
+        "10 centimetres",
+        "2 metres"
+      ],
+      "answer": "2 metres",
+      "hint": "Change metres to centimetres before comparing.",
+      "metadata": {
+        "Chapter": "Ch 8",
+        "Lesson": "Length 1",
+        "Page": "Pg 61",
+        "Category": "Measurement",
+        "Skill": "Compare lengths",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-048",
+      "question": "Which length is equal to 1 metre?",
+      "options": ["10 cm", "50 cm", "60 cm", "1000 cm", "100 cm"],
+      "answer": "100 cm",
+      "hint": "Recall the relationship between metres and centimetres.",
+      "metadata": {
+        "Chapter": "Ch 8",
+        "Lesson": "Length 1",
+        "Page": "Pg 57",
+        "Category": "Measurement",
+        "Skill": "Equivalent length",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-049",
+      "question": "A small exact location is shown by a ___.",
+      "options": ["line", "angle", "square", "curve", "point"],
+      "answer": "point",
+      "hint": "Think about a tiny dot made by a pencil.",
+      "metadata": {
+        "Chapter": "Ch 9",
+        "Lesson": "Lines",
+        "Page": "Pg 69",
+        "Category": "Geometry",
+        "Skill": "Identify point",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-050",
+      "question": "A line segment has how many endpoints?",
+      "options": [0.0, 1.0, 3.0, 4.0, 2.0],
+      "answer": 2.0,
+      "hint": "A line segment stops at both ends.",
+      "metadata": {
+        "Chapter": "Ch 9",
+        "Lesson": "Lines",
+        "Page": "Pg 70",
+        "Category": "Geometry",
+        "Skill": "Line segment",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-051",
+      "question": "Which tool helps draw a straight line segment?",
+      "options": ["Compass", "Clock", "Scale", "Cup", "Ruler"],
+      "answer": "Ruler",
+      "hint": "Choose a tool with one straight edge.",
+      "metadata": {
+        "Chapter": "Ch 9",
+        "Lesson": "Lines",
+        "Page": "Pg 70",
+        "Category": "Geometry",
+        "Skill": "Drawing lines",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-052",
+      "question": "Which figure joins two points directly?",
+      "options": ["Circle", "Angle", "Square", "Triangle", "Line segment"],
+      "answer": "Line segment",
+      "hint": "It is a straight path with two endpoints.",
+      "metadata": {
+        "Chapter": "Ch 9",
+        "Lesson": "Lines",
+        "Page": "Pg 70",
+        "Category": "Geometry",
+        "Skill": "Identify figure",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-053",
+      "question": "What unit measures a line segment in this lesson?",
+      "options": ["Litre", "Kilogram", "Hour", "Rupee", "Centimetre"],
+      "answer": "Centimetre",
+      "hint": "Use the small length units marked on a ruler.",
+      "metadata": {
+        "Chapter": "Ch 9",
+        "Lesson": "Lines",
+        "Page": "Pg 71",
+        "Category": "Measurement",
+        "Skill": "Length",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-054",
+      "question": "A line segment measuring 6 cm has a length of ___.",
+      "options": ["3 cm", "4 cm", "8 cm", "10 cm", "6 cm"],
+      "answer": "6 cm",
+      "hint": "Use the measurement stated in the question.",
+      "metadata": {
+        "Chapter": "Ch 9",
+        "Lesson": "Lines",
+        "Page": "Pg 72",
+        "Category": "Geometry",
+        "Skill": "Read measurement",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-055",
+      "question": "Two line segments meeting at a point form an ___.",
+      "options": ["circle", "square", "point", "oval", "angle"],
+      "answer": "angle",
+      "hint": "Think about the corner made by two straight sides.",
+      "metadata": {
+        "Chapter": "Ch 10",
+        "Lesson": "Angles",
+        "Page": "Pg 74",
+        "Category": "Geometry",
+        "Skill": "Identify angle",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-056",
+      "question": "The point where two arms of an angle meet is the ___.",
+      "options": ["side", "centre", "edge", "curve", "vertex"],
+      "answer": "vertex",
+      "hint": "It is the common endpoint of both arms.",
+      "metadata": {
+        "Chapter": "Ch 10",
+        "Lesson": "Angles",
+        "Page": "Pg 75",
+        "Category": "Geometry",
+        "Skill": "Angle parts",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-057",
+      "question": "How many arms does an angle have?",
+      "options": [1.0, 3.0, 4.0, 0.0, 2.0],
+      "answer": 2.0,
+      "hint": "Count the line segments forming the angle.",
+      "metadata": {
+        "Chapter": "Ch 10",
+        "Lesson": "Angles",
+        "Page": "Pg 75",
+        "Category": "Geometry",
+        "Skill": "Angle parts",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-058",
+      "question": "A square corner is called a ___.",
+      "options": [
+        "large angle",
+        "small angle",
+        "straight line",
+        "full turn",
+        "right angle"
+      ],
+      "answer": "right angle",
+      "hint": "Think about the corner of a book or square.",
+      "metadata": {
+        "Chapter": "Ch 10",
+        "Lesson": "Angles",
+        "Page": "Pg 80",
+        "Category": "Geometry",
+        "Skill": "Angle type",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-059",
+      "question": "Which angle is smaller than a right angle?",
+      "options": [
+        "Right angle",
+        "Obtuse angle",
+        "Straight angle",
+        "Full angle",
+        "Acute angle"
+      ],
+      "answer": "Acute angle",
+      "hint": "Compare the opening with the corner of a square.",
+      "metadata": {
+        "Chapter": "Ch 10",
+        "Lesson": "Angles",
+        "Page": "Pg 81",
+        "Category": "Geometry",
+        "Skill": "Compare angles",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-060",
+      "question": "Which angle is larger than a right angle?",
+      "options": [
+        "Acute angle",
+        "Right angle",
+        "Zero angle",
+        "Small angle",
+        "Obtuse angle"
+      ],
+      "answer": "Obtuse angle",
+      "hint": "Look for an angle with a wider opening than a square corner.",
+      "metadata": {
+        "Chapter": "Ch 10",
+        "Lesson": "Angles",
+        "Page": "Pg 81",
+        "Category": "Geometry",
+        "Skill": "Compare angles",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-061",
+      "question": "How many sides does a triangle have?",
+      "options": [2.0, 4.0, 5.0, 6.0, 3.0],
+      "answer": 3.0,
+      "hint": "Count the straight edges of a triangle.",
+      "metadata": {
+        "Chapter": "Ch 11",
+        "Lesson": "Geometric Shapes",
+        "Page": "Pg 82",
+        "Category": "Geometry",
+        "Skill": "Triangle properties",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-062",
+      "question": "How many vertices does a triangle have?",
+      "options": [2.0, 4.0, 5.0, 1.0, 3.0],
+      "answer": 3.0,
+      "hint": "Each pair of sides meets at a corner.",
+      "metadata": {
+        "Chapter": "Ch 11",
+        "Lesson": "Geometric Shapes",
+        "Page": "Pg 84",
+        "Category": "Geometry",
+        "Skill": "Triangle properties",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-063",
+      "question": "How many sides does a quadrilateral have?",
+      "options": [2.0, 3.0, 5.0, 6.0, 4.0],
+      "answer": 4.0,
+      "hint": "The name describes a shape with four sides.",
+      "metadata": {
+        "Chapter": "Ch 11",
+        "Lesson": "Geometric Shapes",
+        "Page": "Pg 86",
+        "Category": "Geometry",
+        "Skill": "Quadrilateral properties",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-064",
+      "question": "Which shape has four equal sides?",
+      "options": ["Rectangle", "Triangle", "Circle", "Oval", "Square"],
+      "answer": "Square",
+      "hint": "All four straight sides must have the same length.",
+      "metadata": {
+        "Chapter": "Ch 11",
+        "Lesson": "Geometric Shapes",
+        "Page": "Pg 91",
+        "Category": "Geometry",
+        "Skill": "Identify shape",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-065",
+      "question": "Which shape has equal opposite sides?",
+      "options": ["Triangle", "Circle", "Oval", "Pentagon", "Rectangle"],
+      "answer": "Rectangle",
+      "hint": "Compare the sides that face each other.",
+      "metadata": {
+        "Chapter": "Ch 11",
+        "Lesson": "Geometric Shapes",
+        "Page": "Pg 92",
+        "Category": "Geometry",
+        "Skill": "Shape properties",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-066",
+      "question": "How many right angles does a rectangle have?",
+      "options": [1.0, 2.0, 3.0, 0.0, 4.0],
+      "answer": 4.0,
+      "hint": "Examine each corner of a rectangle.",
+      "metadata": {
+        "Chapter": "Ch 11",
+        "Lesson": "Geometric Shapes",
+        "Page": "Pg 92",
+        "Category": "Geometry",
+        "Skill": "Shape properties",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-067",
+      "question": "What is 451 + 306?",
+      "options": [747.0, 657.0, 767.0, 857.0, 757.0],
+      "answer": 757.0,
+      "hint": "Add ones, tens and hundreds separately.",
+      "metadata": {
+        "Chapter": "Ch 12",
+        "Lesson": "Addition",
+        "Page": "Pg 99",
+        "Category": "Addition",
+        "Skill": "Three-digit addition",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-068",
+      "question": "What is 658 + 283?",
+      "options": [831.0, 931.0, 951.0, 1041.0, 941.0],
+      "answer": 941.0,
+      "hint": "Regroup when a column total is greater than nine.",
+      "metadata": {
+        "Chapter": "Ch 12",
+        "Lesson": "Addition",
+        "Page": "Pg 100",
+        "Category": "Addition",
+        "Skill": "Addition with carrying",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-069",
+      "question": "What is 365 + 468?",
+      "options": [723.0, 823.0, 843.0, 933.0, 833.0],
+      "answer": 833.0,
+      "hint": "Start with the ones column.",
+      "metadata": {
+        "Chapter": "Ch 12",
+        "Lesson": "Addition",
+        "Page": "Pg 104",
+        "Category": "Addition",
+        "Skill": "Addition with carrying",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-070",
+      "question": "What is 2415 + 1367?",
+      "options": [3672.0, 3772.0, 3882.0, 4782.0, 3782.0],
+      "answer": 3782.0,
+      "hint": "Keep digits with the same place values together.",
+      "metadata": {
+        "Chapter": "Ch 12",
+        "Lesson": "Addition",
+        "Page": "Pg 105",
+        "Category": "Addition",
+        "Skill": "Four-digit addition",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-071",
+      "question": "What is 1500 + 2500?",
+      "options": [3000.0, 3500.0, 4500.0, 5000.0, 4000.0],
+      "answer": 4000.0,
+      "hint": "Add the thousands and keep the zeros.",
+      "metadata": {
+        "Chapter": "Ch 12",
+        "Lesson": "Addition",
+        "Page": "Rg 107",
+        "Category": "Addition",
+        "Skill": "Thousands",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-072",
+      "question": "What is 975 + 98?",
+      "options": [1063.0, 973.0, 1083.0, 1173.0, 1073.0],
+      "answer": 1073.0,
+      "hint": "Write 98 under the tens and ones places.",
+      "metadata": {
+        "Chapter": "Ch 12",
+        "Lesson": "Addition",
+        "Page": "Pg 108",
+        "Category": "Addition",
+        "Skill": "Regrouping",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-073",
+      "question": "What is 157 − 10?",
+      "options": [167.0, 157.0, 137.0, 140.0, 147.0],
+      "answer": 147.0,
+      "hint": "Subtract one ten from the tens place.",
+      "metadata": {
+        "Chapter": "Ch 13",
+        "Lesson": "Subtraction",
+        "Page": "Pg 109",
+        "Category": "Subtraction",
+        "Skill": "Mental subtraction",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-074",
+      "question": "What is 179 − 143?",
+      "options": [26.0, 46.0, 136.0, 322.0, 36.0],
+      "answer": 36.0,
+      "hint": "Subtract the pages already completed.",
+      "metadata": {
+        "Chapter": "Ch 13",
+        "Lesson": "Subtraction",
+        "Page": "Pg 115",
+        "Category": "Subtraction",
+        "Skill": "Find difference",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-075",
+      "question": "What is 55 − 42?",
+      "options": [12.0, 23.0, 17.0, 97.0, 13.0],
+      "answer": 13.0,
+      "hint": "Start by subtracting the ones digits.",
+      "metadata": {
+        "Chapter": "Ch 13",
+        "Lesson": "Subtraction",
+        "Page": "Pg 116",
+        "Category": "Subtraction",
+        "Skill": "Two-digit subtraction",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-076",
+      "question": "What is 1364 − 1242?",
+      "options": [112.0, 132.0, 222.0, 262.0, 122.0],
+      "answer": 122.0,
+      "hint": "Line up thousands, hundreds, tens and ones.",
+      "metadata": {
+        "Chapter": "Ch 13",
+        "Lesson": "Subtraction",
+        "Page": "Pg 119",
+        "Category": "Subtraction",
+        "Skill": "Four-digit subtraction",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-077",
+      "question": "What is 2436 − 1168?",
+      "options": [1368.0, 1278.0, 1168.0, 3568.0, 1268.0],
+      "answer": 1268.0,
+      "hint": "Borrow from the next place when the top digit is smaller.",
+      "metadata": {
+        "Chapter": "Ch 13",
+        "Lesson": "Subtraction",
+        "Page": "Pg 121",
+        "Category": "Subtraction",
+        "Skill": "Regrouping",
+        "Difficulty": "Hard"
+      }
+    },
+    {
+      "id": "MATH3-078",
+      "question": "What is 4000 − 1550?",
+      "options": [2550.0, 2350.0, 1450.0, 3550.0, 2450.0],
+      "answer": 2450.0,
+      "hint": "Subtract the cost from the starting amount.",
+      "metadata": {
+        "Chapter": "Ch 13",
+        "Lesson": "Subtraction",
+        "Page": "Pg 125",
+        "Category": "Subtraction",
+        "Skill": "Money problem",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-079",
+      "question": "What is 3 × 2 × 2?",
+      "options": [7.0, 8.0, 10.0, 14.0, 12.0],
+      "answer": 12.0,
+      "hint": "Multiply two numbers first, then multiply the result.",
+      "metadata": {
+        "Chapter": "Ch 14",
+        "Lesson": "Multiplication",
+        "Page": "Pg 131",
+        "Category": "Multiplication",
+        "Skill": "Multiply three numbers",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-080",
+      "question": "What is 8 × 0?",
+      "options": [8.0, 1.0, 80.0, 10.0, null],
+      "hint": "Any number multiplied by zero follows one rule.",
+      "metadata": {
+        "Chapter": "Ch 14",
+        "Lesson": "Multiplication",
+        "Page": "Pg 132",
+        "Category": "Multiplication",
+        "Skill": "Zero property",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-081",
+      "question": "What is 21 × 3?",
+      "options": [42.0, 61.0, 64.0, 73.0, 63.0],
+      "answer": 63.0,
+      "hint": "Multiply the ones and tens by three.",
+      "metadata": {
+        "Chapter": "Ch 14",
+        "Lesson": "Multiplication",
+        "Page": "Pg 135",
+        "Category": "Multiplication",
+        "Skill": "Two-digit multiplication",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-082",
+      "question": "What is 25 × 3?",
+      "options": [65.0, 70.0, 85.0, 100.0, 75.0],
+      "answer": 75.0,
+      "hint": "Think of three equal groups of 25.",
+      "metadata": {
+        "Chapter": "Ch 14",
+        "Lesson": "Multiplication",
+        "Page": "Pg 136",
+        "Category": "Multiplication",
+        "Skill": "Repeated groups",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-083",
+      "question": "What is 32 × 4?",
+      "options": [108.0, 118.0, 132.0, 148.0, 128.0],
+      "answer": 128.0,
+      "hint": "Multiply 30 and 2 separately by four.",
+      "metadata": {
+        "Chapter": "Ch 14",
+        "Lesson": "Multiplication",
+        "Page": "Pg 137",
+        "Category": "Multiplication",
+        "Skill": "Regrouping",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-084",
+      "question": "What is 20 × 30?",
+      "options": [60.0, 500.0, 300.0, 6000.0, 600.0],
+      "answer": 600.0,
+      "metadata": {
+        "Chapter": "Ch 14",
+        "Lesson": "Multiplication",
+        "Page": "Multiples of ten",
+        "Category": "Multiply 2 by 3 and then include both zeros.",
+        "Skill": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-085",
+      "question": "What is 24 ÷ 3?",
+      "options": [6.0, 7.0, 9.0, 12.0, 8.0],
+      "answer": 8.0,
+      "hint": "Find the number in each of three equal groups.",
+      "metadata": {
+        "Chapter": "Ch 15",
+        "Lesson": "Division",
+        "Page": "Pg 157",
+        "Category": "Division",
+        "Skill": "Equal sharing",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-086",
+      "question": "What is 50 ÷ 5?",
+      "options": [5.0, 8.0, 9.0, 15.0, 10.0],
+      "answer": 10.0,
+      "hint": "Use the multiplication fact involving 5 and 50.",
+      "metadata": {
+        "Chapter": "Ch 15",
+        "Lesson": "Division",
+        "Page": "Pg 162",
+        "Category": "Division",
+        "Skill": "Basic division",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-087",
+      "question": "What is 60 ÷ 7?",
+      "options": ["7 R5", "8 R3", "9 R4", "6 R6", "8 R4"],
+      "answer": "8 R4",
+      "hint": "Find the largest multiple of seven below 60.",
+      "metadata": {
+        "Chapter": "Ch 15",
+        "Lesson": "Division",
+        "Page": "Pg 164",
+        "Category": "Division",
+        "Skill": "Remainder",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-088",
+      "question": "What is 17 ÷ 3?",
+      "options": ["4 R3", "5 R1", "6 R1", "3 R5", "5 R2"],
+      "answer": "5 R2",
+      "hint": "Find the closest multiple of three below 17.",
+      "metadata": {
+        "Chapter": "Ch 15",
+        "Lesson": "Division",
+        "Page": "Pg 169",
+        "Category": "Division",
+        "Skill": "Remainder",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-089",
+      "question": "What is 96 ÷ 3?",
+      "options": [23.0, 30.0, 33.0, 36.0, 32.0],
+      "answer": 32.0,
+      "hint": "Divide the tens first and then the ones.",
+      "metadata": {
+        "Chapter": "Ch 15",
+        "Lesson": "Division",
+        "Page": "Pg 171",
+        "Category": "Division",
+        "Skill": "Two-digit division",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-090",
+      "question": "What is 448 ÷ 4?",
+      "options": [102.0, 108.0, 114.0, 122.0, 112.0],
+      "answer": 112.0,
+      "hint": "Check your answer by multiplying it by four.",
+      "metadata": {
+        "Chapter": "Ch 15",
+        "Lesson": "Division",
+        "Page": "Pg 172",
+        "Category": "Division",
+        "Skill": "Three-digit division",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-091",
+      "question": "How many hours are in 4 days?",
+      "options": [48.0, 72.0, 84.0, 100.0, 96.0],
+      "answer": 96.0,
+      "hint": "Multiply the number of days by 24.",
+      "metadata": {
+        "Chapter": "Ch 16",
+        "Lesson": "Time 2",
+        "Page": "Pg 190",
+        "Category": "Time",
+        "Skill": "Day conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-092",
+      "question": "How many days are in 3 weeks?",
+      "options": [14.0, 18.0, 24.0, 30.0, 21.0],
+      "answer": 21.0,
+      "hint": "Each week contains seven days.",
+      "metadata": {
+        "Chapter": "Ch 16",
+        "Lesson": "Time 2",
+        "Page": "Pg 192",
+        "Category": "Time",
+        "Skill": "Week conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-093",
+      "question": "How many months are in 2 years?",
+      "options": [12.0, 18.0, 20.0, 36.0, 24.0],
+      "answer": 24.0,
+      "hint": "Multiply the years by 12.",
+      "metadata": {
+        "Chapter": "Ch 16",
+        "Lesson": "Time 2",
+        "Page": "Pg 194",
+        "Category": "Time",
+        "Skill": "Year conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-094",
+      "question": "How many days are in 5 weeks and 2 days?",
+      "options": [35.0, 32.0, 42.0, 52.0, 37.0],
+      "answer": 37.0,
+      "hint": "Convert the weeks to days before adding two.",
+      "metadata": {
+        "Chapter": "Ch 16",
+        "Lesson": "Time 2",
+        "Page": "Pg 196",
+        "Category": "Time",
+        "Skill": "Mixed conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-095",
+      "question": "How long is it from 9:45 to 10:00?",
+      "options": [
+        "10 minutes",
+        "20 minutes",
+        "30 minutes",
+        "45 minutes",
+        "15 minutes"
+      ],
+      "answer": "15 minutes",
+      "hint": "Count the minutes remaining before the next hour.",
+      "metadata": {
+        "Chapter": "Ch 16",
+        "Lesson": "Time 2",
+        "Page": "Pg 198",
+        "Category": "Time",
+        "Skill": "Duration",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-096",
+      "question": "How many minutes are in 1 hour 15 minutes?",
+      "options": [60.0, 65.0, 90.0, 115.0, 75.0],
+      "answer": 75.0,
+      "hint": "Convert the hour to minutes and then add 15.",
+      "metadata": {
+        "Chapter": "Ch 16",
+        "Lesson": "Time 2",
+        "Page": "Pg 199",
+        "Category": "Time",
+        "Skill": "Mixed conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-097",
+      "question": "How many paisa make 1 rupee?",
+      "options": [10.0, 20.0, 50.0, 1000.0, 100.0],
+      "answer": 100.0,
+      "hint": "One rupee contains one hundred smaller currency units.",
+      "metadata": {
+        "Chapter": "Ch 17",
+        "Lesson": "Money",
+        "Page": "Pg 202",
+        "Category": "Money",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-098",
+      "question": "How many paisa are in 6 rupees?",
+      "options": [60.0, 106.0, 160.0, 6000.0, 600.0],
+      "answer": 600.0,
+      "hint": "Multiply the rupees by 100.",
+      "metadata": {
+        "Chapter": "Ch 17",
+        "Lesson": "Money",
+        "Page": "Pg 203",
+        "Category": "Money",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-099",
+      "question": "What is 550 paisa in rupees and paisa?",
+      "options": ["Rs 5.05", "Rs 50.50", "Rs 55", "Rs 550", "Rs 5.50"],
+      "answer": "Rs 5.50",
+      "hint": "Separate every complete group of 100 paisa.",
+      "metadata": {
+        "Chapter": "Ch 17",
+        "Lesson": "Money",
+        "Page": "Pg 206",
+        "Category": "Money",
+        "Skill": "Unit conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-100",
+      "question": "What is Rs 50 + Rs 25?",
+      "options": ["Rs 65", "Rs 70", "Rs 80", "Rs 85", "Rs 75"],
+      "answer": "Rs 75",
+      "hint": "Add the two rupee amounts.",
+      "metadata": {
+        "Chapter": "Ch 17",
+        "Lesson": "Money",
+        "Page": "Pg 208",
+        "Category": "Money",
+        "Skill": "Add money",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-101",
+      "question": "You pay Rs 80 for a Rs 50 item. What is the change?",
+      "options": ["Rs 20", "Rs 40", "Rs 50", "Rs 130", "Rs 30"],
+      "answer": "Rs 30",
+      "hint": "Subtract the price from the amount paid.",
+      "metadata": {
+        "Chapter": "Ch 17",
+        "Lesson": "Money",
+        "Page": "Pg 215",
+        "Category": "Money",
+        "Skill": "Calculate change",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-102",
+      "question": "What is Rs 10.50 − Rs 10?",
+      "options": ["Rs 1.50", "Rs 5.00", "Rs 10.40", "Rs 20.50", "Rs 0.50"],
+      "answer": "Rs 0.50",
+      "hint": "Only the paisa remains after subtracting ten rupees.",
+      "metadata": {
+        "Chapter": "Ch 17",
+        "Lesson": "Money",
+        "Page": "Pg 218",
+        "Category": "Money",
+        "Skill": "Subtract money",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-103",
+      "question": "How many millilitres are in 1 litre?",
+      "options": [100.0, 500.0, 750.0, 10000.0, 1000.0],
+      "answer": 1000.0,
+      "hint": "A litre contains one thousand smaller capacity units.",
+      "metadata": {
+        "Chapter": "Ch 18",
+        "Lesson": "Capacity",
+        "Page": "Pg 221",
+        "Category": "Capacity",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-104",
+      "question": "How many millilitres are in 2 litres 250 millilitres?",
+      "options": [2050.0, 2500.0, 2205.0, 250.0, 2250.0],
+      "answer": 2250.0,
+      "hint": "Convert the litres first, then add 250.",
+      "metadata": {
+        "Chapter": "Ch 18",
+        "Lesson": "Capacity",
+        "Page": "Pg 226",
+        "Category": "Capacity",
+        "Skill": "Mixed conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-105",
+      "question": "Which symbol completes 2 L ___ 1000 mL?",
+      "options": ["<", "#ERROR!", "#ERROR!", "−", ">"],
+      "answer": ">",
+      "hint": "Convert both quantities to millilitres.",
+      "metadata": {
+        "Chapter": "Ch 18",
+        "Lesson": "Capacity",
+        "Page": "Pg 225",
+        "Category": "Capacity",
+        "Skill": "Compare capacity",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-106",
+      "question": "What is 200 mL + 300 mL?",
+      "options": ["400 mL", "600 mL", "100 mL", "1000 mL", "500 mL"],
+      "answer": "500 mL",
+      "hint": "Add the amounts because their units match.",
+      "metadata": {
+        "Chapter": "Ch 18",
+        "Lesson": "Capacity",
+        "Page": "Pg 227",
+        "Category": "Capacity",
+        "Skill": "Add capacity",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-107",
+      "question": "What is 15 L − 12 L?",
+      "options": ["2 L", "4 L", "13 L", "27 L", "3 L"],
+      "answer": "3 L",
+      "hint": "Subtract the smaller litre amount from the larger one.",
+      "metadata": {
+        "Chapter": "Ch 18",
+        "Lesson": "Capacity",
+        "Page": "Pg 228",
+        "Category": "Capacity",
+        "Skill": "Subtract capacity",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-108",
+      "question": "A jug has 5 L. After using 2 L, how much remains?",
+      "options": ["2 L", "4 L", "5 L", "7 L", "3 L"],
+      "answer": "3 L",
+      "hint": "Subtract the amount used from the starting amount.",
+      "metadata": {
+        "Chapter": "Ch 18",
+        "Lesson": "Capacity",
+        "Page": "Pg 230",
+        "Category": "Capacity",
+        "Skill": "Word problem",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-109",
+      "question": "How many centimetres are in 2 metres?",
+      "options": [20.0, 100.0, 202.0, 2000.0, 200.0],
+      "answer": 200.0,
+      "hint": "Multiply the metres by 100.",
+      "metadata": {
+        "Chapter": "Ch 19",
+        "Lesson": "Length 2",
+        "Page": "Pg 231",
+        "Category": "Length",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-110",
+      "question": "Convert 2 m 10 cm to centimetres.",
+      "options": ["200 cm", "201 cm", "120 cm", "220 cm", "210 cm"],
+      "answer": "210 cm",
+      "hint": "Convert two metres, then add ten centimetres.",
+      "metadata": {
+        "Chapter": "Ch 19",
+        "Lesson": "Length 2",
+        "Page": "Pg 232",
+        "Category": "Length",
+        "Skill": "Mixed conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-111",
+      "question": "Convert 5 m 50 cm to centimetres.",
+      "options": ["505 cm", "500 cm", "150 cm", "1050 cm", "550 cm"],
+      "answer": "550 cm",
+      "hint": "Change the metres to centimetres before adding 50.",
+      "metadata": {
+        "Chapter": "Ch 19",
+        "Lesson": "Length 2",
+        "Page": "Pg 233",
+        "Category": "Length",
+        "Skill": "Mixed conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-112",
+      "question": "How many centimetres are in 8 metres?",
+      "options": ["80 cm", "180 cm", "808 cm", "8000 cm", "800 cm"],
+      "answer": "800 cm",
+      "hint": "Each metre contributes 100 centimetres.",
+      "metadata": {
+        "Chapter": "Ch 19",
+        "Lesson": "Length 2",
+        "Page": "Pg 233",
+        "Category": "Length",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-113",
+      "question": "Which is longer?",
+      "options": ["250 cm", "200 cm", "150 cm", "100 cm", "3 metres"],
+      "answer": "3 metres",
+      "hint": "Convert three metres to centimetres.",
+      "metadata": {
+        "Chapter": "Ch 19",
+        "Lesson": "Length 2",
+        "Page": "Pg 231",
+        "Category": "Length",
+        "Skill": "Compare lengths",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-114",
+      "question": "What is 4 metres in centimetres?",
+      "options": ["40 cm", "104 cm", "404 cm", "4000 cm", "400 cm"],
+      "answer": "400 cm",
+      "hint": "Multiply four by the number of centimetres in one metre.",
+      "metadata": {
+        "Chapter": "Ch 19",
+        "Lesson": "Length 2",
+        "Page": "Pg 233",
+        "Category": "Length",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-115",
+      "question": "How many grams are in 1 kilogram?",
+      "options": [100.0, 500.0, 750.0, 10000.0, 1000.0],
+      "answer": 1000.0,
+      "hint": "A kilogram contains one thousand smaller weight units.",
+      "metadata": {
+        "Chapter": "Ch 20",
+        "Lesson": "Weight",
+        "Page": "Pg 235",
+        "Category": "Weight",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-116",
+      "question": "How many grams are in 2 kilograms?",
+      "options": [200.0, 1000.0, 1200.0, 20000.0, 2000.0],
+      "answer": 2000.0,
+      "hint": "Multiply two by 1000.",
+      "metadata": {
+        "Chapter": "Ch 20",
+        "Lesson": "Weight",
+        "Page": "Pg 238",
+        "Category": "Weight",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-117",
+      "question": "Convert 2 kg 500 g to grams.",
+      "options": ["2050 g", "2005 g", "500 g", "3000 g", "2500 g"],
+      "answer": "2500 g",
+      "hint": "Convert the kilograms before adding 500 grams.",
+      "metadata": {
+        "Chapter": "Ch 20",
+        "Lesson": "Weight",
+        "Page": "Pg 238",
+        "Category": "Weight",
+        "Skill": "Mixed conversion",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-118",
+      "question": "How many grams are in 9 kilograms?",
+      "options": ["900 g", "1900 g", "9090 g", "90000 g", "9000 g"],
+      "answer": "9000 g",
+      "hint": "Multiply nine by 1000.",
+      "metadata": {
+        "Chapter": "Ch 20",
+        "Lesson": "Weight",
+        "Page": "Pg 238",
+        "Category": "Weight",
+        "Skill": "Unit conversion",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-119",
+      "question": "Which unit is best for weighing a school bag?",
+      "options": ["Gram", "Litre", "Metre", "Minute", "Kilogram"],
+      "answer": "Kilogram",
+      "hint": "A school bag is much heavier than a pencil.",
+      "metadata": {
+        "Chapter": "Ch 20",
+        "Lesson": "Weight",
+        "Page": "Pg 236",
+        "Category": "Measurement",
+        "Skill": "Choose unit",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-120",
+      "question": "What is 3000 grams in kilograms?",
+      "options": ["30 kg", "300 kg", "2 kg", "4 kg", "3 kg"],
+      "answer": "3 kg",
+      "metadata": {
+        "Chapter": "Ch 20",
+        "Lesson": "Weight",
+        "Page": "Unit conversion",
+        "Category": "Divide the grams into groups of 1000.",
+        "Skill": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-121",
+      "question": "In a pictograph, ★ = 5 students. What do 3 stars represent?",
+      "options": [5.0, 8.0, 10.0, 20.0, 15.0],
+      "answer": 15.0,
+      "hint": "Multiply the key value by the number of symbols.",
+      "metadata": {
+        "Chapter": "Ch 21",
+        "Lesson": "Pictograph",
+        "Page": "Pg 240",
+        "Category": "Data",
+        "Skill": "Pictograph reading",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-122",
+      "question": "In a pictograph, ● = 10 books. What do 4 circles represent?",
+      "options": [14.0, 30.0, 50.0, 400.0, 40.0],
+      "answer": 40.0,
+      "hint": "Each symbol represents ten books.",
+      "metadata": {
+        "Chapter": "Ch 21",
+        "Lesson": "Pictograph",
+        "Page": "Pg 239",
+        "Category": "Data",
+        "Skill": "Pictograph reading",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-123",
+      "question": "In a pictograph, ▲ = 2 apples. What do 5 triangles represent?",
+      "options": [7.0, 8.0, 12.0, 15.0, 10.0],
+      "answer": 10.0,
+      "hint": "Count five equal groups of two.",
+      "metadata": {
+        "Chapter": "Ch 21",
+        "Lesson": "Pictograph",
+        "Page": "Pg 241",
+        "Category": "Data",
+        "Skill": "Pictograph reading",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-124",
+      "question": "In a pictograph, ■ = 20 people. What do 6 squares represent?",
+      "options": [26.0, 100.0, 140.0, 200.0, 120.0],
+      "answer": 120.0,
+      "hint": "Multiply six symbols by the key value.",
+      "metadata": {
+        "Chapter": "Ch 21",
+        "Lesson": "Pictograph",
+        "Page": "Pg 239",
+        "Category": "Data",
+        "Skill": "Pictograph reading",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-125",
+      "question": "If one symbol means 5 students, how many symbols show 25 students?",
+      "options": [4.0, 6.0, 10.0, 20.0, 5.0],
+      "answer": 5.0,
+      "hint": "Divide the total by the value of one symbol.",
+      "metadata": {
+        "Chapter": "Ch 21",
+        "Lesson": "Pictograph",
+        "Page": "Pg 240",
+        "Category": "Data",
+        "Skill": "Find symbol count",
+        "Difficulty": "Medium"
+      }
+    },
+    {
+      "id": "MATH3-126",
+      "question": "If one symbol means 10 cars, how many symbols show 50 cars?",
+      "options": [4.0, 6.0, 10.0, 50.0, 5.0],
+      "answer": 5.0,
+      "hint": "Find how many groups of ten make 50.",
+      "metadata": {
+        "Chapter": "Ch 21",
+        "Lesson": "Pictograph",
+        "Page": "Pg 239",
+        "Category": "Data",
+        "Skill": "Find symbol count",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-127",
+      "question": "What unit is used for the area of a small rectangle?",
+      "options": ["Centimetre", "Metre", "Litre", "Gram", "Square cm"],
+      "answer": "Square cm",
+      "hint": "Area uses square units rather than ordinary length units.",
+      "metadata": {
+        "Chapter": "Ch 22",
+        "Lesson": "Area",
+        "Page": "Pg 249",
+        "Category": "Area",
+        "Skill": "Area unit",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-128",
+      "question": "What is the area of a 4 cm by 2 cm rectangle?",
+      "options": ["6 cm²", "10 cm²", "12 cm²", "16 cm²", "8 cm²"],
+      "answer": "8 cm²",
+      "hint": "Multiply the length by the width.",
+      "metadata": {
+        "Chapter": "Ch 22",
+        "Lesson": "Area",
+        "Page": "Pg 250",
+        "Category": "Area",
+        "Skill": "Rectangle area",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-129",
+      "question": "What is the area of a square with side 3 cm?",
+      "options": ["6 cm²", "12 cm²", "3 cm²", "15 cm²", "9 cm²"],
+      "answer": "9 cm²",
+      "hint": "Multiply the side length by itself.",
+      "metadata": {
+        "Chapter": "Ch 22",
+        "Lesson": "Area",
+        "Page": "Pg 253",
+        "Category": "Area",
+        "Skill": "Square area",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-130",
+      "question": "What is the area of a 5 cm by 4 cm rectangle?",
+      "options": ["9 cm²", "18 cm²", "25 cm²", "40 cm²", "20 cm²"],
+      "answer": "20 cm²",
+      "hint": "Count five groups of four square units.",
+      "metadata": {
+        "Chapter": "Ch 22",
+        "Lesson": "Area",
+        "Page": "Pg 251",
+        "Category": "Area",
+        "Skill": "Rectangle area",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-131",
+      "question": "A shape covers 12 unit squares. What is its area?",
+      "options": [
+        "6 units²",
+        "10 units²",
+        "14 units²",
+        "24 units²",
+        "12 units²"
+      ],
+      "answer": "12 units²",
+      "hint": "The area equals the number of unit squares covered.",
+      "metadata": {
+        "Chapter": "Ch 22",
+        "Lesson": "Area",
+        "Page": "Pg 250",
+        "Category": "Area",
+        "Skill": "Count unit squares",
+        "Difficulty": "Easy"
+      }
+    },
+    {
+      "id": "MATH3-132",
+      "question": "What is the area of a 7 cm by 3 cm rectangle?",
+      "options": ["10 cm²", "14 cm²", "20 cm²", "28 cm²", "21 cm²"],
+      "answer": "21 cm²",
+      "hint": "Multiply seven by three.",
+      "metadata": {
+        "Chapter": "Ch 22",
+        "Lesson": "Area",
+        "Page": "Pg 253",
+        "Category": "Area",
+        "Skill": "Rectangle area",
+        "Difficulty": "Medium"
+      }
+    }
+  ]
+}
