@@ -465,7 +465,7 @@ export function App() {
                 color: '#FFFFFF',
                 padding: '12px 42px',
                 borderRadius: '9999px',
-                fontSize: 'clamp(1.6rem, 3.2vw, 2.4rem)',
+                fontSize: 'clamp(1.6rem, 3.2cqw, 2.4rem)',
                 fontWeight: 900,
                 letterSpacing: '3px',
                 textTransform: 'uppercase',
@@ -485,7 +485,7 @@ export function App() {
             {/* Main Game Name */}
             <h1
               style={{
-                fontSize: 'clamp(4.8rem, 11vw, 7.8rem)',
+                fontSize: 'clamp(4.8rem, 11cqw, 7.8rem)',
                 fontWeight: 900,
                 color: '#FFFFFF',
                 textShadow: '0 10px 0 #0284c7, 0 18px 0 #0369a1, 0 28px 45px rgba(0,0,0,0.45)',
@@ -508,7 +508,7 @@ export function App() {
             style={{
               position: 'relative',
               overflow: 'hidden',
-              fontSize: 'clamp(2.28rem, 5.225vw, 3.42rem)',
+              fontSize: 'clamp(2.28rem, 5.225cqw, 3.42rem)',
               fontWeight: 900,
               color: '#FFFFFF',
               background: 'linear-gradient(180deg, #ff6b6b 0%, #ee5253 50%, #d63031 100%)',
@@ -546,40 +546,47 @@ export function App() {
             <span style={{ fontSize: '1.1em', transform: 'translateY(-1px)' }}>▶</span>
             <span>PLAY</span>
           </button>
+        </div>
+      )}
 
-          {/* DYNAMIC TOP-LEFT TOOLBAR: Slot 0 Settings Button (MainMenu) */}
-          <div
+      {/* ========================================================================= */}
+      {/* DYNAMIC TOP-LEFT TOOLBAR: Slot 0 Settings Button (MainMenu)                */}
+      {/* Standard global icon button: 96px, centre anchored at (100, 100) per       */}
+      {/* .agents ui-layout.md. Kept as a direct child of the stage so it is not     */}
+      {/* offset by the menu content wrapper's translate transform.                  */}
+      {/* ========================================================================= */}
+      {currentScreen === 'main-menu' && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '52px',
+            left: '52px',
+            zIndex: 30
+          }}
+        >
+          <button
+            onClick={() => {
+              sfx.playPop();
+              setShowSettings(true);
+            }}
+            className="btn-3d"
+            title="Game Settings"
             style={{
-              position: 'absolute',
-              top: '20px',
-              left: '20px',
-              zIndex: 30
+              background: '#FFFFFF',
+              color: '#0284c7',
+              border: '4px solid #bae6fd',
+              borderRadius: '50%',
+              width: '96px',
+              height: '96px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 6px 0 #7dd3fc',
+              cursor: 'pointer'
             }}
           >
-            <button
-              onClick={() => {
-                sfx.playPop();
-                setShowSettings(true);
-              }}
-              className="btn-3d"
-              title="Game Settings"
-              style={{
-                background: '#FFFFFF',
-                color: '#0284c7',
-                border: '2.5px solid #bae6fd',
-                borderRadius: '50%',
-                width: '46px',
-                height: '46px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: '0 4px 0 #7dd3fc',
-                cursor: 'pointer'
-              }}
-            >
-              <Settings size={22} />
-            </button>
-          </div>
+            <Settings size={42} />
+          </button>
         </div>
       )}
 

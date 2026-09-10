@@ -88,34 +88,35 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '12px'
+        padding: '30px'
       }}
     >
-      {/* 50% Reduced Size Compact Settings Panel */}
+      {/* Kid-friendly Settings Panel */}
       <div
         className="animate-pop"
         onClick={(e) => e.stopPropagation()}
         style={{
+          position: 'relative',
           background: '#FFFFFF',
-          borderRadius: '18px',
-          padding: '14px 16px',
-          border: '3px solid #38bdf8',
-          boxShadow: '0 8px 0 #0284c7, 0 16px 30px rgba(0,0,0,0.4)',
+          borderRadius: '38px',
+          padding: '46px 50px 80px 50px',
+          border: '5px solid #38bdf8',
+          boxShadow: '0 15px 0 #0284c7, 0 30px 55px rgba(0,0,0,0.45)',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '11px',
-          minWidth: '220px',
-          maxWidth: '250px',
-          width: '85%',
+          gap: '28px',
+          minWidth: '625px',
+          maxWidth: '725px',
+          width: '82%',
           textAlign: 'center',
           boxSizing: 'border-box'
         }}
       >
         {/* Header: Title */}
         <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#0f172a', fontWeight: 900, fontSize: '1.05rem', letterSpacing: '0.5px' }}>
-            <Settings size={18} color="#0284c7" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', color: '#0f172a', fontWeight: 900, fontSize: '2.5rem', letterSpacing: '0.5px' }}>
+            <Settings size={45} color="#0284c7" />
             <span>SETTINGS</span>
           </div>
         </div>
@@ -125,12 +126,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
           style={{
             width: '100%',
             background: '#f8fafc',
-            border: '2px solid #e2e8f0',
-            borderRadius: '14px',
-            padding: '8px 10px',
+            border: '4px solid #e2e8f0',
+            borderRadius: '26px',
+            padding: '20px 26px',
             display: 'flex',
             alignItems: 'center',
-            gap: '10px',
+            gap: '22px',
             boxSizing: 'border-box'
           }}
         >
@@ -144,31 +145,32 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                 ? 'linear-gradient(180deg, #38bdf8 0%, #0284c7 100%)'
                 : '#94a3b8',
               color: '#FFFFFF',
-              border: '2px solid #FFFFFF',
+              border: '4px solid #FFFFFF',
               borderRadius: '50%',
-              width: '38px',
-              height: '38px',
-              minWidth: '38px',
+              width: '90px',
+              height: '90px',
+              minWidth: '90px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: isSFXActive ? '0 3px 0 #0369a1' : '0 3px 0 #64748b',
+              boxShadow: isSFXActive ? '0 6px 0 #0369a1' : '0 6px 0 #64748b',
               transition: 'all 0.15s ease'
             }}
           >
-            {isSFXActive ? <Sparkles size={18} /> : <VolumeX size={18} />}
+            {isSFXActive ? <Sparkles size={42} /> : <VolumeX size={42} />}
           </button>
 
           {/* Slider & Label Container */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '3px', textAlign: 'left' }}>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '9px', textAlign: 'left' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: 900, color: '#1e293b', fontSize: '0.82rem' }}>SFX</span>
-              <span style={{ fontWeight: 900, color: '#64748b', fontSize: '0.75rem' }}>
+              <span style={{ fontWeight: 900, color: '#1e293b', fontSize: '1.75rem' }}>SFX</span>
+              <span style={{ fontWeight: 900, color: '#64748b', fontSize: '1.5rem' }}>
                 {isSFXActive ? `${sfxVolume}%` : 'OFF'}
               </span>
             </div>
             <input
+              className="audio-slider"
               type="range"
               min="0"
               max="100"
@@ -176,11 +178,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
               onChange={handleSFXVolumeChange}
               style={{
                 width: '100%',
-                accentColor: isSFXActive ? '#0284c7' : '#94a3b8',
+                color: isSFXActive ? '#0284c7' : '#94a3b8',
                 cursor: 'pointer',
-                height: '5px',
+                height: '34px',
                 borderRadius: '9999px',
-                margin: 0
+                margin: 0,
+                background: `linear-gradient(90deg, ${isSFXActive ? '#0284c7' : '#94a3b8'} 0%, ${isSFXActive ? '#0284c7' : '#94a3b8'} ${sfxMuted ? 0 : sfxVolume}%, #e2e8f0 ${sfxMuted ? 0 : sfxVolume}%, #e2e8f0 100%)`
               }}
             />
           </div>
@@ -191,12 +194,12 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
           style={{
             width: '100%',
             background: '#f8fafc',
-            border: '2px solid #e2e8f0',
-            borderRadius: '14px',
-            padding: '8px 10px',
+            border: '4px solid #e2e8f0',
+            borderRadius: '26px',
+            padding: '20px 26px',
             display: 'flex',
             alignItems: 'center',
-            gap: '10px',
+            gap: '22px',
             boxSizing: 'border-box'
           }}
         >
@@ -210,31 +213,32 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
                 ? 'linear-gradient(180deg, #a855f7 0%, #7e22ce 100%)'
                 : '#94a3b8',
               color: '#FFFFFF',
-              border: '2px solid #FFFFFF',
+              border: '4px solid #FFFFFF',
               borderRadius: '50%',
-              width: '38px',
-              height: '38px',
-              minWidth: '38px',
+              width: '90px',
+              height: '90px',
+              minWidth: '90px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: isMusicActive ? '0 3px 0 #6b21a8' : '0 3px 0 #64748b',
+              boxShadow: isMusicActive ? '0 6px 0 #6b21a8' : '0 6px 0 #64748b',
               transition: 'all 0.15s ease'
             }}
           >
-            {isMusicActive ? <Volume2 size={19} /> : <VolumeX size={19} />}
+            {isMusicActive ? <Volume2 size={45} /> : <VolumeX size={45} />}
           </button>
 
           {/* Slider & Label Container */}
-          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '3px', textAlign: 'left' }}>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '9px', textAlign: 'left' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontWeight: 900, color: '#1e293b', fontSize: '0.82rem' }}>Volume</span>
-              <span style={{ fontWeight: 900, color: '#64748b', fontSize: '0.75rem' }}>
+              <span style={{ fontWeight: 900, color: '#1e293b', fontSize: '1.75rem' }}>Volume</span>
+              <span style={{ fontWeight: 900, color: '#64748b', fontSize: '1.5rem' }}>
                 {isMusicActive ? `${musicVolume}%` : 'OFF'}
               </span>
             </div>
             <input
+              className="audio-slider"
               type="range"
               min="0"
               max="100"
@@ -242,42 +246,44 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
               onChange={handleMusicVolumeChange}
               style={{
                 width: '100%',
-                accentColor: isMusicActive ? '#9333ea' : '#94a3b8',
+                color: isMusicActive ? '#9333ea' : '#94a3b8',
                 cursor: 'pointer',
-                height: '5px',
+                height: '34px',
                 borderRadius: '9999px',
-                margin: 0
+                margin: 0,
+                background: `linear-gradient(90deg, ${isMusicActive ? '#9333ea' : '#94a3b8'} 0%, ${isMusicActive ? '#9333ea' : '#94a3b8'} ${musicMuted ? 0 : musicVolume}%, #e2e8f0 ${musicMuted ? 0 : musicVolume}%, #e2e8f0 100%)`
               }}
             />
           </div>
         </div>
 
-        {/* Bottom Bar: Red X Close Button in Bottom-Right Corner */}
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginTop: '2px' }}>
-          <button
-            onClick={() => {
-              sfx.playPop();
-              onClose();
-            }}
-            className="btn-3d"
-            title="Close Settings"
-            style={{
-              background: 'linear-gradient(180deg, #ef4444 0%, #dc2626 100%)',
-              color: '#FFFFFF',
-              border: '2px solid #FFFFFF',
-              borderRadius: '50%',
-              width: '34px',
-              height: '34px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 3px 0 #991b1b'
-            }}
-          >
-            <X size={18} strokeWidth={3} />
-          </button>
-        </div>
+        {/* Close Button — anchored to the panel's bottom-right corner */}
+        <button
+          onClick={() => {
+            sfx.playPop();
+            onClose();
+          }}
+          className="btn-3d"
+          title="Close Settings"
+          style={{
+            position: 'absolute',
+            bottom: '-24px',
+            right: '-24px',
+            background: 'linear-gradient(180deg, #ef4444 0%, #dc2626 100%)',
+            color: '#FFFFFF',
+            border: '4px solid #FFFFFF',
+            borderRadius: '50%',
+            width: '94px',
+            height: '94px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            boxShadow: '0 7px 0 #991b1b'
+          }}
+        >
+          <X size={48} strokeWidth={3} />
+        </button>
       </div>
     </div>
   );

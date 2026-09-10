@@ -4,7 +4,7 @@
   "questions": [
     {
       "id": "ENG5-001",
-      "question": "I ___ in Grade Five.",
+      "question": "I _ in Grade Five.",
       "options": [
         "is",
         "are",
@@ -25,7 +25,7 @@
     },
     {
       "id": "ENG5-002",
-      "question": "She ___ at a school.",
+      "question": "She _ at a school.",
       "options": [
         "study",
         "studying",
@@ -46,7 +46,7 @@
     },
     {
       "id": "ENG5-003",
-      "question": "They ___ a party monthly.",
+      "question": "They _ a party monthly.",
       "options": [
         "has",
         "having",
@@ -67,7 +67,7 @@
     },
     {
       "id": "ENG5-004",
-      "question": "My brother ___ tea.",
+      "question": "My brother _ tea.",
       "options": [
         "don't like",
         "isn't like",
@@ -88,7 +88,7 @@
     },
     {
       "id": "ENG5-005",
-      "question": "We meet ___ Friday.",
+      "question": "We meet _ Friday.",
       "options": [
         "at",
         "in",
@@ -109,7 +109,7 @@
     },
     {
       "id": "ENG5-006",
-      "question": "Lunch is ___ 1 p.m.",
+      "question": "Lunch is _ 1 p.m.",
       "options": [
         "on",
         "in",
@@ -130,7 +130,7 @@
     },
     {
       "id": "ENG5-007",
-      "question": "It rains a lot ___ winter.",
+      "question": "It rains a lot _ winter.",
       "options": [
         "on",
         "at",
@@ -172,7 +172,7 @@
     },
     {
       "id": "ENG5-009",
-      "question": "This is ___ book.",
+      "question": "This is _ book.",
       "options": [
         "mine",
         "me",
@@ -193,7 +193,7 @@
     },
     {
       "id": "ENG5-010",
-      "question": "The coffee is ___.",
+      "question": "The coffee is _.",
       "options": [
         "my",
         "me",
@@ -214,7 +214,7 @@
     },
     {
       "id": "ENG5-011",
-      "question": "Rita has a cat. ___ loves it.",
+      "question": "Rita has a cat. _ loves it.",
       "options": [
         "He",
         "It",
@@ -235,7 +235,7 @@
     },
     {
       "id": "ENG5-012",
-      "question": "Ram is a boy. ___ runs fast.",
+      "question": "Ram is a boy. _ runs fast.",
       "options": [
         "She",
         "It",
@@ -256,7 +256,7 @@
     },
     {
       "id": "ENG5-013",
-      "question": "The boys are ready. ___ can begin.",
+      "question": "The boys are ready. _ can begin.",
       "options": [
         "He",
         "She",
@@ -277,7 +277,7 @@
     },
     {
       "id": "ENG5-014",
-      "question": "The dog moves ___ tail.",
+      "question": "The dog moves _ tail.",
       "options": [
         "his",
         "her",
@@ -298,7 +298,7 @@
     },
     {
       "id": "ENG5-015",
-      "question": "These shoes belong to us. They are ___.",
+      "question": "These shoes belong to us. They are _.",
       "options": [
         "our",
         "theirs",
@@ -319,7 +319,7 @@
     },
     {
       "id": "ENG5-016",
-      "question": "This pen belongs to Maya. It is ___.",
+      "question": "This pen belongs to Maya. It is _.",
       "options": [
         "her",
         "his",
@@ -340,7 +340,7 @@
     },
     {
       "id": "ENG5-017",
-      "question": "I brush daily. I ___ brush.",
+      "question": "I brush daily. I _ brush.",
       "options": [
         "never",
         "sometimes",
@@ -361,7 +361,7 @@
     },
     {
       "id": "ENG5-018",
-      "question": "Rina is ___ late for school.",
+      "question": "Rina is _ late for school.",
       "options": [
         "quickly",
         "tomorrow",
@@ -382,7 +382,7 @@
     },
     {
       "id": "ENG5-019",
-      "question": "___ do you visit the library?",
+      "question": "_ do you visit the library?",
       "options": [
         "How much",
         "Where",
@@ -403,7 +403,7 @@
     },
     {
       "id": "ENG5-020",
-      "question": "Yesterday, I ___ tired.",
+      "question": "Yesterday, I _ tired.",
       "options": [
         "were",
         "am",
@@ -424,7 +424,7 @@
     },
     {
       "id": "ENG5-021",
-      "question": "The children ___ excited.",
+      "question": "The children _ excited.",
       "options": [
         "was",
         "is",
@@ -445,7 +445,7 @@
     },
     {
       "id": "ENG5-022",
-      "question": "___ milk was spilt?",
+      "question": "_ milk was spilt?",
       "options": [
         "How many",
         "Where",
@@ -466,7 +466,7 @@
     },
     {
       "id": "ENG5-023",
-      "question": "___ students came?",
+      "question": "_ students came?",
       "options": [
         "How much",
         "How often",
@@ -487,7 +487,7 @@
     },
     {
       "id": "ENG5-024",
-      "question": "___ were you absent?",
+      "question": "_ were you absent?",
       "options": [
         "Where",
         "When",
@@ -508,7 +508,7 @@
     },
     {
       "id": "ENG5-025",
-      "question": "___ you please open the window?",
+      "question": "_ you please open the window?",
       "options": [
         "Did",
         "Are",
@@ -529,7 +529,7 @@
     },
     {
       "id": "ENG5-026",
-      "question": "“Can you help me?” “___.”",
+      "question": "“Can you help me?” “_.”",
       "options": [
         "Sorry",
         "Never",
@@ -571,7 +571,7 @@
     },
     {
       "id": "ENG5-028",
-      "question": "I made a mistake. I should ___.",
+      "question": "I made a mistake. I should _.",
       "options": [
         "request",
         "congratulate",
@@ -592,7 +592,7 @@
     },
     {
       "id": "ENG5-029",
-      "question": "___ is your birthday?",
+      "question": "_ is your birthday?",
       "options": [
         "Who",
         "Where",
@@ -613,7 +613,7 @@
     },
     {
       "id": "ENG5-030",
-      "question": "___ old are you?",
+      "question": "_ old are you?",
       "options": [
         "What",
         "When",
@@ -634,7 +634,7 @@
     },
     {
       "id": "ENG5-031",
-      "question": "She ___ like milk.",
+      "question": "She _ like milk.",
       "options": [
         "don't",
         "isn't",
@@ -655,7 +655,7 @@
     },
     {
       "id": "ENG5-032",
-      "question": "We ___ enjoy the trip.",
+      "question": "We _ enjoy the trip.",
       "options": [
         "doesn't",
         "wasn't",
@@ -718,7 +718,7 @@
     },
     {
       "id": "ENG5-035",
-      "question": "“Thank you.” “___.”",
+      "question": "“Thank you.” “_.”",
       "options": [
         "Good luck",
         "I'm sorry",
@@ -739,7 +739,7 @@
     },
     {
       "id": "ENG5-036",
-      "question": "Walk ___ on a slippery road.",
+      "question": "Walk _ on a slippery road.",
       "options": [
         "noisily",
         "hungrily",
@@ -760,7 +760,7 @@
     },
     {
       "id": "ENG5-037",
-      "question": "The hungry boy ate ___.",
+      "question": "The hungry boy ate _.",
       "options": [
         "quietly",
         "carefully",
@@ -802,7 +802,7 @@
     },
     {
       "id": "ENG5-039",
-      "question": "What a wonderful surprise___",
+      "question": "What a wonderful surprise_",
       "options": [
         ".",
         "?",
@@ -823,7 +823,7 @@
     },
     {
       "id": "ENG5-040",
-      "question": "A passage between rooms is a ___.",
+      "question": "A passage between rooms is a _.",
       "options": [
         "balcony",
         "kitchen",
@@ -844,7 +844,7 @@
     },
     {
       "id": "ENG5-041",
-      "question": "___ onions do we need?",
+      "question": "_ onions do we need?",
       "options": [
         "How much",
         "How often",
@@ -865,7 +865,7 @@
     },
     {
       "id": "ENG5-042",
-      "question": "___ water do you drink?",
+      "question": "_ water do you drink?",
       "options": [
         "How many",
         "How often",
@@ -970,7 +970,7 @@
     },
     {
       "id": "ENG5-047",
-      "question": "Mina is ___ engineer.",
+      "question": "Mina is _ engineer.",
       "options": [
         "a",
         "the",
@@ -991,7 +991,7 @@
     },
     {
       "id": "ENG5-048",
-      "question": "I want to ask ___ question.",
+      "question": "I want to ask _ question.",
       "options": [
         "an",
         "the",
@@ -1054,7 +1054,7 @@
     },
     {
       "id": "ENG5-051",
-      "question": "This story is ___ than that one.",
+      "question": "This story is _ than that one.",
       "options": [
         "most interesting",
         "interestinger",
@@ -1075,7 +1075,7 @@
     },
     {
       "id": "ENG5-052",
-      "question": "A bicycle is ___ than a car.",
+      "question": "A bicycle is _ than a car.",
       "options": [
         "cheapest",
         "more cheap",
@@ -1096,7 +1096,7 @@
     },
     {
       "id": "ENG5-053",
-      "question": "Ram is the ___ boy in his class.",
+      "question": "Ram is the _ boy in his class.",
       "options": [
         "taller",
         "tall",
@@ -1117,7 +1117,7 @@
     },
     {
       "id": "ENG5-054",
-      "question": "___ Sun gives us light.",
+      "question": "_ Sun gives us light.",
       "options": [
         "A",
         "An",
@@ -1138,7 +1138,7 @@
     },
     {
       "id": "ENG5-055",
-      "question": "I saw ___ cat in the garden.",
+      "question": "I saw _ cat in the garden.",
       "options": [
         "an",
         "the",
@@ -1159,7 +1159,7 @@
     },
     {
       "id": "ENG5-056",
-      "question": "She is ___ honest girl.",
+      "question": "She is _ honest girl.",
       "options": [
         "a",
         "the",
@@ -1180,7 +1180,7 @@
     },
     {
       "id": "ENG5-057",
-      "question": "The book is ___ the table.",
+      "question": "The book is _ the table.",
       "options": [
         "in",
         "at",
@@ -1201,7 +1201,7 @@
     },
     {
       "id": "ENG5-058",
-      "question": "The water is ___ the bottle.",
+      "question": "The water is _ the bottle.",
       "options": [
         "on",
         "at",
@@ -1222,7 +1222,7 @@
     },
     {
       "id": "ENG5-059",
-      "question": "The child is hiding ___ the bed.",
+      "question": "The child is hiding _ the bed.",
       "options": [
         "over",
         "on",
@@ -1243,7 +1243,7 @@
     },
     {
       "id": "ENG5-060",
-      "question": "The blue car is ___ the green car.",
+      "question": "The blue car is _ the green car.",
       "options": [
         "between",
         "inside",
@@ -1264,7 +1264,7 @@
     },
     {
       "id": "ENG5-061",
-      "question": "The house is ___ two trees.",
+      "question": "The house is _ two trees.",
       "options": [
         "behind",
         "under",
@@ -1285,7 +1285,7 @@
     },
     {
       "id": "ENG5-062",
-      "question": "I will meet you ___ the airport.",
+      "question": "I will meet you _ the airport.",
       "options": [
         "on",
         "in",
@@ -1306,7 +1306,7 @@
     },
     {
       "id": "ENG5-063",
-      "question": "She lives ___ Pokhara.",
+      "question": "She lives _ Pokhara.",
       "options": [
         "at",
         "on",
@@ -1327,7 +1327,7 @@
     },
     {
       "id": "ENG5-064",
-      "question": "A bird flies ___ the house.",
+      "question": "A bird flies _ the house.",
       "options": [
         "under",
         "inside",
@@ -1348,7 +1348,7 @@
     },
     {
       "id": "ENG5-065",
-      "question": "The Sun ___ in the east.",
+      "question": "The Sun _ in the east.",
       "options": [
         "rise",
         "rising",
@@ -1369,7 +1369,7 @@
     },
     {
       "id": "ENG5-066",
-      "question": "Water ___ at 100°C.",
+      "question": "Water _ at 100°C.",
       "options": [
         "boil",
         "boiling",
@@ -1390,7 +1390,7 @@
     },
     {
       "id": "ENG5-067",
-      "question": "The Earth ___ a planet.",
+      "question": "The Earth _ a planet.",
       "options": [
         "are",
         "am",
@@ -1411,7 +1411,7 @@
     },
     {
       "id": "ENG5-068",
-      "question": "My sister ___ tennis.",
+      "question": "My sister _ tennis.",
       "options": [
         "play",
         "playing",
@@ -1432,7 +1432,7 @@
     },
     {
       "id": "ENG5-069",
-      "question": "They ___ lunch at noon.",
+      "question": "They _ lunch at noon.",
       "options": [
         "eats",
         "eating",
@@ -1453,7 +1453,7 @@
     },
     {
       "id": "ENG5-070",
-      "question": "Bob ___ to class on Saturdays.",
+      "question": "Bob _ to class on Saturdays.",
       "options": [
         "go",
         "going",
@@ -1474,7 +1474,7 @@
     },
     {
       "id": "ENG5-071",
-      "question": "Illegal hunting is called ___.",
+      "question": "Illegal hunting is called _.",
       "options": [
         "hiking",
         "farming",
@@ -1495,7 +1495,7 @@
     },
     {
       "id": "ENG5-072",
-      "question": "Covered with soft hair means ___.",
+      "question": "Covered with soft hair means _.",
       "options": [
         "damp",
         "illegal",
@@ -1515,7 +1515,7 @@
     },
     {
       "id": "ENG5-073",
-      "question": "First, ___ the eggs into a bowl.",
+      "question": "First, _ the eggs into a bowl.",
       "options": [
         "stir",
         "flip",
@@ -1536,7 +1536,7 @@
     },
     {
       "id": "ENG5-074",
-      "question": "Use a spoon to ___ the mixture.",
+      "question": "Use a spoon to _ the mixture.",
       "options": [
         "break",
         "peel",
@@ -1557,7 +1557,7 @@
     },
     {
       "id": "ENG5-075",
-      "question": "___ talking during the lesson.",
+      "question": "_ talking during the lesson.",
       "options": [
         "Open",
         "Turn",
@@ -1578,7 +1578,7 @@
     },
     {
       "id": "ENG5-076",
-      "question": "___ make noise in class.",
+      "question": "_ make noise in class.",
       "options": [
         "Doesn't",
         "Didn't",
@@ -1599,7 +1599,7 @@
     },
     {
       "id": "ENG5-077",
-      "question": "Go ___ ahead.",
+      "question": "Go _ ahead.",
       "options": [
         "under",
         "between",
@@ -1620,7 +1620,7 @@
     },
     {
       "id": "ENG5-078",
-      "question": "Walk ___ the bridge.",
+      "question": "Walk _ the bridge.",
       "options": [
         "under",
         "inside",
@@ -1641,7 +1641,7 @@
     },
     {
       "id": "ENG5-079",
-      "question": "Go ___ the shop and continue.",
+      "question": "Go _ the shop and continue.",
       "options": [
         "inside",
         "under",
@@ -1662,7 +1662,7 @@
     },
     {
       "id": "ENG5-080",
-      "question": "The sign points ←. Turn ___.",
+      "question": "The sign points ←. Turn _.",
       "options": [
         "right",
         "straight",
@@ -1683,7 +1683,7 @@
     },
     {
       "id": "ENG5-081",
-      "question": "Yesterday, I ___ a story.",
+      "question": "Yesterday, I _ a story.",
       "options": [
         "write",
         "writing",
@@ -1704,7 +1704,7 @@
     },
     {
       "id": "ENG5-082",
-      "question": "At 9 p.m., she ___.",
+      "question": "At 9 p.m., she _.",
       "options": [
         "is sleeping",
         "were sleeping",
@@ -1725,7 +1725,7 @@
     },
     {
       "id": "ENG5-083",
-      "question": "While I washed, a dog ___.",
+      "question": "While I washed, a dog _.",
       "options": [
         "was coming",
         "comes",
@@ -1746,7 +1746,7 @@
     },
     {
       "id": "ENG5-084",
-      "question": "He ___ when the phone rang.",
+      "question": "He _ when the phone rang.",
       "options": [
         "listened",
         "is listening",
@@ -1767,7 +1767,7 @@
     },
     {
       "id": "ENG5-085",
-      "question": "Did you ___ the book?",
+      "question": "Did you _ the book?",
       "options": [
         "found",
         "finding",
@@ -1788,7 +1788,7 @@
     },
     {
       "id": "ENG5-086",
-      "question": "They ___ dance yesterday.",
+      "question": "They _ dance yesterday.",
       "options": [
         "doesn't",
         "weren't",
@@ -1830,7 +1830,7 @@
     },
     {
       "id": "ENG5-088",
-      "question": "At 8 p.m., we ___ dinner.",
+      "question": "At 8 p.m., we _ dinner.",
       "options": [
         "was eating",
         "are eating",
@@ -1851,7 +1851,7 @@
     },
     {
       "id": "ENG5-089",
-      "question": "I stayed home ___ I was sick.",
+      "question": "I stayed home _ I was sick.",
       "options": [
         "but",
         "and",
@@ -1872,7 +1872,7 @@
     },
     {
       "id": "ENG5-090",
-      "question": "I tried hard, ___ I lost.",
+      "question": "I tried hard, _ I lost.",
       "options": [
         "because",
         "and",
@@ -1893,7 +1893,7 @@
     },
     {
       "id": "ENG5-091",
-      "question": "She bought a pen ___ a pencil.",
+      "question": "She bought a pen _ a pencil.",
       "options": [
         "but",
         "because",
@@ -1977,7 +1977,7 @@
     },
     {
       "id": "ENG5-095",
-      "question": "What did she ___?",
+      "question": "What did she _?",
       "options": [
         "ate",
         "eaten",
@@ -1998,7 +1998,7 @@
     },
     {
       "id": "ENG5-096",
-      "question": "___ she go yesterday?",
+      "question": "_ she go yesterday?",
       "options": [
         "Does",
         "Is",
@@ -2082,7 +2082,7 @@
     },
     {
       "id": "ENG5-100",
-      "question": "Dark ___ may bring rain.",
+      "question": "Dark _ may bring rain.",
       "options": [
         "carpets",
         "knives",
@@ -2103,7 +2103,7 @@
     },
     {
       "id": "ENG5-101",
-      "question": "She ___ a book now.",
+      "question": "She _ a book now.",
       "options": [
         "are reading",
         "reads",
@@ -2124,7 +2124,7 @@
     },
     {
       "id": "ENG5-102",
-      "question": "They ___ football now.",
+      "question": "They _ football now.",
       "options": [
         "is playing",
         "play",
@@ -2145,7 +2145,7 @@
     },
     {
       "id": "ENG5-103",
-      "question": "There ___ a book here.",
+      "question": "There _ a book here.",
       "options": [
         "are",
         "am",
@@ -2166,7 +2166,7 @@
     },
     {
       "id": "ENG5-104",
-      "question": "There ___ two books here.",
+      "question": "There _ two books here.",
       "options": [
         "is",
         "am",
@@ -2187,7 +2187,7 @@
     },
     {
       "id": "ENG5-105",
-      "question": "I enjoy ___ to music.",
+      "question": "I enjoy _ to music.",
       "options": [
         "listen",
         "listened",
@@ -2208,7 +2208,7 @@
     },
     {
       "id": "ENG5-106",
-      "question": "She loves ___ games.",
+      "question": "She loves _ games.",
       "options": [
         "play",
         "played",
@@ -2229,7 +2229,7 @@
     },
     {
       "id": "ENG5-107",
-      "question": "They hate ___ dishes.",
+      "question": "They hate _ dishes.",
       "options": [
         "wash",
         "washed",
@@ -2250,7 +2250,7 @@
     },
     {
       "id": "ENG5-108",
-      "question": "He dislikes ___ early.",
+      "question": "He dislikes _ early.",
       "options": [
         "wake",
         "woke",
@@ -2271,7 +2271,7 @@
     },
     {
       "id": "ENG5-109",
-      "question": "“Not expensive” means ___.",
+      "question": "“Not expensive” means _.",
       "options": [
         "crowded",
         "bright",
@@ -2292,7 +2292,7 @@
     },
     {
       "id": "ENG5-110",
-      "question": "A reduced-price shopping event is a ___.",
+      "question": "A reduced-price shopping event is a _.",
       "options": [
         "venue",
         "career",
@@ -2313,7 +2313,7 @@
     },
     {
       "id": "ENG5-111",
-      "question": "A large outdoor fire is a ___.",
+      "question": "A large outdoor fire is a _.",
       "options": [
         "hallway",
         "beverage",
@@ -2334,7 +2334,7 @@
     },
     {
       "id": "ENG5-112",
-      "question": "Another word for “valley” is ___.",
+      "question": "Another word for “valley” is _.",
       "options": [
         "trail",
         "venue",
@@ -2355,7 +2355,7 @@
     },
     {
       "id": "ENG5-113",
-      "question": "Birds ___ fly.",
+      "question": "Birds _ fly.",
       "options": [
         "can't",
         "couldn't",
@@ -2376,7 +2376,7 @@
     },
     {
       "id": "ENG5-114",
-      "question": "Fish ___ walk on roads.",
+      "question": "Fish _ walk on roads.",
       "options": [
         "can",
         "could",
@@ -2397,7 +2397,7 @@
     },
     {
       "id": "ENG5-115",
-      "question": "At age five, he ___ swim.",
+      "question": "At age five, he _ swim.",
       "options": [
         "can",
         "will",
@@ -2418,7 +2418,7 @@
     },
     {
       "id": "ENG5-116",
-      "question": "She was ill, so she ___ go.",
+      "question": "She was ill, so she _ go.",
       "options": [
         "could",
         "can",
@@ -2439,7 +2439,7 @@
     },
     {
       "id": "ENG5-117",
-      "question": "___ you lend me a pencil?",
+      "question": "_ you lend me a pencil?",
       "options": [
         "Was",
         "Did",
@@ -2460,7 +2460,7 @@
     },
     {
       "id": "ENG5-118",
-      "question": "I ___ hear you; the music is loud.",
+      "question": "I _ hear you; the music is loud.",
       "options": [
         "can",
         "could",
@@ -2481,7 +2481,7 @@
     },
     {
       "id": "ENG5-119",
-      "question": "“Can you dance?” “Yes, I ___.”",
+      "question": "“Can you dance?” “Yes, I _.”",
       "options": [
         "can't",
         "do",
@@ -2502,7 +2502,7 @@
     },
     {
       "id": "ENG5-120",
-      "question": "“Could she read?” “No, she ___.”",
+      "question": "“Could she read?” “No, she _.”",
       "options": [
         "could",
         "can't",
@@ -2523,7 +2523,7 @@
     },
     {
       "id": "ENG5-121",
-      "question": "___ old are you?",
+      "question": "_ old are you?",
       "options": [
         "What",
         "When",
@@ -2544,7 +2544,7 @@
     },
     {
       "id": "ENG5-122",
-      "question": "___ are you late?",
+      "question": "_ are you late?",
       "options": [
         "When",
         "Who",
@@ -2565,7 +2565,7 @@
     },
     {
       "id": "ENG5-123",
-      "question": "___ book are you reading?",
+      "question": "_ book are you reading?",
       "options": [
         "Why",
         "How",
@@ -2586,7 +2586,7 @@
     },
     {
       "id": "ENG5-124",
-      "question": "___ do you brush your teeth?",
+      "question": "_ do you brush your teeth?",
       "options": [
         "How much",
         "How many",
@@ -2607,7 +2607,7 @@
     },
     {
       "id": "ENG5-125",
-      "question": "I missed lunch. I am ___.",
+      "question": "I missed lunch. I am _.",
       "options": [
         "too slowly",
         "enough time",
@@ -2628,7 +2628,7 @@
     },
     {
       "id": "ENG5-126",
-      "question": "We cannot buy it. It is ___.",
+      "question": "We cannot buy it. It is _.",
       "options": [
         "very hungry",
         "enough time",
@@ -2691,7 +2691,7 @@
     },
     {
       "id": "ENG5-129",
-      "question": "She ___ sing tomorrow.",
+      "question": "She _ sing tomorrow.",
       "options": [
         "is",
         "was",
@@ -2712,7 +2712,7 @@
     },
     {
       "id": "ENG5-130",
-      "question": "We ___ help them tomorrow.",
+      "question": "We _ help them tomorrow.",
       "options": [
         "didn't",
         "aren't",
@@ -2733,7 +2733,7 @@
     },
     {
       "id": "ENG5-131",
-      "question": "___ you come tomorrow?",
+      "question": "_ you come tomorrow?",
       "options": [
         "Did",
         "Are",
@@ -2754,7 +2754,7 @@
     },
     {
       "id": "ENG5-132",
-      "question": "I have planned to swim. I am ___ swim.",
+      "question": "I have planned to swim. I am _ swim.",
       "options": [
         "will be",
         "went to",
@@ -2775,7 +2775,7 @@
     },
     {
       "id": "ENG5-133",
-      "question": "Look at those clouds! It is ___ rain.",
+      "question": "Look at those clouds! It is _ rain.",
       "options": [
         "will be",
         "went to",
@@ -2817,7 +2817,7 @@
     },
     {
       "id": "ENG5-135",
-      "question": "We ___ the library tomorrow.",
+      "question": "We _ the library tomorrow.",
       "options": [
         "visited",
         "are visit",
@@ -2838,7 +2838,7 @@
     },
     {
       "id": "ENG5-136",
-      "question": "Next week, they ___ a test.",
+      "question": "Next week, they _ a test.",
       "options": [
         "took",
         "taking",
@@ -2859,7 +2859,7 @@
     },
     {
       "id": "ENG5-001",
-      "question": "A person who manages a school is a ___.",
+      "question": "A person who manages a school is a _.",
       "options": [
         "gatekeeper",
         "shopkeeper",
@@ -2880,7 +2880,7 @@
     },
     {
       "id": "ENG5-002",
-      "question": "A person who watches an entrance is a ___.",
+      "question": "A person who watches an entrance is a _.",
       "options": [
         "headteacher",
         "doctor",
@@ -2922,7 +2922,7 @@
     },
     {
       "id": "ENG5-004",
-      "question": "“We often ___ English books.”",
+      "question": "“We often _ English books.”",
       "options": [
         "reads",
         "reading",
@@ -2943,7 +2943,7 @@
     },
     {
       "id": "ENG5-005",
-      "question": "“Emily ___ every Saturday.”",
+      "question": "“Emily _ every Saturday.”",
       "options": [
         "swim",
         "swimming",
@@ -2964,7 +2964,7 @@
     },
     {
       "id": "ENG5-006",
-      "question": "“My brother ___ lemonade.”",
+      "question": "“My brother _ lemonade.”",
       "options": [
         "don't like",
         "not likes",
@@ -2985,7 +2985,7 @@
     },
     {
       "id": "ENG5-007",
-      "question": "“Can you come ___ Friday?”",
+      "question": "“Can you come _ Friday?”",
       "options": [
         "at",
         "in",
@@ -3006,7 +3006,7 @@
     },
     {
       "id": "ENG5-008",
-      "question": "“We have lunch ___ 1 p.m.”",
+      "question": "“We have lunch _ 1 p.m.”",
       "options": [
         "on",
         "in",
@@ -3027,7 +3027,7 @@
     },
     {
       "id": "ENG5-009",
-      "question": "“This is Sita’s book. It is ___.”",
+      "question": "“This is Sita’s book. It is _.”",
       "options": [
         "his",
         "theirs",
@@ -3048,7 +3048,7 @@
     },
     {
       "id": "ENG5-010",
-      "question": "“That bicycle belongs to Ram. It is ___.”",
+      "question": "“That bicycle belongs to Ram. It is _.”",
       "options": [
         "hers",
         "ours",
@@ -3069,7 +3069,7 @@
     },
     {
       "id": "ENG5-011",
-      "question": "“The children have bags. They are ___ bags.”",
+      "question": "“The children have bags. They are _ bags.”",
       "options": [
         "its",
         "his",
@@ -3090,7 +3090,7 @@
     },
     {
       "id": "ENG5-012",
-      "question": "“The cat moves ___ tail.”",
+      "question": "“The cat moves _ tail.”",
       "options": [
         "his",
         "their",
@@ -3153,7 +3153,7 @@
     },
     {
       "id": "ENG5-015",
-      "question": "“Ellen is an actress. ___ is famous.”",
+      "question": "“Ellen is an actress. _ is famous.”",
       "options": [
         "He",
         "It",
@@ -3174,7 +3174,7 @@
     },
     {
       "id": "ENG5-016",
-      "question": "“Daya and Dolma are friends. ___ study together.”",
+      "question": "“Daya and Dolma are friends. _ study together.”",
       "options": [
         "She",
         "He",
@@ -3300,7 +3300,7 @@
     },
     {
       "id": "ENG5-022",
-      "question": "“They ___ at home yesterday.”",
+      "question": "“They _ at home yesterday.”",
       "options": [
         "was",
         "are",
@@ -3321,7 +3321,7 @@
     },
     {
       "id": "ENG5-023",
-      "question": "“Jamuna ___ at the market yesterday.”",
+      "question": "“Jamuna _ at the market yesterday.”",
       "options": [
         "were",
         "is",
@@ -3342,7 +3342,7 @@
     },
     {
       "id": "ENG5-024",
-      "question": "“___ milk was spilled?”",
+      "question": "“_ milk was spilled?”",
       "options": [
         "How many",
         "How often",
@@ -3426,7 +3426,7 @@
     },
     {
       "id": "ENG5-028",
-      "question": "“___ old is your sister?”",
+      "question": "“_ old is your sister?”",
       "options": [
         "What",
         "Where",
@@ -3447,7 +3447,7 @@
     },
     {
       "id": "ENG5-029",
-      "question": "“___ is your birthday?”",
+      "question": "“_ is your birthday?”",
       "options": [
         "Who",
         "Where",
@@ -3468,7 +3468,7 @@
     },
     {
       "id": "ENG5-030",
-      "question": "“___ are you from?”",
+      "question": "“_ are you from?”",
       "options": [
         "When",
         "Who",
@@ -3552,7 +3552,7 @@
     },
     {
       "id": "ENG5-034",
-      "question": "“He ran ___.”",
+      "question": "“He ran _.”",
       "options": [
         "quick",
         "quicker",
@@ -3573,7 +3573,7 @@
     },
     {
       "id": "ENG5-035",
-      "question": "“The road is slippery. Walk ___.”",
+      "question": "“The road is slippery. Walk _.”",
       "options": [
         "loudly",
         "hungrily",
@@ -3594,7 +3594,7 @@
     },
     {
       "id": "ENG5-036",
-      "question": "“The thief entered the house ___.”",
+      "question": "“The thief entered the house _.”",
       "options": [
         "noisily",
         "hungrily",
@@ -3678,7 +3678,7 @@
     },
     {
       "id": "ENG5-040",
-      "question": "“Ouch___ That hurts.” Which mark is needed?",
+      "question": "“Ouch_ That hurts.” Which mark is needed?",
       "options": [
         "?",
         ".",
@@ -3699,7 +3699,7 @@
     },
     {
       "id": "ENG5-041",
-      "question": "“___ onions do we need?”",
+      "question": "“_ onions do we need?”",
       "options": [
         "How much",
         "How old",
@@ -3720,7 +3720,7 @@
     },
     {
       "id": "ENG5-042",
-      "question": "“___ cheese do we need?”",
+      "question": "“_ cheese do we need?”",
       "options": [
         "How many",
         "How often",
@@ -3825,7 +3825,7 @@
     },
     {
       "id": "ENG5-047",
-      "question": "“She is ___ engineer.”",
+      "question": "“She is _ engineer.”",
       "options": [
         "a",
         "the",
@@ -3846,7 +3846,7 @@
     },
     {
       "id": "ENG5-048",
-      "question": "“It is ___ nice day.”",
+      "question": "“It is _ nice day.”",
       "options": [
         "an",
         "the",
@@ -3930,7 +3930,7 @@
     },
     {
       "id": "ENG5-052",
-      "question": "“What is the ___ river?”",
+      "question": "“What is the _ river?”",
       "options": [
         "longer",
         "long",
@@ -3993,7 +3993,7 @@
     },
     {
       "id": "ENG5-055",
-      "question": "“Which is ___ highest mountain?”",
+      "question": "“Which is _ highest mountain?”",
       "options": [
         "a",
         "an",
@@ -4014,7 +4014,7 @@
     },
     {
       "id": "ENG5-056",
-      "question": "“She is ___ honest girl.”",
+      "question": "“She is _ honest girl.”",
       "options": [
         "a",
         "the",
@@ -4077,7 +4077,7 @@
     },
     {
       "id": "ENG5-059",
-      "question": "“The child is hiding ___ the bed.”",
+      "question": "“The child is hiding _ the bed.”",
       "options": [
         "over",
         "between",
@@ -4098,7 +4098,7 @@
     },
     {
       "id": "ENG5-060",
-      "question": "“The blue car is ___ the green car.”",
+      "question": "“The blue car is _ the green car.”",
       "options": [
         "under",
         "between",
@@ -4119,7 +4119,7 @@
     },
     {
       "id": "ENG5-061",
-      "question": "“The house is ___ the trees.”",
+      "question": "“The house is _ the trees.”",
       "options": [
         "under",
         "through",
@@ -4140,7 +4140,7 @@
     },
     {
       "id": "ENG5-062",
-      "question": "“My father is working ___ the kitchen.”",
+      "question": "“My father is working _ the kitchen.”",
       "options": [
         "on",
         "under",
@@ -4161,7 +4161,7 @@
     },
     {
       "id": "ENG5-063",
-      "question": "Small drops of liquid are called ___.",
+      "question": "Small drops of liquid are called _.",
       "options": [
         "crystals",
         "clouds",
@@ -4182,7 +4182,7 @@
     },
     {
       "id": "ENG5-064",
-      "question": "Small balls of ice falling from clouds are ___.",
+      "question": "Small balls of ice falling from clouds are _.",
       "options": [
         "sleet",
         "vapour",
@@ -4203,7 +4203,7 @@
     },
     {
       "id": "ENG5-065",
-      "question": "Illegal killing of wild animals is called ___.",
+      "question": "Illegal killing of wild animals is called _.",
       "options": [
         "hunting",
         "farming",
@@ -4245,7 +4245,7 @@
     },
     {
       "id": "ENG5-067",
-      "question": "A group of young animals born together is a ___.",
+      "question": "A group of young animals born together is a _.",
       "options": [
         "herd",
         "flock",
@@ -4266,7 +4266,7 @@
     },
     {
       "id": "ENG5-068",
-      "question": "“My sister ___ tennis.”",
+      "question": "“My sister _ tennis.”",
       "options": [
         "play",
         "playing",
@@ -4287,7 +4287,7 @@
     },
     {
       "id": "ENG5-069",
-      "question": "“They ___ lunch at noon.”",
+      "question": "“They _ lunch at noon.”",
       "options": [
         "eats",
         "eating",
@@ -4308,7 +4308,7 @@
     },
     {
       "id": "ENG5-070",
-      "question": "“Mr Rai ___ English.”",
+      "question": "“Mr Rai _ English.”",
       "options": [
         "teach",
         "teaching",
@@ -4350,7 +4350,7 @@
     },
     {
       "id": "ENG5-072",
-      "question": "“___ your brother go to school?”",
+      "question": "“_ your brother go to school?”",
       "options": [
         "Do",
         "Is",
@@ -4413,7 +4413,7 @@
     },
     {
       "id": "ENG5-075",
-      "question": "“___ in a queue at the bus stop.”",
+      "question": "“_ in a queue at the bus stop.”",
       "options": [
         "Sit",
         "Fall",
@@ -4434,7 +4434,7 @@
     },
     {
       "id": "ENG5-076",
-      "question": "“___ noisy during lessons.”",
+      "question": "“_ noisy during lessons.”",
       "options": [
         "Don't sit",
         "Be always",
@@ -4455,7 +4455,7 @@
     },
     {
       "id": "ENG5-077",
-      "question": "“___ attention to your teacher.”",
+      "question": "“_ attention to your teacher.”",
       "options": [
         "Eat",
         "Stand",
@@ -4476,7 +4476,7 @@
     },
     {
       "id": "ENG5-078",
-      "question": "“Go ___ ahead.”",
+      "question": "“Go _ ahead.”",
       "options": [
         "under",
         "between",
@@ -4497,7 +4497,7 @@
     },
     {
       "id": "ENG5-079",
-      "question": "“Walk ___ the bridge.”",
+      "question": "“Walk _ the bridge.”",
       "options": [
         "under",
         "behind",
@@ -4518,7 +4518,7 @@
     },
     {
       "id": "ENG5-080",
-      "question": "“The bank is ___ the library.”",
+      "question": "“The bank is _ the library.”",
       "options": [
         "inside",
         "through",
@@ -4581,7 +4581,7 @@
     },
     {
       "id": "ENG5-083",
-      "question": "“I ___ a letter yesterday.”",
+      "question": "“I _ a letter yesterday.”",
       "options": [
         "am writing",
         "will write",
@@ -4602,7 +4602,7 @@
     },
     {
       "id": "ENG5-084",
-      "question": "“They ___ football yesterday.”",
+      "question": "“They _ football yesterday.”",
       "options": [
         "was playing",
         "are playing",
@@ -4665,7 +4665,7 @@
     },
     {
       "id": "ENG5-087",
-      "question": "“While I washed dishes, a dog ___ in.”",
+      "question": "“While I washed dishes, a dog _ in.”",
       "options": [
         "was coming",
         "comes",
@@ -4686,7 +4686,7 @@
     },
     {
       "id": "ENG5-088",
-      "question": "“She ___ vegetables when she cut her finger.”",
+      "question": "“She _ vegetables when she cut her finger.”",
       "options": [
         "cut",
         "cuts",
@@ -4728,7 +4728,7 @@
     },
     {
       "id": "ENG5-090",
-      "question": "A tool used for chopping wood is an ___.",
+      "question": "A tool used for chopping wood is an _.",
       "options": [
         "hoe",
         "rake",
@@ -4749,7 +4749,7 @@
     },
     {
       "id": "ENG5-091",
-      "question": "A piece of bread is called a ___.",
+      "question": "A piece of bread is called a _.",
       "options": [
         "cake",
         "bowl",
@@ -4812,7 +4812,7 @@
     },
     {
       "id": "ENG5-094",
-      "question": "“I stayed home ___ I was sick.”",
+      "question": "“I stayed home _ I was sick.”",
       "options": [
         "but",
         "and",
@@ -4833,7 +4833,7 @@
     },
     {
       "id": "ENG5-095",
-      "question": "“I lost the match, ___ I am happy.”",
+      "question": "“I lost the match, _ I am happy.”",
       "options": [
         "because",
         "and",
@@ -4854,7 +4854,7 @@
     },
     {
       "id": "ENG5-096",
-      "question": "“He bought a pen ___ a pencil.”",
+      "question": "“He bought a pen _ a pencil.”",
       "options": [
         "but",
         "because",
@@ -4875,7 +4875,7 @@
     },
     {
       "id": "ENG5-097",
-      "question": "A person who treats sick people is a ___.",
+      "question": "A person who treats sick people is a _.",
       "options": [
         "farmer",
         "waiter",
@@ -4896,7 +4896,7 @@
     },
     {
       "id": "ENG5-098",
-      "question": "A person who prepares restaurant meals is a ___.",
+      "question": "A person who prepares restaurant meals is a _.",
       "options": [
         "waiter",
         "dentist",
@@ -4917,7 +4917,7 @@
     },
     {
       "id": "ENG5-099",
-      "question": "A person who serves restaurant customers is a ___.",
+      "question": "A person who serves restaurant customers is a _.",
       "options": [
         "chef",
         "doctor",
@@ -5001,7 +5001,7 @@
     },
     {
       "id": "ENG5-103",
-      "question": "“Listen! Someone ___ on the door.”",
+      "question": "“Listen! Someone _ on the door.”",
       "options": [
         "knocks",
         "knocked",
@@ -5022,7 +5022,7 @@
     },
     {
       "id": "ENG5-104",
-      "question": "“___ two swings in the playground.”",
+      "question": "“_ two swings in the playground.”",
       "options": [
         "There is",
         "It is",
@@ -5043,7 +5043,7 @@
     },
     {
       "id": "ENG5-105",
-      "question": "A time when goods have lower prices is a ___.",
+      "question": "A time when goods have lower prices is a _.",
       "options": [
         "bargain",
         "market",
@@ -5127,7 +5127,7 @@
     },
     {
       "id": "ENG5-109",
-      "question": "“Prabhu enjoys ___ badminton.”",
+      "question": "“Prabhu enjoys _ badminton.”",
       "options": [
         "play",
         "played",
@@ -5148,7 +5148,7 @@
     },
     {
       "id": "ENG5-110",
-      "question": "“I love ___.”",
+      "question": "“I love _.”",
       "options": [
         "dance",
         "danced",
@@ -5169,7 +5169,7 @@
     },
     {
       "id": "ENG5-111",
-      "question": "“She dislikes ___ homework.”",
+      "question": "“She dislikes _ homework.”",
       "options": [
         "do",
         "does",
@@ -5211,7 +5211,7 @@
     },
     {
       "id": "ENG5-113",
-      "question": "Difficulty hearing is a hearing ___.",
+      "question": "Difficulty hearing is a hearing _.",
       "options": [
         "excellence",
         "admiration",
@@ -5232,7 +5232,7 @@
     },
     {
       "id": "ENG5-114",
-      "question": "People taking part in sports are ___.",
+      "question": "People taking part in sports are _.",
       "options": [
         "experts",
         "doctors",
@@ -5253,7 +5253,7 @@
     },
     {
       "id": "ENG5-115",
-      "question": "Being unable to move part of the body is ___.",
+      "question": "Being unable to move part of the body is _.",
       "options": [
         "admiration",
         "excellence",
@@ -5274,7 +5274,7 @@
     },
     {
       "id": "ENG5-116",
-      "question": "“I ___ speak Chinese. I learned it.”",
+      "question": "“I _ speak Chinese. I learned it.”",
       "options": [
         "can't",
         "couldn't",
@@ -5295,7 +5295,7 @@
     },
     {
       "id": "ENG5-117",
-      "question": "“He ___ jump because his leg hurts.”",
+      "question": "“He _ jump because his leg hurts.”",
       "options": [
         "can",
         "could",
@@ -5316,7 +5316,7 @@
     },
     {
       "id": "ENG5-118",
-      "question": "“Fish ___ swim.”",
+      "question": "“Fish _ swim.”",
       "options": [
         "can't",
         "couldn't",
@@ -5337,7 +5337,7 @@
     },
     {
       "id": "ENG5-119",
-      "question": "A small useful tool is a ___.",
+      "question": "A small useful tool is a _.",
       "options": [
         "flash",
         "splash",
@@ -5358,7 +5358,7 @@
     },
     {
       "id": "ENG5-120",
-      "question": "“She ___ drive when she was five.”",
+      "question": "“She _ drive when she was five.”",
       "options": [
         "can't",
         "won't",
@@ -5379,7 +5379,7 @@
     },
     {
       "id": "ENG5-121",
-      "question": "A picture of a person is called a ___.",
+      "question": "A picture of a person is called a _.",
       "options": [
         "landscape",
         "sculpture",
@@ -5400,7 +5400,7 @@
     },
     {
       "id": "ENG5-122",
-      "question": "A family member who lived long ago is an ___.",
+      "question": "A family member who lived long ago is an _.",
       "options": [
         "artist",
         "courtier",
@@ -5421,7 +5421,7 @@
     },
     {
       "id": "ENG5-123",
-      "question": "Someone wanting to know more is ___.",
+      "question": "Someone wanting to know more is _.",
       "options": [
         "nervous",
         "disappointed",
@@ -5442,7 +5442,7 @@
     },
     {
       "id": "ENG5-124",
-      "question": "“___ old are you?”",
+      "question": "“_ old are you?”",
       "options": [
         "What",
         "Why",
@@ -5463,7 +5463,7 @@
     },
     {
       "id": "ENG5-125",
-      "question": "“___ are you absent?”",
+      "question": "“_ are you absent?”",
       "options": [
         "When",
         "Who",
@@ -5484,7 +5484,7 @@
     },
     {
       "id": "ENG5-126",
-      "question": "“___ do you brush your teeth?”",
+      "question": "“_ do you brush your teeth?”",
       "options": [
         "How much",
         "How old",
@@ -5526,7 +5526,7 @@
     },
     {
       "id": "ENG5-128",
-      "question": "“The house costs too much. It is ___.”",
+      "question": "“The house costs too much. It is _.”",
       "options": [
         "very hungry",
         "quite happy",
@@ -5547,7 +5547,7 @@
     },
     {
       "id": "ENG5-129",
-      "question": "The gases surrounding Earth form the ___.",
+      "question": "The gases surrounding Earth form the _.",
       "options": [
         "planet",
         "temperature",
@@ -5568,7 +5568,7 @@
     },
     {
       "id": "ENG5-130",
-      "question": "A period of one hundred years is a ___.",
+      "question": "A period of one hundred years is a _.",
       "options": [
         "decade",
         "month",
@@ -5589,7 +5589,7 @@
     },
     {
       "id": "ENG5-131",
-      "question": "How hot or cold something is means its ___.",
+      "question": "How hot or cold something is means its _.",
       "options": [
         "atmosphere",
         "oxygen",
@@ -5610,7 +5610,7 @@
     },
     {
       "id": "ENG5-132",
-      "question": "Suitable for people to live in means ___.",
+      "question": "Suitable for people to live in means _.",
       "options": [
         "available",
         "natural",
@@ -5631,7 +5631,7 @@
     },
     {
       "id": "ENG5-133",
-      "question": "“They ___ fruit tomorrow.”",
+      "question": "“They _ fruit tomorrow.”",
       "options": [
         "will ate",
         "are eat",
@@ -5652,7 +5652,7 @@
     },
     {
       "id": "ENG5-134",
-      "question": "“We ___ you tomorrow.”",
+      "question": "“We _ you tomorrow.”",
       "options": [
         "don't helped",
         "not help",
@@ -5673,7 +5673,7 @@
     },
     {
       "id": "ENG5-135",
-      "question": "Dark clouds are gathering. It is ___.",
+      "question": "Dark clouds are gathering. It is _.",
       "options": [
         "will raining",
         "rained now",
@@ -5694,7 +5694,7 @@
     },
     {
       "id": "ENG5-136",
-      "question": "“I have planned it. I am ___ tomorrow.”",
+      "question": "“I have planned it. I am _ tomorrow.”",
       "options": [
         "will swimming",
         "swim yesterday",

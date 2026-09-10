@@ -10,42 +10,53 @@ export const GAME_CONFIG = {
   // Path to the assigned questions JSON file for the current game in the public folder.
   // Each game uses ONLY its assigned JSON file as its independent question pool.
   // DO NOT combine, merge, or cross-reference other question files.
-  dataFile: 'data/Grade5-English-questions-ENG5-only.json',
+  dataFile: "data/Grade5-English-questions-ENG5-only.json",
   // ==========================================
   // 1. BALL DIMENSIONS & VISUAL SIZING
   // ==========================================
   balls: {
-    // Answer balls scaled up 1% more (clamp(72.37px, 9.9vw, 114.69px))
-    sizeClamp: 'clamp(72.37px, 9.9vw, 114.69px)',
+    // Answer balls enlarged by 20% with responsive stage-relative sizing.
+    sizeClamp: "clamp(155.81px, 21.31cqw, 246.91px)",
 
-    // Vertical position in the arena (% from top of arena)
-    verticalPercentY: 29,
+    // Effective rendered ball diameter on the fixed 1920x1080 stage (px).
+    // Used to auto-fit the answer text to the largest size that still fits.
+    sizePx: 246.91,
 
-    // Centered horizontal margins for group formation (% of arena width)
-    // Left: 5%, Right: 85% (Center of group is at 45%, perfectly uniform 20% step)
-    // Keeps the group shifted slightly left with generous, even gaps and zero edge overflow.
-    horizontalMarginLeft: 5,
-    horizontalMarginRight: 85,
+    // TOP HALF-CIRCLE FORMATION (% from top of arena):
+    // the centre ball sits at arcTopPercentY, and every ball drops parabolically
+    // by up to arcDropPercent toward the outer edges — middle highest, the pair
+    // beside it a little lower, the outermost pair lower still.
+    arcTopPercentY: 28,
+    arcDropPercent: 13,
+
+    // Centered horizontal margins for a tighter, evenly spaced group.
+    horizontalMarginLeft: 14,
+    horizontalMarginRight: 86,
 
     // Border thickness (px)
     borderWidthNormal: 3.5,
     borderWidthTargeted: 4.5,
 
-    // Invisible Hitbox collision radius (px) - Generous for mobile but strictly separated so neighboring hitboxes never overlap
-    hitRadius: 62,
+    // A ball counts as hit / targeted when the aim line (or projectile path)
+    // comes within (visible ball radius + hitGrace) of the ball centre — i.e.
+    // touching ANY part of the ball, plus a few px of kid-friendly forgiveness.
+    // Targeting and collision use the exact same radius, so the highlighted
+    // ball is always the one the shot connects with.
+    hitGrace: 12,
 
-    // Aim tolerance for selecting/highlighting a target ball (px)
-    targetToleranceDistance: 62,
-
-    // Large, bold, highly readable typography scaling optimized for balls (ensures zero horizontal clipping)
-    fontSizes: {
-      singleDigit: 'clamp(1.75rem, 3.0vw, 2.45rem)',      // Single digit (e.g. 6, 7)
-      twoDigits: 'clamp(1.48rem, 2.5vw, 2.05rem)',        // 2 digits (e.g. 22, 24, 63, 56)
-      shortWord: 'clamp(1.22rem, 2.0vw, 1.72rem)',       // 3 chars (e.g. 100, 144, 200, Cat)
-      mediumWord: 'clamp(1.05rem, 1.65vw, 1.42rem)',     // 4-5 chars (e.g. Brave, Plant, Flew)
-      longWord: 'clamp(0.88rem, 1.35vw, 1.20rem)',       // 6-7 chars (e.g. Modern, Castle, Shrink)
-      extraLongWord: 'clamp(0.74rem, 1.1vw, 1.02rem)'    // > 7 chars (e.g. Sparkling, Fearless, Children)
-    }
+    // Answer text is auto-fitted per ball (see getBallTextFit in EquationShooter):
+    // a single word takes the largest size that stays on one line; a two-word
+    // value is allowed to wrap onto two lines, sized to the longer word.
+    textFit: {
+      // fraction of the ball diameter usable for text width / height
+      widthRatio: 0.82,
+      // conservative bold-glyph advance estimate, including wide letters like W
+      glyphRatio: 0.7,
+      // hard caps as a fraction of the ball diameter
+      singleLineMaxRatio: 0.6,
+      twoLineMaxRatio: 0.34,
+      minPx: 12,
+    },
   },
 
   // ==========================================
@@ -56,24 +67,33 @@ export const GAME_CONFIG = {
     bulletSpeed: 24,
 
     // Projectile visual size (px)
-    bulletSize: 40,
+    bulletSize: 48,
 
     // Max aiming angle in degrees (+/- from straight up)
     maxAimAngleDegrees: 78,
 
-    // Drag power multiplier and sensitivity
-    powerRatioMin: 0.35,
-    powerRatioMax: 1.45,
-    defaultPower: 0.9,
+    // ------------------------------------------------------------------
+    // CANNON GEOMETRY — fixed 1920x1080 stage space, matches the rendered
+    // barrel. Shots, the trajectory preview and the muzzle flash all
+    // originate from the muzzle tip = pivot + muzzleLength along the aim.
+    // ------------------------------------------------------------------
+    pivotX: 960, // barrel pivot X (horizontal centre of the arena)
+    pivotY: 1032, // barrel pivot Y (bottom-centre of the rotating barrel)
+    muzzleLength: 82, // pivot -> muzzle tip
 
-    // Distance offset from cannon pivot to muzzle tip (px)
-    muzzleOffset: 68,
+    // Projectile reach, mapped from how far back the player drags (px).
+    reachMin: 400,
+    reachMax: 1260,
+    reachPerDragPx: 3.6,
+
+    // Spacing between aiming-trajectory dots (px).
+    trajectoryDotSpacing: 34,
 
     // Recoil animation duration (ms)
     recoilDurationMs: 400,
 
     // Muzzle flash duration (ms)
-    muzzleFlashDurationMs: 450
+    muzzleFlashDurationMs: 450,
   },
 
   // ==========================================
@@ -91,8 +111,8 @@ export const GAME_CONFIG = {
       dotCount: 28,
       dotSize: 10,
       minSpacing: 18,
-      maxSpacing: 26
-    }
+      maxSpacing: 26,
+    },
   },
 
   // ==========================================
@@ -115,7 +135,7 @@ export const GAME_CONFIG = {
     getExpRequired: (lvl: number) => 100 + (Math.max(1, lvl) - 1) * 50,
 
     // Maximum display level before endless mastery
-    maxLevel: 10
+    maxLevel: 10,
   },
 
   // ==========================================
@@ -132,9 +152,8 @@ export const GAME_CONFIG = {
     demotionAccuracy: 0.4,
 
     // Consecutive incorrect answers on a specific category before triggering practice mode
-    categoryStruggleThreshold: 2
-  }
+    categoryStruggleThreshold: 2,
+  },
 };
 
 export type GameConfig = typeof GAME_CONFIG;
-
