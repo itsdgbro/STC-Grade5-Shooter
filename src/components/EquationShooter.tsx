@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import confetti from 'canvas-confetti';
 import { sfx } from '../utils/sounds';
-import { ArrowLeft, Lightbulb, Zap } from 'lucide-react';
+import { ArrowLeft, Lightbulb, Zap, Pause, Play, Settings, RotateCcw } from 'lucide-react';
+import { SettingsModal } from './SettingsModal';
 import { GAME_CONFIG } from '../config/gameConfig';
 import { adaptiveEngine, isAnswerCorrect, shuffleArray, type QuestionData } from '../utils/adaptiveEngine';
 
@@ -79,6 +80,10 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
   const [balls, setBalls] = useState<Ball[]>([]);
   const [feedback, setFeedback] = useState<{ text: string; isCorrect: boolean } | null>(null);
   const [correctStreak, setCorrectStreak] = useState(0);
+
+  // Global UI Overlays (Pause & Settings)
+  const [isPaused, setIsPaused] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   // 5. EXP Level Progression State
   const [expLevel, setExpLevel] = useState(1);
@@ -935,34 +940,60 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
             gap: 'clamp(6px, 1.2vw, 12px)'
           }}
         >
-          {/* Back Button */}
-          <button
-            onClick={() => {
-              sfx.playPop();
-              onBack();
-            }}
-            className="btn-3d"
-            style={{
-              background: '#FFFFFF',
-              color: '#0284c7',
-              border: '2.5px solid #bae6fd',
-              borderRadius: '9999px',
-              padding: '4px 12px',
-              fontSize: 'clamp(0.8rem, 1.3vw, 1.0rem)',
-              fontWeight: 800,
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px',
-              boxShadow: '0 3px 0 #7dd3fc',
-              width: 'auto',
-              minWidth: '72px',
-              height: '42px',
-              justifyContent: 'center',
-              flexShrink: 0
-            }}
-          >
-            <ArrowLeft size={16} /> Back
-          </button>
+          {/* LEFT BUTTON GROUP: PAUSE, SETTINGS */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+            {/* Pause Button */}
+            <button
+              onClick={() => {
+                sfx.playPop();
+                setIsPaused(true);
+              }}
+              className="btn-3d"
+              title="Pause Game"
+              style={{
+                background: '#FFFFFF',
+                color: '#0284c7',
+                border: '2.5px solid #bae6fd',
+                borderRadius: '50%',
+                width: '42px',
+                height: '42px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 3px 0 #7dd3fc',
+                cursor: 'pointer',
+                flexShrink: 0
+              }}
+            >
+              <Pause size={17} />
+            </button>
+
+            {/* Settings Button */}
+            <button
+              onClick={() => {
+                sfx.playPop();
+                setShowSettings(true);
+              }}
+              className="btn-3d"
+              title="Game Settings"
+              style={{
+                background: '#FFFFFF',
+                color: '#0284c7',
+                border: '2.5px solid #bae6fd',
+                borderRadius: '50%',
+                width: '42px',
+                height: '42px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 3px 0 #7dd3fc',
+                cursor: 'pointer',
+                flexShrink: 0
+              }}
+            >
+              <Settings size={17} />
+            </button>
+          </div>
 
           {/* PRIMARY HEADER QUESTION / EQUATION DISPLAY BANNER (LEFT / CENTER) */}
           <div
@@ -1577,12 +1608,12 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               e.stopPropagation();
               fireCannon();
             }}
-            disabled={isShooting}
+            disabled={isShooting || isPaused || showSettings}
             className="btn-3d btn-shoot-mobile no-drag-aim"
             style={{
               position: 'relative',
               overflow: 'hidden',
-              background: isShooting
+              background: isShooting || isPaused || showSettings
                 ? 'linear-gradient(180deg, #94a3b8 0%, #64748b 100%)'
                 : 'linear-gradient(180deg, #ef4444 0%, #dc2626 50%, #b91c1c 100%)',
               color: '#FFFFFF',
@@ -1592,7 +1623,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               fontWeight: 900,
               letterSpacing: '1.5px',
               border: '3.5px solid #FFFFFF',
-              boxShadow: isShooting
+              boxShadow: isShooting || isPaused || showSettings
                 ? '0 4px 0 #475569'
                 : '0 6px 0 #991b1b, 0 10px 18px rgba(220, 38, 38, 0.4)',
               textShadow: '0 2px 0 #7f1d1d, 0 3px 6px rgba(0,0,0,0.35)',
@@ -1600,9 +1631,9 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               alignItems: 'center',
               justifyContent: 'center',
               gap: '8px',
-              cursor: isShooting ? 'not-allowed' : 'pointer',
+              cursor: isShooting || isPaused || showSettings ? 'not-allowed' : 'pointer',
               zIndex: 25,
-              opacity: isShooting ? 0.75 : 1
+              opacity: isShooting || isPaused || showSettings ? 0.75 : 1
             }}
           >
             {/* Specular top highlight */}
@@ -1623,6 +1654,140 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
           </button>
         </div>
       </div>
+
+      {/* ========================================================================= */}
+      {/* 4. GLOBAL UI MODAL: PAUSE PANEL                                            */}
+      {/* ========================================================================= */}
+      {isPaused && (
+        <div
+          className="no-drag-aim"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 120,
+            background: 'rgba(15, 23, 42, 0.75)',
+            backdropFilter: 'blur(8px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '12px'
+          }}
+        >
+          <div
+            className="animate-pop"
+            style={{
+              background: '#FFFFFF',
+              borderRadius: '16px',
+              padding: '14px 16px',
+              border: '2.5px solid #38bdf8',
+              boxShadow: '0 6px 0 #0284c7, 0 12px 24px rgba(0,0,0,0.4)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '8px',
+              minWidth: '190px',
+              maxWidth: '220px',
+              width: '85%',
+              textAlign: 'center'
+            }}
+          >
+            <div style={{ fontSize: '1.4rem', margin: 0, lineHeight: 1 }}>⏸️</div>
+            <h2 style={{ fontSize: '1.05rem', fontWeight: 900, color: '#0f172a', margin: 0, letterSpacing: '0.5px' }}>
+              GAME PAUSED
+            </h2>
+            <p style={{ color: '#64748b', fontSize: '0.66rem', fontWeight: 700, margin: 0, lineHeight: 1.2 }}>
+              Take a break! Press resume when you're ready.
+            </p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '7px', width: '100%', marginTop: '4px' }}>
+              {/* Resume Button */}
+              <button
+                onClick={() => {
+                  sfx.playPop();
+                  setIsPaused(false);
+                }}
+                className="btn-3d"
+                style={{
+                  background: 'linear-gradient(180deg, #22c55e 0%, #16a34a 100%)',
+                  color: '#FFFFFF',
+                  border: '2px solid #FFFFFF',
+                  borderRadius: '9999px',
+                  padding: '8px 12px',
+                  fontSize: '0.88rem',
+                  fontWeight: 900,
+                  boxShadow: '0 3px 0 #15803d',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '6px',
+                  cursor: 'pointer'
+                }}
+              >
+                <Play size={15} /> Resume
+              </button>
+
+              {/* Restart Question Button */}
+              <button
+                onClick={() => {
+                  sfx.playPop();
+                  setIsPaused(false);
+                  loadNextAdaptiveQuestion(expLevel);
+                }}
+                className="btn-3d"
+                style={{
+                  background: 'linear-gradient(180deg, #f59e0b 0%, #d97706 100%)',
+                  color: '#FFFFFF',
+                  border: '2px solid #FFFFFF',
+                  borderRadius: '9999px',
+                  padding: '7px 10px',
+                  fontSize: '0.82rem',
+                  fontWeight: 900,
+                  boxShadow: '0 2.5px 0 #b45309',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '6px',
+                  cursor: 'pointer'
+                }}
+              >
+                <RotateCcw size={14} /> Restart Question
+              </button>
+
+              {/* Main Menu Button */}
+              <button
+                onClick={() => {
+                  sfx.playPop();
+                  setIsPaused(false);
+                  onBack();
+                }}
+                className="btn-3d"
+                style={{
+                  background: '#f1f5f9',
+                  color: '#475569',
+                  border: '1.5px solid #cbd5e1',
+                  borderRadius: '9999px',
+                  padding: '7px 10px',
+                  fontSize: '0.8rem',
+                  fontWeight: 800,
+                  boxShadow: '0 2px 0 #94a3b8',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '5px',
+                  cursor: 'pointer'
+                }}
+              >
+                <ArrowLeft size={14} /> Quit to Menu
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* 5. GLOBAL UI MODAL: SETTINGS PANEL                                         */}
+      {/* ========================================================================= */}
+      <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
     </div>
   );
 };

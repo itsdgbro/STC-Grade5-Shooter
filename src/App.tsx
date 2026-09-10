@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { sfx } from './utils/sounds';
 import { EquationShooter } from './components/EquationShooter';
+import { SettingsModal } from './components/SettingsModal';
 import { GAME_CONFIG } from './config/gameConfig';
+import { Settings } from 'lucide-react';
 
 type Screen = 'main-menu' | 'equation-shooter';
 
@@ -9,6 +11,7 @@ export function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>('main-menu');
   const [gameTitle, setGameTitle] = useState('MATH SHOOTER');
   const [gameSubtitle, setGameSubtitle] = useState('GRADE 5 MATH CHALLENGE');
+  const [showSettings, setShowSettings] = useState(false);
 
   useEffect(() => {
     const loadGameInfo = async () => {
@@ -543,11 +546,50 @@ export function App() {
             <span style={{ fontSize: '1.1em', transform: 'translateY(-1px)' }}>▶</span>
             <span>PLAY</span>
           </button>
+
+          {/* DYNAMIC TOP-LEFT TOOLBAR: Slot 0 Settings Button (MainMenu) */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '20px',
+              left: '20px',
+              zIndex: 30
+            }}
+          >
+            <button
+              onClick={() => {
+                sfx.playPop();
+                setShowSettings(true);
+              }}
+              className="btn-3d"
+              title="Game Settings"
+              style={{
+                background: '#FFFFFF',
+                color: '#0284c7',
+                border: '2.5px solid #bae6fd',
+                borderRadius: '50%',
+                width: '46px',
+                height: '46px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 4px 0 #7dd3fc',
+                cursor: 'pointer'
+              }}
+            >
+              <Settings size={22} />
+            </button>
+          </div>
         </div>
       )}
 
       {/* ========================================================================= */}
-      {/* 2. EQUATION SHOOTER SCREEN                                                */}
+      {/* 2. MAIN MENU SETTINGS MODAL (LAYER 3 MODAL)                               */}
+      {/* ========================================================================= */}
+      <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
+
+      {/* ========================================================================= */}
+      {/* 3. EQUATION SHOOTER SCREEN                                                */}
       {/* ========================================================================= */}
       {currentScreen === 'equation-shooter' && (
         <EquationShooter onBack={() => setCurrentScreen('main-menu')} />
