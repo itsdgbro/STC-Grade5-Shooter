@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { sfx } from "./utils/sounds";
 import { EquationShooter } from "./components/EquationShooter";
 import { SettingsModal } from "./components/SettingsModal";
-import { loadConfiguredQuestionData } from "./utils/questionData";
+import { loadGameLevels } from "./utils/dataLoader";
+import { flutterBridge } from "./utils/flutterBridge";
 import { Settings } from "lucide-react";
 
 type Screen = "main-menu" | "equation-shooter";
@@ -21,20 +22,30 @@ export function App() {
       setIsDataLoading(true);
       setDataLoadError(null);
       try {
-        const { data } = await loadConfiguredQuestionData();
-        if (data && typeof data === "object") {
-          if ("title" in data && typeof data.title === "string")
-            setGameTitle(data.title);
-          if ("subtitle" in data && typeof data.subtitle === "string")
-            setGameSubtitle(data.subtitle);
+        const levels = await loadGameLevels();
+        const firstLevel = levels[0];
+        let title = "Grade 5 Math Shooter";
+        if (firstLevel && typeof firstLevel === "object") {
+          if ("title" in firstLevel && typeof firstLevel.title === "string") {
+            setGameTitle(firstLevel.title);
+            title = firstLevel.title;
+          }
+          if ("subtitle" in firstLevel && typeof firstLevel.subtitle === "string") {
+            setGameSubtitle(firstLevel.subtitle);
+          }
         }
+
+        // Initialize Flutter Bridge metadata
+        flutterBridge.init({
+          gameId: "stc_grade5_shooter",
+          gameTitle: title,
+        });
+
         setIsDataLoading(false);
       } catch (err: unknown) {
         setIsDataLoading(false);
         setDataLoadError(
-          err instanceof Error
-            ? err.message
-            : "The configured question data could not be loaded. Check data/data.json and its selected file.",
+          err instanceof Error ? err.message : "Failed to fetch json file.",
         );
       }
     };
@@ -56,7 +67,7 @@ export function App() {
           boxSizing: "border-box",
           background: "linear-gradient(180deg, #0f172a 0%, #1e3a8a 100%)",
           color: "#FFFFFF",
-          fontFamily: "'Fredoka', 'Nunito', sans-serif",
+          fontFamily: "'Mukta', 'Fredoka', 'Nunito', sans-serif",
           textAlign: "center",
         }}
       >
@@ -68,7 +79,7 @@ export function App() {
             color: dataLoadError ? "#fca5a5" : "#bae6fd",
           }}
         >
-          {dataLoadError ? "Failed to Load Questions" : "Loading Questions..."}
+          {dataLoadError ? "Failed to fetch json file." : "Loading Questions..."}
         </h1>
         {dataLoadError && (
           <>
@@ -81,7 +92,7 @@ export function App() {
                 lineHeight: 1.4,
               }}
             >
-              {dataLoadError}
+              Failed to fetch json file.
             </p>
             <button
               className="btn-3d"
@@ -98,7 +109,7 @@ export function App() {
                 boxShadow: "0 7px 0 #0284c7",
               }}
             >
-              Retry Loading
+              Retry
             </button>
           </>
         )}
@@ -119,7 +130,7 @@ export function App() {
         justifyContent: "center",
         background:
           "linear-gradient(180deg, #38bdf8 0%, #3b82f6 50%, #1d4ed8 100%)",
-        fontFamily: "'Fredoka', 'Nunito', sans-serif",
+        fontFamily: "'Mukta', 'Fredoka', 'Nunito', sans-serif",
       }}
     >
       {/* ========================================================================= */}

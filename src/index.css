@@ -1,5 +1,65 @@
+/* ========================================================================= */
+/* MUKTA FONT FAMILY DECLARATIONS (Full Devanagari & Latin Glyph Support)     */
+/* ========================================================================= */
+@font-face {
+  font-family: "Mukta";
+  src: url("/fonts/Mukta-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mukta";
+  src: url("/fonts/Mukta-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mukta";
+  src: url("/fonts/Mukta-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mukta";
+  src: url("/fonts/Mukta-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mukta";
+  src: url("/fonts/Mukta-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mukta";
+  src: url("/fonts/Mukta-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mukta";
+  src: url("/fonts/Mukta-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   font-family:
+    "Mukta",
     "Fredoka",
     "Nunito",
     system-ui,
@@ -28,7 +88,14 @@ body {
   overflow: hidden;
   /* Everything outside the 16:9 stage shows through as standard black bars. */
   background: #000000;
-  font-family: "Fredoka", "Nunito", sans-serif;
+  font-family: "Mukta", "Fredoka", "Nunito", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
 /*
@@ -375,7 +442,7 @@ body {
   cursor: pointer;
   border: none;
   outline: none;
-  font-family: "Fredoka", sans-serif;
+  font-family: "Mukta", "Fredoka", sans-serif;
   text-decoration: none;
   display: inline-flex;
   align-items: center;

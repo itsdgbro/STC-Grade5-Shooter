@@ -4,41 +4,54 @@ declare global {
   }
 }
 
+export interface GameLevelItem {
+  title?: string;
+  subtitle?: string;
+  sourceFileName?: string;
+  questions?: unknown[];
+  [key: string]: unknown;
+}
+
 /**
- * Loads game levels data.
- * Flow:
- * 1. Window injected data (__GAME_DATA__) if available.
- * 2. Reads the centralized `data.json` file in `data/data.json`.
- * 3. Searches for the value of "data" or "file" in data.json (e.g. "Grade-5-Math.json").
- * 4. If the dataset value is found in the data directory, loads the JSON data into the game.
- * 5. If not found or any fetch fails, throws an error to display a fullscreen "Failed to fetch json file." screen.
+ * Universal Game Level Loader
+ * 
+ * Priority:
+ * 1. window.__GAME_DATA__ (Direct Flutter memory injection)
+ * 2. URL search param ?data=filename.json or ?dataset=filename.json (Flutter WebView query param)
+ * 3. data/data.json (Default fallback config file)
  */
-export async function loadGameLevels(): Promise<unknown[]> {
-  // 1. Check window injected data (for Flutter / container injection)
-  if (
-    typeof window !== 'undefined' &&
-    window.__GAME_DATA__ &&
-    Array.isArray(window.__GAME_DATA__) &&
-    window.__GAME_DATA__.length > 0
-  ) {
-    console.log('[DataLoader] Loaded levels from window.__GAME_DATA__');
-    return window.__GAME_DATA__;
+export async function loadGameLevels(): Promise<GameLevelItem[]> {
+  // 1. Direct in-memory injection from Flutter or container
+  if (typeof window !== 'undefined' && window.__GAME_DATA__) {
+    const injected = window.__GAME_DATA__;
+    if (Array.isArray(injected) && injected.length > 0) {
+      console.log('[DataLoader] Loaded levels from window.__GAME_DATA__');
+      return injected as GameLevelItem[];
+    } else if (
+      typeof injected === 'object' &&
+      injected !== null &&
+      'questions' in injected &&
+      Array.isArray((injected as { questions: unknown[] }).questions)
+    ) {
+      console.log('[DataLoader] Loaded single level object from window.__GAME_DATA__');
+      return [injected as GameLevelItem];
+    }
   }
 
-  const baseUrl = import.meta.env.BASE_URL || './';
+  const baseUrl = import.meta.env?.BASE_URL || './';
   let targetFileName: string | null = null;
 
-  // 2. Check if URL query parameter specifies the dataset (e.g. ?data=filename.json)
+  // 2. Check if URL query parameter specifies dataset (?data=filename.json or ?dataset=filename.json)
   if (typeof window !== 'undefined' && window.location && window.location.search) {
     const urlParams = new URLSearchParams(window.location.search);
     const queryFile = urlParams.get('data') || urlParams.get('dataset');
     if (queryFile && queryFile.trim()) {
       targetFileName = queryFile.trim();
-      console.log(`[DataLoader] URL query parameter specified dataset: "${targetFileName}"`);
+      console.log(`[DataLoader] URL query param specified dataset: "${targetFileName}"`);
     }
   }
 
-  // 3. Fallback: If no URL parameter was provided, read the centralized data.json file
+  // 3. Fallback: Read centralized data/data.json
   if (!targetFileName) {
     try {
       const configPath = `${baseUrl}data/data.json`;
@@ -50,24 +63,25 @@ export async function loadGameLevels(): Promise<unknown[]> {
       }
 
       const config = (await dataRes.json()) as Record<string, unknown>;
-      const fileCandidate = config?.data || config?.file;
-      if (!fileCandidate || typeof fileCandidate !== 'string' || !fileCandidate.trim()) {
-        throw new Error('Field "data" or "file" missing or invalid in data.json');
+      const candidate = config?.data || config?.file;
+      if (!candidate || typeof candidate !== 'string' || !candidate.trim()) {
+        throw new Error('Field "data" missing or invalid in data.json');
       }
 
-      targetFileName = fileCandidate.trim();
+      targetFileName = candidate.trim();
+      console.log(`[DataLoader] Centralized data.json pointed to: "${targetFileName}"`);
     } catch (err) {
       console.error('[DataLoader] Centralized data.json could not be loaded:', err);
       throw new Error('Failed to fetch json file.');
     }
   }
 
-  // 4. Search for the value of data in the directory and load it
+  // 4. Fetch the target dataset file
   try {
     const cleanFileName = targetFileName.startsWith('data/') ? targetFileName : `data/${targetFileName}`;
     const datasetUrl = `${baseUrl}${cleanFileName}`;
 
-    console.log(`[DataLoader] Centralized data.json pointed to: ${cleanFileName}. Fetching dataset...`);
+    console.log(`[DataLoader] Fetching dataset: ${datasetUrl}`);
     const datasetRes = await fetch(datasetUrl);
 
     const isHtmlResponse = datasetRes.headers.get('content-type')?.includes('text/html');
@@ -80,11 +94,23 @@ export async function loadGameLevels(): Promise<unknown[]> {
       throw new Error(`Empty JSON response from ${cleanFileName}`);
     }
 
-    // Support array of levels or level object containing questions
+    // Support either an array of levels [{ questions: [...] }] or a single object { questions: [...] }
     if (Array.isArray(json) && json.length > 0) {
-      const firstLevel = json[0] as { questions?: unknown[] } | undefined;
-      console.log(`[DataLoader] Successfully loaded ${firstLevel?.questions?.length || 0} questions from ${cleanFileName}`);
-      return json;
+      // Check if it's an array of question objects directly [ { question: '...', ... } ]
+      const firstItem = json[0];
+      if (firstItem && typeof firstItem === 'object' && ('question' in firstItem || 'options' in firstItem)) {
+        const wrappedLevel: GameLevelItem = {
+          sourceFileName: cleanFileName,
+          questions: json,
+        };
+        return [wrappedLevel];
+      }
+      return json.map((level) => {
+        if (level && typeof level === 'object') {
+          return { sourceFileName: cleanFileName, ...level };
+        }
+        return level;
+      }) as GameLevelItem[];
     } else if (
       typeof json === 'object' &&
       json !== null &&
@@ -92,8 +118,11 @@ export async function loadGameLevels(): Promise<unknown[]> {
       Array.isArray((json as { questions: unknown[] }).questions) &&
       (json as { questions: unknown[] }).questions.length > 0
     ) {
-      console.log(`[DataLoader] Successfully loaded single level object from ${cleanFileName}`);
-      return [json];
+      const doc = json as GameLevelItem;
+      return [{
+        ...doc,
+        sourceFileName: cleanFileName,
+      }];
     } else {
       throw new Error(`Dataset ${cleanFileName} does not contain valid questions`);
     }

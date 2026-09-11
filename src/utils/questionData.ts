@@ -1,54 +1,18 @@
-import { GAME_CONFIG } from "../config/gameConfig";
-
-interface DataManifest {
-  file: string;
-}
+import { loadGameLevels, type GameLevelItem } from "./dataLoader";
 
 export interface LoadedQuestionData {
-  data: unknown;
+  data: GameLevelItem;
   sourceFile: string;
 }
 
-function buildDataUrl(filePath: string): string {
-  const normalizedPath = filePath.replace(/^\/+/, "");
-  return `${import.meta.env.BASE_URL}${normalizedPath}?t=${Date.now()}`;
-}
-
 export async function loadConfiguredQuestionData(): Promise<LoadedQuestionData> {
-  const manifestPath = GAME_CONFIG.dataFile;
-  const manifestResponse = await fetch(buildDataUrl(manifestPath));
-
-  if (!manifestResponse.ok) {
-    throw new Error(
-      `Failed to load data manifest ${manifestPath}: HTTP ${manifestResponse.status}`,
-    );
+  const levels = await loadGameLevels();
+  if (!levels || levels.length === 0) {
+    throw new Error("Failed to fetch json file.");
   }
-
-  const manifest = (await manifestResponse.json()) as Partial<DataManifest>;
-  if (
-    !manifest ||
-    typeof manifest.file !== "string" ||
-    manifest.file.trim() === ""
-  ) {
-    throw new Error(
-      `Invalid data manifest ${manifestPath}: expected a non-empty "file" value`,
-    );
-  }
-
-  const questionFile = manifest.file.trim();
-  const questionPath = questionFile.startsWith("data/")
-    ? questionFile
-    : `data/${questionFile}`;
-  const questionResponse = await fetch(buildDataUrl(questionPath));
-
-  if (!questionResponse.ok) {
-    throw new Error(
-      `Failed to load question file ${questionPath}: HTTP ${questionResponse.status}`,
-    );
-  }
-
+  const level = levels[0];
   return {
-    data: await questionResponse.json(),
-    sourceFile: questionPath,
+    data: level,
+    sourceFile: level.sourceFileName || "data/data.json",
   };
 }

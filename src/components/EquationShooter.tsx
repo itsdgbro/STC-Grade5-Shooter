@@ -4,7 +4,8 @@ import { sfx } from "../utils/sounds";
 import { Heart, Lightbulb, Pause, Settings } from "lucide-react";
 import { SettingsModal } from "./SettingsModal";
 import { GAME_CONFIG } from "../config/gameConfig";
-import { loadConfiguredQuestionData } from "../utils/questionData";
+import { loadGameLevels } from "../utils/dataLoader";
+import { flutterBridge } from "../utils/flutterBridge";
 import {
   adaptiveEngine,
   isAnswerCorrect,
@@ -177,6 +178,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
   const [score, setScore] = useState(0);
   const [health, setHealth] = useState(3);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [isVictory, setIsVictory] = useState(false);
   const [levelUpCelebration, setLevelUpCelebration] = useState<{
     newLevel: number;
   } | null>(null);
@@ -257,40 +259,64 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
     [],
   );
 
-  // Load questions ONLY from the assigned JSON file for the current game
+  // Load questions dynamically via loadGameLevels
   const fetchAndInitializeQuestions = useCallback(async () => {
     setIsLoading(true);
     setLoadError(null);
     try {
-      const { data, sourceFile: targetFile } =
-        await loadConfiguredQuestionData();
-      const questionDocument =
-        data && typeof data === "object"
-          ? (data as { questions?: unknown })
-          : null;
-      const rawQuestions = Array.isArray(data)
-        ? data
-        : Array.isArray(questionDocument?.questions)
-          ? questionDocument.questions
+      const levels = await loadGameLevels();
+      const firstLevel = (levels && levels.length > 0 ? levels[0] : null) as any;
+      const rawQuestions = Array.isArray(levels) && !firstLevel?.questions
+        ? levels
+        : Array.isArray(firstLevel?.questions)
+          ? firstLevel.questions
           : [];
 
       if (rawQuestions.length === 0) {
-        throw new Error(`No questions found in assigned file: ${targetFile}`);
+        throw new Error("Failed to fetch json file.");
       }
 
-      // Initialize adaptive engine using ONLY the questions from this single file
+      const targetFile = firstLevel?.sourceFileName || "data.json";
       adaptiveEngine.setQuestions(rawQuestions, targetFile);
       setIsLoading(false);
       loadNextAdaptiveQuestion(expLevel);
-    } catch (err: any) {
+    } catch {
       setIsLoading(false);
-      setLoadError(err?.message || "Failed to load valid question file");
+      setLoadError("Failed to fetch json file.");
     }
   }, [expLevel, loadNextAdaptiveQuestion]);
 
   useEffect(() => {
     fetchAndInitializeQuestions();
   }, [fetchAndInitializeQuestions]);
+
+  // Flutter Bridge command listeners (PAUSE, RESUME, RESTART)
+  useEffect(() => {
+    const unsubPause = flutterBridge.on("PAUSE", () => {
+      setIsPaused(true);
+    });
+    const unsubResume = flutterBridge.on("RESUME", () => {
+      setIsPaused(false);
+    });
+    const unsubRestart = flutterBridge.on("RESTART", () => {
+      setIsPaused(false);
+      setIsGameOver(false);
+      setIsVictory(false);
+      setHealth(3);
+      setScore(0);
+      setExpLevel(1);
+      setCurrentExp(0);
+      setCorrectStreak(0);
+      setFeedback(null);
+      loadNextAdaptiveQuestion(1);
+    });
+
+    return () => {
+      unsubPause();
+      unsubResume();
+      unsubRestart();
+    };
+  }, [loadNextAdaptiveQuestion]);
 
   // Arena geometry in the fixed 1920x1080 STAGE coordinate space.
   // The stage is scaled as a whole via a CSS transform (see #root in index.css),
@@ -482,6 +508,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
       isPaused ||
       showSettings ||
       isGameOver ||
+      isVictory ||
       !arenaRef.current
     )
       return;
@@ -672,13 +699,27 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
 
       // EXP Calculation
       const expGained = GAME_CONFIG.expSystem.baseExpPerCorrect;
-      setScore((prev) => prev + 3);
+      const currentFinalScore = score + 3;
+      setScore(currentFinalScore);
       const expRequired = GAME_CONFIG.expSystem.getExpRequired(expLevel);
 
       let nextLevel = expLevel;
       const totalExp = currentExp + expGained;
 
       if (totalExp >= expRequired) {
+        if (expLevel >= GAME_CONFIG.expSystem.maxLevel) {
+          // Reached Max Level: Level / Campaign Victory!
+          setIsVictory(true);
+          sfx.playCorrect();
+          confetti({
+            particleCount: 150,
+            spread: 120,
+            origin: { y: 0.5 },
+          });
+          flutterBridge.sendLevelCompleted(currentFinalScore);
+          return;
+        }
+
         // Level Up Triggered!
         nextLevel = Math.min(GAME_CONFIG.expSystem.maxLevel, expLevel + 1);
         setExpLevel(nextLevel);
@@ -726,6 +767,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
 
       if (remainingHealth === 0) {
         setIsGameOver(true);
+        flutterBridge.sendGameOver(score);
       } else {
         // On incorrect answer, spend one heart and move to a fresh question.
         setTimeout(() => {
@@ -889,7 +931,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               color: "#f87171",
             }}
           >
-            Failed to Load Questions
+            Failed to fetch json file.
           </h2>
           <p
             style={{
@@ -899,7 +941,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               margin: 0,
             }}
           >
-            {loadError}
+            Failed to fetch json file.
           </p>
           <button
             onClick={() => fetchAndInitializeQuestions()}
@@ -916,7 +958,7 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
               boxShadow: "0 4px 0 #0284c7",
             }}
           >
-            Retry Loading
+            Retry
           </button>
         </div>
       )}
@@ -2521,6 +2563,146 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
                 }}
               >
                 Quit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* 5.5 GLOBAL UI MODAL: LEVEL COMPLETED / VICTORY                             */}
+      {/* ========================================================================= */}
+      {isVictory && (
+        <div
+          className="no-drag-aim"
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 10000,
+            background: "rgba(15, 23, 42, 0.82)",
+            backdropFilter: "blur(8px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "30px",
+          }}
+        >
+          <div
+            className="animate-pop"
+            style={{
+              background: "#FFFFFF",
+              borderRadius: "46px",
+              padding: "64px 76px",
+              border: "5px solid #4ade80",
+              boxShadow: "0 16px 0 #16a34a, 0 34px 60px rgba(0,0,0,0.45)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "26px",
+              minWidth: "720px",
+              maxWidth: "840px",
+              width: "84%",
+              textAlign: "center",
+            }}
+          >
+            <div style={{ fontSize: "5rem", margin: 0, lineHeight: 1 }}>🏆</div>
+            <h2
+              style={{
+                fontSize: "3.1rem",
+                fontWeight: 900,
+                color: "#0f172a",
+                margin: 0,
+                letterSpacing: "0.5px",
+              }}
+            >
+              LEVEL COMPLETED!
+            </h2>
+            <p
+              style={{
+                color: "#64748b",
+                fontSize: "35.6px",
+                fontWeight: 700,
+                margin: 0,
+                lineHeight: 1.4,
+              }}
+            >
+              Congratulations! Your final score is{" "}
+              <span
+                style={{
+                  color: "#16a34a",
+                  fontWeight: 900,
+                  textShadow: "0 2px 0 #14532d, 0 0 8px rgba(22,163,74,0.25)",
+                }}
+              >
+                {score}
+              </span>{" "}
+              points!
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "24px",
+                width: "100%",
+                marginTop: "20px",
+              }}
+            >
+              <button
+                onClick={() => {
+                  sfx.playPop();
+                  setHealth(3);
+                  setScore(0);
+                  setExpLevel(1);
+                  setCurrentExp(0);
+                  setCorrectStreak(0);
+                  setFeedback(null);
+                  setIsVictory(false);
+                  loadNextAdaptiveQuestion(1);
+                }}
+                className="btn-3d"
+                style={{
+                  background:
+                    "linear-gradient(180deg, #22c55e 0%, #16a34a 100%)",
+                  color: "#FFFFFF",
+                  border: "4px solid #FFFFFF",
+                  borderRadius: "9999px",
+                  padding: "22px 34px",
+                  fontSize: "clamp(2.25rem, 2.6cqw, 2.7rem)",
+                  fontWeight: 900,
+                  boxShadow: "0 8px 0 #15803d",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+              >
+                Play Again
+              </button>
+
+              <button
+                onClick={() => {
+                  sfx.playPop();
+                  setIsVictory(false);
+                  onBack();
+                }}
+                className="btn-3d"
+                style={{
+                  background: "#f1f5f9",
+                  color: "#475569",
+                  border: "3px solid #cbd5e1",
+                  borderRadius: "9999px",
+                  padding: "22px 34px",
+                  fontSize: "clamp(2.25rem, 2.6cqw, 2.7rem)",
+                  fontWeight: 800,
+                  boxShadow: "0 8px 0 #94a3b8",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  cursor: "pointer",
+                }}
+              >
+                Main Menu
               </button>
             </div>
           </div>
