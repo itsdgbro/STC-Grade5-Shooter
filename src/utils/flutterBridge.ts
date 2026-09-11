@@ -55,7 +55,7 @@ export class FlutterBridgeService {
 
   constructor() {
     this.gameId = 'stc_grade5_shooter';
-    this.gameTitle = 'Grade 5 Math Shooter';
+    this.gameTitle = 'CANNON BALL';
     // Only log to console if debug=true or ?debug_bridge=true in URL
     this.debug = false;
     this.listeners = new Map();

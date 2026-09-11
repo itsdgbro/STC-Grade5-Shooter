@@ -1,11 +1,17 @@
 {
-  "title": "WORD SHOOTER",
+  "title": "CANNON BALL",
   "subtitle": "GRADE 4 ENGLISH ADVENTURE",
   "questions": [
     {
       "id": "ENG4-001",
       "question": "I _ a student.",
-      "options": ["is", "are", "was", "be", "am"],
+      "options": [
+        "is",
+        "are",
+        "was",
+        "be",
+        "am"
+      ],
       "answer": "am",
       "hint": "Say the sentence aloud and choose what sounds right after “I.”",
       "metadata": {
@@ -19,7 +25,13 @@
     {
       "id": "ENG4-002",
       "question": "She _ my teacher.",
-      "options": ["am", "are", "were", "be", "is"],
+      "options": [
+        "am",
+        "are",
+        "were",
+        "be",
+        "is"
+      ],
       "answer": "is",
       "hint": "The subject is one female person.",
       "metadata": {
@@ -33,7 +45,13 @@
     {
       "id": "ENG4-003",
       "question": "They _ good friends.",
-      "options": ["is", "am", "was", "be", "are"],
+      "options": [
+        "is",
+        "am",
+        "was",
+        "be",
+        "are"
+      ],
       "answer": "are",
       "hint": "The subject means more than one person.",
       "metadata": {
@@ -47,7 +65,13 @@
     {
       "id": "ENG4-004",
       "question": "Mina lives _ Nepal.",
-      "options": ["from", "at", "on", "to", "in"],
+      "options": [
+        "from",
+        "at",
+        "on",
+        "to",
+        "in"
+      ],
       "answer": "in",
       "hint": "The blank tells where Mina lives now.",
       "metadata": {
@@ -61,7 +85,13 @@
     {
       "id": "ENG4-005",
       "question": "Ravi is _ Pokhara.",
-      "options": ["in", "on", "at", "under", "from"],
+      "options": [
+        "in",
+        "on",
+        "at",
+        "under",
+        "from"
+      ],
       "answer": "from",
       "hint": "The sentence tells Ravi’s place of origin.",
       "metadata": {
@@ -75,7 +105,13 @@
     {
       "id": "ENG4-006",
       "question": "Which spelling is correct?",
-      "options": ["teecher", "techer", "teachar", "teatcher", "teacher"],
+      "options": [
+        "teecher",
+        "techer",
+        "teachar",
+        "teatcher",
+        "teacher"
+      ],
       "answer": "teacher",
       "hint": "Start with “teach” and add the ending for a person.",
       "metadata": {
@@ -89,7 +125,13 @@
     {
       "id": "ENG4-007",
       "question": "We say _ when leaving.",
-      "options": ["hello", "welcome", "thanks", "sorry", "goodbye"],
+      "options": [
+        "hello",
+        "welcome",
+        "thanks",
+        "sorry",
+        "goodbye"
+      ],
       "answer": "goodbye",
       "hint": "Think about what you say before going away.",
       "metadata": {
@@ -123,7 +165,13 @@
     {
       "id": "ENG4-009",
       "question": "This is _ schoolbag.",
-      "options": ["mine", "me", "I", "ours", "my"],
+      "options": [
+        "mine",
+        "me",
+        "I",
+        "ours",
+        "my"
+      ],
       "answer": "my",
       "hint": "The ownership word comes directly before a noun.",
       "metadata": {
@@ -137,7 +185,13 @@
     {
       "id": "ENG4-010",
       "question": "Ram lost _ pencil.",
-      "options": ["her", "their", "our", "your", "his"],
+      "options": [
+        "her",
+        "their",
+        "our",
+        "your",
+        "his"
+      ],
       "answer": "his",
       "hint": "Ram is one boy who owns the pencil.",
       "metadata": {
@@ -151,7 +205,13 @@
     {
       "id": "ENG4-011",
       "question": "Sita loves _ new dress.",
-      "options": ["his", "my", "our", "their", "her"],
+      "options": [
+        "his",
+        "my",
+        "our",
+        "their",
+        "her"
+      ],
       "answer": "her",
       "hint": "Sita is one girl who owns the dress.",
       "metadata": {
@@ -165,7 +225,13 @@
     {
       "id": "ENG4-012",
       "question": "This book is _.",
-      "options": ["my", "me", "I", "ours", "mine"],
+      "options": [
+        "my",
+        "me",
+        "I",
+        "ours",
+        "mine"
+      ],
       "answer": "mine",
       "hint": "The ownership word stands alone after “is.”",
       "metadata": {
@@ -179,7 +245,13 @@
     {
       "id": "ENG4-013",
       "question": "Those pencils are _.",
-      "options": ["their", "them", "they", "hers", "theirs"],
+      "options": [
+        "their",
+        "them",
+        "they",
+        "hers",
+        "theirs"
+      ],
       "answer": "theirs",
       "hint": "The pencils belong to a group of people.",
       "metadata": {
@@ -193,7 +265,13 @@
     {
       "id": "ENG4-014",
       "question": "_ is my sister.",
-      "options": ["Her", "Hers", "They", "We", "She"],
+      "options": [
+        "Her",
+        "Hers",
+        "They",
+        "We",
+        "She"
+      ],
       "answer": "She",
       "hint": "Choose a subject word for one girl.",
       "metadata": {
@@ -207,7 +285,13 @@
     {
       "id": "ENG4-015",
       "question": "Please give the ball to _.",
-      "options": ["his", "he", "hers", "they", "him"],
+      "options": [
+        "his",
+        "he",
+        "hers",
+        "they",
+        "him"
+      ],
       "answer": "him",
       "hint": "The missing word comes after “to” and refers to a boy.",
       "metadata": {
@@ -241,7 +325,13 @@
     {
       "id": "ENG4-017",
       "question": "I _ brush my teeth daily.",
-      "options": ["never", "rarely", "yesterday", "tomorrow", "always"],
+      "options": [
+        "never",
+        "rarely",
+        "yesterday",
+        "tomorrow",
+        "always"
+      ],
       "answer": "always",
       "hint": "“Daily” means the action happens every day.",
       "metadata": {
@@ -255,7 +345,13 @@
     {
       "id": "ENG4-018",
       "question": "She _ walks to school.",
-      "options": ["never", "tomorrow", "yesterday", "once", "usually"],
+      "options": [
+        "never",
+        "tomorrow",
+        "yesterday",
+        "once",
+        "usually"
+      ],
       "answer": "usually",
       "hint": "The action happens on most days, but not necessarily every day.",
       "metadata": {
@@ -269,7 +365,13 @@
     {
       "id": "ENG4-019",
       "question": "He _ eats meat.",
-      "options": ["always", "daily", "often", "usually", "never"],
+      "options": [
+        "always",
+        "daily",
+        "often",
+        "usually",
+        "never"
+      ],
       "answer": "never",
       "hint": "The sentence should mean he does not eat meat at any time.",
       "metadata": {
@@ -283,7 +385,13 @@
     {
       "id": "ENG4-020",
       "question": "_ do you live?",
-      "options": ["Who", "When", "Why", "What", "Where"],
+      "options": [
+        "Who",
+        "When",
+        "Why",
+        "What",
+        "Where"
+      ],
       "answer": "Where",
       "hint": "The expected answer would be the name of a place.",
       "metadata": {
@@ -297,7 +405,13 @@
     {
       "id": "ENG4-021",
       "question": "_ is your birthday?",
-      "options": ["Where", "Who", "Why", "What", "When"],
+      "options": [
+        "Where",
+        "Who",
+        "Why",
+        "What",
+        "When"
+      ],
       "answer": "When",
       "hint": "The expected answer would be a date or time.",
       "metadata": {
@@ -311,7 +425,13 @@
     {
       "id": "ENG4-022",
       "question": "_ are you crying?",
-      "options": ["Where", "Who", "When", "Which", "Why"],
+      "options": [
+        "Where",
+        "Who",
+        "When",
+        "Which",
+        "Why"
+      ],
       "answer": "Why",
       "hint": "The speaker wants to know the reason.",
       "metadata": {
@@ -325,7 +445,13 @@
     {
       "id": "ENG4-023",
       "question": "Quarter past seven is _.",
-      "options": ["7:30", "6:45", "8:15", "7:45", "7:15"],
+      "options": [
+        "7:30",
+        "6:45",
+        "8:15",
+        "7:45",
+        "7:15"
+      ],
       "answer": "7:15",
       "hint": "Move 15 minutes forward from seven o’clock.",
       "metadata": {
@@ -339,7 +465,13 @@
     {
       "id": "ENG4-024",
       "question": "Half past nine is _.",
-      "options": ["9:15", "8:30", "10:30", "9:45", "9:30"],
+      "options": [
+        "9:15",
+        "8:30",
+        "10:30",
+        "9:45",
+        "9:30"
+      ],
       "answer": "9:30",
       "hint": "Move 30 minutes forward from nine o’clock.",
       "metadata": {
@@ -353,7 +485,13 @@
     {
       "id": "ENG4-025",
       "question": "Yesterday, I _ tired.",
-      "options": ["were", "am", "is", "are", "was"],
+      "options": [
+        "were",
+        "am",
+        "is",
+        "are",
+        "was"
+      ],
       "answer": "was",
       "hint": "The sentence is about the past and has the subject “I.”",
       "metadata": {
@@ -367,7 +505,13 @@
     {
       "id": "ENG4-026",
       "question": "They _ at school yesterday.",
-      "options": ["was", "are", "is", "am", "were"],
+      "options": [
+        "was",
+        "are",
+        "is",
+        "am",
+        "were"
+      ],
       "answer": "were",
       "hint": "The sentence is in the past and the subject is plural.",
       "metadata": {
@@ -381,7 +525,13 @@
     {
       "id": "ENG4-027",
       "question": "She _ absent yesterday.",
-      "options": ["weren't", "isn't", "aren't", "don't", "wasn't"],
+      "options": [
+        "weren't",
+        "isn't",
+        "aren't",
+        "don't",
+        "wasn't"
+      ],
       "answer": "wasn't",
       "hint": "Use a negative past form for one person.",
       "metadata": {
@@ -395,7 +545,13 @@
     {
       "id": "ENG4-028",
       "question": "We _ late yesterday.",
-      "options": ["wasn't", "aren't", "isn't", "didn't", "weren't"],
+      "options": [
+        "wasn't",
+        "aren't",
+        "isn't",
+        "didn't",
+        "weren't"
+      ],
       "answer": "weren't",
       "hint": "Use a negative past form for a group.",
       "metadata": {
@@ -409,7 +565,13 @@
     {
       "id": "ENG4-029",
       "question": "_ you help me, please?",
-      "options": ["Was", "Did", "Has", "Does", "Could"],
+      "options": [
+        "Was",
+        "Did",
+        "Has",
+        "Does",
+        "Could"
+      ],
       "answer": "Could",
       "hint": "Choose the word that makes the request sound polite.",
       "metadata": {
@@ -423,7 +585,13 @@
     {
       "id": "ENG4-030",
       "question": "Please _ the window.",
-      "options": ["opens", "opened", "opening", "opener", "open"],
+      "options": [
+        "opens",
+        "opened",
+        "opening",
+        "opener",
+        "open"
+      ],
       "answer": "open",
       "hint": "After “please,” use the simplest form of the action word.",
       "metadata": {
@@ -477,7 +645,13 @@
     {
       "id": "ENG4-033",
       "question": "How _ books are there?",
-      "options": ["much", "little", "few", "any", "many"],
+      "options": [
+        "much",
+        "little",
+        "few",
+        "any",
+        "many"
+      ],
       "answer": "many",
       "hint": "Books can be counted one by one.",
       "metadata": {
@@ -491,7 +665,13 @@
     {
       "id": "ENG4-034",
       "question": "How _ water do you drink?",
-      "options": ["many", "few", "number", "several", "much"],
+      "options": [
+        "many",
+        "few",
+        "number",
+        "several",
+        "much"
+      ],
       "answer": "much",
       "hint": "Water is normally measured rather than counted.",
       "metadata": {
@@ -505,7 +685,13 @@
     {
       "id": "ENG4-035",
       "question": "I have _ apple.",
-      "options": ["a", "the", "many", "much", "an"],
+      "options": [
+        "a",
+        "the",
+        "many",
+        "much",
+        "an"
+      ],
       "answer": "an",
       "hint": "Say “apple” aloud and listen to its first sound.",
       "metadata": {
@@ -519,7 +705,13 @@
     {
       "id": "ENG4-036",
       "question": "She bought _ mango.",
-      "options": ["an", "the", "much", "many", "a"],
+      "options": [
+        "an",
+        "the",
+        "much",
+        "many",
+        "a"
+      ],
       "answer": "a",
       "hint": "Say “mango” aloud and listen to its first sound.",
       "metadata": {
@@ -533,7 +725,13 @@
     {
       "id": "ENG4-037",
       "question": "Which noun is countable?",
-      "options": ["water", "rice", "sugar", "milk", "pencil"],
+      "options": [
+        "water",
+        "rice",
+        "sugar",
+        "milk",
+        "pencil"
+      ],
       "answer": "pencil",
       "hint": "Choose something you can count as one, two, or three.",
       "metadata": {
@@ -547,7 +745,13 @@
     {
       "id": "ENG4-038",
       "question": "Which noun is uncountable?",
-      "options": ["apple", "book", "chair", "coin", "rice"],
+      "options": [
+        "apple",
+        "book",
+        "chair",
+        "coin",
+        "rice"
+      ],
       "answer": "rice",
       "hint": "Choose something normally measured by weight or amount.",
       "metadata": {
@@ -561,7 +765,13 @@
     {
       "id": "ENG4-039",
       "question": "What is the plural of “child”?",
-      "options": ["childs", "childes", "childrens", "child", "children"],
+      "options": [
+        "childs",
+        "childes",
+        "childrens",
+        "child",
+        "children"
+      ],
       "answer": "children",
       "hint": "This word has a special plural form instead of simply adding “s.”",
       "metadata": {
@@ -575,7 +785,13 @@
     {
       "id": "ENG4-040",
       "question": "What is the plural of “box”?",
-      "options": ["boxs", "boxies", "boxen", "box", "boxes"],
+      "options": [
+        "boxs",
+        "boxies",
+        "boxen",
+        "box",
+        "boxes"
+      ],
       "answer": "boxes",
       "hint": "Easy",
       "metadata": {
@@ -589,7 +805,13 @@
     {
       "id": "ENG4-041",
       "question": "A pen costs Rs. 30. Two cost _.",
-      "options": ["Rs. 30", "Rs. 40", "Rs. 50", "Rs. 90", "Rs. 60"],
+      "options": [
+        "Rs. 30",
+        "Rs. 40",
+        "Rs. 50",
+        "Rs. 90",
+        "Rs. 60"
+      ],
       "answer": "Rs. 60",
       "hint": "Add the price of the pen two times.",
       "metadata": {
@@ -603,7 +825,13 @@
     {
       "id": "ENG4-042",
       "question": "Rice costs Rs. 80. Pay Rs. 100. Change?",
-      "options": ["Rs. 10", "Rs. 30", "Rs. 40", "Rs. 80", "Rs. 20"],
+      "options": [
+        "Rs. 10",
+        "Rs. 30",
+        "Rs. 40",
+        "Rs. 80",
+        "Rs. 20"
+      ],
       "answer": "Rs. 20",
       "hint": "Take the cost away from the amount paid.",
       "metadata": {
@@ -617,7 +845,13 @@
     {
       "id": "ENG4-043",
       "question": "A horse is _ than a goat.",
-      "options": ["biggest", "big", "more big", "smaller", "bigger"],
+      "options": [
+        "biggest",
+        "big",
+        "more big",
+        "smaller",
+        "bigger"
+      ],
       "answer": "bigger",
       "hint": "Only two animals are being compared.",
       "metadata": {
@@ -631,7 +865,13 @@
     {
       "id": "ENG4-044",
       "question": "A mouse is _ than a cat.",
-      "options": ["smallest", "small", "more small", "bigger", "smaller"],
+      "options": [
+        "smallest",
+        "small",
+        "more small",
+        "bigger",
+        "smaller"
+      ],
       "answer": "smaller",
       "hint": "Think about the size of each animal and compare only two.",
       "metadata": {
@@ -645,7 +885,13 @@
     {
       "id": "ENG4-045",
       "question": "A train is _ than a bicycle.",
-      "options": ["fastest", "fast", "more fast", "slower", "faster"],
+      "options": [
+        "fastest",
+        "fast",
+        "more fast",
+        "slower",
+        "faster"
+      ],
       "answer": "faster",
       "hint": "Think about which one normally moves more quickly.",
       "metadata": {
@@ -679,7 +925,13 @@
     {
       "id": "ENG4-047",
       "question": "Everest is the _ mountain.",
-      "options": ["higher", "high", "more high", "lowest", "highest"],
+      "options": [
+        "higher",
+        "high",
+        "more high",
+        "lowest",
+        "highest"
+      ],
       "answer": "highest",
       "hint": "Everest is being compared with every other mountain.",
       "metadata": {
@@ -693,7 +945,13 @@
     {
       "id": "ENG4-048",
       "question": "A cheetah is the _ animal.",
-      "options": ["faster", "fast", "more fast", "slowest", "fastest"],
+      "options": [
+        "faster",
+        "fast",
+        "more fast",
+        "slowest",
+        "fastest"
+      ],
       "answer": "fastest",
       "hint": "One animal is being compared with all animals.",
       "metadata": {
@@ -707,7 +965,13 @@
     {
       "id": "ENG4-049",
       "question": "Good becomes _ in comparison.",
-      "options": ["gooder", "best", "more good", "worse", "better"],
+      "options": [
+        "gooder",
+        "best",
+        "more good",
+        "worse",
+        "better"
+      ],
       "answer": "better",
       "hint": "Medium",
       "metadata": {
@@ -721,7 +985,13 @@
     {
       "id": "ENG4-050",
       "question": "Good becomes _ in superlative.",
-      "options": ["better", "goodest", "more good", "worst", "best"],
+      "options": [
+        "better",
+        "goodest",
+        "more good",
+        "worst",
+        "best"
+      ],
       "answer": "best",
       "hint": "Medium",
       "metadata": {
@@ -735,7 +1005,13 @@
     {
       "id": "ENG4-051",
       "question": "What is the opposite of “bigger”?",
-      "options": ["taller", "higher", "wider", "longer", "smaller"],
+      "options": [
+        "taller",
+        "higher",
+        "wider",
+        "longer",
+        "smaller"
+      ],
       "answer": "smaller",
       "hint": "Imagine changing from a large size to a little size.",
       "metadata": {
@@ -749,7 +1025,13 @@
     {
       "id": "ENG4-052",
       "question": "Which word compares two things?",
-      "options": ["tall", "tallest", "height", "high", "taller"],
+      "options": [
+        "tall",
+        "tallest",
+        "height",
+        "high",
+        "taller"
+      ],
       "answer": "taller",
       "hint": "Look for a describing word used when comparing two people.",
       "metadata": {
@@ -763,7 +1045,13 @@
     {
       "id": "ENG4-053",
       "question": "The book is _ the table.",
-      "options": ["under", "between", "behind", "beside", "on"],
+      "options": [
+        "under",
+        "between",
+        "behind",
+        "beside",
+        "on"
+      ],
       "answer": "on",
       "hint": "Imagine where you normally place a book while studying.",
       "metadata": {
@@ -777,7 +1065,13 @@
     {
       "id": "ENG4-054",
       "question": "The shoes are _ the bed.",
-      "options": ["on", "above", "between", "opposite", "under"],
+      "options": [
+        "on",
+        "above",
+        "between",
+        "opposite",
+        "under"
+      ],
       "answer": "under",
       "hint": "Picture the shoes hidden below the bed.",
       "metadata": {
@@ -791,7 +1085,13 @@
     {
       "id": "ENG4-055",
       "question": "The bank is _ the school.",
-      "options": ["inside", "under", "through", "during", "opposite"],
+      "options": [
+        "inside",
+        "under",
+        "through",
+        "during",
+        "opposite"
+      ],
       "answer": "opposite",
       "hint": "Imagine the two buildings facing each other across a road.",
       "metadata": {
@@ -805,7 +1105,13 @@
     {
       "id": "ENG4-056",
       "question": "The shop is _ the bank.",
-      "options": ["under", "inside", "through", "above", "beside"],
+      "options": [
+        "under",
+        "inside",
+        "through",
+        "above",
+        "beside"
+      ],
       "answer": "beside",
       "hint": "Imagine the two buildings standing side by side.",
       "metadata": {
@@ -819,7 +1125,13 @@
     {
       "id": "ENG4-057",
       "question": "The tree is _ two houses.",
-      "options": ["on", "inside", "behind", "above", "between"],
+      "options": [
+        "on",
+        "inside",
+        "behind",
+        "above",
+        "between"
+      ],
       "answer": "between",
       "hint": "Picture one tree with a house on each side.",
       "metadata": {
@@ -833,7 +1145,13 @@
     {
       "id": "ENG4-058",
       "question": "The cat is _ the curtain.",
-      "options": ["on", "between", "above", "opposite", "behind"],
+      "options": [
+        "on",
+        "between",
+        "above",
+        "opposite",
+        "behind"
+      ],
       "answer": "behind",
       "hint": "The curtain blocks the cat from view.",
       "metadata": {
@@ -847,7 +1165,13 @@
     {
       "id": "ENG4-059",
       "question": "Which word shows location?",
-      "options": ["quickly", "beautiful", "always", "happy", "under"],
+      "options": [
+        "quickly",
+        "beautiful",
+        "always",
+        "happy",
+        "under"
+      ],
       "answer": "under",
       "hint": "Choose the word that tells where something is.",
       "metadata": {
@@ -881,7 +1205,13 @@
     {
       "id": "ENG4-061",
       "question": "The Sun _ in the east.",
-      "options": ["rise", "rising", "rose", "rised", "rises"],
+      "options": [
+        "rise",
+        "rising",
+        "rose",
+        "rised",
+        "rises"
+      ],
       "answer": "rises",
       "hint": "The sentence states a fact that happens every day.",
       "metadata": {
@@ -895,7 +1225,13 @@
     {
       "id": "ENG4-062",
       "question": "Water _ at 100°C.",
-      "options": ["boil", "boiling", "boiled", "is boil", "boils"],
+      "options": [
+        "boil",
+        "boiling",
+        "boiled",
+        "is boil",
+        "boils"
+      ],
       "answer": "boils",
       "hint": "The subject is singular, and the sentence states a scientific fact.",
       "metadata": {
@@ -909,7 +1245,13 @@
     {
       "id": "ENG4-063",
       "question": "He _ football every day.",
-      "options": ["play", "playing", "played", "player", "plays"],
+      "options": [
+        "play",
+        "playing",
+        "played",
+        "player",
+        "plays"
+      ],
       "answer": "plays",
       "hint": "The subject is one boy, and the action happens regularly.",
       "metadata": {
@@ -963,7 +1305,13 @@
     {
       "id": "ENG4-066",
       "question": "_ he play cricket?",
-      "options": ["Do", "Is", "Has", "Was", "Does"],
+      "options": [
+        "Do",
+        "Is",
+        "Has",
+        "Was",
+        "Does"
+      ],
       "answer": "Does",
       "hint": "The question is about the regular action of one boy.",
       "metadata": {
@@ -977,7 +1325,13 @@
     {
       "id": "ENG4-067",
       "question": "_ they live here?",
-      "options": ["Does", "Are", "Has", "Was", "Do"],
+      "options": [
+        "Does",
+        "Are",
+        "Has",
+        "Was",
+        "Do"
+      ],
       "answer": "Do",
       "hint": "The question is about the regular action of several people.",
       "metadata": {
@@ -991,7 +1345,13 @@
     {
       "id": "ENG4-068",
       "question": "Which is a natural material?",
-      "options": ["plastic", "glass", "nylon", "steel", "wood"],
+      "options": [
+        "plastic",
+        "glass",
+        "nylon",
+        "steel",
+        "wood"
+      ],
       "answer": "wood",
       "hint": "Choose a material that comes directly from a living thing.",
       "metadata": {
@@ -1005,7 +1365,13 @@
     {
       "id": "ENG4-069",
       "question": "_ left at the corner.",
-      "options": ["Turns", "Turned", "Turning", "To turn", "Turn"],
+      "options": [
+        "Turns",
+        "Turned",
+        "Turning",
+        "To turn",
+        "Turn"
+      ],
       "answer": "Turn",
       "hint": "A direction normally begins with the basic form of an action word.",
       "metadata": {
@@ -1019,7 +1385,13 @@
     {
       "id": "ENG4-070",
       "question": "_ straight for ten metres.",
-      "options": ["Goes", "Went", "Going", "Gone", "Go"],
+      "options": [
+        "Goes",
+        "Went",
+        "Going",
+        "Gone",
+        "Go"
+      ],
       "answer": "Go",
       "hint": "Choose the basic action word used for movement.",
       "metadata": {
@@ -1033,7 +1405,13 @@
     {
       "id": "ENG4-071",
       "question": "_ touch the hot pan.",
-      "options": ["Doesn't", "Didn't", "Wasn't", "Aren't", "Don't"],
+      "options": [
+        "Doesn't",
+        "Didn't",
+        "Wasn't",
+        "Aren't",
+        "Don't"
+      ],
       "answer": "Don't",
       "hint": "The sentence warns someone not to do an action.",
       "metadata": {
@@ -1047,7 +1425,13 @@
     {
       "id": "ENG4-072",
       "question": "_ your hands before eating.",
-      "options": ["Washes", "Washed", "Washing", "Washer", "Wash"],
+      "options": [
+        "Washes",
+        "Washed",
+        "Washing",
+        "Washer",
+        "Wash"
+      ],
       "answer": "Wash",
       "hint": "Instructions begin with the basic form of an action word.",
       "metadata": {
@@ -1061,7 +1445,13 @@
     {
       "id": "ENG4-073",
       "question": "Which direction is opposite east?",
-      "options": ["north", "south", "left", "right", "west"],
+      "options": [
+        "north",
+        "south",
+        "left",
+        "right",
+        "west"
+      ],
       "answer": "west",
       "hint": "Picture a compass and look directly across from east.",
       "metadata": {
@@ -1075,7 +1465,13 @@
     {
       "id": "ENG4-074",
       "question": "Which direction is opposite north?",
-      "options": ["east", "west", "left", "right", "south"],
+      "options": [
+        "east",
+        "west",
+        "left",
+        "right",
+        "south"
+      ],
       "answer": "south",
       "hint": "Picture a compass and look directly across from north.",
       "metadata": {
@@ -1089,7 +1485,13 @@
     {
       "id": "ENG4-075",
       "question": "The hospital is _ the bank.",
-      "options": ["through", "during", "above", "inside", "beside"],
+      "options": [
+        "through",
+        "during",
+        "above",
+        "inside",
+        "beside"
+      ],
       "answer": "beside",
       "hint": "Picture the hospital and bank standing side by side.",
       "metadata": {
@@ -1123,7 +1525,13 @@
     {
       "id": "ENG4-077",
       "question": "Yesterday, I _ home early.",
-      "options": ["go", "goes", "going", "gone", "went"],
+      "options": [
+        "go",
+        "goes",
+        "going",
+        "gone",
+        "went"
+      ],
       "answer": "went",
       "hint": "The action was completed before today.",
       "metadata": {
@@ -1137,7 +1545,13 @@
     {
       "id": "ENG4-078",
       "question": "She _ an apple yesterday.",
-      "options": ["eat", "eats", "eating", "eated", "ate"],
+      "options": [
+        "eat",
+        "eats",
+        "eating",
+        "eated",
+        "ate"
+      ],
       "answer": "ate",
       "hint": "Choose the special past form of the action word.",
       "metadata": {
@@ -1151,7 +1565,13 @@
     {
       "id": "ENG4-079",
       "question": "They _ football last week.",
-      "options": ["play", "plays", "playing", "plaied", "played"],
+      "options": [
+        "play",
+        "plays",
+        "playing",
+        "plaied",
+        "played"
+      ],
       "answer": "played",
       "hint": "The action is finished, and this is a regular verb.",
       "metadata": {
@@ -1165,7 +1585,13 @@
     {
       "id": "ENG4-080",
       "question": "We _ a tiger at the zoo.",
-      "options": ["see", "seen", "sees", "seeing", "saw"],
+      "options": [
+        "see",
+        "seen",
+        "sees",
+        "seeing",
+        "saw"
+      ],
       "answer": "saw",
       "hint": "Imagine the zoo visit happened yesterday.",
       "metadata": {
@@ -1179,7 +1605,13 @@
     {
       "id": "ENG4-081",
       "question": "He _ a new bicycle.",
-      "options": ["buy", "buys", "buyed", "buying", "bought"],
+      "options": [
+        "buy",
+        "buys",
+        "buyed",
+        "buying",
+        "bought"
+      ],
       "answer": "bought",
       "hint": "Choose the special past form of “buy.”",
       "metadata": {
@@ -1193,7 +1625,13 @@
     {
       "id": "ENG4-082",
       "question": "The past form of “come” is _.",
-      "options": ["comed", "comes", "coming", "come", "came"],
+      "options": [
+        "comed",
+        "comes",
+        "coming",
+        "come",
+        "came"
+      ],
       "answer": "came",
       "hint": "This verb does not make its past form by adding “-ed.”",
       "metadata": {
@@ -1207,7 +1645,13 @@
     {
       "id": "ENG4-083",
       "question": "The past form of “walk” is _.",
-      "options": ["walks", "walking", "walken", "walkt", "walked"],
+      "options": [
+        "walks",
+        "walking",
+        "walken",
+        "walkt",
+        "walked"
+      ],
       "answer": "walked",
       "hint": "This regular verb needs the usual past-tense ending.",
       "metadata": {
@@ -1221,7 +1665,13 @@
     {
       "id": "ENG4-084",
       "question": "Which word shows past time?",
-      "options": ["tomorrow", "always", "now", "daily", "yesterday"],
+      "options": [
+        "tomorrow",
+        "always",
+        "now",
+        "daily",
+        "yesterday"
+      ],
       "answer": "yesterday",
       "hint": "Choose the word that refers to the day before today.",
       "metadata": {
@@ -1235,7 +1685,13 @@
     {
       "id": "ENG4-085",
       "question": "I stayed home _ it rained.",
-      "options": ["and", "but", "or", "so", "because"],
+      "options": [
+        "and",
+        "but",
+        "or",
+        "so",
+        "because"
+      ],
       "answer": "because",
       "hint": "The rain explains why the person stayed home.",
       "metadata": {
@@ -1249,7 +1705,13 @@
     {
       "id": "ENG4-086",
       "question": "I was tired _ I continued.",
-      "options": ["and", "because", "or", "so", "but"],
+      "options": [
+        "and",
+        "because",
+        "or",
+        "so",
+        "but"
+      ],
       "answer": "but",
       "hint": "The second idea is surprising after the first.",
       "metadata": {
@@ -1263,7 +1725,13 @@
     {
       "id": "ENG4-087",
       "question": "Mina bought rice _ vegetables.",
-      "options": ["but", "because", "or", "so", "and"],
+      "options": [
+        "but",
+        "because",
+        "or",
+        "so",
+        "and"
+      ],
       "answer": "and",
       "hint": "Two similar shopping items are being added together.",
       "metadata": {
@@ -1277,7 +1745,13 @@
     {
       "id": "ENG4-088",
       "question": "He cried _ he was hurt.",
-      "options": ["but", "and", "or", "so", "because"],
+      "options": [
+        "but",
+        "and",
+        "or",
+        "so",
+        "because"
+      ],
       "answer": "because",
       "hint": "Being hurt explains the first action.",
       "metadata": {
@@ -1291,7 +1765,13 @@
     {
       "id": "ENG4-089",
       "question": "The cat entered _ ate fish.",
-      "options": ["but", "because", "or", "so", "and"],
+      "options": [
+        "but",
+        "because",
+        "or",
+        "so",
+        "and"
+      ],
       "answer": "and",
       "hint": "The same animal performs two actions.",
       "metadata": {
@@ -1305,7 +1785,13 @@
     {
       "id": "ENG4-090",
       "question": "She is poor _ honest.",
-      "options": ["and", "because", "or", "so", "but"],
+      "options": [
+        "and",
+        "because",
+        "or",
+        "so",
+        "but"
+      ],
       "answer": "but",
       "hint": "The sentence connects two contrasting descriptions.",
       "metadata": {
@@ -1339,7 +1825,13 @@
     {
       "id": "ENG4-092",
       "question": "Which word gives a reason?",
-      "options": ["but", "and", "or", "also", "because"],
+      "options": [
+        "but",
+        "and",
+        "or",
+        "also",
+        "because"
+      ],
       "answer": "because",
       "hint": "Choose the word used before an explanation.",
       "metadata": {
@@ -1353,7 +1845,13 @@
     {
       "id": "ENG4-093",
       "question": "The boy _ running.",
-      "options": ["are", "am", "was", "be", "is"],
+      "options": [
+        "are",
+        "am",
+        "was",
+        "be",
+        "is"
+      ],
       "answer": "is",
       "hint": "The subject is one boy, and the action is happening now.",
       "metadata": {
@@ -1367,7 +1865,13 @@
     {
       "id": "ENG4-094",
       "question": "The girls _ dancing.",
-      "options": ["is", "am", "was", "be", "are"],
+      "options": [
+        "is",
+        "am",
+        "was",
+        "be",
+        "are"
+      ],
       "answer": "are",
       "hint": "The subject means more than one girl.",
       "metadata": {
@@ -1381,7 +1885,13 @@
     {
       "id": "ENG4-095",
       "question": "I _ reading a book.",
-      "options": ["is", "are", "were", "be", "am"],
+      "options": [
+        "is",
+        "are",
+        "were",
+        "be",
+        "am"
+      ],
       "answer": "am",
       "hint": "The action is happening now, and the subject is “I.”",
       "metadata": {
@@ -1395,7 +1905,13 @@
     {
       "id": "ENG4-096",
       "question": "Look! The dog is _.",
-      "options": ["barked", "barks", "bark", "barker", "barking"],
+      "options": [
+        "barked",
+        "barks",
+        "bark",
+        "barker",
+        "barking"
+      ],
       "answer": "barking",
       "hint": "“Look!” tells you the action is happening now.",
       "metadata": {
@@ -1409,7 +1925,13 @@
     {
       "id": "ENG4-097",
       "question": "These flowers are very _.",
-      "options": ["beauty", "beautifully", "beautify", "beauties", "beautiful"],
+      "options": [
+        "beauty",
+        "beautifully",
+        "beautify",
+        "beauties",
+        "beautiful"
+      ],
       "answer": "beautiful",
       "hint": "The missing word should describe how the flowers look.",
       "metadata": {
@@ -1423,7 +1945,13 @@
     {
       "id": "ENG4-098",
       "question": "_ book here is mine.",
-      "options": ["These", "Those", "They", "Them", "This"],
+      "options": [
+        "These",
+        "Those",
+        "They",
+        "Them",
+        "This"
+      ],
       "answer": "This",
       "hint": "Only one nearby object is being pointed out.",
       "metadata": {
@@ -1437,7 +1965,13 @@
     {
       "id": "ENG4-099",
       "question": "_ houses there are old.",
-      "options": ["This", "That", "It", "Its", "Those"],
+      "options": [
+        "This",
+        "That",
+        "It",
+        "Its",
+        "Those"
+      ],
       "answer": "Those",
       "hint": "Several objects far from the speaker are being pointed out.",
       "metadata": {
@@ -1471,7 +2005,13 @@
     {
       "id": "ENG4-101",
       "question": "I like _ books.",
-      "options": ["read", "reads", "ran", "reader", "reading"],
+      "options": [
+        "read",
+        "reads",
+        "ran",
+        "reader",
+        "reading"
+      ],
       "answer": "reading",
       "hint": "The action word after “like” should name an activity.",
       "metadata": {
@@ -1485,7 +2025,13 @@
     {
       "id": "ENG4-102",
       "question": "She loves _ pictures.",
-      "options": ["draw", "draws", "drew", "drawn", "drawing"],
+      "options": [
+        "draw",
+        "draws",
+        "drew",
+        "drawn",
+        "drawing"
+      ],
       "answer": "drawing",
       "hint": "The action word after “loves” should name an activity.",
       "metadata": {
@@ -1499,7 +2045,13 @@
     {
       "id": "ENG4-103",
       "question": "He hates _ early.",
-      "options": ["wake", "wakes", "woke", "waken", "waking"],
+      "options": [
+        "wake",
+        "wakes",
+        "woke",
+        "waken",
+        "waking"
+      ],
       "answer": "waking",
       "hint": "The action word after “hates” should end like an activity name.",
       "metadata": {
@@ -1513,7 +2065,13 @@
     {
       "id": "ENG4-104",
       "question": "They enjoy _ football.",
-      "options": ["play", "plays", "played", "player", "playing"],
+      "options": [
+        "play",
+        "plays",
+        "played",
+        "player",
+        "playing"
+      ],
       "answer": "playing",
       "hint": "After “enjoy,” use a form that names the activity.",
       "metadata": {
@@ -1527,7 +2085,13 @@
     {
       "id": "ENG4-105",
       "question": "Mina _ like swimming.",
-      "options": ["don't", "isn't", "wasn't", "weren't", "doesn't"],
+      "options": [
+        "don't",
+        "isn't",
+        "wasn't",
+        "weren't",
+        "doesn't"
+      ],
       "answer": "doesn't",
       "hint": "Mina is one person, and the sentence is in the present.",
       "metadata": {
@@ -1541,7 +2105,13 @@
     {
       "id": "ENG4-106",
       "question": "Which activity is a hobby?",
-      "options": ["sleeping", "sneezing", "coughing", "waiting", "painting"],
+      "options": [
+        "sleeping",
+        "sneezing",
+        "coughing",
+        "waiting",
+        "painting"
+      ],
       "answer": "painting",
       "hint": "Choose something people practise for fun or creativity.",
       "metadata": {
@@ -1595,7 +2165,13 @@
     {
       "id": "ENG4-109",
       "question": "Birds _ fly.",
-      "options": ["can't", "couldn't", "weren't", "don't", "can"],
+      "options": [
+        "can't",
+        "couldn't",
+        "weren't",
+        "don't",
+        "can"
+      ],
       "answer": "can",
       "hint": "The sentence describes something birds are able to do.",
       "metadata": {
@@ -1609,7 +2185,13 @@
     {
       "id": "ENG4-110",
       "question": "Fish _ walk.",
-      "options": ["can", "could", "are", "do", "can't"],
+      "options": [
+        "can",
+        "could",
+        "are",
+        "do",
+        "can't"
+      ],
       "answer": "can't",
       "hint": "Think about whether fish have the body parts needed for walking.",
       "metadata": {
@@ -1623,7 +2205,13 @@
     {
       "id": "ENG4-111",
       "question": "I _ ride a bicycle now.",
-      "options": ["couldn't", "was", "did", "have", "can"],
+      "options": [
+        "couldn't",
+        "was",
+        "did",
+        "have",
+        "can"
+      ],
       "answer": "can",
       "hint": "The sentence describes an ability the speaker has now.",
       "metadata": {
@@ -1637,7 +2225,13 @@
     {
       "id": "ENG4-112",
       "question": "As a baby, I _ walk.",
-      "options": ["can", "could", "was", "did", "couldn't"],
+      "options": [
+        "can",
+        "could",
+        "was",
+        "did",
+        "couldn't"
+      ],
       "answer": "couldn't",
       "hint": "Think about an ability a very young baby normally lacks.",
       "metadata": {
@@ -1651,7 +2245,13 @@
     {
       "id": "ENG4-113",
       "question": "My grandfather _ run fast.",
-      "options": ["can't", "isn't", "doesn't", "wasn't", "could"],
+      "options": [
+        "can't",
+        "isn't",
+        "doesn't",
+        "wasn't",
+        "could"
+      ],
       "answer": "could",
       "hint": "The sentence describes something he was able to do earlier.",
       "metadata": {
@@ -1665,7 +2265,13 @@
     {
       "id": "ENG4-114",
       "question": "A goalkeeper _ catch balls.",
-      "options": ["can't", "couldn't", "wasn't", "isn't", "can"],
+      "options": [
+        "can't",
+        "couldn't",
+        "wasn't",
+        "isn't",
+        "can"
+      ],
       "answer": "can",
       "hint": "Think about the main job of a goalkeeper.",
       "metadata": {
@@ -1679,7 +2285,13 @@
     {
       "id": "ENG4-115",
       "question": "Which animal can climb trees?",
-      "options": ["fish", "cow", "duck", "sheep", "monkey"],
+      "options": [
+        "fish",
+        "cow",
+        "duck",
+        "sheep",
+        "monkey"
+      ],
       "answer": "monkey",
       "hint": "Choose the animal that uses hands and feet to move on branches.",
       "metadata": {
@@ -1693,7 +2305,13 @@
     {
       "id": "ENG4-116",
       "question": "What does “ability” mean?",
-      "options": ["must stop", "will go", "did happen", "may ask", "can do"],
+      "options": [
+        "must stop",
+        "will go",
+        "did happen",
+        "may ask",
+        "can do"
+      ],
       "answer": "can do",
       "hint": "Think about a skill someone is able to perform.",
       "metadata": {
@@ -1707,7 +2325,13 @@
     {
       "id": "ENG4-117",
       "question": "_ is your best friend?",
-      "options": ["Where", "When", "Why", "How", "Who"],
+      "options": [
+        "Where",
+        "When",
+        "Why",
+        "How",
+        "Who"
+      ],
       "answer": "Who",
       "hint": "The expected answer would be a person’s name.",
       "metadata": {
@@ -1721,7 +2345,13 @@
     {
       "id": "ENG4-118",
       "question": "_ are you late?",
-      "options": ["Who", "Where", "When", "Which", "Why"],
+      "options": [
+        "Who",
+        "Where",
+        "When",
+        "Which",
+        "Why"
+      ],
       "answer": "Why",
       "hint": "The speaker wants an explanation.",
       "metadata": {
@@ -1735,7 +2365,13 @@
     {
       "id": "ENG4-119",
       "question": "_ do you go to school?",
-      "options": ["Who", "What", "Which", "Whose", "How"],
+      "options": [
+        "Who",
+        "What",
+        "Which",
+        "Whose",
+        "How"
+      ],
       "answer": "How",
       "hint": "The expected answer might be “by bus” or “on foot.”",
       "metadata": {
@@ -1749,7 +2385,13 @@
     {
       "id": "ENG4-120",
       "question": "_ does school begin?",
-      "options": ["Who", "Why", "Which", "Whose", "When"],
+      "options": [
+        "Who",
+        "Why",
+        "Which",
+        "Whose",
+        "When"
+      ],
       "answer": "When",
       "hint": "The expected answer would be a time.",
       "metadata": {
@@ -1803,7 +2445,13 @@
     {
       "id": "ENG4-123",
       "question": "I think school is important.",
-      "options": ["I refuse", "I forget", "I leave", "I doubt", "I agree"],
+      "options": [
+        "I refuse",
+        "I forget",
+        "I leave",
+        "I doubt",
+        "I agree"
+      ],
       "answer": "I agree",
       "hint": "Choose the response showing the same opinion.",
       "metadata": {
@@ -1837,7 +2485,13 @@
     {
       "id": "ENG4-125",
       "question": "We _ visit Pokhara tomorrow.",
-      "options": ["did", "were", "have", "had", "will"],
+      "options": [
+        "did",
+        "were",
+        "have",
+        "had",
+        "will"
+      ],
       "answer": "will",
       "hint": "The visit has not happened yet.",
       "metadata": {
@@ -1851,7 +2505,13 @@
     {
       "id": "ENG4-126",
       "question": "She _ travel next week.",
-      "options": ["did", "was", "has", "had", "will"],
+      "options": [
+        "did",
+        "was",
+        "has",
+        "had",
+        "will"
+      ],
       "answer": "will",
       "hint": "“Next week” shows that the action is still ahead.",
       "metadata": {
@@ -1865,7 +2525,13 @@
     {
       "id": "ENG4-127",
       "question": "They _ play football tomorrow.",
-      "options": ["did", "were", "had", "was", "will"],
+      "options": [
+        "did",
+        "were",
+        "had",
+        "was",
+        "will"
+      ],
       "answer": "will",
       "hint": "Choose the helping word used for a future action.",
       "metadata": {
@@ -1879,7 +2545,13 @@
     {
       "id": "ENG4-128",
       "question": "I _ going to study.",
-      "options": ["is", "are", "was", "were", "am"],
+      "options": [
+        "is",
+        "are",
+        "was",
+        "were",
+        "am"
+      ],
       "answer": "am",
       "hint": "Choose the helping verb that matches “I.”",
       "metadata": {
@@ -1893,7 +2565,13 @@
     {
       "id": "ENG4-129",
       "question": "He _ going to cook.",
-      "options": ["am", "are", "were", "be", "is"],
+      "options": [
+        "am",
+        "are",
+        "were",
+        "be",
+        "is"
+      ],
       "answer": "is",
       "hint": "The subject is one boy making a plan.",
       "metadata": {
@@ -1907,7 +2585,13 @@
     {
       "id": "ENG4-130",
       "question": "We _ going to dance.",
-      "options": ["is", "am", "was", "be", "are"],
+      "options": [
+        "is",
+        "am",
+        "was",
+        "be",
+        "are"
+      ],
       "answer": "are",
       "hint": "The subject means more than one person.",
       "metadata": {
@@ -1921,7 +2605,13 @@
     {
       "id": "ENG4-131",
       "question": "_ you visit us tomorrow?",
-      "options": ["Did", "Was", "Has", "Does", "Will"],
+      "options": [
+        "Did",
+        "Was",
+        "Has",
+        "Does",
+        "Will"
+      ],
       "answer": "Will",
       "hint": "The question asks about an action that has not happened yet.",
       "metadata": {
@@ -1935,7 +2625,13 @@
     {
       "id": "ENG4-132",
       "question": "The negative of “will” is _.",
-      "options": ["don't", "didn't", "wasn't", "isn't", "won't"],
+      "options": [
+        "don't",
+        "didn't",
+        "wasn't",
+        "isn't",
+        "won't"
+      ],
       "answer": "won't",
       "hint": "Look for the shortened form made from “will not.”",
       "metadata": {

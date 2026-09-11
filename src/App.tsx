@@ -10,7 +10,7 @@ type Screen = "main-menu" | "equation-shooter";
 
 export function App() {
   const [currentScreen, setCurrentScreen] = useState<Screen>("main-menu");
-  const [gameTitle, setGameTitle] = useState("MATH SHOOTER");
+  const [gameTitle, setGameTitle] = useState("CANNON BALL");
   const [gameSubtitle, setGameSubtitle] = useState("GRADE 5 MATH CHALLENGE");
   const [showSettings, setShowSettings] = useState(false);
   const [isDataLoading, setIsDataLoading] = useState(true);
@@ -24,7 +24,7 @@ export function App() {
       try {
         const levels = await loadGameLevels();
         const firstLevel = levels[0];
-        let title = "Grade 5 Math Shooter";
+        let title = "CANNON BALL";
         if (firstLevel && typeof firstLevel === "object") {
           if ("title" in firstLevel && typeof firstLevel.title === "string") {
             setGameTitle(firstLevel.title);

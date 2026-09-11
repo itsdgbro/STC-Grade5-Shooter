@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preload" href="/fonts/Mukta-Regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Mukta-Bold.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="preload" href="/fonts/Mukta-ExtraBold.ttf" as="font" type="font/ttf" crossorigin />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grade 5 Math - Equation Shooter</title>
-    <!--
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Nunito:wght@700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="preload" href="/fonts/Mukta-Regular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="/fonts/Mukta-Bold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="/fonts/Mukta-ExtraBold.ttf" as="font" type="font/ttf" crossorigin />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CANNON BALL</title>
+  <!--
       FIXED 16:9 STAGE FIT
       The game is authored at a constant 1920x1080 design space. This runs
       before first paint (and on every resize) to compute the largest uniform
@@ -21,28 +21,30 @@
       viewport area is left as the black <body>, i.e. standard letterbox /
       pillarbox bars. See #root in src/index.css for how --stage-scale is used.
     -->
-    <script>
-      (function () {
-        var STAGE_W = 1920,
-          STAGE_H = 1080;
-        function fitStage() {
-          var scale = Math.min(
-            window.innerWidth / STAGE_W,
-            window.innerHeight / STAGE_H,
-          );
-          document.documentElement.style.setProperty(
-            "--stage-scale",
-            String(scale),
-          );
-        }
-        fitStage();
-        window.addEventListener("resize", fitStage);
-        window.addEventListener("orientationchange", fitStage);
-      })();
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <script>
+    (function () {
+      var STAGE_W = 1920,
+        STAGE_H = 1080;
+      function fitStage() {
+        var scale = Math.min(
+          window.innerWidth / STAGE_W,
+          window.innerHeight / STAGE_H,
+        );
+        document.documentElement.style.setProperty(
+          "--stage-scale",
+          String(scale),
+        );
+      }
+      fitStage();
+      window.addEventListener("resize", fitStage);
+      window.addEventListener("orientationchange", fitStage);
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
