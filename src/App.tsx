@@ -52,6 +52,34 @@ export function App() {
     loadGameInfo();
   }, [dataLoadAttempt]);
 
+  // Start background music automatically on the user's first touch/click anywhere
+  useEffect(() => {
+    const events = ["touchstart", "touchend", "click", "pointerdown", "keydown"] as const;
+
+    const handleFirstInteraction = () => {
+      sfx.startBGM().then((started) => {
+        if (started || sfx.isPlaying()) {
+          events.forEach((evt) => {
+            document.removeEventListener(evt, handleFirstInteraction, true);
+          });
+        }
+      });
+    };
+
+    events.forEach((evt) => {
+      document.addEventListener(evt, handleFirstInteraction, {
+        capture: true,
+        passive: true,
+      });
+    });
+
+    return () => {
+      events.forEach((evt) => {
+        document.removeEventListener(evt, handleFirstInteraction, true);
+      });
+    };
+  }, []);
+
   if (isDataLoading || dataLoadError) {
     return (
       <div
@@ -895,6 +923,7 @@ export function App() {
           <button
             onClick={() => {
               sfx.playPop();
+              sfx.startBGM();
               setCurrentScreen("equation-shooter");
             }}
             className="btn-3d"

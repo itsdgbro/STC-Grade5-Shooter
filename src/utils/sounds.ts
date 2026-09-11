@@ -6,9 +6,11 @@ class AudioManager {
   public musicMuted: boolean = false;
   public musicVolume: number = 0.5;
 
+  private bgmAudio: HTMLAudioElement | null = null;
   private bgmTimer: number | null = null;
   private bgmGainNode: GainNode | null = null;
   private isBgmActive: boolean = false;
+  private isAudioFileFailed: boolean = false;
   private step: number = 0;
 
   constructor() {
@@ -64,6 +66,14 @@ class AudioManager {
   public setMusicMuted(muted: boolean) {
     this.musicMuted = muted;
     this.updateBgmGain();
+    if (this.bgmAudio) {
+      this.bgmAudio.volume = muted ? 0 : this.musicVolume * 0.35;
+      if (muted) {
+        this.bgmAudio.pause();
+      } else if (this.isBgmActive && this.musicVolume > 0) {
+        this.bgmAudio.play().catch(() => {});
+      }
+    }
     try {
       localStorage.setItem('game_music_muted', String(muted));
     } catch {}
@@ -72,6 +82,12 @@ class AudioManager {
   public setMusicVolume(vol: number) {
     this.musicVolume = Math.max(0, Math.min(1, vol));
     this.updateBgmGain();
+    if (this.bgmAudio) {
+      this.bgmAudio.volume = this.musicMuted ? 0 : this.musicVolume * 0.35;
+      if (!this.musicMuted && this.musicVolume > 0 && this.isBgmActive && this.bgmAudio.paused) {
+        this.bgmAudio.play().catch(() => {});
+      }
+    }
     try {
       localStorage.setItem('game_music_volume', String(this.musicVolume));
     } catch {}
@@ -84,9 +100,64 @@ class AudioManager {
     }
   }
 
-  public startBGM() {
-    if (this.isBgmActive) return;
+  public isPlaying(): boolean {
+    if (this.bgmAudio) {
+      return !this.bgmAudio.paused && !this.bgmAudio.ended;
+    }
+    return this.bgmTimer !== null;
+  }
+
+  public startBGM(): Promise<boolean> {
     this.isBgmActive = true;
+    this.initCtx();
+
+    if (this.musicMuted || this.musicVolume <= 0) {
+      return Promise.resolve(false);
+    }
+
+    // Try playing the background music track if available
+    if (!this.isAudioFileFailed) {
+      if (!this.bgmAudio) {
+        try {
+          const base = import.meta.env.BASE_URL || '/';
+          const bgmPath = `${base.replace(/\/$/, '')}/assets/audio/bg_music.mp3`;
+          this.bgmAudio = new Audio(bgmPath);
+          this.bgmAudio.loop = true;
+          this.bgmAudio.volume = this.musicVolume * 0.35;
+
+          this.bgmAudio.addEventListener('error', () => {
+            this.isAudioFileFailed = true;
+            if (this.isBgmActive) {
+              this.startSynthBGM();
+            }
+          });
+        } catch {
+          this.isAudioFileFailed = true;
+        }
+      }
+
+      if (this.bgmAudio) {
+        this.bgmAudio.volume = this.musicVolume * 0.35;
+        const playPromise = this.bgmAudio.play();
+        if (playPromise !== undefined) {
+          return playPromise
+            .then(() => true)
+            .catch(() => {
+              // Autoplay restriction: will start on next user interaction
+              return false;
+            });
+        }
+        return Promise.resolve(true);
+      }
+    }
+
+    // Fallback: synthesized cheerful pentatonic melody loop
+    this.startSynthBGM();
+    return Promise.resolve(true);
+  }
+
+  private startSynthBGM() {
+    if (this.bgmTimer !== null) return;
     this.initCtx();
     if (!this.ctx) return;
 
@@ -154,6 +225,9 @@ class AudioManager {
 
   public stopBGM() {
     this.isBgmActive = false;
+    if (this.bgmAudio) {
+      this.bgmAudio.pause();
+    }
     if (this.bgmTimer !== null) {
       clearInterval(this.bgmTimer);
       this.bgmTimer = null;

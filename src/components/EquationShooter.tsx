@@ -290,6 +290,11 @@ export const EquationShooter: React.FC<EquationShooterProps> = ({ onBack }) => {
     fetchAndInitializeQuestions();
   }, [fetchAndInitializeQuestions]);
 
+  // Ensure looped background music is playing
+  useEffect(() => {
+    sfx.startBGM();
+  }, []);
+
   // Flutter Bridge command listeners (PAUSE, RESUME, RESTART)
   useEffect(() => {
     const unsubPause = flutterBridge.on("PAUSE", () => {
