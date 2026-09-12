@@ -92,7 +92,7 @@ export class GameScene extends Phaser.Scene {
     this.createClouds();
 
     // 3. Trajectory Graphics Layer
-    this.trajectoryGraphics = this.add.graphics();
+    this.trajectoryGraphics = this.add.graphics().setDepth(15);
 
     // 4. Primary Header Question Display Banner (at X: 960, Y: 80, height: 140)
     this.createQuestionBanner();
@@ -116,7 +116,7 @@ export class GameScene extends Phaser.Scene {
   private createQuestionBanner() {
     this.questionContainer = this.add.container(960, 80);
 
-    const cardW = 1080;
+    const cardW = 920;
     const cardH = 140;
     const cornerRadius = 10;
 
@@ -138,10 +138,11 @@ export class GameScene extends Phaser.Scene {
     this.questionText = this.add
       .text(0, 0, "Loading Question...", {
         fontFamily: "'Fredoka', 'Mukta', sans-serif",
-        fontSize: "44px",
+        fontSize: "54px",
         fontStyle: "900",
         color: "#0f172a",
         align: "center",
+        lineSpacing: 2,
         wordWrap: { width: cardW - 80, useAdvancedWrap: true },
       })
       .setOrigin(0.5);
@@ -226,11 +227,20 @@ export class GameScene extends Phaser.Scene {
     });
 
     this.input.on("pointermove", (pointer: Phaser.Input.Pointer) => {
-      if (!this.isAiming || this.isShooting) return;
+      // Only follow when mouse or touch is actively held down
+      if (!this.isAiming || !pointer.isDown) return;
+      if (this.isShooting || this.isPaused) return;
+      if (pointer.y < 165 || (pointer.y > 920 && (pointer.x < 320 || pointer.x > 1600))) {
+        return;
+      }
       this.updateAim(pointer);
     });
 
     this.input.on("pointerup", () => {
+      this.isAiming = false;
+    });
+
+    this.input.on("gameout", () => {
       this.isAiming = false;
     });
 
@@ -310,10 +320,9 @@ export class GameScene extends Phaser.Scene {
     }
   }
 
-  // Exact trajectory dots matching original SVG preview
+  // Exact trajectory dots matching original SVG preview - kept visible all the time
   private renderTrajectory() {
     this.trajectoryGraphics.clear();
-    if (!this.isAiming && !this.isShooting) return;
 
     const muzzle = this.getCannonMuzzle(this.cannonAngle);
     const rad = Phaser.Math.DegToRad(this.cannonAngle);
@@ -508,7 +517,7 @@ export class GameScene extends Phaser.Scene {
             y: ball.container.y / 1080,
           },
         });
-      } catch {}
+      } catch { }
 
       this.tweens.add({
         targets: ball.container,
@@ -606,13 +615,32 @@ export class GameScene extends Phaser.Scene {
       );
       this.currentQuestion = q;
 
-      // Update question text in banner
+      // Update question text in banner with dynamic sizing
       this.questionText.setText(q.question);
       const len = q.question.length;
-      if (len > 35) {
-        this.questionText.setFontSize(34);
+
+      let fontSize = 54;
+      if (len <= 20) {
+        fontSize = 62;
+      } else if (len <= 32) {
+        fontSize = 54;
+      } else if (len <= 48) {
+        fontSize = 48;
+      } else if (len <= 65) {
+        fontSize = 42;
+      } else if (len <= 85) {
+        fontSize = 36;
       } else {
-        this.questionText.setFontSize(44);
+        fontSize = 30;
+      }
+
+      this.questionText.setFontSize(fontSize);
+
+      // Auto-fit check: ensure text fits within the card height with comfortable margins
+      const maxTextHeight = 114;
+      while (this.questionText.height > maxTextHeight && fontSize > 22) {
+        fontSize -= 2;
+        this.questionText.setFontSize(fontSize);
       }
 
       // Pass hint to UIScene
@@ -695,7 +723,8 @@ export class GameScene extends Phaser.Scene {
           isHit: false,
         });
       });
-    } catch {}
+      this.checkTargetedBall();
+    } catch { }
   }
 
   private getDynamicXPositions(count: number): number[] {
@@ -721,6 +750,18 @@ export class GameScene extends Phaser.Scene {
   }
 
   private setupUIEvents() {
+    this.game.events.off("triggerShoot");
+    this.game.events.off("pauseGame");
+    this.game.events.off("resumeGame");
+    this.game.events.off("restartGame");
+
+    this.events.once("shutdown", () => {
+      this.game.events.off("triggerShoot");
+      this.game.events.off("pauseGame");
+      this.game.events.off("resumeGame");
+      this.game.events.off("restartGame");
+    });
+
     this.game.events.on("triggerShoot", () => this.fireCannon());
     this.game.events.on("pauseGame", () => (this.isPaused = true));
     this.game.events.on("resumeGame", () => (this.isPaused = false));

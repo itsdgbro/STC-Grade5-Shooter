@@ -492,42 +492,116 @@ export class TextureGenerator {
     });
   }
 
-  // 7. HEARTS (Full and Empty)
+  // 7. HEARTS (High-Definition 3D Glossy Candy Hearts)
   private static createHeartTextures(scene: Phaser.Scene) {
-    const drawHeart = (
-      key: string,
-      color: string,
-      border: string,
-      shadow: string,
-    ) => {
+    const drawHeart = (key: string, isEmpty: boolean) => {
       if (scene.textures.exists(key)) return;
-      const canvas = scene.textures.createCanvas(key, 64, 64);
+      const size = 128;
+      const canvas = scene.textures.createCanvas(key, size, size);
       if (!canvas) return;
       const ctx = canvas.getContext();
 
-      ctx.shadowColor = shadow;
-      ctx.shadowBlur = 8;
-      ctx.shadowOffsetY = 4;
+      const drawHeartPath = (offsetY = 0) => {
+        ctx.beginPath();
+        // Plump, perfectly symmetrical 3D heart curve
+        ctx.moveTo(64, 112 + offsetY);
+        // Left sweep up to bottom of left lobe
+        ctx.bezierCurveTo(20, 80 + offsetY, 8, 52 + offsetY, 8, 36 + offsetY);
+        // Left lobe rounded crest
+        ctx.bezierCurveTo(8, 14 + offsetY, 26, 6 + offsetY, 44, 6 + offsetY);
+        // Dip to center cleft
+        ctx.bezierCurveTo(55, 6 + offsetY, 62, 18 + offsetY, 64, 28 + offsetY);
+        // Dip from center cleft to right lobe
+        ctx.bezierCurveTo(66, 18 + offsetY, 73, 6 + offsetY, 84, 6 + offsetY);
+        // Right lobe rounded crest
+        ctx.bezierCurveTo(102, 6 + offsetY, 120, 14 + offsetY, 120, 36 + offsetY);
+        // Right sweep down to bottom tip
+        ctx.bezierCurveTo(120, 52 + offsetY, 108, 80 + offsetY, 64, 112 + offsetY);
+        ctx.closePath();
+      };
 
-      ctx.fillStyle = color;
-      ctx.strokeStyle = border;
-      ctx.lineWidth = 3;
+      if (!isEmpty) {
+        // 1. Bottom 3D Drop Shadow Ledge (offset by +7px)
+        drawHeartPath(7);
+        ctx.fillStyle = "#881337"; // Rich deep wine shadow
+        ctx.fill();
 
-      ctx.beginPath();
-      ctx.moveTo(32, 52);
-      ctx.bezierCurveTo(12, 36, 6, 20, 16, 12);
-      ctx.bezierCurveTo(24, 6, 30, 14, 32, 20);
-      ctx.bezierCurveTo(34, 14, 40, 6, 48, 12);
-      ctx.bezierCurveTo(58, 20, 52, 36, 32, 52);
-      ctx.closePath();
-      ctx.fill();
-      ctx.stroke();
+        // 2. Main Heart Body with 3D Radial Sphere Gradient
+        drawHeartPath(0);
+        const grad = ctx.createRadialGradient(48, 36, 6, 64, 64, 64);
+        grad.addColorStop(0, "#ff4d6d");    // Vibrant bright coral pink-red
+        grad.addColorStop(0.35, "#f43f5e"); // Bright cherry red
+        grad.addColorStop(0.7, "#e11d48");  // Rich candy red
+        grad.addColorStop(1, "#be123c");    // Deep crimson border
+        ctx.fillStyle = grad;
+        ctx.fill();
+
+        // 3. Crisp Border Stroke
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = "#ffffff";
+        ctx.stroke();
+
+        // 4. Primary Specular Gloss Highlight (top-left lobe)
+        ctx.save();
+        ctx.translate(38, 24);
+        ctx.rotate(-0.45);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 16, 7, 0, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 255, 255, 0.75)";
+        ctx.fill();
+        ctx.restore();
+
+        // 5. Secondary Specular Highlight (top-right lobe)
+        ctx.save();
+        ctx.translate(88, 23);
+        ctx.rotate(0.4);
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 9, 4.5, 0, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 255, 255, 0.45)";
+        ctx.fill();
+        ctx.restore();
+
+        // 6. Tiny Glint Sparkle Dot
+        ctx.beginPath();
+        ctx.arc(28, 18, 3, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255, 255, 255, 0.9)";
+        ctx.fill();
+      } else {
+        // Empty Heart Socket (Lost Life State)
+        // 1. Shadow Ledge
+        drawHeartPath(6);
+        ctx.fillStyle = "#1e293b";
+        ctx.fill();
+
+        // 2. Main Body with Frosted Slate Gradient
+        drawHeartPath(0);
+        const emptyGrad = ctx.createLinearGradient(0, 6, 0, 112);
+        emptyGrad.addColorStop(0, "#64748b");
+        emptyGrad.addColorStop(1, "#334155");
+        ctx.fillStyle = emptyGrad;
+        ctx.fill();
+
+        // 3. Crisp Slate Border Stroke
+        ctx.lineWidth = 4;
+        ctx.strokeStyle = "#cbd5e1";
+        ctx.stroke();
+
+        // 4. Inner Socket Inset Dark Shadow
+        ctx.save();
+        drawHeartPath(0);
+        ctx.clip();
+        ctx.beginPath();
+        ctx.ellipse(64, 42, 38, 22, 0, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(15, 23, 42, 0.45)";
+        ctx.fill();
+        ctx.restore();
+      }
 
       canvas.refresh();
     };
 
-    drawHeart("heart_full", "#ef4444", "#ffffff", "rgba(239, 68, 68, 0.6)");
-    drawHeart("heart_empty", "#475569", "#94a3b8", "rgba(0, 0, 0, 0.3)");
+    drawHeart("heart_full", false);
+    drawHeart("heart_empty", true);
   }
 
   // 8. GOLDEN STAR
@@ -635,6 +709,99 @@ export class TextureGenerator {
         ctx.fillRect(26, 39, 12, 8);
         ctx.fillStyle = "#94a3b8";
         ctx.fillRect(28, 48, 8, 4);
+        canvas.refresh();
+      }
+    }
+
+    // SFX Sparkles Icon (White Vector Sparkles)
+    if (!scene.textures.exists("icon_sfx_on")) {
+      const canvas = scene.textures.createCanvas("icon_sfx_on", 64, 64);
+      if (canvas) {
+        const ctx = canvas.getContext();
+        ctx.fillStyle = "#ffffff";
+        const drawStar = (cx: number, cy: number, r: number) => {
+          ctx.beginPath();
+          ctx.moveTo(cx, cy - r);
+          ctx.quadraticCurveTo(cx, cy, cx + r, cy);
+          ctx.quadraticCurveTo(cx, cy, cx, cy + r);
+          ctx.quadraticCurveTo(cx, cy, cx - r, cy);
+          ctx.quadraticCurveTo(cx, cy, cx, cy - r);
+          ctx.closePath();
+          ctx.fill();
+        };
+        drawStar(30, 32, 20);
+        drawStar(48, 16, 9);
+        drawStar(16, 46, 7);
+        canvas.refresh();
+      }
+    }
+
+    // Music Note Icon (White Double Note)
+    if (!scene.textures.exists("icon_music_on")) {
+      const canvas = scene.textures.createCanvas("icon_music_on", 64, 64);
+      if (canvas) {
+        const ctx = canvas.getContext();
+        ctx.fillStyle = "#ffffff";
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 4.5;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+
+        // Left note head
+        ctx.beginPath();
+        ctx.ellipse(22, 45, 8, 6, -Math.PI / 6, 0, Math.PI * 2);
+        ctx.fill();
+        // Right note head
+        ctx.beginPath();
+        ctx.ellipse(44, 39, 8, 6, -Math.PI / 6, 0, Math.PI * 2);
+        ctx.fill();
+        // Stems
+        ctx.beginPath();
+        ctx.moveTo(27, 43);
+        ctx.lineTo(27, 18);
+        ctx.lineTo(49, 12);
+        ctx.lineTo(49, 37);
+        ctx.stroke();
+        // Beam
+        ctx.beginPath();
+        ctx.moveTo(25, 18);
+        ctx.lineTo(51, 12);
+        ctx.lineWidth = 6;
+        ctx.stroke();
+        canvas.refresh();
+      }
+    }
+
+    // Audio Muted Icon (Speaker with X)
+    if (!scene.textures.exists("icon_audio_off")) {
+      const canvas = scene.textures.createCanvas("icon_audio_off", 64, 64);
+      if (canvas) {
+        const ctx = canvas.getContext();
+        ctx.fillStyle = "#ffffff";
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 4.5;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+
+        // Speaker cone
+        ctx.beginPath();
+        ctx.moveTo(14, 24);
+        ctx.lineTo(22, 24);
+        ctx.lineTo(34, 14);
+        ctx.lineTo(34, 50);
+        ctx.lineTo(22, 40);
+        ctx.lineTo(14, 40);
+        ctx.closePath();
+        ctx.fill();
+
+        // X mark
+        ctx.beginPath();
+        ctx.moveTo(42, 24);
+        ctx.lineTo(54, 40);
+        ctx.moveTo(54, 24);
+        ctx.lineTo(42, 40);
+        ctx.stroke();
+
         canvas.refresh();
       }
     }

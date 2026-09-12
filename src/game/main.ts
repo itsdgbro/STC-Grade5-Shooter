@@ -13,7 +13,7 @@ export const gameConfig: Phaser.Types.Core.GameConfig = {
   backgroundColor: "#000000",
   scale: {
     mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
+    autoCenter: Phaser.Scale.NO_CENTER,
   },
   input: {
     activePointers: 2,

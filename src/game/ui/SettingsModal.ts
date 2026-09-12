@@ -16,11 +16,10 @@ export class SettingsModal extends Phaser.GameObjects.Container {
       .setInteractive();
 
     // 2. Main Settings Card with Rounded Corner Radius Curve
-    const cardW = 680;
-    const cardH = 500;
+    const cardW = 720;
+    const cardH = 460;
     const cardRadius = 38;
 
-    // 3D Ledge Shadow + Main Card Face + Cyan Border (drawn with Graphics for smooth rounded corners)
     const cardGfx = scene.add.graphics();
 
     // 3D Ledge Shadow (offset by +10px downwards)
@@ -41,235 +40,51 @@ export class SettingsModal extends Phaser.GameObjects.Container {
       .setOrigin(0.5)
       .setInteractive();
 
-    // Header Title
+    // Header Title with Settings Gear Icon
+    const headerContainer = scene.add.container(0, -155);
+    const gearIcon = scene.add
+      .image(-110, 0, "icon_settings")
+      .setDisplaySize(44, 44)
+      .setTint(0x0284c7);
+
     const title = scene.add
-      .text(0, -175, "GAME SETTINGS", {
+      .text(18, 0, "SETTINGS", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "46px",
+        fontSize: "44px",
         fontStyle: "900",
         color: "#0f172a",
+        letterSpacing: 1,
       })
       .setOrigin(0.5);
 
-    // 3. Controller Rows (with rounded container curves)
-    const rowW = 560;
-    const rowH = 76;
-    const rowRadius = 22;
+    headerContainer.add([gearIcon, title]);
 
-    // Music Row Container Card
-    const musicRowGfx = scene.add.graphics();
-    musicRowGfx.fillStyle(0xf8fafc, 1);
-    musicRowGfx.fillRoundedRect(-rowW / 2, -108, rowW, rowH, rowRadius);
-    musicRowGfx.lineStyle(3, 0xe2e8f0, 1);
-    musicRowGfx.strokeRoundedRect(-rowW / 2, -108, rowW, rowH, rowRadius);
+    // Red Circular ✕ Close Button at Bottom-Right Corner
+    const cornerX = cardW / 2 - 14;
+    const cornerY = cardH / 2 - 14;
+    const closeRadius = 36;
 
-    const musicLabel = scene.add
-      .text(-240, -70, "🎵 Background Music", {
-        fontFamily: "'Fredoka', sans-serif",
-        fontSize: "28px",
-        fontStyle: "bold",
-        color: "#1e293b",
-      })
-      .setOrigin(0, 0.5);
-
-    // Music Toggle Pill Button
-    const musicBtnContainer = scene.add.container(180, -70);
-    const musicBtnGfx = scene.add.graphics();
-
-    const drawMusicBtn = (muted: boolean) => {
-      musicBtnGfx.clear();
-      // 3D bottom ledge
-      musicBtnGfx.fillStyle(muted ? 0x991b1b : 0x15803d, 1);
-      musicBtnGfx.fillRoundedRect(-65, -23 + 4, 130, 46, 23);
-      // Main face
-      musicBtnGfx.fillStyle(muted ? 0xef4444 : 0x22c55e, 1);
-      musicBtnGfx.fillRoundedRect(-65, -23, 130, 46, 23);
-      // White border
-      musicBtnGfx.lineStyle(3, 0xffffff, 1);
-      musicBtnGfx.strokeRoundedRect(-65, -23, 130, 46, 23);
-    };
-    drawMusicBtn(sfx.musicMuted);
-
-    const musicBtnHit = scene.add
-      .rectangle(0, 0, 130, 46, 0x000000, 0)
-      .setInteractive({ useHandCursor: true });
-
-    const musicStatus = scene.add
-      .text(0, 0, sfx.musicMuted ? "MUTED" : "ON", {
-        fontFamily: "'Fredoka', sans-serif",
-        fontSize: "22px",
-        fontStyle: "900",
-        color: "#ffffff",
-      })
-      .setOrigin(0.5);
-
-    musicBtnContainer.add([musicBtnGfx, musicBtnHit, musicStatus]);
-
-    musicBtnHit.on("pointerdown", () => {
-      sfx.playPop();
-      const nextMuted = !sfx.musicMuted;
-      sfx.setMusicMuted(nextMuted);
-      drawMusicBtn(nextMuted);
-      musicStatus.setText(nextMuted ? "MUTED" : "ON");
-      if (!nextMuted) {
-        sfx.startBGM();
-      }
-    });
-
-    musicBtnHit.on("pointerover", () => {
-      scene.tweens.add({
-        targets: musicBtnContainer,
-        scaleX: 1.06,
-        scaleY: 1.06,
-        duration: 90,
-      });
-    });
-
-    musicBtnHit.on("pointerout", () => {
-      scene.tweens.add({
-        targets: musicBtnContainer,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 90,
-      });
-    });
-
-    // SFX Row Container Card
-    const sfxRowGfx = scene.add.graphics();
-    sfxRowGfx.fillStyle(0xf8fafc, 1);
-    sfxRowGfx.fillRoundedRect(-rowW / 2, -12, rowW, rowH, rowRadius);
-    sfxRowGfx.lineStyle(3, 0xe2e8f0, 1);
-    sfxRowGfx.strokeRoundedRect(-rowW / 2, -12, rowW, rowH, rowRadius);
-
-    const sfxLabel = scene.add
-      .text(-240, 26, "🔊 Sound Effects", {
-        fontFamily: "'Fredoka', sans-serif",
-        fontSize: "28px",
-        fontStyle: "bold",
-        color: "#1e293b",
-      })
-      .setOrigin(0, 0.5);
-
-    // SFX Toggle Pill Button
-    const sfxBtnContainer = scene.add.container(180, 26);
-    const sfxBtnGfx = scene.add.graphics();
-
-    const drawSfxBtn = (muted: boolean) => {
-      sfxBtnGfx.clear();
-      // 3D bottom ledge
-      sfxBtnGfx.fillStyle(muted ? 0x991b1b : 0x15803d, 1);
-      sfxBtnGfx.fillRoundedRect(-65, -23 + 4, 130, 46, 23);
-      // Main face
-      sfxBtnGfx.fillStyle(muted ? 0xef4444 : 0x22c55e, 1);
-      sfxBtnGfx.fillRoundedRect(-65, -23, 130, 46, 23);
-      // White border
-      sfxBtnGfx.lineStyle(3, 0xffffff, 1);
-      sfxBtnGfx.strokeRoundedRect(-65, -23, 130, 46, 23);
-    };
-    drawSfxBtn(sfx.sfxMuted);
-
-    const sfxBtnHit = scene.add
-      .rectangle(0, 0, 130, 46, 0x000000, 0)
-      .setInteractive({ useHandCursor: true });
-
-    const sfxStatus = scene.add
-      .text(0, 0, sfx.sfxMuted ? "MUTED" : "ON", {
-        fontFamily: "'Fredoka', sans-serif",
-        fontSize: "22px",
-        fontStyle: "900",
-        color: "#ffffff",
-      })
-      .setOrigin(0.5);
-
-    sfxBtnContainer.add([sfxBtnGfx, sfxBtnHit, sfxStatus]);
-
-    sfxBtnHit.on("pointerdown", () => {
-      sfx.playPop();
-      const nextMuted = !sfx.sfxMuted;
-      sfx.setSFXMuted(nextMuted);
-      drawSfxBtn(nextMuted);
-      sfxStatus.setText(nextMuted ? "MUTED" : "ON");
-    });
-
-    sfxBtnHit.on("pointerover", () => {
-      scene.tweens.add({
-        targets: sfxBtnContainer,
-        scaleX: 1.06,
-        scaleY: 1.06,
-        duration: 90,
-      });
-    });
-
-    sfxBtnHit.on("pointerout", () => {
-      scene.tweens.add({
-        targets: sfxBtnContainer,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 90,
-      });
-    });
-
-    // 4. Corner Red Close Button (anchored at curved corner)
-    const cornerX = cardW / 2 - 20;
-    const cornerY = -cardH / 2 + 20;
-    const cornerCloseLedge = scene.add.circle(cornerX, cornerY + 4, 28, 0x991b1b);
+    const cornerCloseLedge = scene.add.circle(cornerX, cornerY + 5, closeRadius, 0x991b1b);
     const cornerCloseFace = scene.add
-      .circle(cornerX, cornerY, 28, 0xef4444)
-      .setStrokeStyle(3, 0xffffff)
+      .circle(cornerX, cornerY, closeRadius, 0xef4444)
+      .setStrokeStyle(4, 0xffffff)
       .setInteractive({ useHandCursor: true });
     const cornerCloseIcon = scene.add
-      .text(cornerX, cornerY - 1, "✕", {
+      .text(cornerX, cornerY - 2, "✕", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "30px",
+        fontSize: "36px",
         fontStyle: "900",
         color: "#ffffff",
       })
       .setOrigin(0.5);
-
-    // 5. 3D "CLOSE" Button at Bottom
-    const closeBtnContainer = scene.add.container(0, 165);
-    const closeBtn = scene.add
-      .image(0, 0, "btn_green")
-      .setInteractive({ useHandCursor: true });
-
-    const closeLabel = scene.add
-      .text(0, -4, "CLOSE", {
-        fontFamily: "'Fredoka', sans-serif",
-        fontSize: "32px",
-        fontStyle: "900",
-        color: "#ffffff",
-        stroke: "#14532d",
-        strokeThickness: 4,
-      })
-      .setOrigin(0.5);
-
-    closeBtnContainer.add([closeBtn, closeLabel]);
 
     const handleClose = () => {
       sfx.playPop();
       this.close();
     };
 
-    closeBtn.on("pointerdown", handleClose);
     cornerCloseFace.on("pointerdown", handleClose);
     backdrop.on("pointerdown", handleClose);
-
-    closeBtn.on("pointerover", () => {
-      scene.tweens.add({
-        targets: closeBtnContainer,
-        scaleX: 1.05,
-        scaleY: 1.05,
-        duration: 90,
-      });
-    });
-    closeBtn.on("pointerout", () => {
-      scene.tweens.add({
-        targets: closeBtnContainer,
-        scaleX: 1,
-        scaleY: 1,
-        duration: 90,
-      });
-    });
 
     cornerCloseFace.on("pointerover", () => {
       scene.tweens.add({
@@ -288,21 +103,325 @@ export class SettingsModal extends Phaser.GameObjects.Container {
       });
     });
 
+    // -------------------------------------------------------------------------
+    // 3. ROWS LAYOUT (SFX & MUSIC)
+    // -------------------------------------------------------------------------
+    const rowW = 630;
+    const rowH = 112;
+    const rowRadius = 26;
+
+    const sliderW = 440;
+    const sliderH = 22;
+    const sliderLeft = -195;
+    const sliderTop = 8;
+
+    // --- ROW 1: SFX ---
+    const sfxRowContainer = scene.add.container(0, -50);
+    const sfxRowGfx = scene.add.graphics();
+    sfxRowGfx.fillStyle(0xf8fafc, 1);
+    sfxRowGfx.fillRoundedRect(-rowW / 2, -rowH / 2, rowW, rowH, rowRadius);
+    sfxRowGfx.lineStyle(4, 0xe2e8f0, 1);
+    sfxRowGfx.strokeRoundedRect(-rowW / 2, -rowH / 2, rowW, rowH, rowRadius);
+
+    // Circular SFX Toggle Button
+    const sfxBtnContainer = scene.add.container(-245, 0);
+    const sfxBtnGfx = scene.add.graphics();
+    const sfxBtnIcon = scene.add
+      .image(0, 0, sfx.sfxMuted ? "icon_audio_off" : "icon_sfx_on")
+      .setDisplaySize(42, 42);
+    const sfxBtnHit = scene.add
+      .circle(0, 0, 38, 0x000000, 0)
+      .setInteractive({ useHandCursor: true });
+    sfxBtnContainer.add([sfxBtnGfx, sfxBtnIcon, sfxBtnHit]);
+
+    const drawSFXBtn = (muted: boolean) => {
+      sfxBtnGfx.clear();
+      sfxBtnGfx.fillStyle(muted ? 0x64748b : 0x0369a1, 1);
+      sfxBtnGfx.fillCircle(0, 4, 38);
+      sfxBtnGfx.fillStyle(muted ? 0x94a3b8 : 0x0284c7, 1);
+      sfxBtnGfx.fillCircle(0, 0, 38);
+      sfxBtnGfx.lineStyle(3.5, 0xffffff, 1);
+      sfxBtnGfx.strokeCircle(0, 0, 38);
+      sfxBtnIcon.setTexture(muted ? "icon_audio_off" : "icon_sfx_on");
+    };
+
+    // SFX Label & Value Text
+    const sfxLabel = scene.add
+      .text(sliderLeft, -24, "SFX", {
+        fontFamily: "'Fredoka', sans-serif",
+        fontSize: "28px",
+        fontStyle: "900",
+        color: "#1e293b",
+      })
+      .setOrigin(0, 0.5);
+
+    const sfxValPct = Math.round(sfx.sfxVolume * 100);
+    const sfxValueText = scene.add
+      .text(sliderLeft + sliderW, -24, sfx.sfxMuted ? "OFF" : `${sfxValPct}%`, {
+        fontFamily: "'Fredoka', sans-serif",
+        fontSize: "26px",
+        fontStyle: "900",
+        color: sfx.sfxMuted ? "#94a3b8" : "#0284c7",
+      })
+      .setOrigin(1, 0.5);
+
+    // SFX Slider Graphics
+    const sfxSliderGfx = scene.add.graphics();
+    const drawSFXSlider = (vol: number, muted: boolean) => {
+      sfxSliderGfx.clear();
+      // Track bg
+      sfxSliderGfx.fillStyle(0xe2e8f0, 1);
+      sfxSliderGfx.fillRoundedRect(sliderLeft, sliderTop, sliderW, sliderH, 11);
+      // Track fill
+      const fillW = muted ? 0 : Math.max(0, Math.min(sliderW, vol * sliderW));
+      if (fillW > 0) {
+        sfxSliderGfx.fillStyle(0x0284c7, 1);
+        sfxSliderGfx.fillRoundedRect(sliderLeft, sliderTop, fillW, sliderH, 11);
+      }
+      // Knob
+      const knobX = muted ? sliderLeft : sliderLeft + fillW;
+      const knobY = sliderTop + sliderH / 2;
+      sfxSliderGfx.fillStyle(muted ? 0x64748b : 0x0369a1, 1);
+      sfxSliderGfx.fillCircle(knobX, knobY + 2, 14);
+      sfxSliderGfx.fillStyle(0xffffff, 1);
+      sfxSliderGfx.fillCircle(knobX, knobY, 14);
+      sfxSliderGfx.lineStyle(3.5, muted ? 0x94a3b8 : 0x0284c7, 1);
+      sfxSliderGfx.strokeCircle(knobX, knobY, 14);
+    };
+
+    const sfxSliderHit = scene.add
+      .rectangle(sliderLeft + sliderW / 2, sliderTop + sliderH / 2, sliderW + 30, 44, 0x000000, 0)
+      .setInteractive({ useHandCursor: true });
+
+    sfxRowContainer.add([
+      sfxRowGfx,
+      sfxBtnContainer,
+      sfxLabel,
+      sfxValueText,
+      sfxSliderGfx,
+      sfxSliderHit,
+    ]);
+
+    drawSFXBtn(sfx.sfxMuted);
+    drawSFXSlider(sfx.sfxVolume, sfx.sfxMuted);
+
+    // --- ROW 2: MUSIC ---
+    const musicRowContainer = scene.add.container(0, 75);
+    const musicRowGfx = scene.add.graphics();
+    musicRowGfx.fillStyle(0xf8fafc, 1);
+    musicRowGfx.fillRoundedRect(-rowW / 2, -rowH / 2, rowW, rowH, rowRadius);
+    musicRowGfx.lineStyle(4, 0xe2e8f0, 1);
+    musicRowGfx.strokeRoundedRect(-rowW / 2, -rowH / 2, rowW, rowH, rowRadius);
+
+    // Circular Music Toggle Button
+    const musicBtnContainer = scene.add.container(-245, 0);
+    const musicBtnGfx = scene.add.graphics();
+    const musicBtnIcon = scene.add
+      .image(0, 0, sfx.musicMuted ? "icon_audio_off" : "icon_music_on")
+      .setDisplaySize(42, 42);
+    const musicBtnHit = scene.add
+      .circle(0, 0, 38, 0x000000, 0)
+      .setInteractive({ useHandCursor: true });
+    musicBtnContainer.add([musicBtnGfx, musicBtnIcon, musicBtnHit]);
+
+    const drawMusicBtn = (muted: boolean) => {
+      musicBtnGfx.clear();
+      musicBtnGfx.fillStyle(muted ? 0x64748b : 0x6b21a8, 1);
+      musicBtnGfx.fillCircle(0, 4, 38);
+      musicBtnGfx.fillStyle(muted ? 0x94a3b8 : 0x9333ea, 1);
+      musicBtnGfx.fillCircle(0, 0, 38);
+      musicBtnGfx.lineStyle(3.5, 0xffffff, 1);
+      musicBtnGfx.strokeCircle(0, 0, 38);
+      musicBtnIcon.setTexture(muted ? "icon_audio_off" : "icon_music_on");
+    };
+
+    // Music Label & Value Text
+    const musicLabel = scene.add
+      .text(sliderLeft, -24, "Music", {
+        fontFamily: "'Fredoka', sans-serif",
+        fontSize: "28px",
+        fontStyle: "900",
+        color: "#1e293b",
+      })
+      .setOrigin(0, 0.5);
+
+    const musicValPct = Math.round(sfx.musicVolume * 100);
+    const musicValueText = scene.add
+      .text(sliderLeft + sliderW, -24, sfx.musicMuted ? "OFF" : `${musicValPct}%`, {
+        fontFamily: "'Fredoka', sans-serif",
+        fontSize: "26px",
+        fontStyle: "900",
+        color: sfx.musicMuted ? "#94a3b8" : "#9333ea",
+      })
+      .setOrigin(1, 0.5);
+
+    // Music Slider Graphics
+    const musicSliderGfx = scene.add.graphics();
+    const drawMusicSlider = (vol: number, muted: boolean) => {
+      musicSliderGfx.clear();
+      // Track bg
+      musicSliderGfx.fillStyle(0xe2e8f0, 1);
+      musicSliderGfx.fillRoundedRect(sliderLeft, sliderTop, sliderW, sliderH, 11);
+      // Track fill
+      const fillW = muted ? 0 : Math.max(0, Math.min(sliderW, vol * sliderW));
+      if (fillW > 0) {
+        musicSliderGfx.fillStyle(0x9333ea, 1);
+        musicSliderGfx.fillRoundedRect(sliderLeft, sliderTop, fillW, sliderH, 11);
+      }
+      // Knob
+      const knobX = muted ? sliderLeft : sliderLeft + fillW;
+      const knobY = sliderTop + sliderH / 2;
+      musicSliderGfx.fillStyle(muted ? 0x64748b : 0x6b21a8, 1);
+      musicSliderGfx.fillCircle(knobX, knobY + 2, 14);
+      musicSliderGfx.fillStyle(0xffffff, 1);
+      musicSliderGfx.fillCircle(knobX, knobY, 14);
+      musicSliderGfx.lineStyle(3.5, muted ? 0x94a3b8 : 0x9333ea, 1);
+      musicSliderGfx.strokeCircle(knobX, knobY, 14);
+    };
+
+    const musicSliderHit = scene.add
+      .rectangle(sliderLeft + sliderW / 2, sliderTop + sliderH / 2, sliderW + 30, 44, 0x000000, 0)
+      .setInteractive({ useHandCursor: true });
+
+    musicRowContainer.add([
+      musicRowGfx,
+      musicBtnContainer,
+      musicLabel,
+      musicValueText,
+      musicSliderGfx,
+      musicSliderHit,
+    ]);
+
+    drawMusicBtn(sfx.musicMuted);
+    drawMusicSlider(sfx.musicVolume, sfx.musicMuted);
+
+    // -------------------------------------------------------------------------
+    // 4. INTERACTION LOGIC (BUTTON TOGGLES & SLIDER DRAGGING)
+    // -------------------------------------------------------------------------
+    // Toggle SFX
+    sfxBtnHit.on("pointerdown", () => {
+      sfx.playPop();
+      const nextMuted = !sfx.sfxMuted;
+      sfx.setSFXMuted(nextMuted);
+      drawSFXBtn(nextMuted);
+      drawSFXSlider(sfx.sfxVolume, nextMuted);
+      sfxValueText.setText(nextMuted ? "OFF" : `${Math.round(sfx.sfxVolume * 100)}%`);
+      sfxValueText.setColor(nextMuted ? "#94a3b8" : "#0284c7");
+    });
+
+    sfxBtnHit.on("pointerover", () => {
+      scene.tweens.add({
+        targets: sfxBtnContainer,
+        scaleX: 1.08,
+        scaleY: 1.08,
+        duration: 90,
+      });
+    });
+    sfxBtnHit.on("pointerout", () => {
+      scene.tweens.add({
+        targets: sfxBtnContainer,
+        scaleX: 1,
+        scaleY: 1,
+        duration: 90,
+      });
+    });
+
+    // Toggle Music
+    musicBtnHit.on("pointerdown", () => {
+      sfx.playPop();
+      const nextMuted = !sfx.musicMuted;
+      sfx.setMusicMuted(nextMuted);
+      if (!nextMuted) {
+        sfx.startBGM();
+      }
+      drawMusicBtn(nextMuted);
+      drawMusicSlider(sfx.musicVolume, nextMuted);
+      musicValueText.setText(nextMuted ? "OFF" : `${Math.round(sfx.musicVolume * 100)}%`);
+      musicValueText.setColor(nextMuted ? "#94a3b8" : "#9333ea");
+    });
+
+    musicBtnHit.on("pointerover", () => {
+      scene.tweens.add({
+        targets: musicBtnContainer,
+        scaleX: 1.08,
+        scaleY: 1.08,
+        duration: 90,
+      });
+    });
+    musicBtnHit.on("pointerout", () => {
+      scene.tweens.add({
+        targets: musicBtnContainer,
+        scaleX: 1,
+        scaleY: 1,
+        duration: 90,
+      });
+    });
+
+    // Sliders Dragging Logic
+    let isDraggingSFX = false;
+    let isDraggingMusic = false;
+
+    const updateSFXFromPointer = (pointer: Phaser.Input.Pointer) => {
+      const localX = pointer.x - this.x - sfxRowContainer.x;
+      const fraction = Phaser.Math.Clamp((localX - sliderLeft) / sliderW, 0, 1);
+      sfx.setSFXMuted(false);
+      sfx.setSFXVolume(fraction);
+      drawSFXBtn(false);
+      drawSFXSlider(fraction, false);
+      sfxValueText.setText(`${Math.round(fraction * 100)}%`);
+      sfxValueText.setColor("#0284c7");
+    };
+
+    const updateMusicFromPointer = (pointer: Phaser.Input.Pointer) => {
+      const localX = pointer.x - this.x - musicRowContainer.x;
+      const fraction = Phaser.Math.Clamp((localX - sliderLeft) / sliderW, 0, 1);
+      sfx.setMusicMuted(false);
+      sfx.setMusicVolume(fraction);
+      sfx.startBGM();
+      drawMusicBtn(false);
+      drawMusicSlider(fraction, false);
+      musicValueText.setText(`${Math.round(fraction * 100)}%`);
+      musicValueText.setColor("#9333ea");
+    };
+
+    sfxSliderHit.on("pointerdown", (pointer: Phaser.Input.Pointer) => {
+      isDraggingSFX = true;
+      updateSFXFromPointer(pointer);
+    });
+
+    musicSliderHit.on("pointerdown", (pointer: Phaser.Input.Pointer) => {
+      isDraggingMusic = true;
+      updateMusicFromPointer(pointer);
+    });
+
+    const onPointerMove = (pointer: Phaser.Input.Pointer) => {
+      if (isDraggingSFX) updateSFXFromPointer(pointer);
+      if (isDraggingMusic) updateMusicFromPointer(pointer);
+    };
+
+    const onPointerUp = () => {
+      isDraggingSFX = false;
+      isDraggingMusic = false;
+    };
+
+    scene.input.on("pointermove", onPointerMove);
+    scene.input.on("pointerup", onPointerUp);
+
+    this.on("destroy", () => {
+      scene.input.off("pointermove", onPointerMove);
+      scene.input.off("pointerup", onPointerUp);
+    });
+
     this.add([
       backdrop,
       cardGfx,
       cardHitArea,
-      title,
-      musicRowGfx,
-      musicLabel,
-      musicBtnContainer,
-      sfxRowGfx,
-      sfxLabel,
-      sfxBtnContainer,
+      headerContainer,
+      sfxRowContainer,
+      musicRowContainer,
       cornerCloseLedge,
       cornerCloseFace,
       cornerCloseIcon,
-      closeBtnContainer,
     ]);
 
     scene.add.existing(this);

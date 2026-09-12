@@ -173,10 +173,10 @@ export class UIScene extends Phaser.Scene {
     healthContainer.add(healthGfx);
 
     this.heartSprites = [];
-    [-54, 0, 54].forEach((hx) => {
+    [-55, 0, 55].forEach((hx) => {
       const heart = this.add
         .image(hx, 0, "heart_full")
-        .setDisplaySize(44, 44);
+        .setDisplaySize(50, 48);
       this.heartSprites.push(heart);
       healthContainer.add(heart);
     });
@@ -654,6 +654,17 @@ export class UIScene extends Phaser.Scene {
   // 7. EVENT LISTENERS
   // =========================================================================
   private setupListeners() {
+    // 1. Remove any previous listeners to prevent duplicate listener accumulation on restarts
+    this.game.events.off("setHintText");
+    this.game.events.off("correctAnswer");
+    this.game.events.off("wrongAnswer");
+
+    this.events.once("shutdown", () => {
+      this.game.events.off("setHintText");
+      this.game.events.off("correctAnswer");
+      this.game.events.off("wrongAnswer");
+    });
+
     this.game.events.on("setHintText", (hint: string) => {
       this.currentHint = hint;
     });
@@ -678,21 +689,41 @@ export class UIScene extends Phaser.Scene {
       });
     });
 
+    let lastWrongTime = 0;
     this.game.events.on("wrongAnswer", () => {
+      const now = Date.now();
+      // Debounce: prevent multiple heart deductions in rapid succession (minimum 500ms gap)
+      if (now - lastWrongTime < 500) return;
+      lastWrongTime = now;
+
+      if (this.health <= 0) return;
+
+      // Exactly 1 heart lost per wrong hit
       this.health = Math.max(0, this.health - 1);
-      if (this.heartSprites[this.health]) {
-        const heart = this.heartSprites[this.health];
+      const targetHeartIdx = this.health; // 2 (right), then 1 (middle), then 0 (left)
+      if (this.heartSprites[targetHeartIdx]) {
+        const heart = this.heartSprites[targetHeartIdx];
+        const baseScaleX = heart.scaleX;
+        const baseScaleY = heart.scaleY;
         this.tweens.add({
           targets: heart,
-          scaleX: 1.3,
-          scaleY: 1.3,
-          duration: 100,
+          scaleX: baseScaleX * 1.35,
+          scaleY: baseScaleY * 1.35,
+          duration: 120,
           yoyo: true,
-          onComplete: () => {
+          onYoyo: () => {
             heart.setTexture("heart_empty");
+          },
+          onComplete: () => {
+            heart.setScale(baseScaleX, baseScaleY);
           },
         });
       }
+
+      flutterBridge.send("GAME_PROGRESS", {
+        score: this.score,
+        health: this.health,
+      });
 
       if (this.health === 0) {
         this.time.delayedCall(600, () => this.showGameOverModal());
@@ -701,21 +732,30 @@ export class UIScene extends Phaser.Scene {
   }
 
   private setupFlutterBridge() {
-    flutterBridge.on("PAUSE", () => this.showPauseModal());
-    flutterBridge.on("RESUME", () => {
-      if (this.activeModal) {
-        this.activeModal.destroy();
-        this.activeModal = null;
-        this.game.events.emit("resumeGame");
-      }
-    });
-    flutterBridge.on("RESTART", () => {
-      if (this.activeModal) {
-        this.activeModal.destroy();
-        this.activeModal = null;
-      }
-      this.scene.restart();
-      this.game.events.emit("restartGame");
+    const unsubs: (() => void)[] = [];
+    unsubs.push(flutterBridge.on("PAUSE", () => this.showPauseModal()));
+    unsubs.push(
+      flutterBridge.on("RESUME", () => {
+        if (this.activeModal) {
+          this.activeModal.destroy();
+          this.activeModal = null;
+          this.game.events.emit("resumeGame");
+        }
+      })
+    );
+    unsubs.push(
+      flutterBridge.on("RESTART", () => {
+        if (this.activeModal) {
+          this.activeModal.destroy();
+          this.activeModal = null;
+        }
+        this.scene.restart();
+        this.game.events.emit("restartGame");
+      })
+    );
+
+    this.events.once("shutdown", () => {
+      unsubs.forEach((unsub) => unsub());
     });
   }
 }

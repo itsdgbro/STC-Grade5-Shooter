@@ -114,36 +114,36 @@ export class MainMenuScene extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
-    // Play Button (Large Red 3D Pill matching original App.tsx)
-    const playBtnContainer = this.add.container(0, 165);
-    const playW = 390;
-    const playH = 92;
+    // Play Button (Increased by 40% per user request)
+    const playBtnContainer = this.add.container(0, 180);
+    const playW = Math.round(390 * 1.4); // 546
+    const playH = Math.round(92 * 1.4);  // 129
 
     // Bottom 3D shadow ledge
     const playLedge = this.add
-      .rectangle(0, 11, playW, playH, 0x9b1d1d, 1)
+      .rectangle(0, 15, playW, playH, 0x9b1d1d, 1)
       .setOrigin(0.5);
 
     // Main Red Face
     const playFace = this.add
       .rectangle(0, 0, playW, playH, 0xee5253)
-      .setStrokeStyle(6, 0xffffff)
+      .setStrokeStyle(8, 0xffffff)
       .setInteractive({ useHandCursor: true });
 
     // Specular highlight top pill
     const playHighlight = this.add
-      .rectangle(0, -20, playW * 0.78, playH * 0.32, 0xffffff, 0.45)
+      .rectangle(0, -28, playW * 0.78, playH * 0.32, 0xffffff, 0.45)
       .setOrigin(0.5);
 
     // Label
     const playLabel = this.add
       .text(0, -2, "▶  PLAY", {
         fontFamily: "'Fredoka', 'Mukta', sans-serif",
-        fontSize: "48px",
+        fontSize: "66px",
         fontStyle: "900",
         color: "#ffffff",
         stroke: "#9b1d1d",
-        strokeThickness: 6,
+        strokeThickness: 8,
       })
       .setOrigin(0.5);
 
@@ -171,7 +171,7 @@ export class MainMenuScene extends Phaser.Scene {
     });
 
     playFace.on("pointerdown", () => {
-      playBtnContainer.y = 173;
+      playBtnContainer.y = 190;
       sfx.playPop();
       sfx.startBGM();
 
