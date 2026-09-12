@@ -102,6 +102,9 @@ export const GAME_CONFIG = {
   // 3. GAMEPLAY, EXP & ADAPTIVE PROGRESSION
   // ==========================================
   gameplay: {
+    // Points awarded on correct answer
+    pointsPerCorrect: 3,
+
     // Delay before advancing to next question on success (ms)
     nextQuestionDelayMs: 1000,
 

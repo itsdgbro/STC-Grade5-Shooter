@@ -15,23 +15,23 @@ export class SettingsModal extends Phaser.GameObjects.Container {
       .rectangle(0, 0, 1920, 1080, 0x0f172a, 0.75)
       .setInteractive();
 
-    // 2. Main Settings Card with Rounded Corner Radius Curve
-    const cardW = 720;
-    const cardH = 460;
-    const cardRadius = 38;
+    // 2. Main Settings Card with Rounded Corner Radius Curve (Enlarged by 30%: 936x598, radius: 50)
+    const cardW = 936;
+    const cardH = 598;
+    const cardRadius = 50;
 
     const cardGfx = scene.add.graphics();
 
-    // 3D Ledge Shadow (offset by +10px downwards)
+    // 3D Ledge Shadow (offset by +13px downwards)
     cardGfx.fillStyle(0x0284c7, 1);
-    cardGfx.fillRoundedRect(-cardW / 2, -cardH / 2 + 10, cardW, cardH, cardRadius);
+    cardGfx.fillRoundedRect(-cardW / 2, -cardH / 2 + 13, cardW, cardH, cardRadius);
 
     // Main Card White Face
     cardGfx.fillStyle(0xffffff, 1);
     cardGfx.fillRoundedRect(-cardW / 2, -cardH / 2, cardW, cardH, cardRadius);
 
-    // Cyan Border (5px stroke)
-    cardGfx.lineStyle(5, 0x38bdf8, 1);
+    // Cyan Border (7px stroke)
+    cardGfx.lineStyle(7, 0x38bdf8, 1);
     cardGfx.strokeRoundedRect(-cardW / 2, -cardH / 2, cardW, cardH, cardRadius);
 
     // Card interactive hit area so clicking on card doesn't bubble to backdrop
@@ -40,17 +40,17 @@ export class SettingsModal extends Phaser.GameObjects.Container {
       .setOrigin(0.5)
       .setInteractive();
 
-    // Header Title with Settings Gear Icon
-    const headerContainer = scene.add.container(0, -155);
+    // Header Title with Settings Gear Icon (Enlarged by 30%)
+    const headerContainer = scene.add.container(0, -200);
     const gearIcon = scene.add
-      .image(-110, 0, "icon_settings")
-      .setDisplaySize(44, 44)
+      .image(-145, 0, "icon_settings")
+      .setDisplaySize(58, 58)
       .setTint(0x0284c7);
 
     const title = scene.add
-      .text(18, 0, "SETTINGS", {
+      .text(24, 0, "SETTINGS", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "44px",
+        fontSize: "58px",
         fontStyle: "900",
         color: "#0f172a",
         letterSpacing: 1,
@@ -59,20 +59,20 @@ export class SettingsModal extends Phaser.GameObjects.Container {
 
     headerContainer.add([gearIcon, title]);
 
-    // Red Circular ✕ Close Button at Bottom-Right Corner
-    const cornerX = cardW / 2 - 14;
-    const cornerY = cardH / 2 - 14;
-    const closeRadius = 36;
+    // Red Circular ✕ Close Button at Bottom-Right Corner (Enlarged by 30%)
+    const cornerX = cardW / 2 - 18;
+    const cornerY = cardH / 2 - 18;
+    const closeRadius = 47;
 
-    const cornerCloseLedge = scene.add.circle(cornerX, cornerY + 5, closeRadius, 0x991b1b);
+    const cornerCloseLedge = scene.add.circle(cornerX, cornerY + 7, closeRadius, 0x991b1b);
     const cornerCloseFace = scene.add
       .circle(cornerX, cornerY, closeRadius, 0xef4444)
-      .setStrokeStyle(4, 0xffffff)
+      .setStrokeStyle(5, 0xffffff)
       .setInteractive({ useHandCursor: true });
     const cornerCloseIcon = scene.add
       .text(cornerX, cornerY - 2, "✕", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "36px",
+        fontSize: "47px",
         fontStyle: "900",
         color: "#ffffff",
       })
@@ -104,52 +104,52 @@ export class SettingsModal extends Phaser.GameObjects.Container {
     });
 
     // -------------------------------------------------------------------------
-    // 3. ROWS LAYOUT (SFX & MUSIC)
+    // 3. ROWS LAYOUT (SFX & MUSIC) - Enlarged by 30%
     // -------------------------------------------------------------------------
-    const rowW = 630;
-    const rowH = 112;
-    const rowRadius = 26;
+    const rowW = 820;
+    const rowH = 146;
+    const rowRadius = 34;
 
-    const sliderW = 440;
-    const sliderH = 22;
-    const sliderLeft = -195;
-    const sliderTop = 8;
+    const sliderW = 572;
+    const sliderH = 29;
+    const sliderLeft = -254;
+    const sliderTop = 11;
 
     // --- ROW 1: SFX ---
-    const sfxRowContainer = scene.add.container(0, -50);
+    const sfxRowContainer = scene.add.container(0, -65);
     const sfxRowGfx = scene.add.graphics();
     sfxRowGfx.fillStyle(0xf8fafc, 1);
     sfxRowGfx.fillRoundedRect(-rowW / 2, -rowH / 2, rowW, rowH, rowRadius);
-    sfxRowGfx.lineStyle(4, 0xe2e8f0, 1);
+    sfxRowGfx.lineStyle(5, 0xe2e8f0, 1);
     sfxRowGfx.strokeRoundedRect(-rowW / 2, -rowH / 2, rowW, rowH, rowRadius);
 
     // Circular SFX Toggle Button
-    const sfxBtnContainer = scene.add.container(-245, 0);
+    const sfxBtnContainer = scene.add.container(-320, 0);
     const sfxBtnGfx = scene.add.graphics();
     const sfxBtnIcon = scene.add
       .image(0, 0, sfx.sfxMuted ? "icon_audio_off" : "icon_sfx_on")
-      .setDisplaySize(42, 42);
+      .setDisplaySize(55, 55);
     const sfxBtnHit = scene.add
-      .circle(0, 0, 38, 0x000000, 0)
+      .circle(0, 0, 49, 0x000000, 0)
       .setInteractive({ useHandCursor: true });
     sfxBtnContainer.add([sfxBtnGfx, sfxBtnIcon, sfxBtnHit]);
 
     const drawSFXBtn = (muted: boolean) => {
       sfxBtnGfx.clear();
       sfxBtnGfx.fillStyle(muted ? 0x64748b : 0x0369a1, 1);
-      sfxBtnGfx.fillCircle(0, 4, 38);
+      sfxBtnGfx.fillCircle(0, 5, 49);
       sfxBtnGfx.fillStyle(muted ? 0x94a3b8 : 0x0284c7, 1);
-      sfxBtnGfx.fillCircle(0, 0, 38);
-      sfxBtnGfx.lineStyle(3.5, 0xffffff, 1);
-      sfxBtnGfx.strokeCircle(0, 0, 38);
+      sfxBtnGfx.fillCircle(0, 0, 49);
+      sfxBtnGfx.lineStyle(4.5, 0xffffff, 1);
+      sfxBtnGfx.strokeCircle(0, 0, 49);
       sfxBtnIcon.setTexture(muted ? "icon_audio_off" : "icon_sfx_on");
     };
 
     // SFX Label & Value Text
     const sfxLabel = scene.add
-      .text(sliderLeft, -24, "SFX", {
+      .text(sliderLeft, -31, "SFX", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "28px",
+        fontSize: "36px",
         fontStyle: "900",
         color: "#1e293b",
       })
@@ -157,9 +157,9 @@ export class SettingsModal extends Phaser.GameObjects.Container {
 
     const sfxValPct = Math.round(sfx.sfxVolume * 100);
     const sfxValueText = scene.add
-      .text(sliderLeft + sliderW, -24, sfx.sfxMuted ? "OFF" : `${sfxValPct}%`, {
+      .text(sliderLeft + sliderW, -31, sfx.sfxMuted ? "OFF" : `${sfxValPct}%`, {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "26px",
+        fontSize: "34px",
         fontStyle: "900",
         color: sfx.sfxMuted ? "#94a3b8" : "#0284c7",
       })
@@ -171,26 +171,26 @@ export class SettingsModal extends Phaser.GameObjects.Container {
       sfxSliderGfx.clear();
       // Track bg
       sfxSliderGfx.fillStyle(0xe2e8f0, 1);
-      sfxSliderGfx.fillRoundedRect(sliderLeft, sliderTop, sliderW, sliderH, 11);
+      sfxSliderGfx.fillRoundedRect(sliderLeft, sliderTop, sliderW, sliderH, 14);
       // Track fill
       const fillW = muted ? 0 : Math.max(0, Math.min(sliderW, vol * sliderW));
       if (fillW > 0) {
         sfxSliderGfx.fillStyle(0x0284c7, 1);
-        sfxSliderGfx.fillRoundedRect(sliderLeft, sliderTop, fillW, sliderH, 11);
+        sfxSliderGfx.fillRoundedRect(sliderLeft, sliderTop, fillW, sliderH, 14);
       }
       // Knob
       const knobX = muted ? sliderLeft : sliderLeft + fillW;
       const knobY = sliderTop + sliderH / 2;
       sfxSliderGfx.fillStyle(muted ? 0x64748b : 0x0369a1, 1);
-      sfxSliderGfx.fillCircle(knobX, knobY + 2, 14);
+      sfxSliderGfx.fillCircle(knobX, knobY + 3, 18);
       sfxSliderGfx.fillStyle(0xffffff, 1);
-      sfxSliderGfx.fillCircle(knobX, knobY, 14);
-      sfxSliderGfx.lineStyle(3.5, muted ? 0x94a3b8 : 0x0284c7, 1);
-      sfxSliderGfx.strokeCircle(knobX, knobY, 14);
+      sfxSliderGfx.fillCircle(knobX, knobY, 18);
+      sfxSliderGfx.lineStyle(4.5, muted ? 0x94a3b8 : 0x0284c7, 1);
+      sfxSliderGfx.strokeCircle(knobX, knobY, 18);
     };
 
     const sfxSliderHit = scene.add
-      .rectangle(sliderLeft + sliderW / 2, sliderTop + sliderH / 2, sliderW + 30, 44, 0x000000, 0)
+      .rectangle(sliderLeft + sliderW / 2, sliderTop + sliderH / 2, sliderW + 38, 57, 0x000000, 0)
       .setInteractive({ useHandCursor: true });
 
     sfxRowContainer.add([
@@ -206,40 +206,40 @@ export class SettingsModal extends Phaser.GameObjects.Container {
     drawSFXSlider(sfx.sfxVolume, sfx.sfxMuted);
 
     // --- ROW 2: MUSIC ---
-    const musicRowContainer = scene.add.container(0, 75);
+    const musicRowContainer = scene.add.container(0, 100);
     const musicRowGfx = scene.add.graphics();
     musicRowGfx.fillStyle(0xf8fafc, 1);
     musicRowGfx.fillRoundedRect(-rowW / 2, -rowH / 2, rowW, rowH, rowRadius);
-    musicRowGfx.lineStyle(4, 0xe2e8f0, 1);
+    musicRowGfx.lineStyle(5, 0xe2e8f0, 1);
     musicRowGfx.strokeRoundedRect(-rowW / 2, -rowH / 2, rowW, rowH, rowRadius);
 
     // Circular Music Toggle Button
-    const musicBtnContainer = scene.add.container(-245, 0);
+    const musicBtnContainer = scene.add.container(-320, 0);
     const musicBtnGfx = scene.add.graphics();
     const musicBtnIcon = scene.add
       .image(0, 0, sfx.musicMuted ? "icon_audio_off" : "icon_music_on")
-      .setDisplaySize(42, 42);
+      .setDisplaySize(55, 55);
     const musicBtnHit = scene.add
-      .circle(0, 0, 38, 0x000000, 0)
+      .circle(0, 0, 49, 0x000000, 0)
       .setInteractive({ useHandCursor: true });
     musicBtnContainer.add([musicBtnGfx, musicBtnIcon, musicBtnHit]);
 
     const drawMusicBtn = (muted: boolean) => {
       musicBtnGfx.clear();
       musicBtnGfx.fillStyle(muted ? 0x64748b : 0x6b21a8, 1);
-      musicBtnGfx.fillCircle(0, 4, 38);
+      musicBtnGfx.fillCircle(0, 5, 49);
       musicBtnGfx.fillStyle(muted ? 0x94a3b8 : 0x9333ea, 1);
-      musicBtnGfx.fillCircle(0, 0, 38);
-      musicBtnGfx.lineStyle(3.5, 0xffffff, 1);
-      musicBtnGfx.strokeCircle(0, 0, 38);
+      musicBtnGfx.fillCircle(0, 0, 49);
+      musicBtnGfx.lineStyle(4.5, 0xffffff, 1);
+      musicBtnGfx.strokeCircle(0, 0, 49);
       musicBtnIcon.setTexture(muted ? "icon_audio_off" : "icon_music_on");
     };
 
     // Music Label & Value Text
     const musicLabel = scene.add
-      .text(sliderLeft, -24, "Music", {
+      .text(sliderLeft, -31, "Music", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "28px",
+        fontSize: "36px",
         fontStyle: "900",
         color: "#1e293b",
       })
@@ -247,9 +247,9 @@ export class SettingsModal extends Phaser.GameObjects.Container {
 
     const musicValPct = Math.round(sfx.musicVolume * 100);
     const musicValueText = scene.add
-      .text(sliderLeft + sliderW, -24, sfx.musicMuted ? "OFF" : `${musicValPct}%`, {
+      .text(sliderLeft + sliderW, -31, sfx.musicMuted ? "OFF" : `${musicValPct}%`, {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "26px",
+        fontSize: "34px",
         fontStyle: "900",
         color: sfx.musicMuted ? "#94a3b8" : "#9333ea",
       })
@@ -261,26 +261,26 @@ export class SettingsModal extends Phaser.GameObjects.Container {
       musicSliderGfx.clear();
       // Track bg
       musicSliderGfx.fillStyle(0xe2e8f0, 1);
-      musicSliderGfx.fillRoundedRect(sliderLeft, sliderTop, sliderW, sliderH, 11);
+      musicSliderGfx.fillRoundedRect(sliderLeft, sliderTop, sliderW, sliderH, 14);
       // Track fill
       const fillW = muted ? 0 : Math.max(0, Math.min(sliderW, vol * sliderW));
       if (fillW > 0) {
         musicSliderGfx.fillStyle(0x9333ea, 1);
-        musicSliderGfx.fillRoundedRect(sliderLeft, sliderTop, fillW, sliderH, 11);
+        musicSliderGfx.fillRoundedRect(sliderLeft, sliderTop, fillW, sliderH, 14);
       }
       // Knob
       const knobX = muted ? sliderLeft : sliderLeft + fillW;
       const knobY = sliderTop + sliderH / 2;
       musicSliderGfx.fillStyle(muted ? 0x64748b : 0x6b21a8, 1);
-      musicSliderGfx.fillCircle(knobX, knobY + 2, 14);
+      musicSliderGfx.fillCircle(knobX, knobY + 3, 18);
       musicSliderGfx.fillStyle(0xffffff, 1);
-      musicSliderGfx.fillCircle(knobX, knobY, 14);
-      musicSliderGfx.lineStyle(3.5, muted ? 0x94a3b8 : 0x9333ea, 1);
-      musicSliderGfx.strokeCircle(knobX, knobY, 14);
+      musicSliderGfx.fillCircle(knobX, knobY, 18);
+      musicSliderGfx.lineStyle(4.5, muted ? 0x94a3b8 : 0x9333ea, 1);
+      musicSliderGfx.strokeCircle(knobX, knobY, 18);
     };
 
     const musicSliderHit = scene.add
-      .rectangle(sliderLeft + sliderW / 2, sliderTop + sliderH / 2, sliderW + 30, 44, 0x000000, 0)
+      .rectangle(sliderLeft + sliderW / 2, sliderTop + sliderH / 2, sliderW + 38, 57, 0x000000, 0)
       .setInteractive({ useHandCursor: true });
 
     musicRowContainer.add([

@@ -1,4 +1,5 @@
 import * as Phaser from "phaser";
+import { GAME_CONFIG } from "../../config/gameConfig";
 import { sfx } from "../../utils/sounds";
 import { flutterBridge } from "../../utils/flutterBridge";
 import { SettingsModal } from "../ui/SettingsModal";
@@ -6,6 +7,7 @@ import { SettingsModal } from "../ui/SettingsModal";
 export class UIScene extends Phaser.Scene {
   // Game Stats
   private score = 0;
+  private correctAnswersCount = 0;
   private health = 3;
   private currentHint = "Solve the equation step by step, then shoot the matching number ball!";
 
@@ -28,6 +30,7 @@ export class UIScene extends Phaser.Scene {
 
   create() {
     this.score = 0;
+    this.correctAnswersCount = 0;
     this.health = 3;
     this.activeModal = null;
     this.isShootOnCooldown = false;
@@ -184,37 +187,38 @@ export class UIScene extends Phaser.Scene {
 
   // =========================================================================
   // 2. BOTTOM AREA: HINT PILL BUTTON (LEFT) & SHOOT PILL BUTTON (RIGHT)
+  // Both buttons enlarged by 20% for improved touch ergonomics & visibility
   // =========================================================================
   private createBottomButtons() {
-    // ---- LEFT HINT PILL BUTTON (at X: 170, Y: 1010, radius: 10) ----
-    const hintContainer = this.add.container(170, 1010).setDepth(30);
-    const hintW = 220;
-    const hintH = 74;
-    const hintR = 10;
+    // ---- LEFT HINT PILL BUTTON (enlarged by 20%: 264x89, radius: 12) ----
+    const hintContainer = this.add.container(185, 1005).setDepth(30);
+    const hintW = 264;
+    const hintH = 89;
+    const hintR = 12;
 
     const hintGfx = this.add.graphics();
-    // Ledge shadow (0 7px 0 #ca8a04)
+    // Ledge shadow (0 8px 0 #ca8a04)
     hintGfx.fillStyle(0xca8a04, 1);
-    hintGfx.fillRoundedRect(-hintW / 2, -hintH / 2 + 7, hintW, hintH, hintR);
+    hintGfx.fillRoundedRect(-hintW / 2, -hintH / 2 + 8, hintW, hintH, hintR);
 
-    // Face (5px solid #FFFFFF, yellow #facc15)
+    // Face (6px solid #FFFFFF, yellow #facc15)
     hintGfx.fillStyle(0xfacc15, 1);
     hintGfx.fillRoundedRect(-hintW / 2, -hintH / 2, hintW, hintH, hintR);
 
     // Border
-    hintGfx.lineStyle(5, 0xffffff, 1);
+    hintGfx.lineStyle(6, 0xffffff, 1);
     hintGfx.strokeRoundedRect(-hintW / 2, -hintH / 2, hintW, hintH, hintR);
 
     const hintFace = this.add
       .rectangle(0, 0, hintW, hintH, 0x000000, 0)
       .setInteractive({ useHandCursor: true });
 
-    // Icon + Text
-    const hintIcon = this.add.image(-48, -2, "icon_hint").setDisplaySize(38, 38);
+    // Icon + Text (enlarged by 20%)
+    const hintIcon = this.add.image(-58, -2, "icon_hint").setDisplaySize(46, 46);
     const hintLabel = this.add
-      .text(14, -2, "HINT", {
+      .text(18, -2, "HINT", {
         fontFamily: "'Fredoka', 'Mukta', sans-serif",
-        fontSize: "32px",
+        fontSize: "38px",
         fontStyle: "900",
         color: "#854d0e",
       })
@@ -247,10 +251,10 @@ export class UIScene extends Phaser.Scene {
       this.showHintModal();
     });
 
-    // ---- RIGHT SHOOT PILL BUTTON (at X: 1740, Y: 1010, radius: 10) ----
-    this.shootBtnContainer = this.add.container(1740, 1010).setDepth(30);
-    const shootW = 230;
-    const shootH = 74;
+    // ---- RIGHT SHOOT PILL BUTTON (enlarged by 20%: 276x89, radius: 12) ----
+    this.shootBtnContainer = this.add.container(1725, 1005).setDepth(30);
+    const shootW = 276;
+    const shootH = 89;
 
     this.shootGfx = this.add.graphics();
     this.drawShootBtn(0xef4444, 0x991b1b);
@@ -259,19 +263,19 @@ export class UIScene extends Phaser.Scene {
       .rectangle(0, 0, shootW, shootH, 0x000000, 0)
       .setInteractive({ useHandCursor: true });
 
-    // Specular highlight with 6px corner radius
+    // Specular highlight
     const shootHighlight = this.add.graphics();
     shootHighlight.fillStyle(0xffffff, 0.4);
-    shootHighlight.fillRoundedRect(-shootW * 0.38, -26, shootW * 0.76, shootH * 0.28, 6);
+    shootHighlight.fillRoundedRect(-shootW * 0.38, -31, shootW * 0.76, shootH * 0.28, 7);
 
     const shootLabel = this.add
       .text(0, -2, "SHOOT", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "34px",
+        fontSize: "41px",
         fontStyle: "900",
         color: "#ffffff",
         stroke: "#7f1d1d",
-        strokeThickness: 4,
+        strokeThickness: 5,
       })
       .setOrigin(0.5);
 
@@ -311,18 +315,18 @@ export class UIScene extends Phaser.Scene {
   }
 
   private drawShootBtn(faceColor: number, ledgeColor: number) {
-    const shootW = 230;
-    const shootH = 74;
-    const r = 10;
+    const shootW = 276;
+    const shootH = 89;
+    const r = 12;
     this.shootGfx.clear();
     // Ledge shadow
     this.shootGfx.fillStyle(ledgeColor, 1);
-    this.shootGfx.fillRoundedRect(-shootW / 2, -shootH / 2 + 9, shootW, shootH, r);
+    this.shootGfx.fillRoundedRect(-shootW / 2, -shootH / 2 + 11, shootW, shootH, r);
     // Face
     this.shootGfx.fillStyle(faceColor, 1);
     this.shootGfx.fillRoundedRect(-shootW / 2, -shootH / 2, shootW, shootH, r);
     // Border
-    this.shootGfx.lineStyle(5, 0xffffff, 1);
+    this.shootGfx.lineStyle(6, 0xffffff, 1);
     this.shootGfx.strokeRoundedRect(-shootW / 2, -shootH / 2, shootW, shootH, r);
   }
 
@@ -451,7 +455,7 @@ export class UIScene extends Phaser.Scene {
   }
 
   // =========================================================================
-  // 5. PAUSE MODAL
+  // 5. PAUSE MODAL (Enlarged by 30% with button sizes and text)
   // =========================================================================
   private showPauseModal() {
     if (this.activeModal) return;
@@ -462,81 +466,98 @@ export class UIScene extends Phaser.Scene {
       .rectangle(0, 0, 1920, 1080, 0x0f172a, 0.75)
       .setInteractive();
 
+    // Card enlarged by 30%: 560x480 -> 728x624
     const card = this.add
-      .rectangle(0, 0, 560, 480, 0xffffff)
-      .setStrokeStyle(5, 0x0284c7)
+      .rectangle(0, 0, 728, 624, 0xffffff)
+      .setStrokeStyle(7, 0x0284c7)
       .setOrigin(0.5);
 
+    // Title enlarged by 30%: 48px -> 62px, Y: -170 -> -220
     const title = this.add
-      .text(0, -170, "GAME PAUSED", {
+      .text(0, -220, "GAME PAUSED", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "48px",
+        fontSize: "62px",
         fontStyle: "900",
         color: "#0f172a",
       })
       .setOrigin(0.5);
 
-    // Resume
+    // Resume (enlarged by 30%: scale 1.3, font 39px, Y: -78)
     const resumeBtn = this.add
-      .image(0, -60, "btn_green")
+      .image(0, -78, "btn_green")
+      .setScale(1.3)
       .setInteractive({ useHandCursor: true });
     const resumeLabel = this.add
-      .text(0, -64, "RESUME", {
+      .text(0, -82, "RESUME", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "30px",
+        fontSize: "39px",
         fontStyle: "900",
         color: "#ffffff",
       })
       .setOrigin(0.5);
 
-    resumeBtn.on("pointerdown", () => {
+    const onResume = () => {
       sfx.playPop();
       modal.destroy();
       this.activeModal = null;
       this.game.events.emit("resumeGame");
-    });
+    };
+    resumeBtn.on("pointerdown", onResume);
+    resumeLabel.setInteractive({ useHandCursor: true }).on("pointerdown", onResume);
+    resumeBtn.on("pointerover", () => resumeBtn.setScale(1.35));
+    resumeBtn.on("pointerout", () => resumeBtn.setScale(1.3));
 
-    // Restart
+    // Restart (enlarged by 30%: scale 1.3, font 39px, Y: 52)
     const restartBtn = this.add
-      .image(0, 40, "btn_orange")
+      .image(0, 52, "btn_orange")
+      .setScale(1.3)
       .setInteractive({ useHandCursor: true });
     const restartLabel = this.add
-      .text(0, 36, "RESTART", {
+      .text(0, 48, "RESTART", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "30px",
+        fontSize: "39px",
         fontStyle: "900",
         color: "#ffffff",
       })
       .setOrigin(0.5);
 
-    restartBtn.on("pointerdown", () => {
+    const onRestart = () => {
       sfx.playPop();
       modal.destroy();
       this.activeModal = null;
       this.scene.restart();
       this.game.events.emit("restartGame");
-    });
+    };
+    restartBtn.on("pointerdown", onRestart);
+    restartLabel.setInteractive({ useHandCursor: true }).on("pointerdown", onRestart);
+    restartBtn.on("pointerover", () => restartBtn.setScale(1.35));
+    restartBtn.on("pointerout", () => restartBtn.setScale(1.3));
 
-    // Menu
+    // Menu (enlarged by 30%: scale 1.3, font 36px, Y: 182)
     const menuBtn = this.add
-      .image(0, 140, "btn_blue")
+      .image(0, 182, "btn_blue")
+      .setScale(1.3)
       .setInteractive({ useHandCursor: true });
     const menuLabel = this.add
-      .text(0, 136, "MAIN MENU", {
+      .text(0, 178, "MAIN MENU", {
         fontFamily: "'Fredoka', sans-serif",
-        fontSize: "28px",
+        fontSize: "36px",
         fontStyle: "900",
         color: "#ffffff",
       })
       .setOrigin(0.5);
 
-    menuBtn.on("pointerdown", () => {
+    const onMenu = () => {
       sfx.playPop();
       modal.destroy();
       this.activeModal = null;
       this.scene.stop("GameScene");
       this.scene.start("MainMenuScene");
-    });
+    };
+    menuBtn.on("pointerdown", onMenu);
+    menuLabel.setInteractive({ useHandCursor: true }).on("pointerdown", onMenu);
+    menuBtn.on("pointerover", () => menuBtn.setScale(1.35));
+    menuBtn.on("pointerout", () => menuBtn.setScale(1.3));
 
     modal.add([
       backdrop,
@@ -562,10 +583,10 @@ export class UIScene extends Phaser.Scene {
 
     flutterBridge.sendGameOver({
       score: this.score,
-      stars: Math.min(3, Math.max(1, Math.floor(this.score / 150))),
+      stars: Math.min(3, Math.max(1, this.correctAnswersCount >= 7 ? 3 : this.correctAnswersCount >= 4 ? 2 : 1)),
       timeSpentSeconds: 60,
       totalQuestions: 10,
-      correctAnswers: Math.floor(this.score / 20),
+      correctAnswers: this.correctAnswersCount,
     });
 
     const modal = this.add.container(960, 540).setDepth(100);
@@ -670,8 +691,32 @@ export class UIScene extends Phaser.Scene {
     });
 
     this.game.events.on("correctAnswer", () => {
-      this.score += 200;
+      const reward = GAME_CONFIG.gameplay.pointsPerCorrect ?? 3;
+      this.score += reward;
+      this.correctAnswersCount++;
       this.scoreText.setText(`${this.score}`);
+
+      // Floating +3 points popup near Points card
+      const plusPopup = this.add
+        .text(1580, 36, `+${reward}`, {
+          fontFamily: "'Fredoka', sans-serif",
+          fontSize: "32px",
+          fontStyle: "900",
+          color: "#16a34a",
+          stroke: "#ffffff",
+          strokeThickness: 4,
+        })
+        .setOrigin(0.5)
+        .setDepth(35);
+
+      this.tweens.add({
+        targets: plusPopup,
+        y: 2,
+        alpha: 0,
+        duration: 750,
+        ease: "Cubic.easeOut",
+        onComplete: () => plusPopup.destroy(),
+      });
 
       // Score pop animation
       this.tweens.add({
