@@ -347,6 +347,36 @@ class AudioManager {
       osc.stop(this.ctx.currentTime + 0.2);
     } catch {}
   }
+
+  playWrong() {
+    this.playGentleTryAgain();
+  }
+
+  playLevelUp() {
+    if (this.sfxMuted || this.sfxVolume <= 0) return;
+    try {
+      this.initCtx();
+      if (!this.ctx) return;
+      const now = this.ctx.currentTime;
+      const notes = [440, 554.37, 659.25, 880]; // A4, C#5, E5, A5
+      notes.forEach((freq, idx) => {
+        if (!this.ctx) return;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, now + idx * 0.09);
+
+        const baseVol = 0.3 * this.sfxVolume;
+        gain.gain.setValueAtTime(baseVol, now + idx * 0.09);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.09 + 0.35);
+
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start(now + idx * 0.09);
+        osc.stop(now + idx * 0.09 + 0.35);
+      });
+    } catch {}
+  }
 }
 
 export const sfx = new AudioManager();

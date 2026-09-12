@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="gameSkyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="40%" stop-color="#60a5fa" />
+      <stop offset="80%" stop-color="#93c5fd" />
+      <stop offset="100%" stop-color="#bfdbfe" />
+    </linearGradient>
+
+    <!-- Grass Gradient -->
+    <linearGradient id="gameGrassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="45%" stop-color="#059669" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1920" height="1080" fill="url(#gameSkyGrad)" />
+
+  <!-- Mountains Layer (Purple/Indigo, Stretched Edge-to-Edge) -->
+  <g transform="translate(0, 685) scale(1.2, 1.25)" opacity="0.45">
+    <path d="M0,180 Q400,40 800,160 T1600,140 L1600,240 L0,240 Z" fill="#818cf8" />
+    <path d="M250,200 Q650,80 1050,190 T1600,180 L1600,240 L0,240 Z" fill="#6366f1" />
+  </g>
+
+  <!-- Green Hills Layer (Emerald/Mint, Stretched Edge-to-Edge) -->
+  <g transform="translate(0, 780) scale(1.2, 1.18)">
+    <path d="M0,130 Q450,30 950,120 T1600,100 L1600,220 L0,220 Z" fill="#34d399" />
+    <path d="M0,170 Q600,70 1200,160 T1600,150 L1600,220 L0,220 Z" fill="#10b981" />
+  </g>
+
+  <!-- Grass Ground Band (120px tall) -->
+  <rect x="0" y="960" width="1920" height="120" fill="url(#gameGrassGrad)" />
+  <line x1="0" y1="960" x2="1920" y2="960" stroke="#34d399" stroke-width="5" />
+
+  <!-- Left Tree 🌳 -->
+  <g transform="translate(30, 890)">
+    <rect x="35" y="50" width="26" height="50" rx="6" fill="#78350f" />
+    <circle cx="48" cy="30" r="44" fill="#15803d" />
+    <circle cx="28" cy="18" r="32" fill="#22c55e" />
+    <circle cx="68" cy="18" r="32" fill="#16a34a" />
+    <circle cx="48" cy="-8" r="30" fill="#4ade80" />
+  </g>
+
+  <!-- Right Tree 🌲 -->
+  <g transform="translate(1830, 885)">
+    <rect x="25" y="60" width="20" height="45" rx="5" fill="#78350f" />
+    <polygon points="35, -20, -5, 45, 75, 45" fill="#15803d" />
+    <polygon points="35, 15, -15, 65, 85, 65" fill="#16a34a" />
+    <polygon points="35, 40, -20, 85, 90, 85" fill="#14532d" />
+  </g>
+
+  <!-- Flora On Grass Band -->
+  <!-- 🌸 Left 6% -->
+  <g transform="translate(115, 1020)">
+    <circle cx="-6" cy="-6" r="8" fill="#f472b6" />
+    <circle cx="6" cy="-6" r="8" fill="#f472b6" />
+    <circle cx="-6" cy="6" r="8" fill="#f472b6" />
+    <circle cx="6" cy="6" r="8" fill="#f472b6" />
+    <circle cx="0" cy="0" r="6" fill="#fde047" />
+  </g>
+
+  <!-- 🍄 Left 16% -->
+  <g transform="translate(307, 1025)">
+    <path d="M -5,14 L -3,2 Q 0,1 3,2 L 5,14 Z" fill="#ffffff" />
+    <ellipse cx="0" cy="2" rx="14" ry="10" fill="#ef4444" />
+    <circle cx="-4" cy="0" r="2.5" fill="#ffffff" />
+    <circle cx="4" cy="-1" r="2.5" fill="#ffffff" />
+  </g>
+
+  <!-- 🌼 Left 26% -->
+  <g transform="translate(500, 1020)">
+    <circle cx="0" cy="0" r="14" fill="#ffffff" />
+    <circle cx="0" cy="0" r="7" fill="#facc15" />
+  </g>
+
+  <!-- 🌻 Right 26% (74%) -->
+  <g transform="translate(1420, 1020)">
+    <circle cx="0" cy="0" r="14" fill="#facc15" />
+    <circle cx="0" cy="0" r="7" fill="#854d0e" />
+  </g>
+
+  <!-- 🍄 Right 16% (84%) -->
+  <g transform="translate(1612, 1025)">
+    <path d="M -5,14 L -3,2 Q 0,1 3,2 L 5,14 Z" fill="#ffffff" />
+    <ellipse cx="0" cy="2" rx="14" ry="10" fill="#ef4444" />
+    <circle cx="-4" cy="0" r="2.5" fill="#ffffff" />
+    <circle cx="4" cy="-1" r="2.5" fill="#ffffff" />
+  </g>
+
+  <!-- 🌷 Right 6% (94%) -->
+  <g transform="translate(1805, 1020)">
+    <path d="M 0,15 L 0,0" stroke="#15803d" stroke-width="3" />
+    <path d="M -8,0 C -8,-14 0,-14 0,-4 C 0,-14 8,-14 8,0 C 8,10 -8,10 -8,0 Z" fill="#fb7185" />
+  </g>
+</svg>

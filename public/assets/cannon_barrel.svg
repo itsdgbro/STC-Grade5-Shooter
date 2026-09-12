@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 130" width="80" height="130">
+  <defs>
+    <linearGradient id="barrelMetal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#64748b" />
+      <stop offset="30%" stop-color="#94a3b8" />
+      <stop offset="70%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+  </defs>
+
+  <!-- Rear Cannon Bulb Base -->
+  <circle cx="40" cy="98" r="28" fill="url(#barrelMetal)" stroke="#0f172a" stroke-width="4" />
+
+  <!-- Main Tapered Cannon Body -->
+  <path d="M 18,92 L 23,20 L 57,20 L 62,92 Z" fill="url(#barrelMetal)" stroke="#0f172a" stroke-width="4" />
+
+  <!-- Brass Gold Accent Ring 1 -->
+  <rect x="21" y="44" width="38" height="10" rx="3" fill="url(#goldTrim)" stroke="#78350f" stroke-width="2" />
+
+  <!-- Brass Gold Accent Ring 2 -->
+  <rect x="22" y="74" width="36" height="8" rx="3" fill="url(#goldTrim)" stroke="#78350f" stroke-width="2" />
+
+  <!-- Chunky Muzzle Bell Ring -->
+  <rect x="15" y="10" width="50" height="16" rx="6" fill="#1e293b" stroke="#cbd5e1" stroke-width="3" />
+  <ellipse cx="40" cy="10" rx="20" ry="7" fill="#0f172a" stroke="#475569" stroke-width="2" />
+</svg>
